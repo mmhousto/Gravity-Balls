@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--DONT MODIFY HERE. AUTO GENERATED DEPENDENCIES FROM NPAndroidLibraryDependencies.cs.-->
+<dependencies>
+	<androidPackages>
+		<!--Dependency added for using Support Libraries-->
+		<androidPackage
+			spec="com.android.support:support-v4:27.1+" />
+		<androidPackage
+			spec="com.android.support:exifinterface:27.1+" />
+	</androidPackages>
+</dependencies>
