@@ -6,6 +6,8 @@ public class paddle : MonoBehaviour
 {
     public Collider wall, wall2, switchL, switchR;
 	public bool isPaddle1;
+    private SpriteRenderer spriteRenderer;
+    public Sprite basic, dark, pro;
 	public float speed = 20f;
     private Vector3 touchPosition, tP2;
     private Rigidbody rb;
@@ -22,7 +24,20 @@ public class paddle : MonoBehaviour
         Physics.IgnoreCollision(wall, GetComponent<Collider>());
         Physics.IgnoreCollision(wall2, GetComponent<Collider>());
         Physics.IgnoreCollision(brickWall.GetComponent<Collider>(), GetComponent<Collider>());
-
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if(PlayerPrefs.GetInt("selectedPaddle") == 0) {
+            spriteRenderer.sprite = basic;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 1) {
+            spriteRenderer.sprite = dark;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 2) {
+            spriteRenderer.sprite = pro;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 3) {
+            spriteRenderer.sprite = basic;
+            spriteRenderer.color = Color.red;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 4) {
+            spriteRenderer.sprite = basic;
+            spriteRenderer.color = Color.yellow;
+        }
     }
 
     void splitPaddles(Transform secondPos){

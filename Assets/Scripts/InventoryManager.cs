@@ -7,14 +7,14 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
-	public GameObject Paddle1, Paddle2, Paddle3;
+	public GameObject Paddle1, Paddle2, Paddle3, Paddle4, Paddle5;
 	public GameObject paddleBasic, paddleDark, paddlePro;
 	public List<GameObject> paddlesT = new List<GameObject>();
 	private TextMeshProUGUI paddleName, priceLbl;
 	private int coins;
 	private string[] sprites = new string[] {"Paddles/begginer-paddle.svg", "Paddles/paddle-dark.svg", "Paddles/paddle-pro.svg"};
-	private int[] price = new int[] {0, 20, 50};
-	private bool[] ownPaddle = new bool[] {true, false, false};
+	private int[] price = new int[] {0, 20, 50, 5, 5};
+	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0};
     private GameObject selectedPaddle;
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,24 @@ public class InventoryManager : MonoBehaviour
         paddlesT.Add(Paddle1);
         paddlesT.Add(Paddle2);
         paddlesT.Add(Paddle3);
-        GameObject childBtn1 = Paddle1.transform.GetChild(2).gameObject;
+        paddlesT.Add(Paddle4);
+        paddlesT.Add(Paddle5);
         coins = PlayerPrefs.GetInt("Coins");
         selectedPaddle = paddlesT[PlayerPrefs.GetInt("selectedPaddle")];
-
+        for(int i = 0; i < ownPaddle.Length; i++) {
+            ownPaddle[i] = PlayerPrefs.GetInt("ownPaddle" + (i+1), ownPaddle[i]);
+        }
     }
     // Update is called once per frame
     void Update()
     {
+        selectedPaddle = paddlesT[PlayerPrefs.GetInt("selectedPaddle")];
+        for(int i = 0; i < ownPaddle.Length; i++) {
+            ownPaddle[i] = PlayerPrefs.GetInt("ownPaddle" + (i+1), ownPaddle[i]);
+        }
         for(int i = 0; i < paddlesT.Count; i++) {
-        		if(ownPaddle[i] == true) {
-        			var children = paddlesT[i].GetComponentsInChildren<Transform>();
+            var children = paddlesT[i].GetComponentsInChildren<Transform>();
+        		if(ownPaddle[i] == 1) {
                     foreach (var child in children) {
                         if(child.name == "txt"){
                             if(selectedPaddle == paddlesT[i]){
@@ -43,7 +50,6 @@ public class InventoryManager : MonoBehaviour
                         }
                     }
         		} else {
-        			var children = paddlesT[i].GetComponentsInChildren<Transform>();
                     foreach (var child in children) {
                         if(child.name == "txt"){
                             child.GetComponent<TextMeshProUGUI>().text = "BUY";
@@ -56,7 +62,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void btn1Clicked() {
-        if(ownPaddle[0] == true){
+        if(ownPaddle[0] == 1){
             selectPaddle1();
         } else {
             buyPaddle1();
@@ -66,7 +72,6 @@ public class InventoryManager : MonoBehaviour
 
     public void selectPaddle1() {
     	selectedPaddle = paddlesT[0];
-        PlayerPrefs.SetString("Paddle", "Paddles/begginer-paddle.svg");
         PlayerPrefs.SetInt("selectedPaddle", 0);
     }
 
@@ -74,14 +79,15 @@ public class InventoryManager : MonoBehaviour
     	if(coins >= price[0]) {
     		coins -= price[0];
     		PlayerPrefs.SetInt("Coins", coins);
-    		ownPaddle[0] = true;
+    		ownPaddle[0] = 1;
+            PlayerPrefs.SetInt("ownPaddle1", 1);
     	} else {
     	//not enough coins
     	}
     }
 
     public void btn2Clicked() {
-        if(ownPaddle[1] == true){
+        if(ownPaddle[1] == 1){
             selectPaddle2();
         } else {
             buyPaddle2();
@@ -91,7 +97,6 @@ public class InventoryManager : MonoBehaviour
 
     public void selectPaddle2() {
         selectedPaddle = paddlesT[1];
-        PlayerPrefs.SetString("Paddle", "Paddles/paddle-dark.svg");
         PlayerPrefs.SetInt("selectedPaddle", 1);
     }
 
@@ -99,14 +104,15 @@ public class InventoryManager : MonoBehaviour
         if(coins >= price[1]) {
             coins -= price[1];
             PlayerPrefs.SetInt("Coins", coins);
-            ownPaddle[1] = true;
+            ownPaddle[1] = 1;
+            PlayerPrefs.SetInt("ownPaddle2", 1);
         } else {
         //not enough coins
         }
     }
 
     public void btn3Clicked() {
-        if(ownPaddle[2] == true){
+        if(ownPaddle[2] == 1){
             selectPaddle3();
         } else {
             buyPaddle3();
@@ -116,7 +122,6 @@ public class InventoryManager : MonoBehaviour
 
     public void selectPaddle3() {
         selectedPaddle = paddlesT[2];
-        PlayerPrefs.SetString("Paddle", "Paddles/paddle-pro.svg");
         PlayerPrefs.SetInt("selectedPaddle", 2);
     }
 
@@ -124,7 +129,58 @@ public class InventoryManager : MonoBehaviour
         if(coins >= price[2]) {
             coins -= price[2];
             PlayerPrefs.SetInt("Coins", coins);
-            ownPaddle[2] = true;
+            ownPaddle[2] = 1;
+            PlayerPrefs.SetInt("ownPaddle3", 1);
+        } else {
+        //not enough coins
+        }
+    }
+
+    public void btnRedClicked() {
+        if(ownPaddle[3] == 1){
+            selectPaddleRed();
+        } else {
+            buyPaddleRed();
+        }
+
+    }
+
+    public void selectPaddleRed() {
+        selectedPaddle = paddlesT[3];
+        PlayerPrefs.SetInt("selectedPaddle", 3);
+    }
+
+    public void buyPaddleRed() {
+        if(coins >= price[3]) {
+            coins -= price[3];
+            PlayerPrefs.SetInt("Coins", coins);
+            ownPaddle[3] = 1;
+            PlayerPrefs.SetInt("ownPaddle4", 1);
+        } else {
+        //not enough coins
+        }
+    }
+
+    public void btnGoldClicked() {
+        if(ownPaddle[4] == 1){
+            selectPaddleGold();
+        } else {
+            buyPaddleGold();
+        }
+
+    }
+
+    public void selectPaddleGold() {
+        selectedPaddle = paddlesT[4];
+        PlayerPrefs.SetInt("selectedPaddle", 4);
+    }
+
+    public void buyPaddleGold() {
+        if(coins >= price[4]) {
+            coins -= price[4];
+            PlayerPrefs.SetInt("Coins", coins);
+            ownPaddle[4] = 1;
+            PlayerPrefs.SetInt("ownPaddle5", 1);
         } else {
         //not enough coins
         }
