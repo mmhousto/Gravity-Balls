@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class boundaries : MonoBehaviour
 {
-	private Vector2 screenBounds;
-	public Vector2 wallL;
-	public Vector2 wallR;
-	public Vector2 wallTop;
-	public Vector2 wallBot;
+	public GameObject wallL;
+	public GameObject wallR;
+	public GameObject wallTop;
+	public GameObject wallBot;
     // Start is called before the first frame update
     void Start() {
-    	wallR = new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z);
-        
+    	wallR.transform.position = new Vector3(Screen.width/160f, 0, 0);
+        wallL.transform.position = new Vector3(Screen.width/(-160f), 0, 0);
     }
 
     // Update is called once per frame
