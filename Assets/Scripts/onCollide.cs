@@ -39,6 +39,7 @@ public class onCollide : MonoBehaviour
             GetComponent<Rigidbody>().velocity = new Vector3(sx * 3f, sy * 3f, 0f);
             transform.Translate(0f, 8f, 0f);
             GameManager.Death();
+            SkillManager.Death();
     
         }
     }

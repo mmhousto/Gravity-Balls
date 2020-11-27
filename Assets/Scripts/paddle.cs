@@ -50,14 +50,14 @@ public class paddle : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) {
         if(collision.transform.name == "switchL"){
-            transform.Translate(5f, 0f, 0f);
+            transform.Translate(6f, 0f, 0f);
         } else if(collision.transform.name == "switchR"){
-            transform.Translate(-5f, 0f, 0f);
+            transform.Translate(-6f, 0f, 0f);
         }
     }
     void OnCollisionEnter(Collision collision) {
         if(collision.transform.tag == "extend"){
-            transform.localScale += new Vector3(.465f, 0f, 0f);
+            transform.localScale += new Vector3(0.08f, 0f, 0f);
             StartCoroutine(waitResize());
         }
         if(collision.transform.tag == "life"){
@@ -83,7 +83,7 @@ public class paddle : MonoBehaviour
 
     IEnumerator waitResize(){
         yield return new WaitForSeconds(15);
-            transform.localScale -= new Vector3(.465f, 0f, 0f);
+            transform.localScale -= new Vector3(0.08f, 0f, 0f);
     }
 
     IEnumerator brickBreak(){

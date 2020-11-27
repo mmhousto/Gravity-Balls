@@ -3,8 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>BuildSystemType</key>
-	<string>Latest</string>
-	<key>PreviewsEnabled</key>
-	<false/>
+	<string>Original</string>
 </dict>
 </plist>
