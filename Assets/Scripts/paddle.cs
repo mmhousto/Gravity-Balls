@@ -15,6 +15,7 @@ public class paddle : MonoBehaviour
     public GameObject brickWall, paddleP1;
     private GameObject paddle2;
     private bool isActive = false;
+    public AudioSource coinCollect;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +66,8 @@ public class paddle : MonoBehaviour
         }
         if(collision.transform.tag == "coin"){
             GameManager.collectCoin();
+            coinCollect.Play();
+
         }
         if(collision.transform.tag == "brick" && !isActive){
             isActive = true;
