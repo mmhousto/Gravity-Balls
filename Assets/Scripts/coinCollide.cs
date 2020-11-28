@@ -5,6 +5,7 @@ using UnityEngine;
 public class coinCollide : MonoBehaviour
 {
     Rigidbody rb;
+    public AudioSource coinCollect;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class coinCollide : MonoBehaviour
 
     void OnCollisionEnter(Collision collision) {
         if(collision.transform.name == "Paddle") {
+            coinCollect.Play();
             Destroy(gameObject);
         } 
     }
