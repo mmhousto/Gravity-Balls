@@ -200,6 +200,13 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "UnityConnectSettings",
+            "fullManagedTypeName": "UnityEditor.UnityConnectSettings",
+            "moduleName": "UnityConnect",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "GlobalGameManager",
             "fullManagedTypeName": "",
@@ -433,6 +440,15 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioSource",
+            "fullManagedTypeName": "UnityEngine.AudioSource",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Scenes/gameSingle.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Rigidbody",
             "fullManagedTypeName": "UnityEngine.Rigidbody",
             "moduleName": "Physics",
@@ -504,10 +520,28 @@
             ]
         },
         {
+            "managedAssemblyName": "",
+            "nativeClass": "SampleClip",
+            "fullManagedTypeName": "",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Scenes/gameSingle.unity"
+            ]
+        },
+        {
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "MeshFilter",
             "fullManagedTypeName": "UnityEngine.MeshFilter",
             "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Scenes/gameSingle.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioClip",
+            "fullManagedTypeName": "UnityEngine.AudioClip",
+            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/gameSingle.unity"
             ]
@@ -523,6 +557,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "AudioManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "DisplayAd",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -572,6 +613,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "basicItem",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "boundaries",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -712,6 +760,20 @@
             "managedAssemblyName": "Unity.VectorGraphics.dll",
             "nativeClass": "",
             "fullManagedTypeName": "SVGImage",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.Advertisements.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Advertisements.Placeholder",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.Advertisements.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder",
             "moduleName": "",
             "usedInScenes": []
         },
