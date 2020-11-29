@@ -51,9 +51,9 @@ public class paddle : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) {
         if(collision.transform.name == "switchL"){
-            transform.Translate(6f, 0f, 0f);
+            transform.Translate(5f, 0f, 0f);
         } else if(collision.transform.name == "switchR"){
-            transform.Translate(-6f, 0f, 0f);
+            transform.Translate(-5f, 0f, 0f);
         }
     }
     void OnCollisionEnter(Collision collision) {
