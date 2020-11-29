@@ -1855,6 +1855,7 @@ IL2CPP_EXTERN_C const uint32_t Convert_ToDecimal_mD729925F249653EF8DA34909561747
 IL2CPP_EXTERN_C const uint32_t Convert_ToDecimal_mE68EDBB62A7C808F042AB5BD365BE6B6186C26C1_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Convert_ToDouble_m10322320EC0B380FE4C1EB5DBB24AE9F242B7CC8_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Convert_ToDouble_mDFBC4D4FA3C7A19C293D8BCBDA90E001AF8970E1_MetadataUsageId;
+IL2CPP_EXTERN_C const uint32_t Convert_ToDouble_mF6F0642EA16CAB414EEA621DEAA519527DA64284_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Convert_ToDouble_mFBE178F3838EDFC9B04A4896D027C98F5E9D204B_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Convert_ToInt16_m1B573BC2A10448288F43B9835CE94F34228ABADF_MetadataUsageId;
 IL2CPP_EXTERN_C const uint32_t Convert_ToInt16_m541B626F2506C13399245670B33C0387F4C92241_MetadataUsageId;
@@ -26364,7 +26365,7 @@ IL_0094:
 		String_t* L_20 = ___propertyKey6;
 		String_t* L_21 = ___propertyValue7;
 		NullCheck(L_19);
-		InterfaceActionInvoker2< String_t*, String_t* >::Invoke(1 /* System.Void System.Collections.Generic.IDictionary`2<System.String,System.String>::Add(TKey,TValue) */, IDictionary_2_tA1998BD309D36A531FCABB9A6BE08237AEB22560_il2cpp_TypeInfo_var, L_19, L_20, L_21);
+		InterfaceActionInvoker2< String_t*, String_t* >::Invoke(3 /* System.Void System.Collections.Generic.IDictionary`2<System.String,System.String>::Add(TKey,TValue) */, IDictionary_2_tA1998BD309D36A531FCABB9A6BE08237AEB22560_il2cpp_TypeInfo_var, L_19, L_20, L_21);
 	}
 
 IL_00af:
@@ -45349,6 +45350,34 @@ IL_0006:
 IL_0007:
 	{
 		return (((float)((float)G_B3_0)));
+	}
+}
+// System.Double System.Convert::ToDouble(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Convert_ToDouble_mF6F0642EA16CAB414EEA621DEAA519527DA64284 (RuntimeObject * ___value0, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Convert_ToDouble_mF6F0642EA16CAB414EEA621DEAA519527DA64284_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		RuntimeObject * L_0 = ___value0;
+		if (!L_0)
+		{
+			goto IL_0010;
+		}
+	}
+	{
+		RuntimeObject * L_1 = ___value0;
+		NullCheck(((RuntimeObject*)Castclass((RuntimeObject*)L_1, IConvertible_t40D9E38816544BF71E97F48AB3C47C9A2B7E9BE4_il2cpp_TypeInfo_var)));
+		double L_2 = InterfaceFuncInvoker1< double, RuntimeObject* >::Invoke(12 /* System.Double System.IConvertible::ToDouble(System.IFormatProvider) */, IConvertible_t40D9E38816544BF71E97F48AB3C47C9A2B7E9BE4_il2cpp_TypeInfo_var, ((RuntimeObject*)Castclass((RuntimeObject*)L_1, IConvertible_t40D9E38816544BF71E97F48AB3C47C9A2B7E9BE4_il2cpp_TypeInfo_var)), (RuntimeObject*)NULL);
+		return L_2;
+	}
+
+IL_0010:
+	{
+		return (0.0);
 	}
 }
 // System.Double System.Convert::ToDouble(System.Object,System.IFormatProvider)
