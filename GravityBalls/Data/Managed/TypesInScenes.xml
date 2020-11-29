@@ -54,6 +54,7 @@
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="AudioManager" preserve="nothing"/>
+		<type fullname="CanvasHelper" preserve="nothing"/>
 		<type fullname="DisplayAd" preserve="nothing"/>
 		<type fullname="DontDestroy" preserve="nothing"/>
 		<type fullname="GameManager" preserve="nothing"/>
