@@ -16,6 +16,7 @@ public class paddle : MonoBehaviour
     private GameObject paddle2;
     private bool isActive = false;
     public AudioSource coinCollect;
+    public AudioSource ballBounce;
 
     // Start is called before the first frame update
     void Start()
@@ -57,17 +58,19 @@ public class paddle : MonoBehaviour
         }
     }
     void OnCollisionEnter(Collision collision) {
-        if(collision.transform.tag == "extend"){
+        if(collision.transform.tag == "extend") {
             transform.localScale += new Vector3(0.08f, 0f, 0f);
             StartCoroutine(waitResize());
         }
-        if(collision.transform.tag == "life"){
+        if(collision.transform.tag == "life") {
             GameManager.lives += 1;
         }
-        if(collision.transform.tag == "coin"){
+        if(collision.transform.tag == "coin") {
             GameManager.collectCoin();
             coinCollect.Play();
-
+        }
+        if(collision.transform.tag == "enemy") {
+            ballBounce.Play();
         }
         if(collision.transform.tag == "brick" && !isActive){
             isActive = true;

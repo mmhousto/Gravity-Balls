@@ -7,6 +7,7 @@ public class onCollide : MonoBehaviour
     Rigidbody rb;
     private int ballBounces = 0;
     public ParticleSystem ten;
+    public AudioSource missBall;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class onCollide : MonoBehaviour
          
             GetComponent<Rigidbody>().velocity = new Vector3(sx * 3f, sy * 3f, 0f);
             transform.Translate(0f, 8f, 0f);
+            missBall.Play();
             GameManager.Death();
             SkillManager.Death();
     
