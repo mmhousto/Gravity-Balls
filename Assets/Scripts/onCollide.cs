@@ -6,22 +6,26 @@ public class onCollide : MonoBehaviour
 {
     Rigidbody rb;
     private int ballBounces = 0;
+    public ParticleSystem ten;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(8,8);
+        ten.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(ballBounces > 9){
-            Destroy(gameObject);
+            ten.Emit(6);
+            Destroy(this.gameObject, 0.5f);
         }
         
     }
+
 
     void OnCollisionEnter(Collision collision) {
     	if(collision.transform.name == "Paddle"){
