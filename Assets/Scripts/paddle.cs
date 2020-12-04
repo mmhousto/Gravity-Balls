@@ -16,10 +16,16 @@ public class paddle : MonoBehaviour
     private GameObject paddle2;
     private bool isActive = false;
     public AudioSource coinCollect;
+    public AudioSource ballBounce;
+    public AudioSource lifeGain;
+    public AudioSource extendPaddle;
+    public AudioSource breakBrick;
+    private static int brickHits;
 
     // Start is called before the first frame update
     void Start()
     {
+        brickHits = 0;
         paddleP1 = GetComponent<GameObject>();
         rb = GetComponent<Rigidbody>();
         Physics.IgnoreCollision(wall, GetComponent<Collider>());
@@ -41,33 +47,37 @@ public class paddle : MonoBehaviour
         }
     }
 
-    void splitPaddles(Transform secondPos){
+    void splitPaddles(Transform secondPos) {
         paddle2 = Instantiate(paddleP1, secondPos.transform.position, secondPos.transform.rotation);
     }
 
-    void combinePaddles(){
+    void combinePaddles() {
         Destroy(paddle2);
     }
 
     void OnTriggerEnter(Collider collision) {
-        if(collision.transform.name == "switchL"){
+        if(collision.transform.name == "switchL") {
             transform.Translate(5f, 0f, 0f);
-        } else if(collision.transform.name == "switchR"){
+        } else if(collision.transform.name == "switchR") {
             transform.Translate(-5f, 0f, 0f);
         }
     }
     void OnCollisionEnter(Collision collision) {
-        if(collision.transform.tag == "extend"){
+        if(collision.transform.tag == "extend") {
             transform.localScale += new Vector3(0.08f, 0f, 0f);
+            extendPaddle.Play();
             StartCoroutine(waitResize());
         }
-        if(collision.transform.tag == "life"){
+        if(collision.transform.tag == "life") {
             GameManager.lives += 1;
+            lifeGain.Play();
         }
-        if(collision.transform.tag == "coin"){
+        if(collision.transform.tag == "coin") {
             GameManager.collectCoin();
             coinCollect.Play();
-
+        }
+        if(collision.transform.tag == "enemy") {
+            ballBounce.Play();
         }
         if(collision.transform.tag == "brick" && !isActive){
             isActive = true;
@@ -80,27 +90,39 @@ public class paddle : MonoBehaviour
         }
     }
 
-    IEnumerator waitTen(){
+    IEnumerator waitTen() {
         yield return new WaitForSeconds(10);
     }
 
-    IEnumerator waitResize(){
+    IEnumerator waitResize() {
         yield return new WaitForSeconds(15);
             transform.localScale -= new Vector3(0.08f, 0f, 0f);
+            extendPaddle.Play();
     }
 
-    IEnumerator brickBreak(){
+    IEnumerator brickBreak() {
         yield return new WaitForSeconds(10);
+            brickHits = 0;
             isActive = false;
             brickWall.transform.gameObject.SetActive(false);
+    }
+
+    public void EndBrick() {
+        brickHits = 0;
+        isActive = false;
+        brickWall.transform.gameObject.SetActive(false);
+    }
+
+    public static void hitBrick() {
+        brickHits += 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isPaddle1){
+        if(isPaddle1) {
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f, Space.World);
-        if(Input.touchCount > 0){
+        if(Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
             touchPosition = Camera.main.ScreenToWorldPoint(touch.position); 
             touchPosition.z = 0f;
@@ -119,6 +141,10 @@ public class paddle : MonoBehaviour
             }
         }
         
+        }
+        if(brickHits > 3) {
+            EndBrick();
+            breakBrick.Play();
         }
     }
 }

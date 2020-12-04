@@ -7,6 +7,9 @@ public class onCollide : MonoBehaviour
     Rigidbody rb;
     private int ballBounces = 0;
     public ParticleSystem ten;
+    public AudioSource missBall;
+    public AudioSource brickHit;
+    public AudioSource tenExplode;
 
     // Start is called before the first frame update
     void Start()
@@ -20,17 +23,21 @@ public class onCollide : MonoBehaviour
     void Update()
     {
         if(ballBounces > 9){
+            tenExplode.Play();
             ten.Emit(6);
             Destroy(this.gameObject, 0.5f);
         }
         
     }
 
-
     void OnCollisionEnter(Collision collision) {
     	if(collision.transform.name == "Paddle"){
             score.AddPoint();
             ballBounces += 1;
+        }
+        if(collision.transform.tag == "brickWall"){
+            brickHit.Play();
+            paddle.hitBrick();
         }
     }
 
@@ -42,6 +49,7 @@ public class onCollide : MonoBehaviour
          
             GetComponent<Rigidbody>().velocity = new Vector3(sx * 3f, sy * 3f, 0f);
             transform.Translate(0f, 8f, 0f);
+            missBall.Play();
             GameManager.Death();
             SkillManager.Death();
     
