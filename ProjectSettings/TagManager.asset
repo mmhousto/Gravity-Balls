@@ -11,6 +11,7 @@ TagManager:
   - dontDestroy
   - enemy
   - ball
+  - brickWall
   layers:
   - Default
   - TransparentFX
