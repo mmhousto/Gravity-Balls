@@ -41,9 +41,11 @@ public class AudioManager : MonoBehaviour
 	public void ChangeMusicOnOff() {
 		if(isMOn){
 			musicImage.sprite = musicOff;
+			musicAudio.Stop();
 			isMOn = false;
 		}else {
 			musicImage.sprite = musicOn;
+			musicAudio.Play();
 			isMOn = true;
 		}
 	}	
