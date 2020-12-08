@@ -56,10 +56,13 @@ public class paddle : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collision) {
+        Camera cam = Camera.main;
+        float height = 2f * cam.orthographicSize;
+        float width = height * cam.aspect;
         if(collision.transform.name == "switchL") {
-            transform.Translate(5f, 0f, 0f);
+            transform.Translate(width, 0f, 0f);
         } else if(collision.transform.name == "switchR") {
-            transform.Translate(-5f, 0f, 0f);
+            transform.Translate(-width, 0f, 0f);
         }
     }
     void OnCollisionEnter(Collision collision) {
