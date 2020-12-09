@@ -60,9 +60,13 @@ public class paddle : MonoBehaviour
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
         if(collision.transform.name == "switchL") {
-            transform.Translate(width, 0f, 0f);
+            if(width > 7.5) {
+                transform.Translate(7.5f, 0f, 0f);
+            } else transform.Translate(width, 0f, 0f);
         } else if(collision.transform.name == "switchR") {
-            transform.Translate(-width, 0f, 0f);
+            if(width > 7.5) {
+                transform.Translate(-7.5f, 0f, 0f);
+            } else transform.Translate(-width, 0f, 0f);
         }
     }
     void OnCollisionEnter(Collision collision) {
