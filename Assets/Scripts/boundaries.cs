@@ -15,7 +15,7 @@ public class boundaries : MonoBehaviour
         Debug.Log(height);
         Debug.Log(width);
         if(width > 7.5) {
-            gameObject.transform.localScale = new Vector3(1.42f, 1f, 1f);
+            gameObject.transform.localScale = new Vector3(1.55f, 1f, 1f);
         }
         if(width <= 7.5) {
             gameObject.transform.localScale = new Vector3(1.33f, 1f, 1f);
