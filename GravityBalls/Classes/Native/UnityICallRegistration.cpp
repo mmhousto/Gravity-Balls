@@ -150,6 +150,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_PlayHelper();
 		Register_UnityEngine_AudioSource_PlayHelper();
 
+		//System.Void UnityEngine.AudioSource::Stop(System.Boolean)
+		void Register_UnityEngine_AudioSource_Stop();
+		Register_UnityEngine_AudioSource_Stop();
+
 	//End Registrations for type : UnityEngine.AudioSource
 
 	//Start Registrations for type : UnityEngine.Behaviour
@@ -1823,6 +1827,34 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Object_FindObjectsOfType();
 
 	//End Registrations for type : UnityEngine.Object
+
+	//Start Registrations for type : UnityEngine.ParticleSystem
+
+		//System.Void UnityEngine.ParticleSystem::EmitOld_Internal(UnityEngine.ParticleSystem/Particle&)
+		void Register_UnityEngine_ParticleSystem_EmitOld_Internal();
+		Register_UnityEngine_ParticleSystem_EmitOld_Internal();
+
+		//System.Void UnityEngine.ParticleSystem::Emit_Injected(UnityEngine.ParticleSystem/EmitParams&,System.Int32)
+		void Register_UnityEngine_ParticleSystem_Emit_Injected();
+		Register_UnityEngine_ParticleSystem_Emit_Injected();
+
+		//System.Void UnityEngine.ParticleSystem::Emit_Internal(System.Int32)
+		void Register_UnityEngine_ParticleSystem_Emit_Internal();
+		Register_UnityEngine_ParticleSystem_Emit_Internal();
+
+		//System.Void UnityEngine.ParticleSystem::Stop(System.Boolean,UnityEngine.ParticleSystemStopBehavior)
+		void Register_UnityEngine_ParticleSystem_Stop();
+		Register_UnityEngine_ParticleSystem_Stop();
+
+	//End Registrations for type : UnityEngine.ParticleSystem
+
+	//Start Registrations for type : UnityEngine.ParticleSystemRenderer
+
+		//System.Int32 UnityEngine.ParticleSystemRenderer::GetMeshes(UnityEngine.Mesh[])
+		void Register_UnityEngine_ParticleSystemRenderer_GetMeshes();
+		Register_UnityEngine_ParticleSystemRenderer_GetMeshes();
+
+	//End Registrations for type : UnityEngine.ParticleSystemRenderer
 
 	//Start Registrations for type : UnityEngine.Physics
 

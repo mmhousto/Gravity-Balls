@@ -21,7 +21,7 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.3</string>
+    <string>0.7</string>
     <key>CFBundleVersion</key>
     <string>0</string>
     <key>LSRequiresIPhoneOS</key>
@@ -35,7 +35,15 @@
     <array>
       <dict>
         <key>SKAdNetworkIdentifier</key>
-        <string>v79kvwwj4g.skadnetwork</string>
+        <string>9T245VHMPL.skadnetwork</string>
+      </dict>
+      <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>238da6jt44.skadnetwork</string>
+      </dict>
+      <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>c6k4g5qg8m.skadnetwork</string>
       </dict>
       <dict>
         <key>SKAdNetworkIdentifier</key>
@@ -64,6 +72,14 @@
       <dict>
         <key>SKAdNetworkIdentifier</key>
         <string>488r3q3dtq.skadnetwork</string>
+      </dict>
+      <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>v79kvwwj4g.skadnetwork</string>
+      </dict>
+      <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>24t9a8vw3c.skadnetwork</string>
       </dict>
       <dict>
         <key>SKAdNetworkIdentifier</key>
@@ -123,6 +139,10 @@
       </dict>
       <dict>
         <key>SKAdNetworkIdentifier</key>
+        <string>578prtvx9j.skadnetwork</string>
+      </dict>
+      <dict>
+        <key>SKAdNetworkIdentifier</key>
         <string>22mmun2rn5.skadnetwork</string>
       </dict>
       <dict>
@@ -159,10 +179,6 @@
       </dict>
       <dict>
         <key>SKAdNetworkIdentifier</key>
-        <string>cstr6suwn9.skadnetwork</string>
-      </dict>
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
         <string>5a6flpkh64.skadnetwork</string>
       </dict>
       <dict>
@@ -191,15 +207,7 @@
       </dict>
       <dict>
         <key>SKAdNetworkIdentifier</key>
-        <string>9T245VHMPL.skadnetwork</string>
-      </dict>
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>238da6jt44.skadnetwork</string>
-      </dict>
-      <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>c6k4g5qg8m.skadnetwork</string>
+        <string>cstr6suwn9.skadnetwork</string>
       </dict>
     </array>
     <key>UILaunchStoryboardName~ipad</key>

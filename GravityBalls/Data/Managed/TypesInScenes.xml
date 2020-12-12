@@ -17,6 +17,7 @@
 		<type fullname="UnityEditor.PlayerSettings" preserve="nothing"/>
 		<type fullname="UnityEditor.UnityConnectSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.QualitySettings" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
 		<type fullname="UnityEngine.Canvas" preserve="nothing"/>
@@ -37,17 +38,18 @@
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.LightmapSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.LightingSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider" preserve="nothing"/>
 		<type fullname="UnityEngine.SphereCollider" preserve="nothing"/>
+		<type fullname="UnityEngine.ParticleSystemRenderer" preserve="nothing"/>
+		<type fullname="UnityEngine.ParticleSystem" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Light" preserve="nothing"/>
 		<type fullname="UnityEngine.Mesh" preserve="nothing"/>
 		<type fullname="UnityEngine.PhysicMaterial" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
-		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp-firstpass">
 		<type fullname="VoxelBusters.NativePlugins.NPSettings" preserve="nothing"/>
