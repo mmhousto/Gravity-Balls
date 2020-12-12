@@ -48,7 +48,6 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_SpriteShapeModuleCodeGen
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_TilemapModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UIModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UnityWebRequestAssetBundleModuleCodeGenModule;
-IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_AndroidJNIModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_TextCoreModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UICodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UnityConnectModuleCodeGenModule;
@@ -56,6 +55,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UnityWebRequestWWWModule
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_TextMeshProCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_AdvertisementsCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_GameCenterModuleCodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_ParticleSystemModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_ScreenCaptureModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_UnityAnalyticsModuleCodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_VectorGraphicsCodeGenModule;
@@ -88,7 +88,6 @@ const Il2CppCodeGenModule* g_CodeGenModules[37] =
 	(&g_UnityEngine_TilemapModuleCodeGenModule),
 	(&g_UnityEngine_UIModuleCodeGenModule),
 	(&g_UnityEngine_UnityWebRequestAssetBundleModuleCodeGenModule),
-	(&g_UnityEngine_AndroidJNIModuleCodeGenModule),
 	(&g_UnityEngine_TextCoreModuleCodeGenModule),
 	(&g_UnityEngine_UICodeGenModule),
 	(&g_UnityEngine_UnityConnectModuleCodeGenModule),
@@ -96,6 +95,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[37] =
 	(&g_Unity_TextMeshProCodeGenModule),
 	(&g_UnityEngine_AdvertisementsCodeGenModule),
 	(&g_UnityEngine_GameCenterModuleCodeGenModule),
+	(&g_UnityEngine_ParticleSystemModuleCodeGenModule),
 	(&g_UnityEngine_ScreenCaptureModuleCodeGenModule),
 	(&g_UnityEngine_UnityAnalyticsModuleCodeGenModule),
 	(&g_Unity_VectorGraphicsCodeGenModule),
@@ -108,15 +108,15 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	21,
 	g_ReversePInvokeWrapperPointers,
-	15684,
+	15680,
 	g_Il2CppGenericMethodPointers,
-	4057,
+	4060,
 	g_Il2CppInvokerPointers,
 	5793,
 	g_AttributeGenerators,
 	585,
 	g_UnresolvedVirtualMethodPointers,
-	335,
+	336,
 	g_Il2CppInteropData,
 	0,
 	NULL,
