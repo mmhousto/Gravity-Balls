@@ -12,6 +12,8 @@ TagManager:
   - enemy
   - ball
   - brickWall
+  - music
+  - sound
   layers:
   - Default
   - TransparentFX

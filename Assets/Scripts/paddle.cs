@@ -25,6 +25,7 @@ public class paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
         brickHits = 0;
         paddleP1 = GetComponent<GameObject>();
         rb = GetComponent<Rigidbody>();
