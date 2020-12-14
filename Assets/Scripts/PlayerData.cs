@@ -14,6 +14,8 @@ public class PlayerData : MonoBehaviour
     private int ownPaddle3 = 0;
     private int ownPaddle4 = 0;
     private int ownPaddle5 = 0;
+    private static int musicOn = 1;
+    private static string volume = "medium";
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class PlayerData : MonoBehaviour
         ownPaddle5 = PlayerPrefs.GetInt("ownPaddle5", 0);
         paddlePath = PlayerPrefs.GetString("Paddle", "Paddles/begginer-paddle.svg");
         paddleNum = PlayerPrefs.GetInt("selectedPaddle", 0);
+        volume = PlayerPrefs.GetString("gameVolume", "medium");
+        musicOn = PlayerPrefs.GetInt("music", 1);
     }
 
     // Update is called once per frame
@@ -40,6 +44,16 @@ public class PlayerData : MonoBehaviour
         ownPaddle5 = PlayerPrefs.GetInt("ownPaddle5", 0);
         paddlePath = PlayerPrefs.GetString("Paddle", "Paddles/begginer-paddle.svg");
         paddleNum = PlayerPrefs.GetInt("selectedPaddle", 0);
+        volume = PlayerPrefs.GetString("gameVolume", "medium");
+        musicOn = PlayerPrefs.GetInt("music", 1);
+    }
+
+    public static int getMusicOn() {
+        return musicOn;
+    }
+
+    public static string getVolume() {
+        return volume;
     }
 
     public static int getHiScore(){
