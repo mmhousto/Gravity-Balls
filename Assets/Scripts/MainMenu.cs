@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
 
 	public void PlaySolo() {
+		Destroy(GameObject.Find("AudioManager"));
 		SceneManager.LoadScene(1);
 	}
 
