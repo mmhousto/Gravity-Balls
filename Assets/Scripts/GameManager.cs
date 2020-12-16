@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void loadMenu(){
+        Destroy(GameObject.Find("PlayerData"));
         SceneManager.LoadScene(0);
     }
     // Update is called once per frame

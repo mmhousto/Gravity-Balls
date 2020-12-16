@@ -10,57 +10,115 @@ public class AudioManager : MonoBehaviour
 	private Image musicImage, soundImage;
 	public Sprite soundOff, soundLow, soundMed, soundHigh;
 	public AudioSource musicAudio;
-	public AudioSource [] soundAudio;
-	bool isMOn = true, isSOnLow = false, isSOnMed = true, isSOnHigh = false;
+	private string volumeLevel = "medium";
+	private int isMusicOn = 1;
+	private bool isMOn = true, isSOnLow = false, isSOnMed = true, isSOnHigh = false;
+	private bool restarted = false;
+
+	void Awake() {
+		DontDestroyOnLoad(this);
+	}
 
 	void start() {
+		AudioListener.volume = 0.75f;
+		musicAudio.Play();
+		volumeLevel = PlayerData.getVolume();
+		isMusicOn = PlayerData.getMusicOn();
 		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
 		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
-		if(PlayerData.getVolume() == "high") {
+		if(volumeLevel == "high") {
 			soundImage.sprite = soundHigh;
-			PlayerPrefs.SetString("gameVolume", "high");
 			AudioListener.volume = 1.0f;
 			isSOnMed = false;
 			isSOnHigh = true;
 			isSOnLow = false;
 		}
-		if(PlayerData.getVolume() == "medium") {
+		if(volumeLevel == "medium") {
 			soundImage.sprite = soundMed;
-			PlayerPrefs.SetString("gameVolume", "medium");
 			AudioListener.volume = 0.75f;
 			isSOnMed = true;
 			isSOnHigh = false;
 			isSOnLow = false;
 		}
-		if(PlayerData.getVolume() == "low") {
+		if(volumeLevel == "low") {
 			soundImage.sprite = soundLow;
-			PlayerPrefs.SetString("gameVolume", "low");
 			AudioListener.volume = 0.25f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = true;
 		}
-		if(PlayerData.getVolume() == "off") {
+		if(volumeLevel == "off") {
 			soundImage.sprite = soundOff;
-			PlayerPrefs.SetString("gameVolume", "off");
 			AudioListener.volume = 0.0f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = false;
 		}
-		if(PlayerData.getMusicOn() == 0) {
+		if(isMusicOn == 0) {
 			musicImage.sprite = musicOff;
 			musicAudio.Stop();
 			isMOn = false;
-		} else if(PlayerData.getMusicOn() == 1) {
+		} else if(isMusicOn == 1) {
 			musicImage.sprite = musicOn;
 			musicAudio.Play();
 			isMOn = true;
 		}
 	}
 
-	public void ChangeSound() {
+	void Update() {
+		if(SceneManager.GetSceneByName("gameSingle").name == "gameSingle" && restarted == false) {
+			AudioListener.volume = 0.75f;
+			musicAudio.Play();
+			restarted = true;
+			volumeLevel = PlayerData.getVolume();
+		isMusicOn = PlayerData.getMusicOn();
+		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
 		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
+					if(volumeLevel == "high") {
+			soundImage.sprite = soundHigh;
+			AudioListener.volume = 1.0f;
+			isSOnMed = false;
+			isSOnHigh = true;
+			isSOnLow = false;
+		}
+		if(volumeLevel == "medium") {
+			soundImage.sprite = soundMed;
+			AudioListener.volume = 0.75f;
+			isSOnMed = true;
+			isSOnHigh = false;
+			isSOnLow = false;
+		}
+		if(volumeLevel == "low") {
+			soundImage.sprite = soundLow;
+			AudioListener.volume = 0.25f;
+			isSOnMed = false;
+			isSOnHigh = false;
+			isSOnLow = true;
+		}
+		if(volumeLevel == "off") {
+			soundImage.sprite = soundOff;
+			AudioListener.volume = 0.0f;
+			isSOnMed = false;
+			isSOnHigh = false;
+			isSOnLow = false;
+		}
+		if(isMusicOn == 0) {
+			musicImage.sprite = musicOff;
+			musicAudio.Stop();
+			isMOn = false;
+		} else if(isMusicOn == 1) {
+			musicImage.sprite = musicOn;
+			musicAudio.Play();
+			isMOn = true;
+		}
+		}
+		volumeLevel = PlayerData.getVolume();
+		isMusicOn = PlayerData.getMusicOn();
+		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
+		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
+	}
+
+	public void ChangeSound() {
 		Debug.Log("Sound Changed");
 		if(isSOnMed){
 			AudioListener.volume = 1.0f;
@@ -97,15 +155,14 @@ public class AudioManager : MonoBehaviour
 	}
 
 	public void ChangeMusicOnOff() {
-		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
 		Debug.Log("Clicked");
-		if(PlayerPrefs.GetInt("music", 1) == 1){
+		if(isMusicOn == 1) {
 			Debug.Log("Music OFF");
 			PlayerPrefs.SetInt("music", 0);
 			musicImage.sprite = musicOff;
 			musicAudio.Stop();
 			isMOn = false;
-		}else if(PlayerPrefs.GetInt("music", 1) == 0) {
+		} else if(isMusicOn == 0) {
 			Debug.Log("Music ON");
 			PlayerPrefs.SetInt("music", 1);
 			musicImage.sprite = musicOn;
