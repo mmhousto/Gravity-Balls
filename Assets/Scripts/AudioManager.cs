@@ -15,15 +15,9 @@ public class AudioManager : MonoBehaviour
 	private bool isMOn = true, isSOnLow = false, isSOnMed = true, isSOnHigh = false;
 	private bool restarted = false;
 
-	void Awake() {
-		DontDestroyOnLoad(this);
-	}
-
 	void start() {
-		AudioListener.volume = 0.75f;
-		musicAudio.Play();
-		volumeLevel = PlayerData.getVolume();
-		isMusicOn = PlayerData.getMusicOn();
+		volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
+		isMusicOn = PlayerPrefs.GetInt("music", 1);
 		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
 		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
 		if(volumeLevel == "high") {
@@ -32,21 +26,21 @@ public class AudioManager : MonoBehaviour
 			isSOnMed = false;
 			isSOnHigh = true;
 			isSOnLow = false;
-		}
+		} else
 		if(volumeLevel == "medium") {
 			soundImage.sprite = soundMed;
 			AudioListener.volume = 0.75f;
 			isSOnMed = true;
 			isSOnHigh = false;
 			isSOnLow = false;
-		}
+		} else
 		if(volumeLevel == "low") {
 			soundImage.sprite = soundLow;
 			AudioListener.volume = 0.25f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = true;
-		}
+		} else
 		if(volumeLevel == "off") {
 			soundImage.sprite = soundOff;
 			AudioListener.volume = 0.0f;
@@ -66,56 +60,41 @@ public class AudioManager : MonoBehaviour
 	}
 
 	void Update() {
-		if(SceneManager.GetSceneByName("gameSingle").name == "gameSingle" && restarted == false) {
-			AudioListener.volume = 0.75f;
-			musicAudio.Play();
-			restarted = true;
-			volumeLevel = PlayerData.getVolume();
-		isMusicOn = PlayerData.getMusicOn();
+		volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
+		isMusicOn = PlayerPrefs.GetInt("music", 1);
 		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
 		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
-					if(volumeLevel == "high") {
+		if(volumeLevel == "high") {
 			soundImage.sprite = soundHigh;
-			AudioListener.volume = 1.0f;
 			isSOnMed = false;
 			isSOnHigh = true;
 			isSOnLow = false;
-		}
+		} else
 		if(volumeLevel == "medium") {
 			soundImage.sprite = soundMed;
-			AudioListener.volume = 0.75f;
 			isSOnMed = true;
 			isSOnHigh = false;
 			isSOnLow = false;
-		}
+		} else
 		if(volumeLevel == "low") {
 			soundImage.sprite = soundLow;
-			AudioListener.volume = 0.25f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = true;
-		}
+		} else
 		if(volumeLevel == "off") {
 			soundImage.sprite = soundOff;
-			AudioListener.volume = 0.0f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = false;
 		}
 		if(isMusicOn == 0) {
 			musicImage.sprite = musicOff;
-			musicAudio.Stop();
 			isMOn = false;
 		} else if(isMusicOn == 1) {
 			musicImage.sprite = musicOn;
-			musicAudio.Play();
 			isMOn = true;
 		}
-		}
-		volumeLevel = PlayerData.getVolume();
-		isMusicOn = PlayerData.getMusicOn();
-		musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
-		soundImage = GameObject.Find("btnSound").GetComponent<Image>();
 	}
 
 	public void ChangeSound() {
