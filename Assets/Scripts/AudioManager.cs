@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
 	private bool restarted = false;
 	private GameObject parentObject;
 
-	void start() {
+	void Start() {
 		volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
 		isMusicOn = PlayerPrefs.GetInt("music", 1);
 		currentScene = SceneManager.GetActiveScene().name;
@@ -79,7 +79,9 @@ public class AudioManager : MonoBehaviour
 		}
 
 		if(isMusicOn == 0) {
+			Debug.Log("Music off");
 			if(currentScene == "MainScreen") {
+				Debug.Log("Music Image off");
 				musicImage.sprite = musicOff;
 			} else if (currentScene == "gameSingle" || currentScene == "gameSkill") {
 				musicImage2.sprite = musicOff;
@@ -170,6 +172,7 @@ public class AudioManager : MonoBehaviour
 				musicAudio.Stop();
 				isPlaying = false;
 			}
+
 
 			if(currentScene == "MainScreen") {
 				musicImage.sprite = musicOff;
