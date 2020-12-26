@@ -79,9 +79,7 @@ public class AudioManager : MonoBehaviour
 		}
 
 		if(isMusicOn == 0) {
-			Debug.Log("Music off");
 			if(currentScene == "MainScreen") {
-				Debug.Log("Music Image off");
 				musicImage.sprite = musicOff;
 			} else if (currentScene == "gameSingle" || currentScene == "gameSkill") {
 				musicImage2.sprite = musicOff;
@@ -201,7 +199,6 @@ public class AudioManager : MonoBehaviour
 	}
 
 	public void ChangeSound() {
-		Debug.Log("Sound Changed");
 		currentScene = SceneManager.GetActiveScene().name;
 		if(isSOnMed){
 			AudioListener.volume = 1.0f;
@@ -271,7 +268,6 @@ public class AudioManager : MonoBehaviour
 			PlayerPrefs.SetInt("music", 0);
 
 			if(currentScene == "MainScreen") {
-				Debug.Log("Music OFF");
 				musicImage.sprite = musicOff;
 			} else if (currentScene == "gameSingle" || currentScene == "gameSkill") {
 				musicImage2.sprite = musicOff;
@@ -282,7 +278,6 @@ public class AudioManager : MonoBehaviour
 			isMOn = false;
 			isPlaying = false;
 		} else if(isMusicOn == 0) {
-			Debug.Log("Music ON");
 			PlayerPrefs.SetInt("music", 1);
 
 			if(currentScene == "MainScreen") {
