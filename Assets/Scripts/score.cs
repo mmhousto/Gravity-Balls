@@ -30,6 +30,11 @@ public class score : MonoBehaviour
         hiScoreLabel.text = HiScore.ToString();
     }
 
+    public static int GetScore()
+    {
+        return Score;
+    }
+
     public static void AddPoint() {
     	Score += 1;
     }

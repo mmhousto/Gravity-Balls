@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
         		break;
         	case 0:
                 PlayerPrefs.SetInt("CoinsC", coins);
+                PlayServices.AddScoreToLeaderboard();
         		life1.gameObject.SetActive(false);
         		life2.gameObject.SetActive(false);
         		life3.gameObject.SetActive(false);
