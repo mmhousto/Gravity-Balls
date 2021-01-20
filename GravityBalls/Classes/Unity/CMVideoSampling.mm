@@ -1,9 +1,6 @@
 #include "CMVideoSampling.h"
 
 #include "CVTextureCache.h"
-#include "GlesHelper.h"
-
-#include <OpenGLES/ES3/glext.h>
 #include <AVFoundation/AVFoundation.h>
 
 void CMVideoSampling_Initialize(CMVideoSampling* sampling)
@@ -68,21 +65,6 @@ intptr_t CMVideoSampling_ImageBuffer(CMVideoSampling* sampling, CVImageBufferRef
 
     if (sampling->cvTextureCacheTexture)
         retTex = GetTextureFromCVTextureCache(sampling->cvTextureCacheTexture);
-
-#if UNITY_USES_GLES
-    if (UnitySelectedRenderingAPI() == apiOpenGLES2 || UnitySelectedRenderingAPI() == apiOpenGLES3)
-    {
-        GLint oldTexBinding = 0;
-
-        glGetIntegerv(GL_TEXTURE_BINDING_2D, &oldTexBinding);
-        glBindTexture(GL_TEXTURE_2D, (GLuint)retTex);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glBindTexture(GL_TEXTURE_2D, oldTexBinding);
-    }
-#endif
 
     return retTex;
 }

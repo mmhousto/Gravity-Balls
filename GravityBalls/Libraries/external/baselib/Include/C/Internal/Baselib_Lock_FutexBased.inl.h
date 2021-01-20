@@ -16,14 +16,14 @@ typedef struct Baselib_Lock
     char _cachelineSpacer[PLATFORM_CACHE_LINE_SIZE - sizeof(int32_t)];
 } Baselib_Lock;
 
-static inline Baselib_Lock Baselib_Lock_Create(void)
+BASELIB_INLINE_API Baselib_Lock Baselib_Lock_Create(void)
 {
     Baselib_Lock lock = {Detail_Baselib_Lock_UNLOCKED, {0}};
     return lock;
 }
 
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_Lock_TryAcquire(Baselib_Lock* lock)
+BASELIB_INLINE_API bool Baselib_Lock_TryAcquire(Baselib_Lock* lock)
 {
     int32_t previousState = Detail_Baselib_Lock_UNLOCKED;
     do
@@ -35,7 +35,7 @@ static inline bool Baselib_Lock_TryAcquire(Baselib_Lock* lock)
     return false;
 }
 
-static inline void Baselib_Lock_Acquire(Baselib_Lock* lock)
+BASELIB_INLINE_API void Baselib_Lock_Acquire(Baselib_Lock* lock)
 {
     int32_t previousState = Detail_Baselib_Lock_UNLOCKED;
     do
@@ -53,7 +53,7 @@ static inline void Baselib_Lock_Acquire(Baselib_Lock* lock)
 }
 
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, const uint32_t timeoutInMilliseconds)
+BASELIB_INLINE_API bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, const uint32_t timeoutInMilliseconds)
 {
     int32_t previousState = Detail_Baselib_Lock_UNLOCKED;
     do
@@ -80,13 +80,13 @@ static inline bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, const uint32
     return false;
 }
 
-static inline void Baselib_Lock_Release(Baselib_Lock* lock)
+BASELIB_INLINE_API void Baselib_Lock_Release(Baselib_Lock* lock)
 {
     const int32_t previousState = Baselib_atomic_exchange_32_release(&lock->state, Detail_Baselib_Lock_UNLOCKED);
     if (previousState == Detail_Baselib_Lock_CONTENDED)
         Baselib_SystemFutex_Notify(&lock->state, 1, Baselib_WakeupFallbackStrategy_OneByOne);
 }
 
-static inline void Baselib_Lock_Free(Baselib_Lock* lock)
+BASELIB_INLINE_API void Baselib_Lock_Free(Baselib_Lock* lock)
 {
 }

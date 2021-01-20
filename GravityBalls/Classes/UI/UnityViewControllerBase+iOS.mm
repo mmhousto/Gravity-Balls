@@ -19,6 +19,15 @@
 
 @implementation UnityViewControllerBase (iOS)
 
+ScreenOrientation _currentOrientation;
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
+    _currentOrientation = UIViewControllerOrientation(self);
+    AppController_SendUnityViewControllerNotification(kUnityViewDidAppear);
+}
+
 - (BOOL)shouldAutorotate
 {
     return YES;
@@ -77,8 +86,12 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
-    ScreenOrientation curOrient = UIViewControllerOrientation(self);
+    // Dropped UIViewControllerOrientation(self) usage to calculate current orientation because
+    // in some cases this method is called after screen has already turned so
+    // UIViewControllerOrientation(self) might give inconsistant results
+    ScreenOrientation curOrient = _currentOrientation;
     ScreenOrientation newOrient = OrientationAfterTransform(curOrient, [coordinator targetTransform]);
+    _currentOrientation = newOrient;
 
     // in case of presentation controller it will take control over orientations
     // so to avoid crazy corner cases, make default view controller to ignore "wrong" orientations

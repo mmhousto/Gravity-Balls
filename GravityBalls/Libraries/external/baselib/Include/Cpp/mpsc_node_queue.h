@@ -37,7 +37,7 @@ namespace baselib
         //  the information yet. Therefore the consumer threads calls will yield null until that particular producer thread wakes back up.
         //
         template<typename T>
-        class alignas(PLATFORM_CACHE_LINE_SIZE)mpsc_node_queue
+        class alignas(sizeof(intptr_t) * 2)mpsc_node_queue
         {
         public:
             // Create a new queue instance.
@@ -116,12 +116,16 @@ namespace baselib
             }
 
         private:
+            // Space out atomic members to individual cache lines. Required for native LLSC operations on some architectures, others to avoid false sharing
+            char _cachelineSpacer0[PLATFORM_CACHE_LINE_SIZE];
             union
             {
                 atomic<T*> m_Front;
                 atomic<intptr_t> m_FrontIntPtr;
             };
-            alignas(PLATFORM_CACHE_LINE_SIZE) atomic<T*> m_Back;
+            char _cachelineSpacer1[PLATFORM_CACHE_LINE_SIZE - sizeof(T*)];
+            atomic<T*> m_Back;
+            char _cachelineSpacer2[PLATFORM_CACHE_LINE_SIZE - sizeof(T*)];
 
             // Verify mpsc_node is base of T
             static_assert(std::is_base_of<baselib::mpsc_node, T>::value, "Node class/struct used with baselib::mpsc_node_queue must derive from baselib::mpsc_node.");

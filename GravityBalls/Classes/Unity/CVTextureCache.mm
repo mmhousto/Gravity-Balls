@@ -32,8 +32,6 @@ void* CreateCVTextureCache()
     CVReturn err = 0;
     if (UnitySelectedRenderingAPI() == apiMetal)
         err = CVMetalTextureCacheCreate(kCFAllocatorDefault, 0, UnityGetMetalDevice(), 0, (CVMetalTextureCacheRef*)&ret);
-    else
-        err = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, 0, UnityGetMainScreenContextGLES(), 0, (CVOpenGLESTextureCacheRef*)&ret);
 
     if (err)
     {
@@ -47,8 +45,6 @@ void FlushCVTextureCache(void* cache)
 {
     if (UnitySelectedRenderingAPI() == apiMetal)
         CVMetalTextureCacheFlush((CVMetalTextureCacheRef)cache, 0);
-    else
-        CVOpenGLESTextureCacheFlush((CVOpenGLESTextureCacheRef)cache, 0);
 }
 
 void* CreateBGRA32TextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h)
@@ -61,14 +57,6 @@ void* CreateBGRA32TextureFromCVTextureCache(void* cache, void* image, size_t w, 
         err = CVMetalTextureCacheCreateTextureFromImage(
             kCFAllocatorDefault, (CVMetalTextureCacheRef)cache, (CVImageBufferRef)image, 0,
             (MTLPixelFormat)((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->colorFormat, w, h, 0, (CVMetalTextureRef*)&texture
-        );
-    }
-    else
-    {
-        err = CVOpenGLESTextureCacheCreateTextureFromImage(
-            kCFAllocatorDefault, (CVOpenGLESTextureCacheRef)cache, (CVImageBufferRef)image, 0,
-            GL_TEXTURE_2D, GL_RGBA, (GLsizei)w, (GLsizei)h, GL_BGRA_EXT, GL_UNSIGNED_BYTE,
-            0, (CVOpenGLESTextureRef*)&texture
         );
     }
 
@@ -92,22 +80,6 @@ void* CreateHalfFloatTextureFromCVTextureCache(void* cache, void* image, size_t 
             MTLPixelFormatR16Float, w, h, 0, (CVMetalTextureRef*)&texture
         );
     }
-    else if (UnitySelectedRenderingAPI() == apiOpenGLES3)
-    {
-        err = CVOpenGLESTextureCacheCreateTextureFromImage(
-            kCFAllocatorDefault, (CVOpenGLESTextureCacheRef)cache, (CVImageBufferRef)image, 0,
-            GL_TEXTURE_2D, GL_R16F, (GLsizei)w, (GLsizei)h, GL_RED, GL_HALF_FLOAT,
-            0, (CVOpenGLESTextureRef*)&texture
-        );
-    }
-    else // OpenGLES2
-    {
-        err = CVOpenGLESTextureCacheCreateTextureFromImage(
-            kCFAllocatorDefault, (CVOpenGLESTextureCacheRef)cache, (CVImageBufferRef)image, 0,
-            GL_TEXTURE_2D, GL_RED_EXT, (GLsizei)w, (GLsizei)h, GL_RED_EXT, GL_HALF_FLOAT_OES,
-            0, (CVOpenGLESTextureRef*)&texture
-        );
-    }
 
     if (err)
     {
@@ -115,12 +87,6 @@ void* CreateHalfFloatTextureFromCVTextureCache(void* cache, void* image, size_t 
         texture = 0;
     }
     return texture;
-}
-
-unsigned GetGLTextureFromCVTextureCache(void* texture)
-{
-    assert(UnitySelectedRenderingAPI() != apiMetal);
-    return CVOpenGLESTextureGetName((CVOpenGLESTextureRef)texture);
 }
 
 id<MTLTexture> GetMetalTextureFromCVTextureCache(void* texture)
@@ -133,19 +99,16 @@ uintptr_t GetTextureFromCVTextureCache(void* texture)
 {
     if (UnitySelectedRenderingAPI() == apiMetal)
         return (uintptr_t)(__bridge void*)GetMetalTextureFromCVTextureCache(texture);
-    else
-        return (uintptr_t)GetGLTextureFromCVTextureCache(texture);
+    return 0;
 }
 
 void* CreatePixelBufferForCVTextureCache(size_t w, size_t h)
 {
-    NSString* apiKey = UnitySelectedRenderingAPI() == apiMetal  ? (__bridge NSString*)kCVPixelBufferMetalCompatibilityKey
-        : (__bridge NSString*)kCVPixelBufferOpenGLESCompatibilityKey;
     CVPixelBufferRef pb = 0;
     NSDictionary* options = @{  (__bridge NSString*)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA),
                                 (__bridge NSString*)kCVPixelBufferWidthKey: @(w),
                                 (__bridge NSString*)kCVPixelBufferHeightKey: @(h),
-                                apiKey: @(YES),
+                                (__bridge NSString*)kCVPixelBufferMetalCompatibilityKey: @(YES),
                                 (__bridge NSString*)kCVPixelBufferIOSurfacePropertiesKey: @{}};
 
     CVPixelBufferCreate(kCFAllocatorDefault, w, h, kCVPixelFormatType_32BGRA, (__bridge CFDictionaryRef)options, &pb);
@@ -162,6 +125,5 @@ int IsCVTextureFlipped(void* texture)
 {
     if (UnitySelectedRenderingAPI() == apiMetal)
         return CVMetalTextureIsFlipped((CVMetalTextureRef)texture);
-    else
-        return CVOpenGLESTextureIsFlipped((CVOpenGLESTextureRef)texture);
+    return 0;
 }

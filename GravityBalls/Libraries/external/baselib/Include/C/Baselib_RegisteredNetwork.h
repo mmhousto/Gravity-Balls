@@ -106,8 +106,6 @@ BASELIB_API Baselib_RegisteredNetwork_Endpoint Baselib_RegisteredNetwork_Endpoin
 
 // Decode endpoint.
 //
-// Destination must be able to accommodate Baselib_RegisteredNetwork_Endpoint_DecodedIpMaxSize bytes
-//
 // \param endpoint   Endpoint to be converted.
 // \param dstAddress Pointer to address to write data to.
 //
@@ -139,14 +137,24 @@ typedef struct Baselib_RegisteredNetwork_Request
     void*                                 requestUserdata;
 } Baselib_RegisteredNetwork_Request;
 
+// Success or failure of a Baselib_RegisteredNetwork_CompletionResult.
+typedef enum Baselib_RegisteredNetwork_CompletionStatus
+{
+    // Networking request failed.
+    Baselib_RegisteredNetwork_CompletionStatus_Failed = 0,
+    // Networking request successfully finished.
+    Baselib_RegisteredNetwork_CompletionStatus_Success = 1,
+} Baselib_RegisteredNetwork_CompletionStatus;
+BASELIB_ENUM_ENSURE_ABI_COMPATIBILITY(Baselib_RegisteredNetwork_CompletionStatus);
+
 // Result of a previously scheduled send/receive
 //
 // When a networking request is completed, this is placed into an internal completion queue.
 typedef struct Baselib_RegisteredNetwork_CompletionResult
 {
-    bool     success;
-    uint32_t bytesTransferred;
-    void*    requestUserdata;
+    Baselib_RegisteredNetwork_CompletionStatus  status;
+    uint32_t                                    bytesTransferred;
+    void*                                       requestUserdata;
 } Baselib_RegisteredNetwork_CompletionResult;
 
 // ------------------------------------------------------------------------------------------------
@@ -155,7 +163,7 @@ typedef struct Baselib_RegisteredNetwork_CompletionResult
 typedef struct Baselib_RegisteredNetwork_Socket_UDP { struct Baselib_RegisteredNetwork_Socket_UDP_Impl* handle; } Baselib_RegisteredNetwork_Socket_UDP;
 static const Baselib_RegisteredNetwork_Socket_UDP Baselib_RegisteredNetwork_Socket_UDP_Invalid = { NULL };
 
-// Creates an UDP socket with internal request & completion queues.
+// Creates an UDP socket with internal request and completion queues.
 //
 // \param bindAddress     Address to bind socket to, in connectionless UDP every socket has to be bound.
 // \param endpointReuse   Allows multiple sockets to be bound to the same address/port if set to AddressReuse_Allow,
@@ -227,16 +235,37 @@ BASELIB_API uint32_t Baselib_RegisteredNetwork_Socket_UDP_ScheduleSend(
     Baselib_ErrorState*                      errorState
 );
 
+// Status of processing send/recv.
+typedef enum Baselib_RegisteredNetwork_ProcessStatus
+{
+    // No further items to process.
+    //
+    // Note that this does not imply that all requests have been fully processed at any moment in time.
+    Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately = 0,
+
+    // deprecated, same as Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately
+    Baselib_RegisteredNetwork_ProcessStatus_Done
+        COMPILER_DEPRECATED_ENUM_VALUE("Use Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately instead (equivalent)") = 0,
+
+    // Should call again, there is more workload to process.
+    Baselib_RegisteredNetwork_ProcessStatus_Pending = 1,
+} Baselib_RegisteredNetwork_ProcessStatus;
+BASELIB_ENUM_ENSURE_ABI_COMPATIBILITY(Baselib_RegisteredNetwork_ProcessStatus);
+
 // Processes the receive queue on a socket.
 //
 // Needs to be called periodically to ensure requests are processed.
 // You should call this in loop until either your time budget is exceed or the function returns false.
 //
+// Platforms emulating RIO behavior with sockets, perform one receive per call until there are no more receive requests in the queue.
+// Requests failed due to empty socket receive buffer are requeued and processed at the next call to Baselib_RegisteredNetwork_Socket_UDP_ProcessRecv.
+// In that case Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately is returned since an immediate retry will not have any effect.
+//
 // Possible error codes:
 // - InvalidArgument:     if socket is invalid
 //
-// \returns true if there is more workload to process, false if otherwise
-BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_ProcessRecv(
+// \returns Baselib_RegisteredNetwork_ProcessStatus_Pending if there is more workload to process immediately, Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately if otherwise
+BASELIB_API Baselib_RegisteredNetwork_ProcessStatus Baselib_RegisteredNetwork_Socket_UDP_ProcessRecv(
     Baselib_RegisteredNetwork_Socket_UDP socket,
     Baselib_ErrorState*                  errorState
 );
@@ -246,14 +275,28 @@ BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_ProcessRecv(
 // Needs to be called periodically to ensure requests are processed.
 // You should call this in loop until either your time budget is exceed or the function returns false.
 //
+// Platforms emulating RIO behavior with sockets, perform one send per call until there are no more send requests in the queue.
+// Requests failed due to full socket send buffer are requeued processed at the next call to Baselib_RegisteredNetwork_Socket_UDP_ProcessSend.
+// In that case Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately is returned since an immediate retry will not have any effect.
+//
 // Possible error codes:
 // - InvalidArgument:     if socket is invalid
 //
-// \returns true if there is more workload to process, false if otherwise
-BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_ProcessSend(
+// \returns Baselib_RegisteredNetwork_ProcessStatus_Pending if there is more workload to process immediately, Baselib_RegisteredNetwork_ProcessStatus_NonePendingImmediately if otherwise
+BASELIB_API Baselib_RegisteredNetwork_ProcessStatus Baselib_RegisteredNetwork_Socket_UDP_ProcessSend(
     Baselib_RegisteredNetwork_Socket_UDP socket,
     Baselib_ErrorState*                  errorState
 );
+
+// Status of a recv/send completion queue.
+typedef enum Baselib_RegisteredNetwork_CompletionQueueStatus
+{
+    // No results are ready for dequeing.
+    Baselib_RegisteredNetwork_CompletionQueueStatus_NoResultsAvailable = 0,
+    // Results are available for dequeing.
+    Baselib_RegisteredNetwork_CompletionQueueStatus_ResultsAvailable = 1,
+} Baselib_RegisteredNetwork_CompletionQueueStatus;
+BASELIB_ENUM_ENSURE_ABI_COMPATIBILITY(Baselib_RegisteredNetwork_CompletionQueueStatus);
 
 // Wait until results appears for a previously scheduled receive.
 //
@@ -262,8 +305,8 @@ BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_ProcessSend(
 // Possible error codes:
 // - InvalidArgument:     if socket is invalid
 //
-// \returns true if results are available for dequeue, false otherwise
-BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedRecv(
+// \returns Baselib_RegisteredNetwork_CompletionQueueStatus_ResultsAvailable if results are available for dequeue, Baselib_RegisteredNetwork_CompletionQueueStatus_NoResultsAvailable otherwise
+BASELIB_API Baselib_RegisteredNetwork_CompletionQueueStatus Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedRecv(
     Baselib_RegisteredNetwork_Socket_UDP socket,
     uint32_t                             timeoutInMilliseconds,
     Baselib_ErrorState*                  errorState
@@ -276,8 +319,8 @@ BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedRecv(
 // Possible error codes:
 // - InvalidArgument:     if socket is invalid
 //
-// \returns true if results are available for dequeue, false otherwise
-BASELIB_API bool Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend(
+// \returns Baselib_RegisteredNetwork_CompletionQueueStatus_ResultsAvailable if results are available for dequeue, Baselib_RegisteredNetwork_CompletionQueueStatus_NoResultsAvailable otherwise
+BASELIB_API Baselib_RegisteredNetwork_CompletionQueueStatus Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend(
     Baselib_RegisteredNetwork_Socket_UDP socket,
     uint32_t                             timeoutInMilliseconds,
     Baselib_ErrorState*                  errorState

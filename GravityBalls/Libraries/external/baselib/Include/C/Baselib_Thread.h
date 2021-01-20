@@ -8,12 +8,31 @@ BASELIB_C_INTERFACE
 {
 #endif
 
+// Unique thread id that can be used to compare different threads or stored for bookkeeping etc..
+typedef intptr_t Baselib_Thread_Id;
+
+// Baselib_Thread_Id that is guaranteed not to represent a thread
+static const Baselib_Thread_Id Baselib_Thread_InvalidId = 0;
+
+// Yields the execution context of the current thread to other threads, potentially causing a context switch.
+//
+// The operating system may decide to not switch to any other thread.
+BASELIB_API void Baselib_Thread_YieldExecution(void);
+
+// Return the thread id of the current thread, i.e. the thread that is calling this function
+BASELIB_API Baselib_Thread_Id Baselib_Thread_GetCurrentThreadId(void);
+
+
+// We currently do not allow creating threads from C# bindings,
+// since there is right now no way accessible way to inform the garbage collector about new baselib threads.
+// I.e. any managed allocation on a baselib thread created from C# would never be garbage collected!
+#ifndef BASELIB_BINDING_GENERATION
+
 // The minimum guaranteed number of max concurrent threads that works on all platforms.
 //
 // This only applies if all the threads are created with Baselib.
-// In practice, it might not be possible to create this many threads either. If memory is
-// exhausted, by for example creating threads with very large stacks, that might translate to
-// a lower limit in practice.
+// In practice, it might not be possible to create this many threads either. If memory is exhausted,
+// by for example creating threads with very large stacks, that might translate to a lower limit in practice.
 // Note that on many platforms the actual limit is way higher.
 static const int Baselib_Thread_MinGuaranteedMaxConcurrentThreads = 64;
 
@@ -23,13 +42,8 @@ typedef void (*Baselib_Thread_EntryPointFunction)(void* arg);
 
 typedef struct Baselib_Thread_Config
 {
-    uint32_t uninitializedDetectionMagic;      // Don't set this, it is set by Baselib_Thread_ConfigCreate
-
-    // Length of the name (optional)
-    uint32_t nameLen;
-
-    // Name of the created thread (optional)
-    // Does not need to contain null terminator
+    // Nullterminated name of the created thread (optional)
+    // Useful exclusively for debugging - which tooling it is shown by and how it can be queried is platform dependent.
     const char* name;
 
     // The minimum size in bytes to allocate for the thread stack. (optional)
@@ -45,33 +59,18 @@ typedef struct Baselib_Thread_Config
     void* entryPointArgument;
 } Baselib_Thread_Config;
 
-// Unique thread id that can be used to compare different threads or stored for bookkeeping etc..
-typedef intptr_t Baselib_Thread_Id;
-
-// Baselib_Thread_Id that is guaranteed not to represent a thread
-static const Baselib_Thread_Id Baselib_Thread_InvalidId = 0;
-
-// Creates a thread configuration (defined above), which is an argument to Thread_Create further down.
-//
-// Always use this function to create a new configuration to ensure that it is properly initialized.
-//
-// \param entryPoint  The function that will be executed by the thread
-BASELIB_API Baselib_Thread_Config Baselib_Thread_ConfigCreate(Baselib_Thread_EntryPointFunction entryPoint);
-
-
 // Creates and starts a new thread.
 //
 // On some platforms the thread name is not set until the thread has begun executing, which is not guaranteed
-// to have happened when the creation function returns. On some platforms there is a limit on the length of
-// the thread name. If config->name is longer than that (platform dependent) limit, the name will be truncated.
+// to have happened when the creation function returns. There is typically a platform specific limit on the length of
+// the thread name. If config.name is longer than this limit, the name will be automatically truncated.
 //
-// \param config        A pointer to a config object. This object should be constructed with Baselib_Thread_ConfigCreate
+// \param config        A pointer to a config object. entryPoint needs to be a valid function pointer, all other properties can be zero/null.
 //
 // Possible error codes:
-// - Baselib_ErrorCode_UninitializedThreadConfig:        config is null or uninitialized
-// - Baselib_ErrorCode_ThreadEntryPointFunctionNotSet:   config->entryPoint is null
-// - Baselib_ErrorCode_OutOfSystemResources:             there is not enough memory to create a thread with that stack size or the system limit of number of concurrent threads has been reached
-BASELIB_API Baselib_Thread* Baselib_Thread_Create(const Baselib_Thread_Config* config, Baselib_ErrorState* errorState);
+// - Baselib_ErrorCode_InvalidArgument:            config.entryPoint is null
+// - Baselib_ErrorCode_OutOfSystemResources:       there is not enough memory to create a thread with that stack size or the system limit of number of concurrent threads has been reached
+BASELIB_API Baselib_Thread* Baselib_Thread_Create(Baselib_Thread_Config config, Baselib_ErrorState* errorState);
 
 
 // Waits until a thread has finished its execution.
@@ -88,24 +87,15 @@ BASELIB_API Baselib_Thread* Baselib_Thread_Create(const Baselib_Thread_Config* c
 // - Baselib_ErrorCode_Timeout:               timeout is reached before the thread has finished
 BASELIB_API void Baselib_Thread_Join(Baselib_Thread* thread, uint32_t timeoutInMilliseconds, Baselib_ErrorState* errorState);
 
-
-// Yields the execution context of the current thread to other threads, potentially causing a context switch.
-//
-// The operating system may decide to not switch to any other thread.
-BASELIB_API void Baselib_Thread_YieldExecution(void);
-
-// Return the thread id of the current thread, i.e. the thread that is calling this function
-BASELIB_API Baselib_Thread_Id Baselib_Thread_GetCurrentThreadId(void);
-
 // Return the thread id of the thread given as argument
 //
 // \param thread        A pointer to a thread object.
 BASELIB_API Baselib_Thread_Id Baselib_Thread_GetId(Baselib_Thread* thread);
 
-
 // Returns true if there is support in baselib for threads on this platform, otherwise false.
 BASELIB_API bool Baselib_Thread_SupportsThreads(void);
 
+#endif // !BASELIB_BINDING_GENERATION
 
 #ifdef __cplusplus
 } // BASELIB_C_INTERFACE

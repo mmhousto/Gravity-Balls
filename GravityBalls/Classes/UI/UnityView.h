@@ -39,6 +39,12 @@
 - (void)processKeyboard;
 @end
 
+@interface UnityView (UnityAppController)
+// if we know that unity view bounds have changed but need to update unity-side size/orientation immediately
+// otherwise the update will be delayed to next layoutSubviews
+- (void)boundsUpdated;
+@end
+
 #if PLATFORM_IOS
     #include "UnityView+iOS.h"
 #elif PLATFORM_TVOS

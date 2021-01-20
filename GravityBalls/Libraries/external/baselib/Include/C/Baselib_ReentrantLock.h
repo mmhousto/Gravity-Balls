@@ -21,7 +21,7 @@
 // For optimal performance, the returned Baselib_ReentrantLock should be stored at a cache aligned memory location.
 //
 // \returns         A struct representing a lock instance. Use Baselib_ReentrantLock_Free to free the lock.
-static inline Baselib_ReentrantLock Baselib_ReentrantLock_Create(void);
+BASELIB_INLINE_API Baselib_ReentrantLock Baselib_ReentrantLock_Create(void);
 
 
 // Try to acquire lock and return immediately.
@@ -32,7 +32,7 @@ static inline Baselib_ReentrantLock Baselib_ReentrantLock_Create(void);
 //
 // \returns         true if lock was acquired.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock);
+BASELIB_INLINE_API bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock);
 
 // Acquire lock.
 //
@@ -41,7 +41,7 @@ static inline bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock)
 // If lock is held by another thread, this function wait for lock to be released.
 //
 // This function is guaranteed to emit an acquire barrier.
-static inline void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock);
+BASELIB_INLINE_API void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock);
 
 // Acquire lock.
 // If lock is already acquired by the current thread this function increase the lock count so that an equal number of calls to Baselib_ReentrantLock_Release needs
@@ -58,7 +58,7 @@ static inline void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock);
 //
 // \returns         true if lock was acquired.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* lock, uint32_t timeoutInMilliseconds);
+BASELIB_INLINE_API bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* lock, uint32_t timeoutInMilliseconds);
 
 // Release lock.
 // If lock count is still higher than zero after the release operation then lock remain in a locked state.
@@ -67,10 +67,10 @@ static inline bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* 
 // When the lock is released this function is guaranteed to emit a release barrier.
 //
 // Calling this function from a thread that doesn't own the lock result triggers an assert in debug and causes undefined behavior in release builds.
-static inline void Baselib_ReentrantLock_Release(Baselib_ReentrantLock* lock);
+BASELIB_INLINE_API void Baselib_ReentrantLock_Release(Baselib_ReentrantLock* lock);
 
 // Reclaim resources and memory held by lock.
 //
 // If threads are waiting on the lock, calling free may trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
-static inline void Baselib_ReentrantLock_Free(Baselib_ReentrantLock* lock);
+BASELIB_INLINE_API void Baselib_ReentrantLock_Free(Baselib_ReentrantLock* lock);

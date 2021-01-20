@@ -40,12 +40,20 @@
     #define PLATFORM_WEBGL 0
 #endif
 
+#ifndef PLATFORM_WASI
+    #define PLATFORM_WASI 0
+#endif
+
 #ifndef PLATFORM_ANDROID
     #define PLATFORM_ANDROID 0
 #endif
 
 #ifndef PLATFORM_PS4
     #define PLATFORM_PS4 0
+#endif
+
+#ifndef PLATFORM_PS5
+    #define PLATFORM_PS5 0
 #endif
 
 #ifndef PLATFORM_IOS
@@ -68,8 +76,8 @@
     #define PLATFORM_LUMIN 0
 #endif
 
-#ifndef PLATFORM_GGP
-    #define PLATFORM_GGP 0
+#ifndef PLATFORM_STADIA
+    #define PLATFORM_STADIA 0
 #endif
 
 #ifndef PLATFORM_NETBSD

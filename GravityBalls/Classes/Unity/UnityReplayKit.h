@@ -43,5 +43,11 @@
 - (void)createOverlayWindow;
 @end
 
+// starting with iOS13 RPScreenRecorder is not immediately ready for recording
+//   * it seems it does some magic on background thread
+// meaning that our api usage (do init in [UnityReplayKit sharedInstance]) is prone to errors
+// hence we introduce easly RPScreenRecorder "init"
+
+void InitUnityReplayKit();
 
 #endif  // UNITY_REPLAY_KIT_AVAILABLE

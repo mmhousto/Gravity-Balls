@@ -43,25 +43,16 @@ BASELIB_API Baselib_TLS_Handle Baselib_TLS_Alloc(void);
 // Frees provided Thread Local Storage slot.
 BASELIB_API void Baselib_TLS_Free(Baselib_TLS_Handle handle);
 
-#ifdef __cplusplus
-} // BASELIB_C_INTERFACE
-#endif
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
 // Sets value to Thread Local Storage slot.
-static COMPILER_FORCEINLINE void Baselib_TLS_Set(Baselib_TLS_Handle handle, uintptr_t value);
+BASELIB_FORCEINLINE_API void Baselib_TLS_Set(Baselib_TLS_Handle handle, uintptr_t value);
 
 // Gets value from Thread Local Storage slot.
 //
 // If called on just initialized variable, guaranteed to return 0.
-static COMPILER_FORCEINLINE uintptr_t Baselib_TLS_Get(Baselib_TLS_Handle handle);
+BASELIB_FORCEINLINE_API uintptr_t Baselib_TLS_Get(Baselib_TLS_Handle handle);
 
 #ifdef __cplusplus
-} // extern "C"
+} // BASELIB_C_INTERFACE
 #endif
 
 #include <C/Baselib_ThreadLocalStorage.inl.h>

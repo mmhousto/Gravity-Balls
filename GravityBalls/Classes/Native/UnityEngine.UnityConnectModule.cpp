@@ -42,6 +42,15 @@ struct Il2CppArrayBounds;
 // System.Array
 
 
+// UnityEngine.Advertisements.UnityAdsSettings
+struct  UnityAdsSettings_t8981CDFAD06AC0BCC154F74A898E9569F57ACA43  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+
 // System.ValueType
 struct  ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52  : public RuntimeObject
 {
@@ -58,15 +67,6 @@ struct ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52_marshaled_pinvoke
 struct ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52_marshaled_com
 {
 };
-
-// UnityEngine.Advertisements.UnityAdsSettings
-struct  UnityAdsSettings_t8981CDFAD06AC0BCC154F74A898E9569F57ACA43  : public RuntimeObject
-{
-public:
-
-public:
-};
-
 
 // System.Boolean
 struct  Boolean_t07D1E3F34E4813023D64F584DFF7B34C9D922F37 
@@ -139,8 +139,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool UnityAdsSettings_get_testMode_mB7505FA84
 	static UnityAdsSettings_get_testMode_mB7505FA841B82FB37A830EB43FE95DAB6FE38824_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (UnityAdsSettings_get_testMode_mB7505FA841B82FB37A830EB43FE95DAB6FE38824_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Advertisements.UnityAdsSettings::get_testMode()");
-	bool retVal = _il2cpp_icall_func();
-	return retVal;
+	bool icallRetVal = _il2cpp_icall_func();
+	return icallRetVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

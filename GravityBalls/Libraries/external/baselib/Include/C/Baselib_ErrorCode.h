@@ -8,7 +8,7 @@ BASELIB_C_INTERFACE
 #endif
 
 // All possible baselib error codes.
-typedef enum
+typedef enum Baselib_ErrorCode
 {
     Baselib_ErrorCode_Success = 0x00000000,
 
@@ -16,6 +16,7 @@ typedef enum
     Baselib_ErrorCode_OutOfMemory = 0x01000000,
     Baselib_ErrorCode_OutOfSystemResources,
     Baselib_ErrorCode_InvalidAddressRange,
+    // nativeErrorCode contains name of invalid argument
     Baselib_ErrorCode_InvalidArgument,
     Baselib_ErrorCode_InvalidBufferSize,
     Baselib_ErrorCode_InvalidState,
@@ -29,10 +30,7 @@ typedef enum
     Baselib_ErrorCode_UnsupportedPageState,
 
     // Thread
-    Baselib_ErrorCode_UninitializedThreadConfig = 0x03000000,
-    // Occurrence of this error is preceeded by an debug assertion.
-    Baselib_ErrorCode_ThreadEntryPointFunctionNotSet,
-    Baselib_ErrorCode_ThreadCannotJoinSelf,
+    Baselib_ErrorCode_ThreadCannotJoinSelf = 0x03000000,
 
     // Socket
     Baselib_ErrorCode_NetworkInitializationError = 0x04000000,
@@ -40,6 +38,16 @@ typedef enum
     // Risen in case if destination cannot be reached or requested address for bind was not local.
     Baselib_ErrorCode_AddressUnreachable,
     Baselib_ErrorCode_AddressFamilyNotSupported,
+    Baselib_ErrorCode_Disconnected,
+
+    // FileIO
+    Baselib_ErrorCode_InvalidPathname = 0x05000000,
+    Baselib_ErrorCode_RequestedAccessIsNotAllowed,
+    Baselib_ErrorCode_IOError,
+
+    // DynamicLibrary
+    Baselib_ErrorCode_FailedToOpenDynamicLibrary = 0x06000000,
+    Baselib_ErrorCode_FunctionNotFound,
 
     // An error that was not anticipated by the baselib authors.
     // Occurrence of this error is preceeded by a debug assertion.

@@ -19,7 +19,7 @@
 // For optimal performance, the returned Baselib_Lock should be stored at a cache aligned memory location.
 //
 // \returns          A struct representing a lock instance. Use Baselib_Lock_Free to free the lock.
-static inline Baselib_Lock Baselib_Lock_Create(void);
+BASELIB_INLINE_API Baselib_Lock Baselib_Lock_Create(void);
 
 // Try to acquire lock and return immediately.
 //
@@ -29,14 +29,14 @@ static inline Baselib_Lock Baselib_Lock_Create(void);
 //
 // \returns          true if lock was acquired.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_Lock_TryAcquire(Baselib_Lock* lock);
+BASELIB_INLINE_API bool Baselib_Lock_TryAcquire(Baselib_Lock* lock);
 
 // Acquire lock.
 //
 // If lock is held, either by this or another thread, then the function wait for lock to be released.
 //
 // This function is guaranteed to emit an acquire barrier.
-static inline void Baselib_Lock_Acquire(Baselib_Lock* lock);
+BASELIB_INLINE_API void Baselib_Lock_Acquire(Baselib_Lock* lock);
 
 // Try to acquire lock.
 //
@@ -52,7 +52,7 @@ static inline void Baselib_Lock_Acquire(Baselib_Lock* lock);
 //
 // \returns          true if lock was acquired.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, uint32_t timeoutInMilliseconds);
+BASELIB_INLINE_API bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, uint32_t timeoutInMilliseconds);
 
 // Release lock and make it available to other threads.
 //
@@ -60,10 +60,10 @@ static inline bool Baselib_Lock_TryTimedAcquire(Baselib_Lock* lock, uint32_t tim
 // If no lock was previously held calling this function result in a no-op.
 //
 // When the lock is released this function is guaranteed to emit a release barrier.
-static inline void Baselib_Lock_Release(Baselib_Lock* lock);
+BASELIB_INLINE_API void Baselib_Lock_Release(Baselib_Lock* lock);
 
 // Reclaim resources and memory held by lock.
 //
 // If threads are waiting on the lock, calling free may trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
-static inline void Baselib_Lock_Free(Baselib_Lock* lock);
+BASELIB_INLINE_API void Baselib_Lock_Free(Baselib_Lock* lock);

@@ -25,6 +25,16 @@
     #define BASELIB_API
 #endif
 
+// BASELIB_BINDING_GENERATION is set by the bindings generator and by BindingsExposedInlineImplementations.cpp
+// in order to selectively provide symbols bindings can link to for some our our inline implementations.
+#ifdef BASELIB_BINDING_GENERATION
+    #define BASELIB_INLINE_API        BASELIB_API
+    #define BASELIB_FORCEINLINE_API   BASELIB_API
+#else
+    #define BASELIB_INLINE_API        static inline
+    #define BASELIB_FORCEINLINE_API   static COMPILER_FORCEINLINE
+#endif
+
 
 #include "Internal/BasicTypes.h"
 #include "Internal/CoreMacros.h"

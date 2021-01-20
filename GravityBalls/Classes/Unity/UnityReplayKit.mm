@@ -126,10 +126,7 @@ static UnityReplayKit* _replayKit = nil;
 
 + (UnityReplayKit*)sharedInstance
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _replayKit = [[UnityReplayKit alloc] init];
-    });
+    NSAssert(_replayKit != nil, @"InitUnityReplayKit should be called before using ReplayKit api.");
     return _replayKit;
 }
 
@@ -316,40 +313,41 @@ static UnityReplayKit* _replayKit = nil;
 }
 
 - (void)broadcastActivityViewController:(UnityReplayKit_RPBroadcastActivityViewController *)sBroadcastActivityViewController
-    didFinishWithBroadcastController:(id<UnityReplayKit_RPBroadcastController>)sBroadcastController
+    didFinishWithBroadcastController:(id<UnityReplayKit_RPBroadcastController>)inRPBroadcastController
     error:(NSError *)error
 {
     dispatch_sync(dispatch_get_main_queue(), ^{
         UnityPause(0);
-    });
 
-    if (sBroadcastController == nil)
-    {
-        _lastError = [error description];
-        UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, false, [_lastError UTF8String]);
-        broadcastStartStatusCallback = nullptr;
-        [UnityGetGLViewController() dismissViewControllerAnimated: YES completion: nil];
-        return;
-    }
-
-    broadcastController = sBroadcastController;
-    [UnityGetGLViewController() dismissViewControllerAnimated: YES completion:^
-    {
-        [broadcastController startBroadcastWithHandler:^(NSError* error)
+        broadcastController = inRPBroadcastController;
+        if (broadcastController == nil)  // broadcast was canceled
         {
-            if (error != nil)
+            _lastError = [error description];
+            UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, false, [_lastError UTF8String]);
+            broadcastStartStatusCallback = nil;
+            [UnityGetGLViewController() dismissViewControllerAnimated: YES completion: nil];
+        }
+        else                            // start broadcast
+        {
+            [UnityGetGLViewController() dismissViewControllerAnimated: YES completion:^
             {
-                _lastError = [error description];
-                UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, false, [_lastError UTF8String]);
-                broadcastStartStatusCallback = nullptr;
-                broadcastController = nil;
-                return;
-            }
-            UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, true, "");
-            broadcastStartStatusCallback = nullptr;
-            _lastError = nil;
-        }];
-    }];
+                [broadcastController startBroadcastWithHandler:^(NSError* error)
+                {
+                    if (error != nil)
+                    {
+                        _lastError = [error description];
+                        UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, false, [_lastError UTF8String]);
+                        broadcastStartStatusCallback = nil; broadcastController = nil;
+                    }
+                    else
+                    {
+                        UnityReplayKitTriggerBroadcastStatusCallback(broadcastStartStatusCallback, true, "");
+                        broadcastStartStatusCallback = nil; _lastError = nil;
+                    }
+                }];
+            }];
+        }
+    });
 }
 
 - (void)startBroadcastingWithCallback:(void *)callback
@@ -389,12 +387,22 @@ static UnityReplayKit* _replayKit = nil;
         vc.delegate = self;
         broadcastStartStatusCallback = callback;
 
+        // oh apple, how much do you like confusing docs and contradicting behaviours
+        // on ios13 UIModalPresentationPopover meaning was changed; what's more: it is now broken if portrait is disabled
+        // pre ios13 it was intended to be UIModalPresentationPopover for ipads, UIModalPresentationFullScreen for iphones
+        // yet having fully blackscreen (UIModalPresentationFullScreen) was not looking good for lots of people
+        //   so we use popover for both ipad/iphone but ONLY before ios13
+        // note that tvos is fullscreen always (this is the only option here)
     #if PLATFORM_TVOS
         vc.modalPresentationStyle = UIModalPresentationFullScreen;
     #else
-        vc.modalPresentationStyle = UIModalPresentationPopover;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        if (UnityiOS130orNewer())
         {
+            vc.modalPresentationStyle = UIModalPresentationFormSheet;
+        }
+        else
+        {
+            vc.modalPresentationStyle = UIModalPresentationPopover;
             vc.popoverPresentationController.sourceRect = CGRectMake(GetAppController().rootView.bounds.size.width / 2, 0, 0, 0);
             vc.popoverPresentationController.sourceView = GetAppController().rootView;
         }
@@ -550,5 +558,15 @@ static UnityReplayKit* _replayKit = nil;
 }
 
 @end
+
+static dispatch_once_t onceToken_InitUnityReplayKit;
+void InitUnityReplayKit()
+{
+    dispatch_once(&onceToken_InitUnityReplayKit, ^{
+        _replayKit = [[UnityReplayKit alloc] init];
+        // that seems to be enough to trigger RPScreenRecorder to become "ready"
+        [RPScreenRecorder sharedRecorder].delegate = _replayKit;
+    });
+}
 
 #endif  // UNITY_REPLAY_KIT_AVAILABLE

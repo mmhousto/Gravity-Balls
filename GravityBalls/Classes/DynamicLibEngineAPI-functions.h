@@ -54,7 +54,6 @@ UnityExternCall(NSBundle*,            UnityGetMetalBundle);
 UnityExternCall(MTLDeviceRef,         UnityGetMetalDevice);
 UnityExternCall(MTLCommandQueueRef,   UnityGetMetalCommandQueue);
 UnityExternCall(MTLCommandQueueRef,   UnityGetMetalDrawableCommandQueue);
-UnityExternCall(EAGLContext*,         UnityGetDataContextEAGL);
 
 UnityExternCall(RenderSurfaceBase*,         UnityBackbufferColor);
 UnityExternCall(RenderSurfaceBase*,         UnityBackbufferDepth);
@@ -65,10 +64,6 @@ UnityExternCall(void,                       UnityPrepareScreenshot);
 UnityExternCall(MTLTextureRef,    AcquireDrawableMTL, UnityDisplaySurfaceMTL*);
 UnityExternCall(int,              UnityCommandQueueMaxCommandBufferCountMTL);
 UnityExternCall(void,             SetDrawableSizeMTL, UnityDisplaySurfaceMTL*, int, int);
-
-// EAGLContextHelper.mm
-UnityExternCall(void,             UnityMakeCurrentContextEAGL, EAGLContext*);
-UnityExternCall(EAGLContext*,     UnityGetCurrentContextEAGL);
 
 // UI/ActivityIndicator.mm
 UnityExternCall(void,             UnityStartActivityIndicator);
@@ -123,8 +118,8 @@ UnityExternCall(int,              UnityCameraCaptureSetAutoFocusPoint, void*, fl
 // Unity/DeviceSettings.mm
 UnityExternCall(const char*,      UnityDeviceUniqueIdentifier);
 UnityExternCall(const char*,      UnityVendorIdentifier);
-UnityExternCall(const char*,      UnityAdvertisingIdentifier);
-UnityExternCall(int,              UnityAdvertisingTrackingEnabled);
+UnityExternCall(const char*,      UnityAdIdentifier);
+UnityExternCall(int,              UnityAdTrackingEnabled);
 UnityExternCall(const char*,      UnityDeviceName);
 UnityExternCall(const char*,      UnitySystemName);
 UnityExternCall(const char*,      UnitySystemVersion);
@@ -144,8 +139,7 @@ UnityExternCall(int,              UnityGetWantsSoftwareDimming);
 UnityExternCall(void,             UnitySetWantsSoftwareDimming, int);
 
 // Unity/DisplayManager.mm
-UnityExternCall(EAGLContext*,     UnityGetMainScreenContextGLES);
-UnityExternCall(EAGLContext*,     UnityGetContextEAGL);
+UnityExternCall(void,             UnityActivateScreenForRendering, void*);
 UnityExternCall(void,             UnityStartFrameRendering);
 UnityExternCall(void,             UnityDestroyUnityRenderSurfaces);
 UnityExternCall(int,              UnityMainScreenRefreshRate);
@@ -254,5 +248,3 @@ UnityExternCall(void,     UnitySetAppleTVRemoteTouchesEnabled, int);
 // misc not in trampoline
 UnityExternCall(bool,     Unity_il2cppNoExceptions);
 UnityExternCall(void,     RegisterStaticallyLinkedModulesGranular);
-
-UnityExternCall(NSArray<NSString*>*, GetLaunchImageNames, UIUserInterfaceIdiom, const OrientationMask&, const CGSize&, ScreenOrientation, float);

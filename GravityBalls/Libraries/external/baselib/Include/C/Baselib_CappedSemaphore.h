@@ -29,19 +29,19 @@
 // For optimal performance, the returned Baselib_CappedSemaphore should be stored at a cache aligned memory location.
 //
 // \returns          A struct representing a semaphore instance. Use Baselib_CappedSemaphore_Free to free the semaphore.
-static inline Baselib_CappedSemaphore Baselib_CappedSemaphore_Create(uint16_t cap);
+BASELIB_INLINE_API Baselib_CappedSemaphore Baselib_CappedSemaphore_Create(uint16_t cap);
 
 // Try to consume a token and return immediately.
 //
 // When successful this function is guaranteed to emit an acquire barrier.
 //
 // \returns          true if token was consumed. false if not.
-static inline bool Baselib_CappedSemaphore_TryAcquire(Baselib_CappedSemaphore* semaphore);
+BASELIB_INLINE_API bool Baselib_CappedSemaphore_TryAcquire(Baselib_CappedSemaphore* semaphore);
 
 // Wait for semaphore token to become available
 //
 // This function is guaranteed to emit an acquire barrier.
-static inline void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* semaphore);
+BASELIB_INLINE_API void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* semaphore);
 
 // Wait for semaphore token to become available
 //
@@ -56,7 +56,7 @@ static inline void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* sema
 // \param timeoutInMilliseconds       Time to wait for token to become available in milliseconds.
 //
 // \returns          true if token was consumed. false if timeout was reached.
-static inline bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemaphore* semaphore, const uint32_t timeoutInMilliseconds);
+BASELIB_INLINE_API bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemaphore* semaphore, const uint32_t timeoutInMilliseconds);
 
 // Submit tokens to the semaphore.
 //
@@ -65,17 +65,17 @@ static inline bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemapho
 // When successful this function is guaranteed to emit a release barrier.
 //
 // \returns          number of submitted tokens.
-static inline uint16_t Baselib_CappedSemaphore_Release(Baselib_CappedSemaphore* semaphore, const uint16_t count);
+BASELIB_INLINE_API uint16_t Baselib_CappedSemaphore_Release(Baselib_CappedSemaphore* semaphore, const uint16_t count);
 
 // Sets the semaphore token count to zero and release all waiting threads.
 //
 // When successful this function is guaranteed to emit a release barrier.
 //
 // \returns          number of released threads.
-static inline uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThreads(Baselib_CappedSemaphore* semaphore);
+BASELIB_INLINE_API uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThreads(Baselib_CappedSemaphore* semaphore);
 
 // Reclaim resources and memory held by the semaphore.
 //
 // If threads are waiting on the semaphore, calling free will trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op.
-static inline void Baselib_CappedSemaphore_Free(Baselib_CappedSemaphore* semaphore);
+BASELIB_INLINE_API void Baselib_CappedSemaphore_Free(Baselib_CappedSemaphore* semaphore);

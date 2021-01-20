@@ -1,27 +1,27 @@
+#pragma once
+
 namespace baselib
 {
     BASELIB_CPP_INTERFACE
     {
-        template<typename LockT>
-        inline void ConditionVariable::Wait(LockT& lock)
+        inline void ConditionVariable::Wait()
         {
             m_Data.waiters.fetch_add(1, memory_order_relaxed);
-            lock.Release();
+            m_Lock.Release();
             m_Data.semaphore.Acquire();
-            lock.Acquire();
+            m_Lock.Acquire();
         }
 
-        template<typename LockT>
-        inline bool ConditionVariable::TimedWait(LockT& lock, const timeout_ms timeoutInMilliseconds)
+        inline bool ConditionVariable::TimedWait(const timeout_ms timeoutInMilliseconds)
         {
             m_Data.waiters.fetch_add(1, memory_order_relaxed);
-            lock.Release();
+            m_Lock.Release();
 
             bool acquired = m_Data.semaphore.TryTimedAcquire(timeoutInMilliseconds);
 
             if (acquired)
             {
-                lock.Acquire();
+                m_Lock.Acquire();
                 return true;
             }
 
@@ -32,7 +32,7 @@ namespace baselib
                 {
                     if (m_Data.waiters.compare_exchange_weak(waiters, waiters - 1, memory_order_relaxed, memory_order_relaxed))
                     {
-                        lock.Acquire();
+                        m_Lock.Acquire();
                         return false;
                     }
                 }
@@ -40,7 +40,7 @@ namespace baselib
             }
             while (!m_Data.semaphore.TryAcquire());
 
-            lock.Acquire();
+            m_Lock.Acquire();
             return true;
         }
 

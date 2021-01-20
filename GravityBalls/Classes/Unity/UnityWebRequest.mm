@@ -87,6 +87,8 @@ static NSLock* currentRequestsLock;
         NSInteger transmitted = [outputStream write: data maxLength: dataSize];
         if (transmitted > 0)
             UnityWebRequestConsumeUploadData(udata, (unsigned)transmitted);
+        else if (transmitted < 0)
+            break;
         switch (task.state)
         {
             case NSURLSessionTaskStateCanceling:
@@ -98,6 +100,7 @@ static NSLock* currentRequestsLock;
         }
     }
     [outputStream close];
+    UnityWebRequestRelease(udata);
 }
 
 - (id)init:(void*)udata
@@ -262,6 +265,7 @@ static NSLock* currentRequestsLock;
     if (error != nil)
         UnityReportWebRequestNetworkError(urequest.udata, (int)[error code]);
     UnityReportWebRequestFinishedLoadingData(urequest.udata);
+    UnityWebRequestRelease(urequest.udata);
 }
 
 @end

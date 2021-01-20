@@ -44,6 +44,15 @@ struct Il2CppArrayBounds;
 // System.Array
 
 
+// UnityEngine.ScreenCapture
+struct  ScreenCapture_tB6B7FF78A39DE3F56C3BA19D3BCCB429A8469737  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+
 // System.String
 struct  String_t  : public RuntimeObject
 {
@@ -105,15 +114,6 @@ struct ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52_marshaled_pinvoke
 struct ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52_marshaled_com
 {
 };
-
-// UnityEngine.ScreenCapture
-struct  ScreenCapture_tB6B7FF78A39DE3F56C3BA19D3BCCB429A8469737  : public RuntimeObject
-{
-public:
-
-public:
-};
-
 
 // System.Enum
 struct  Enum_t23B90B40F60E677A8025267341651C94AE079CDA  : public ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52
@@ -183,11 +183,11 @@ public:
 };
 
 
-// UnityEngine.ScreenCapture_StereoScreenCaptureMode
+// UnityEngine.ScreenCapture/StereoScreenCaptureMode
 struct  StereoScreenCaptureMode_tC6FBA6A44A10156522DD0E39315C38A3913B13C7 
 {
 public:
-	// System.Int32 UnityEngine.ScreenCapture_StereoScreenCaptureMode::value__
+	// System.Int32 UnityEngine.ScreenCapture/StereoScreenCaptureMode::value__
 	int32_t ___value___2;
 
 public:
@@ -230,7 +230,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScreenCapture_CaptureScreenshot_mC755099
 		return;
 	}
 }
-// System.Void UnityEngine.ScreenCapture::CaptureScreenshot(System.String,System.Int32,UnityEngine.ScreenCapture_StereoScreenCaptureMode)
+// System.Void UnityEngine.ScreenCapture::CaptureScreenshot(System.String,System.Int32,UnityEngine.ScreenCapture/StereoScreenCaptureMode)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScreenCapture_CaptureScreenshot_m856F202DB6C6CA5D98A5C0EE5ED41096E3CC66E7 (String_t* ___filename0, int32_t ___superSize1, int32_t ___CaptureMode2, const RuntimeMethod* method)
 {
 	typedef void (*ScreenCapture_CaptureScreenshot_m856F202DB6C6CA5D98A5C0EE5ED41096E3CC66E7_ftn) (String_t*, int32_t, int32_t);

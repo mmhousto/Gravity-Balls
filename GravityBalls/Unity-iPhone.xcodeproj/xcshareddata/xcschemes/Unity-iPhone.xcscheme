@@ -36,12 +36,6 @@
             ReferencedContainer = "container:Unity-iPhone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-waitForPlayerConnection 30"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <Testables>
          <TestableReference
             skipped = "NO">

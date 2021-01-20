@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../C/Baselib_Memory.h"
+#include "../C/Baselib_Atomic_LLSC.h"
 #include "mpsc_node.h"
 
 namespace baselib
@@ -36,7 +37,7 @@ namespace baselib
         //  Producer threads always progress independently.
         //
         template<typename T>
-        class alignas(PLATFORM_CACHE_LINE_SIZE)mpsc_node_stack
+        class alignas(sizeof(intptr_t) * 2)mpsc_node_stack
         {
         public:
             // Create a new stack instance.
@@ -59,13 +60,20 @@ namespace baselib
             {
                 SequencedTopPtr newtop;
                 newtop.ptr = node;
-                SequencedTopPtr top = m_Top.load(memory_order_relaxed);
-                do
+                if (PLATFORM_LLSC_NATIVE_SUPPORT)
                 {
-                    node->next.store(top.ptr, memory_order_relaxed);
-                    newtop.idx = top.idx + 1;
+                    Baselib_atomic_llsc_ptr_acquire_release_v(&m_Top, &node->next.obj, &newtop, );
                 }
-                while (!m_Top.compare_exchange_strong(top, newtop, memory_order_release, memory_order_relaxed));
+                else
+                {
+                    SequencedTopPtr top = m_Top.load(memory_order_relaxed);
+                    do
+                    {
+                        node->next.store(top.ptr, memory_order_relaxed);
+                        newtop.idx = top.idx + 1;
+                    }
+                    while (!m_Top.compare_exchange_strong(top, newtop, memory_order_release, memory_order_relaxed));
+                }
             }
 
             // Push a linked list of nodes to the top of the stack.
@@ -73,13 +81,20 @@ namespace baselib
             {
                 SequencedTopPtr newtop;
                 newtop.ptr = first_node;
-                SequencedTopPtr top = m_Top.load(memory_order_relaxed);
-                do
+                if (PLATFORM_LLSC_NATIVE_SUPPORT)
                 {
-                    last_node->next.store(top.ptr, memory_order_relaxed);
-                    newtop.idx = top.idx + 1;
+                    Baselib_atomic_llsc_ptr_acquire_release_v(&m_Top, &last_node->next.obj, &newtop, );
                 }
-                while (!m_Top.compare_exchange_strong(top, newtop, memory_order_release, memory_order_relaxed));
+                else
+                {
+                    SequencedTopPtr top = m_Top.load(memory_order_relaxed);
+                    do
+                    {
+                        last_node->next.store(top.ptr, memory_order_relaxed);
+                        newtop.idx = top.idx + 1;
+                    }
+                    while (!m_Top.compare_exchange_strong(top, newtop, memory_order_release, memory_order_relaxed));
+                }
             }
 
             // Try to pop node from the top of the stack.
@@ -90,21 +105,36 @@ namespace baselib
             // \returns top node of the stack or null.
             T* try_pop_back()
             {
-                if (m_ConsumerLock.exchange(true))
+                if (m_ConsumerLock.exchange(true, memory_order_acquire))
                     return 0;
                 T* node;
                 SequencedTopPtr newtop;
-                SequencedTopPtr top = m_Top.load(memory_order_relaxed);
-                do
+                if (PLATFORM_LLSC_NATIVE_SUPPORT)
                 {
-                    node = top.ptr;
-                    if (!node)
-                        break;
-                    newtop.ptr = static_cast<T*>(node->next.load(memory_order_relaxed));
-                    newtop.idx = top.idx + 1;
+                    Baselib_atomic_llsc_ptr_acquire_release_v(&m_Top, &node, &newtop,
+                    {
+                        if (!node)
+                        {
+                            Baselib_atomic_llsc_break();
+                            break;
+                        }
+                        newtop.ptr = static_cast<T*>(node->next.obj);
+                    });
                 }
-                while (!m_Top.compare_exchange_strong(top, newtop, memory_order_acquire, memory_order_relaxed));
-                m_ConsumerLock.store(false);
+                else
+                {
+                    SequencedTopPtr top = m_Top.load(memory_order_relaxed);
+                    do
+                    {
+                        node = top.ptr;
+                        if (!node)
+                            break;
+                        newtop.ptr = static_cast<T*>(node->next.load(memory_order_relaxed));
+                        newtop.idx = top.idx + 1;
+                    }
+                    while (!m_Top.compare_exchange_strong(top, newtop, memory_order_relaxed, memory_order_relaxed));
+                }
+                m_ConsumerLock.store(false, memory_order_release);
                 return node;
             }
 
@@ -116,21 +146,35 @@ namespace baselib
             // \returns linked list of nodes or null.
             T* try_pop_all()
             {
-                if (m_ConsumerLock.exchange(true))
+                if (m_ConsumerLock.exchange(true, memory_order_acquire))
                     return 0;
                 T* node;
                 SequencedTopPtr newtop;
                 newtop.ptr = 0;
-                SequencedTopPtr top = m_Top.load(memory_order_relaxed);
-                do
+                if (PLATFORM_LLSC_NATIVE_SUPPORT)
                 {
-                    node = top.ptr;
-                    if (!node)
-                        break;
-                    newtop.idx = top.idx + 1;
+                    Baselib_atomic_llsc_ptr_acquire_release_v(&m_Top, &node, &newtop,
+                    {
+                        if (!node)
+                        {
+                            Baselib_atomic_llsc_break();
+                            break;
+                        }
+                    });
                 }
-                while (!m_Top.compare_exchange_strong(top, newtop, memory_order_acquire, memory_order_relaxed));
-                m_ConsumerLock.store(false);
+                else
+                {
+                    SequencedTopPtr top = m_Top.load(memory_order_relaxed);
+                    do
+                    {
+                        node = top.ptr;
+                        if (!node)
+                            break;
+                        newtop.idx = top.idx + 1;
+                    }
+                    while (!m_Top.compare_exchange_strong(top, newtop, memory_order_relaxed, memory_order_relaxed));
+                }
+                m_ConsumerLock.store(false, memory_order_release);
                 return node;
             }
 
@@ -141,8 +185,12 @@ namespace baselib
                 intptr_t idx;
             } SequencedTopPtr;
 
+            // Space out atomic members to individual cache lines. Required for native LLSC operations on some architectures, others to avoid false sharing
+            char _cachelineSpacer0[PLATFORM_CACHE_LINE_SIZE];
             atomic<SequencedTopPtr> m_Top;
-            alignas(PLATFORM_CACHE_LINE_SIZE) atomic<bool> m_ConsumerLock;
+            char _cachelineSpacer1[PLATFORM_CACHE_LINE_SIZE - sizeof(SequencedTopPtr)];
+            atomic<bool> m_ConsumerLock;
+            char _cachelineSpacer2[PLATFORM_CACHE_LINE_SIZE - sizeof(bool)];
 
             // Verify mpsc_node is base of T
             static_assert(std::is_base_of<baselib::mpsc_node, T>::value, "Node class/struct used with baselib::mpsc_node_stack must derive from baselib::mpsc_node.");

@@ -13,8 +13,6 @@ void        FlushCVTextureCache(void* cache);
 void*       CreateBGRA32TextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h);
 void*       CreateHalfFloatTextureFromCVTextureCache(void* cache, void* image, size_t w, size_t h);
 
-// texture = CVOpenGLESTextureRef
-unsigned        GetGLTextureFromCVTextureCache(void* texture);
 // texture = CVMetalTextureRef
 MTLTextureRef   GetMetalTextureFromCVTextureCache(void* texture);
 

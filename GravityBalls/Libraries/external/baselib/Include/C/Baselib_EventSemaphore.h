@@ -12,30 +12,21 @@
 // "Event (synchronization primitive)", Wikipedia: The Free Encyclopedia
 // https://en.wikipedia.org/w/index.php?title=Event_(synchronization_primitive)&oldid=781517732
 
-#include "Baselib_Atomic.h"
-#include "Baselib_CappedSemaphore.h"
 
-enum Detail_Baselib_EventSemaphore_State
-{
-    Detail_Baselib_EventSemaphore_SET,
-    Detail_Baselib_EventSemaphore_UNSET
-};
-typedef struct Baselib_EventSemaphore
-{
-    Baselib_CappedSemaphore semaphore;
-    int8_t                  state;
-} Baselib_EventSemaphore;
+#if PLATFORM_FUTEX_NATIVE_SUPPORT
+    #include "Internal/Baselib_EventSemaphore_FutexBased.inl.h"
+#else
+    #include "Internal/Baselib_EventSemaphore_SemaphoreBased.inl.h"
+#endif
 
 // Creates an event semaphore synchronization primitive. Initial state of event is unset.
 //
 // If there are not enough system resources to create a semaphore, process abort is triggered.
 //
+// For optimal performance, the returned Baselib_EventSemaphore should be stored at a cache aligned memory location.
+//
 // \returns     A struct representing a semaphore instance. Use Baselib_EventSemaphore_Free to free the semaphore.
-static inline Baselib_EventSemaphore Baselib_EventSemaphore_Create(void)
-{
-    Baselib_EventSemaphore semaphore = {Baselib_CappedSemaphore_Create(0), Detail_Baselib_EventSemaphore_UNSET};
-    return semaphore;
-}
+BASELIB_INLINE_API Baselib_EventSemaphore Baselib_EventSemaphore_Create(void);
 
 // Try to acquire semaphore.
 //
@@ -43,19 +34,12 @@ static inline Baselib_EventSemaphore Baselib_EventSemaphore_Create(void)
 //
 // \returns true if event is set, false other wise.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_EventSemaphore_TryAcquire(Baselib_EventSemaphore* semaphore)
-{
-    return Baselib_atomic_load_8_acquire(&semaphore->state) == Detail_Baselib_EventSemaphore_SET;
-}
+BASELIB_INLINE_API bool Baselib_EventSemaphore_TryAcquire(Baselib_EventSemaphore* semaphore);
 
 // Acquire semaphore.
 //
 // This function is guaranteed to emit an acquire barrier.
-static inline void Baselib_EventSemaphore_Acquire(Baselib_EventSemaphore* semaphore)
-{
-    if (!Baselib_EventSemaphore_TryAcquire(semaphore))
-        Baselib_CappedSemaphore_Acquire(&semaphore->semaphore);
-}
+BASELIB_INLINE_API void Baselib_EventSemaphore_Acquire(Baselib_EventSemaphore* semaphore);
 
 // Try to acquire semaphore.
 //
@@ -71,54 +55,34 @@ static inline void Baselib_EventSemaphore_Acquire(Baselib_EventSemaphore* semaph
 //
 // \returns     true if semaphore was acquired.
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_EventSemaphore_TryTimedAcquire(Baselib_EventSemaphore* semaphore, const uint32_t timeoutInMilliseconds)
-{
-    return Baselib_EventSemaphore_TryAcquire(semaphore) || Baselib_CappedSemaphore_TryTimedAcquire(&semaphore->semaphore, timeoutInMilliseconds);
-}
+BASELIB_INLINE_API bool Baselib_EventSemaphore_TryTimedAcquire(Baselib_EventSemaphore* semaphore, const uint32_t timeoutInMilliseconds);
 
-// Release up to `count` number of threads.
-//
-// If there are threads waiting, then up to `count` number of threads are released without changing the state of the event.
-// I.e if the event was unset it will remain unset.
-//
-// When threads are released this function is guaranteed to emit a release barrier.
-//
-// \returns     number of woken threads.
-static inline uint16_t Baselib_EventSemaphore_Release(Baselib_EventSemaphore* semaphore, const uint16_t count)
-{
-    return Baselib_CappedSemaphore_Release(&semaphore->semaphore, count);
-}
-
-// Set event
+// Sets the event
 //
 // Setting the event will cause all waiting threads to wakeup. And will let all future acquiring threads through until Baselib_EventSemaphore_Reset is called.
+// It is guaranteed that any thread waiting previously on the EventSemaphore will be woken up, even if the semaphore is immediately reset. (no lock stealing)
 //
 // Guaranteed to emit a release barrier.
-//
-// \returns     number of woken threads.
-static inline uint16_t Baselib_EventSemaphore_Set(Baselib_EventSemaphore* semaphore)
-{
-    Baselib_atomic_store_8_release(&semaphore->state, Detail_Baselib_EventSemaphore_SET);
-    return Baselib_CappedSemaphore_Release(&semaphore->semaphore, UINT16_MAX);
-}
+BASELIB_INLINE_API void Baselib_EventSemaphore_Set(Baselib_EventSemaphore* semaphore);
 
 // Reset event
 //
 // Resetting the event will cause all future acquiring threads to enter a wait state.
+// Has no effect if the EventSemaphore is already in a reset state.
 //
 // Guaranteed to emit a release barrier.
-static inline void Baselib_EventSemaphore_Reset(Baselib_EventSemaphore* semaphore)
-{
-    Baselib_atomic_store_8_release(&semaphore->state, Detail_Baselib_EventSemaphore_UNSET);
-}
+BASELIB_INLINE_API void Baselib_EventSemaphore_Reset(Baselib_EventSemaphore* semaphore);
+
+// Reset event and release all waiting threads
+//
+// Resetting the event will cause all future acquiring threads to enter a wait state.
+// If there were any threads waiting (i.e. the EventSemaphore was already in a release state) they will be released.
+//
+// Guaranteed to emit a release barrier.
+BASELIB_INLINE_API void Baselib_EventSemaphore_ResetAndReleaseWaitingThreads(Baselib_EventSemaphore* semaphore);
 
 // Reclaim resources and memory held by the semaphore.
 //
 // If threads are waiting on the semaphore, calling free may trigger an assert and may cause process abort.
 // Calling this function with a nullptr result in a no-op
-static inline void Baselib_EventSemaphore_Free(Baselib_EventSemaphore* semaphore)
-{
-    if (!semaphore)
-        return;
-    Baselib_CappedSemaphore_Free(&semaphore->semaphore);
-}
+BASELIB_INLINE_API void Baselib_EventSemaphore_Free(Baselib_EventSemaphore* semaphore);

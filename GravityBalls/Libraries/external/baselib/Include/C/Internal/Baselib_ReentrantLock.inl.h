@@ -15,14 +15,14 @@ typedef struct Baselib_ReentrantLock
 BASELIB_STATIC_ASSERT((BASELIB_ALIGN_OF(Baselib_ReentrantLock) + offsetof(Baselib_ReentrantLock, owner)) % sizeof(Baselib_Thread_Id) == 0, "Baselib_ReentrantLock::owner is not aligned for atomic use");
 BASELIB_STATIC_ASSERT((BASELIB_ALIGN_OF(Baselib_ReentrantLock) + offsetof(Baselib_ReentrantLock, count)) % sizeof(int32_t) == 0, "Baselib_ReentrantLock::count is not aligned for atomic use");
 
-static inline Baselib_ReentrantLock Baselib_ReentrantLock_Create(void)
+BASELIB_INLINE_API Baselib_ReentrantLock Baselib_ReentrantLock_Create(void)
 {
     Baselib_ReentrantLock lock = {Baselib_Lock_Create(), Baselib_Thread_InvalidId, 0};
     return lock;
 }
 
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock)
+BASELIB_INLINE_API bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock)
 {
     const Baselib_Thread_Id currentThreadId = Baselib_Thread_GetCurrentThreadId();
     const Baselib_Thread_Id lockOwner       = Baselib_atomic_load_ptr_relaxed(&lock->owner);
@@ -38,7 +38,7 @@ static inline bool Baselib_ReentrantLock_TryAcquire(Baselib_ReentrantLock* lock)
     return true;
 }
 
-static inline void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock)
+BASELIB_INLINE_API void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock)
 {
     const Baselib_Thread_Id currentThreadId = Baselib_Thread_GetCurrentThreadId();
     const Baselib_Thread_Id lockOwner       = Baselib_atomic_load_ptr_relaxed(&lock->owner);
@@ -53,7 +53,7 @@ static inline void Baselib_ReentrantLock_Acquire(Baselib_ReentrantLock* lock)
 }
 
 COMPILER_WARN_UNUSED_RESULT
-static inline bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* lock, const uint32_t timeoutInMilliseconds)
+BASELIB_INLINE_API bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* lock, const uint32_t timeoutInMilliseconds)
 {
     const Baselib_Thread_Id currentThreadId = Baselib_Thread_GetCurrentThreadId();
     const Baselib_Thread_Id lockOwner       = Baselib_atomic_load_ptr_relaxed(&lock->owner);
@@ -69,7 +69,7 @@ static inline bool Baselib_ReentrantLock_TryTimedAcquire(Baselib_ReentrantLock* 
     return true;
 }
 
-static inline void Baselib_ReentrantLock_Release(Baselib_ReentrantLock* lock)
+BASELIB_INLINE_API void Baselib_ReentrantLock_Release(Baselib_ReentrantLock* lock)
 {
     if (lock->count > 0)
     {
@@ -85,7 +85,7 @@ static inline void Baselib_ReentrantLock_Release(Baselib_ReentrantLock* lock)
     }
 }
 
-static inline void Baselib_ReentrantLock_Free(Baselib_ReentrantLock* lock)
+BASELIB_INLINE_API void Baselib_ReentrantLock_Free(Baselib_ReentrantLock* lock)
 {
     if (!lock)
         return;

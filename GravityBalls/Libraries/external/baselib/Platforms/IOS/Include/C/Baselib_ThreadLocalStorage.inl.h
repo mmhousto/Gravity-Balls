@@ -34,20 +34,21 @@ static COMPILER_FORCEINLINE void** Baselib_TLS_Darwin_SlotTable(void)
 
 #endif
 
-#if __cplusplus
-extern "C" {
+#ifdef __cplusplus
+BASELIB_C_INTERFACE
+{
 #endif
 
-static COMPILER_FORCEINLINE void Baselib_TLS_Set(Baselib_TLS_Handle handle, uintptr_t value)
+BASELIB_FORCEINLINE_API void Baselib_TLS_Set(Baselib_TLS_Handle handle, uintptr_t value)
 {
     Baselib_TLS_Darwin_SlotTable()[handle] = (void*)value;
 }
 
-static COMPILER_FORCEINLINE uintptr_t Baselib_TLS_Get(Baselib_TLS_Handle handle)
+BASELIB_FORCEINLINE_API uintptr_t Baselib_TLS_Get(Baselib_TLS_Handle handle)
 {
     return (uintptr_t)Baselib_TLS_Darwin_SlotTable()[handle];
 }
 
-#if __cplusplus
-}
+#ifdef __cplusplus
+} // BASELIB_C_INTERFACE
 #endif

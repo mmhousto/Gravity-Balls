@@ -1,7 +1,5 @@
 #pragma once
 
-#include <C/Baselib_Debug.inl.h>
-
 #ifdef __cplusplus
 BASELIB_C_INTERFACE
 {

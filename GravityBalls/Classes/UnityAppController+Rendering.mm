@@ -4,7 +4,6 @@
 #include "Unity/InternalProfiler.h"
 #include "Unity/UnityMetalSupport.h"
 #include "Unity/DisplayManager.h"
-#include "Unity/EAGLContextHelper.h"
 
 #include "UI/UnityView.h"
 
@@ -68,6 +67,7 @@ static bool _enableRunLoopAcceptInput = false;
 #endif
     if (!_didResignActive)
     {
+        UnityDisplayLinkCallback(_displayLink.timestamp);
         [self repaint];
         [self processTouchEvents];
     }
@@ -174,7 +174,6 @@ extern "C" void UnityInitMainScreenRenderingCallback()
 
 static NSBundle*        _MetalBundle    = nil;
 static id<MTLDevice>    _MetalDevice    = nil;
-static EAGLContext*     _GlesContext    = nil;
 
 static bool IsMetalSupported(int /*api*/)
 {
@@ -191,58 +190,18 @@ static bool IsMetalSupported(int /*api*/)
     return false;
 }
 
-static bool IsGlesSupported(int api)
-{
-#if UNITY_USES_GLES
-    _GlesContext = [[EAGLContext alloc] initWithAPI: (EAGLRenderingAPI)api];
-    return _GlesContext != nil;
-#else
-    return false;
-#endif
-}
-
-typedef bool(*CheckSupportedFunc)(int);
-
-
 static int SelectRenderingAPIImpl()
 {
-    // Get list of graphics APIs to try from player settings
-    const int kMaxAPIs = 3;
-    int apis[kMaxAPIs];
-    const int apiCount = UnityGetRenderingAPIs(kMaxAPIs, apis);
+    const int api = UnityGetRenderingAPI();
+    if (api == apiMetal && IsMetalSupported(0))
+        return api;
 
-    // Go over them and try each
-    for (int i = 0; i < apiCount; ++i)
-    {
-        int api = apis[i];
-        // Metal
-        if (api == apiMetal)
-        {
-#if UNITY_CAN_USE_METAL
-            if (!IsMetalSupported(0))
-                continue;
-            return api;
+#if TARGET_IPHONE_SIMULATOR || TARGET_TVOS_SIMULATOR
+    return apiNoGraphics;
 #else
-            continue;
-#endif
-        }
-        // GLES3
-        if (api == apiOpenGLES3)
-        {
-            if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES3))
-                continue;
-            return api;
-        }
-        // GLES2
-        if (api == apiOpenGLES2)
-        {
-            if (!IsGlesSupported(kEAGLRenderingAPIOpenGLES2))
-                continue;
-            return api;
-        }
-    }
-
+    assert(false);
     return 0;
+#endif
 }
 
 extern "C" NSBundle*            UnityGetMetalBundle()
@@ -253,11 +212,6 @@ extern "C" NSBundle*            UnityGetMetalBundle()
 extern "C" MTLDeviceRef         UnityGetMetalDevice()       { return _MetalDevice; }
 extern "C" MTLCommandQueueRef   UnityGetMetalCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->commandQueue; }
 extern "C" MTLCommandQueueRef   UnityGetMetalDrawableCommandQueue() { return ((UnityDisplaySurfaceMTL*)GetMainDisplaySurface())->drawableCommandQueue; }
-
-extern "C" EAGLContext*         UnityGetDataContextEAGL()
-{
-    return _GlesContext;
-}
 
 extern "C" int                  UnitySelectedRenderingAPI() { return _renderingAPI; }
 
@@ -272,14 +226,8 @@ extern "C" void UnityRepaint()
 {
     @autoreleasepool
     {
-        // this will handle running on metal just fine (nop)
-        EAGLContextSetCurrentAutoRestore autorestore(GetMainDisplaySurface());
-
         Profiler_FrameStart();
-
-        UnityInputProcess();
         UnityPlayerLoop();
-
         Profiler_FrameEnd();
     }
 }

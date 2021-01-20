@@ -16,5 +16,9 @@
 // There is one platform specific environment header for every platform.
 // You need to specify the right platform specific include path for the correct one to be picked up.
 #include "BaselibPlatformSpecificEnvironment.h"
-
 #include "VerifyPlatformEnvironment.h"
+
+
+#ifndef BASELIB_DEBUG_TRAP
+    #define BASELIB_DEBUG_TRAP COMPILER_DEBUG_TRAP
+#endif

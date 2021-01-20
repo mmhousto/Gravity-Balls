@@ -1,7 +1,6 @@
 #pragma once
 
 #include "UnityRendering.h"
-#include "GlesHelper.h"
 #include <UIKit/UIKit.h>
 
 @class EAGLContext;
@@ -14,7 +13,7 @@
 - (void)createView:(BOOL)useForRendering showRightAway:(BOOL)showRightAway;
 - (void)createView:(BOOL)useForRendering;
 - (void)createWithWindow:(UIWindow*)window andView:(UIView*)view;
-- (void)initRendering;
+- (UnityDisplaySurfaceBase*)initRendering;
 - (void)recreateSurface:(RenderingSurfaceParams)params;
 - (void)destroySurface;
 

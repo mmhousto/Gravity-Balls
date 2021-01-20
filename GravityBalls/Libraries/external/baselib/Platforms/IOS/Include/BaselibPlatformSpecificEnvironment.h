@@ -17,3 +17,10 @@
 #if (!defined(PLATFORM_USE_APPLE_LLVM_ATOMIC_CMPXCHG_128_PATCH)) && (!defined(NDEBUG)) && (__aarch64__) && (__clang__) && ((__clang_major__ < 9) && (__clang_major__ >= 8))
     #define PLATFORM_USE_APPLE_LLVM_ATOMIC_CMPXCHG_128_PATCH 1
 #endif
+
+// iOS armv7 has alignof(max_align_t) == 4
+#ifndef PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT
+    #if PLATFORM_ARCH_32
+        #define PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT 8
+    #endif
+#endif

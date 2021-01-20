@@ -11,7 +11,7 @@
 // #include "RedefinePlatforms.h"
 
 #ifndef DETAIL__PLATFORMS_HAD_BEEN_UNDEFINED_BY_UNDEFINEPLATFORMS_H
-    #error "DefinePlatforms.h can only be used after UndefinePlatforms.h got included before."
+    #error "RedefinePlatforms.h can only be used after UndefinePlatforms.h got included before."
 #endif
 
 #undef DETAIL__PLATFORMS_HAD_BEEN_UNDEFINED_BY_UNDEFINEPLATFORMS_H
@@ -65,6 +65,14 @@
     #define PLATFORM_WEBGL 0
 #endif
 
+#undef PLATFORM_WASI
+#if defined(DETAIL__TEMP_PLATFORM_WASI_WAS_1)
+    #undef DETAIL__TEMP_PLATFORM_WASI_WAS_1
+    #define PLATFORM_WASI 1
+#else
+    #define PLATFORM_WASI 0
+#endif
+
 #undef PLATFORM_ANDROID
 #if defined(DETAIL__TEMP_PLATFORM_ANDROID_WAS_1)
     #undef DETAIL__TEMP_PLATFORM_ANDROID_WAS_1
@@ -79,6 +87,14 @@
     #define PLATFORM_PS4 1
 #else
     #define PLATFORM_PS4 0
+#endif
+
+#undef PLATFORM_PS5
+#if defined(DETAIL__TEMP_PLATFORM_PS5_WAS_1)
+    #undef DETAIL__TEMP_PLATFORM_PS5_WAS_1
+    #define PLATFORM_PS5 1
+#else
+    #define PLATFORM_PS5 0
 #endif
 
 #undef PLATFORM_IPHONE
@@ -129,12 +145,12 @@
     #define PLATFORM_LUMIN 0
 #endif
 
-#undef PLATFORM_GGP
-#if defined(DETAIL__TEMP_PLATFORM_GGP_WAS_1)
-    #undef DETAIL__TEMP_PLATFORM_GGP_WAS_1
-    #define PLATFORM_GGP 1
+#undef PLATFORM_STADIA
+#if defined(DETAIL__TEMP_PLATFORM_STADIA_WAS_1)
+    #undef DETAIL__TEMP_PLATFORM_STADIA_WAS_1
+    #define PLATFORM_STADIA 1
 #else
-    #define PLATFORM_GGP 0
+    #define PLATFORM_STADIA 0
 #endif
 
 #undef PLATFORM_NETBSD

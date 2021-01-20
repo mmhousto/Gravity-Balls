@@ -1,10 +1,10 @@
 #pragma once
 
-#ifndef ENABLE_ASSERTIONS
+#ifndef BASELIB_ENABLE_ASSERTIONS
     #ifdef NDEBUG
-        #define ENABLE_ASSERTIONS 0
+        #define BASELIB_ENABLE_ASSERTIONS 0
     #else
-        #define ENABLE_ASSERTIONS 1
+        #define BASELIB_ENABLE_ASSERTIONS 1
     #endif
 #endif
 
@@ -29,7 +29,7 @@ BASELIB_API void detail_AssertLog(const char* format, ...);
 
 #define BaselibAssert(ASSERT_EXPRESSION_, ...)                                                                      \
     do {                                                                                                            \
-        if (ENABLE_ASSERTIONS)                                                                                      \
+        if (BASELIB_ENABLE_ASSERTIONS)                                                                                      \
         {                                                                                                           \
             if(!(ASSERT_EXPRESSION_))                                                                               \
             {                                                                                                       \

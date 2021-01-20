@@ -52,33 +52,16 @@ void    UnitySuppressPauseMessage();
 int     UnityIsPaused();                    // 0 if player is running, 1 if paused
 void    UnityWillPause();                   // send the message that app will pause
 void    UnityWillResume();                  // send the message that app will resume
-void    UnityInputProcess();
 void    UnityDeliverUIEvents();             // unity processing impacting UI will be called in there
+
+void    UnityInputProcess();                // no longer used, will be removed soon
 
 
 // rendering
 
-int     UnityGetRenderingAPIs(int capacity, int* outAPIs);
+int     UnityGetRenderingAPI();
 void    UnityFinishRendering();
-
-// OpenGL ES.
-
-int     UnityHasRenderingAPIExtension(const char* extension);
-void    UnityOnSetCurrentGLContext(EAGLContext* context);
-
-// This must match the one in ApiEnumsGLES.h
-typedef enum UnityFramebufferTarget
-{
-    kDrawFramebuffer = 0,
-    kReadFramebuffer,
-    kFramebufferTargetCount
-} UnityFramebufferTarget;
-void    UnityBindFramebuffer(UnityFramebufferTarget target, int fbo);
-void    UnityRegisterFBO(UnityRenderBufferHandle color, UnityRenderBufferHandle depth, unsigned fbo);
-
-// when texture (managed in trampoline) is used in unity (e.g. with external render surfaces)
-// we need to poke unity when we delete it (so it could clear caches etc)
-void    UnityOnDeleteGLTexture(int tex);
+void    UnityDisplayLinkCallback(double machAbsoluteTimeSeconds);
 
 // controling player internals
 
@@ -194,6 +177,7 @@ void    UnityReportWebRequestResponseHeader(void* udata, const char* headerName,
 void    UnityReportWebRequestReceivedResponse(void* udata, unsigned expectedDataLength);
 void    UnityReportWebRequestReceivedData(void* udata, const void* buffer, unsigned totalRead, unsigned expectedTotal);
 void    UnityReportWebRequestFinishedLoadingData(void* udata);
+void    UnityWebRequestRelease(void* udata);
 void    UnityReportWebRequestSentData(void* udata, unsigned totalWritten, unsigned expectedTotal);
 int     UnityReportWebRequestValidateCertificate(void* udata, const void* certificateData, unsigned certificateSize);
 const void*   UnityWebRequestGetUploadData(void* udata, unsigned* bufferSize);
@@ -290,8 +274,6 @@ MTLCommandQueueRef  UnityGetMetalCommandQueue();
 MTLCommandQueueRef  UnityGetMetalDrawableCommandQueue();
 int UnityCommandQueueMaxCommandBufferCountMTL();
 
-EAGLContext*        UnityGetDataContextEAGL();
-
 UnityRenderBufferHandle UnityBackbufferColor();
 UnityRenderBufferHandle UnityBackbufferDepth();
 
@@ -344,8 +326,8 @@ int             UnityCameraCaptureSetAutoFocusPoint(void* capture, float x, floa
 // Unity/DeviceSettings.mm
 const char*     UnityDeviceUniqueIdentifier();
 const char*     UnityVendorIdentifier();
-const char*     UnityAdvertisingIdentifier();
-int             UnityAdvertisingTrackingEnabled();
+const char*     UnityAdIdentifier();
+int             UnityAdTrackingEnabled();
 int             UnityGetLowPowerModeEnabled();
 int             UnityGetWantsSoftwareDimming();
 void            UnitySetWantsSoftwareDimming(int enabled);
@@ -361,8 +343,7 @@ const char*     UnitySystemLanguage();
 int             UnityDeviceSupportsUpsideDown();
 
 // Unity/DisplayManager.mm
-EAGLContext*    UnityGetMainScreenContextGLES();
-EAGLContext*    UnityGetContextEAGL();
+void            UnityActivateScreenForRendering(void* nativeDisplay);
 void            UnityStartFrameRendering();
 void            UnityDestroyUnityRenderSurfaces();
 int             UnityMainScreenRefreshRate();

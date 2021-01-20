@@ -14,7 +14,7 @@ BASELIB_C_INTERFACE
 #endif
 
 // Address family.
-typedef enum
+typedef enum Baselib_NetworkAddress_Family
 {
     Baselib_NetworkAddress_Family_Invalid = 0,
     Baselib_NetworkAddress_Family_IPv4 = 1,
@@ -80,7 +80,7 @@ static inline Baselib_NetworkAddress Baselib_NetworkAddress_Empty(void)
     return address;
 }
 
-typedef enum
+typedef enum Baselib_NetworkAddress_AddressReuse
 {
     Baselib_NetworkAddress_AddressReuse_DoNotAllow = 0,
 

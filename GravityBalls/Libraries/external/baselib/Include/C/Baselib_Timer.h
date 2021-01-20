@@ -6,6 +6,7 @@ BASELIB_C_INTERFACE
 #endif
 
 // Time conversion factors.
+//
 // (not an enum since Int32 can't represent Baselib_NanosecondsPerMinute)
 static const uint64_t Baselib_SecondsPerMinute           =                               60ULL;
 static const uint64_t Baselib_MillisecondsPerSecond      =                             1000ULL;

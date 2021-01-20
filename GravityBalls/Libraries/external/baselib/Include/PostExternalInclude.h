@@ -17,6 +17,7 @@
 #endif
 #undef DETAIL__WINUSER_H_HAS_BEEN_INCLUDED
 
+#include "Internal/RedefineCompilerMacros.h"
 #include "Internal/RedefinePlatforms.h"
 
 // undefine whatever might be defined already

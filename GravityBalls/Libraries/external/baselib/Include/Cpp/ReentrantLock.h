@@ -64,7 +64,7 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             COMPILER_WARN_UNUSED_RESULT
-            inline bool TryAcquire()
+            FORCE_INLINE bool TryAcquire()
             {
                 return Baselib_ReentrantLock_TryAcquire(&m_ReentrantLockData);
             }
@@ -84,7 +84,7 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             COMPILER_WARN_UNUSED_RESULT
-            inline bool TryTimedAcquire(const timeout_ms timeoutInMilliseconds)
+            FORCE_INLINE bool TryTimedAcquire(const timeout_ms timeoutInMilliseconds)
             {
                 return Baselib_ReentrantLock_TryTimedAcquire(&m_ReentrantLockData, timeoutInMilliseconds.count());
             }
@@ -96,7 +96,7 @@ namespace baselib
             // When the lock is released this function is guaranteed to emit a release barrier.
             //
             // Calling this function from a thread that doesn't own the lock triggers an assert in debug and causes undefined behavior in release builds.
-            inline void Release()
+            FORCE_INLINE void Release()
             {
                 return Baselib_ReentrantLock_Release(&m_ReentrantLockData);
             }
@@ -111,11 +111,11 @@ namespace baselib
             //      enteredCriticalSection++;
             //  });
             template<class FunctionType>
-            inline void AcquireScoped(const FunctionType& func)
+            FORCE_INLINE void AcquireScoped(const FunctionType& func)
             {
+                ReleaseOnDestroy releaseScope(*this);
                 Acquire();
                 func();
-                Release();
             }
 
             // Try to acquire lock and invoke user defined function.
@@ -131,12 +131,12 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             template<class FunctionType>
-            inline bool TryAcquireScoped(const FunctionType& func)
+            FORCE_INLINE bool TryAcquireScoped(const FunctionType& func)
             {
                 if (TryAcquire())
                 {
+                    ReleaseOnDestroy releaseScope(*this);
                     func();
-                    Release();
                     return true;
                 }
                 return false;
@@ -159,18 +159,27 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             template<class FunctionType>
-            inline bool TryTimedAcquireScoped(const timeout_ms timeoutInMilliseconds, const FunctionType& func)
+            FORCE_INLINE bool TryTimedAcquireScoped(const timeout_ms timeoutInMilliseconds, const FunctionType& func)
             {
                 if (TryTimedAcquire(timeoutInMilliseconds))
                 {
+                    ReleaseOnDestroy releaseScope(*this);
                     func();
-                    Release();
                     return true;
                 }
                 return false;
             }
 
         private:
+            class ReleaseOnDestroy
+            {
+            public:
+                FORCE_INLINE ReleaseOnDestroy(ReentrantLock& lockReference) : m_LockReference(lockReference) {}
+                FORCE_INLINE ~ReleaseOnDestroy() { m_LockReference.Release(); }
+            private:
+                ReentrantLock& m_LockReference;
+            };
+
             Baselib_ReentrantLock   m_ReentrantLockData;
         };
     }

@@ -70,6 +70,7 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
 @synthesize status      = _status;
 @synthesize text;
 @synthesize selection;
+@synthesize hasUsedDictation;
 
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textFieldObj
@@ -77,6 +78,19 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
     [self textInputDone: nil];
     return YES;
 }
+
+#if PLATFORM_IOS
+- (void)textInputModeDidChange:(NSNotification*)notification
+{
+    // Apple reports back the primary language of the current keyboard text input mode using BCP 47 language code i.e "en-GB"
+    // but this also (undocumented) will return "dictation" when using voice dictation and "emoji" when using the emoji keyboard.
+    if ([_keyboard->inputView.textInputMode.primaryLanguage isEqualToString: @"dictation"])
+    {
+        hasUsedDictation = YES;
+    }
+}
+
+#endif
 
 - (void)textInputDone:(id)sender
 {
@@ -157,6 +171,20 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
     [self systemHideKeyboard];
 }
 
+- (void)keyboardDidHide:(NSNotification*)notification
+{
+    // The audio engine starts and restarts by listening to AVAudioSessionInterruptionNotifications, However
+    // Apple does *not* guarantee that the AVAudioSessionInterruptionTypeEnded will be sent, especially if
+    // the app is in the foreground - This can happen when using the dictate function on the keyboard
+    // so we send the notification ourselves to ensure the audio restarts.
+    if (hasUsedDictation)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName: AVAudioSessionInterruptionNotification
+         object: [AVAudioSession sharedInstance]
+         userInfo: @{AVAudioSessionInterruptionTypeKey: [NSNumber numberWithUnsignedInteger: AVAudioSessionInterruptionTypeEnded]}];
+    }
+}
+
 - (void)keyboardDidChangeFrame:(NSNotification*)notification
 {
     _active = true;
@@ -164,8 +192,14 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
     CGRect srcRect  = [[notification.userInfo objectForKey: UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGRect rect     = [UnityGetGLView() convertRect: srcRect fromView: nil];
 
-    if (rect.origin.y >= [UnityGetGLView() bounds].size.height)
+    // there are several ways to hide keyboard:
+    // one, using the hide button on the keyboard, will move it outside view
+    // another, for ipad floating keyboard, will "minimize" it (making its height/width zero)
+
+    if (rect.origin.y >= [UnityGetGLView() bounds].size.height || rect.size.width < 1e-6 || rect.size.height < 1e-6)
+    {
         [self systemHideKeyboard];
+    }
     else
     {
         rect.origin.y = [UnityGetGLView() frame].size.height - rect.size.height; // iPhone X sometimes reports wrong y value for keyboard
@@ -277,7 +311,9 @@ extern "C" void UnityKeyboard_LayoutChanged(NSString* layout);
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardWillShow:) name: UIKeyboardWillShowNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardDidShow:) name: UIKeyboardDidShowNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardWillHide:) name: UIKeyboardWillHideNotification object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardDidHide:) name: UIKeyboardDidHideNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(keyboardDidChangeFrame:) name: UIKeyboardDidChangeFrameNotification object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(textInputModeDidChange:) name: UITextInputCurrentInputModeDidChangeNotification object: nil];
 #endif
 
         [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(textInputDone:) name: UITextFieldTextDidEndEditingNotification object: nil];

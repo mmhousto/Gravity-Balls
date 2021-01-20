@@ -1,32 +1,32 @@
+#pragma once
+
 #include "../CountdownTimer.h"
 #include "../../C/Baselib_SystemFutex.h"
 #include "../../C/Baselib_Thread.h"
 
 #if !PLATFORM_FUTEX_NATIVE_SUPPORT
-    #error "Only use this implementation on top of a proper futex, in all other situations us Baselib_Sempahore_SemaphoreBased.inl.h"
+    #error "Only use this implementation on top of a proper futex, in all other situations us ConditionVariable_SemaphoreBased.inl.h"
 #endif
 
 namespace baselib
 {
     BASELIB_CPP_INTERFACE
     {
-        template<typename LockT>
-        inline void ConditionVariable::Wait(LockT& lock)
+        inline void ConditionVariable::Wait()
         {
             m_Data.waiters.fetch_add(1, memory_order_relaxed);
-            lock.Release();
+            m_Lock.Release();
             while (!m_Data.TryConsumeWakeup())
             {
                 Baselib_SystemFutex_Wait(&m_Data.wakeups.obj, 0, std::numeric_limits<uint32_t>::max());
             }
-            lock.Acquire();
+            m_Lock.Acquire();
         }
 
-        template<typename LockT>
-        inline bool ConditionVariable::TimedWait(LockT& lock, const timeout_ms timeoutInMilliseconds)
+        inline bool ConditionVariable::TimedWait(const timeout_ms timeoutInMilliseconds)
         {
             m_Data.waiters.fetch_add(1, memory_order_relaxed);
-            lock.Release();
+            m_Lock.Release();
 
             uint32_t timeLeft = timeoutInMilliseconds.count();
             auto timer = CountdownTimer::StartNew(timeoutInMilliseconds);
@@ -35,7 +35,7 @@ namespace baselib
                 Baselib_SystemFutex_Wait(&m_Data.wakeups.obj, 0, timeLeft);
                 if (m_Data.TryConsumeWakeup())
                 {
-                    lock.Acquire();
+                    m_Lock.Acquire();
                     return true;
                 }
                 timeLeft = timer.GetTimeLeftInMilliseconds().count();
@@ -49,7 +49,7 @@ namespace baselib
                 {
                     if (m_Data.waiters.compare_exchange_weak(waiters, waiters - 1, memory_order_relaxed, memory_order_relaxed))
                     {
-                        lock.Acquire();
+                        m_Lock.Acquire();
                         return false;
                     }
                 }
@@ -57,7 +57,7 @@ namespace baselib
             }
             while (!m_Data.TryConsumeWakeup());
 
-            lock.Acquire();
+            m_Lock.Acquire();
             return true;
         }
 

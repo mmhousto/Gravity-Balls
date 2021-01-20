@@ -9,14 +9,9 @@
 #import <Availability.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import <OpenGLES/EAGL.h>
-#import <OpenGLES/EAGLDrawable.h>
-#import <OpenGLES/ES2/gl.h>
-#import <OpenGLES/ES2/glext.h>
-
 #include <mach/mach_time.h>
 
-// MSAA_DEFAULT_SAMPLE_COUNT was moved to iPhone_GlesSupport.h
+// MSAA_DEFAULT_SAMPLE_COUNT was removed
 // ENABLE_INTERNAL_PROFILER and related defines were moved to iPhone_Profiler.h
 // kFPS define for removed: you can use Application.targetFrameRate (30 fps by default)
 // DisplayLink is the only run loop mode now - all others were removed
@@ -29,8 +24,6 @@
 #include "UI/SplashScreen.h"
 #include "Unity/InternalProfiler.h"
 #include "Unity/DisplayManager.h"
-#include "Unity/EAGLContextHelper.h"
-#include "Unity/GlesHelper.h"
 #include "Unity/ObjCRuntime.h"
 #include "PluginBase/AppDelegateListener.h"
 
@@ -72,8 +65,6 @@ bool    _didResignActive        = false;
 
 // was startUnity scheduled: used to make startup robust in case of locking device
 static bool _startUnityScheduled    = false;
-
-bool    _supportsMSAA           = false;
 
 #if UNITY_SUPPORT_ROTATION
 // Required to enable specific orientation for some presentation controllers: see supportedInterfaceOrientationsForWindow below for details
@@ -144,6 +135,12 @@ NSInteger _forceInterfaceOrientationMask = 0;
     [audioSession setActive: YES error: nil];
     [audioSession addObserver: self forKeyPath: @"outputVolume" options: 0 context: nil];
     UnityUpdateMuteState([audioSession outputVolume] < 0.01f ? 1 : 0);
+
+#if UNITY_REPLAY_KIT_AVAILABLE
+    void InitUnityReplayKit();  // Classes/Unity/UnityReplayKit.mm
+
+    InitUnityReplayKit();
+#endif
 }
 
 extern "C" void UnityDestroyDisplayLink()
@@ -192,6 +189,11 @@ extern "C" void UnityCleanupTrampoline()
     // No rootViewController is set because we are switching from one view controller to another, all orientations should be enabled
     if ([window rootViewController] == nil)
         return UIInterfaceOrientationMaskAll;
+
+    // During splash screen show phase no forced orientations should be allowed.
+    // This will prevent unwanted rotation while splash screen is on and application is not yet ready to present (Ex. Fogbugz cases: 1190428, 1269547).
+    if (!_unityAppReady)
+        return [_rootController supportedInterfaceOrientations];
 
     // Some presentation controllers (e.g. UIImagePickerController) require portrait orientation and will throw exception if it is not supported.
     // At the same time enabling all orientations by returning UIInterfaceOrientationMaskAll might cause unwanted orientation change
@@ -396,7 +398,7 @@ extern "C" void UnityCleanupTrampoline()
     // a view snapshot (case 760747).
     dispatch_async(dispatch_get_main_queue(), ^{
         // if we are active again, we don't need to do this anymore
-        if (!_didResignActive)
+        if (!_didResignActive || _snapshotViewController)
         {
             return;
         }
@@ -421,6 +423,13 @@ extern "C" void UnityCleanupTrampoline()
     dispatch_async(dispatch_get_main_queue(), ^{
         if (_snapshotViewController)
         {
+            // we've got a view on top of the snapshot view (3rd party plugin/social media login etc).
+            if (_snapshotViewController.presentedViewController)
+            {
+                [self performSelector: @selector(removeSnapshotViewController) withObject: nil afterDelay: 0.05];
+                return;
+            }
+
             [_snapshotViewController dismissViewControllerAnimated: NO completion: nil];
             _snapshotViewController = nil;
 
@@ -437,6 +446,10 @@ extern "C" void UnityCleanupTrampoline()
     if (_unityAppReady)
     {
         UnitySetPlayerFocus(0);
+
+        // signal unity that the frame rendering have ended
+        // as we will not get the callback from the display link current frame
+        UnityDisplayLinkCallback(0);
 
         _wasPausedExternal = UnityIsPaused();
         if (_wasPausedExternal == false)

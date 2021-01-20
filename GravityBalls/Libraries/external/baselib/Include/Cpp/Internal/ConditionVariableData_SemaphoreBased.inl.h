@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../Atomic.h"
 #include "../Semaphore.h"
 

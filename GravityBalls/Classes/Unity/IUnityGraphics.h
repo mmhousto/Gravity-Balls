@@ -7,6 +7,7 @@
 #pragma once
 #include "IUnityInterface.h"
 
+// Has to match the GfxDeviceRenderer enum
 typedef enum UnityGfxRenderer
 {
     //kUnityGfxRendererOpenGL            =  0, // Legacy OpenGL, removed

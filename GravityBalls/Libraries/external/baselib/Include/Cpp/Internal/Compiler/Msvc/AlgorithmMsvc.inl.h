@@ -89,7 +89,12 @@ namespace baselib
 #endif
             }
 
-#if defined(_AMD64_) || defined(_X86_)
+            // __popcnt/__popcnt16/__popcnt64 were introduced as part of SSE4a
+            // See https://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT
+            // To check this accurately, we would need to check cpuid which itself is not for free.
+            // However, compiling for some hardware, MSVC defines __AVX__ which is a superset of SSE4 so we can use that.
+            // (as of writing there's no equivalent __SSE4__)
+#if defined(__AVX__)
 #ifdef _AMD64_
             inline int BitsInMask(uint64_t value)   { return (int)__popcnt64(value); }
 #else

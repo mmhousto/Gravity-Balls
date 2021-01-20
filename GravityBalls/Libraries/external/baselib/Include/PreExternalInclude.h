@@ -15,6 +15,7 @@
     #error "PreExternalInclude.h has been included more than once or PostExternalInclude.h is missing."
 #endif
 
+#include "Internal/UndefineCompilerMacros.h"
 #include "Internal/UndefinePlatforms.h"
 #include "Internal/UndefineCoreMacros.h"
 

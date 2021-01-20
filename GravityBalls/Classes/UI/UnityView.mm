@@ -9,7 +9,6 @@
 extern bool _renderingInited;
 extern bool _unityAppReady;
 extern bool _skipPresent;
-extern bool _supportsMSAA;
 
 @implementation UnityView
 {
@@ -25,6 +24,11 @@ extern bool _supportsMSAA;
     CGSize systemRenderSize = CGSizeMake(size.width * self.contentScaleFactor, size.height * self.contentScaleFactor);
     _curOrientation = (ScreenOrientation)UnityReportResizeView(systemRenderSize.width, systemRenderSize.height, _curOrientation);
     ReportSafeAreaChangeForView(self);
+}
+
+- (void)boundsUpdated
+{
+    [self onUpdateSurfaceSize: self.bounds.size];
 }
 
 - (void)initImpl:(CGRect)frame scaleFactor:(CGFloat)scale
@@ -96,7 +100,7 @@ extern bool _supportsMSAA;
     }
 
     unsigned requestedW, requestedH;    UnityGetRenderingResolution(&requestedW, &requestedH);
-    int requestedMSAA = UnityGetDesiredMSAASampleCount(MSAA_DEFAULT_SAMPLE_COUNT);
+    int requestedMSAA = UnityGetDesiredMSAASampleCount(1);
     int requestedSRGB = UnityGetSRGBRequested();
     int requestedWideColor = UnityGetWideColorRequested();
     int requestedHDR = UnityGetHDRModeRequested();
@@ -107,7 +111,7 @@ extern bool _supportsMSAA;
     if (_shouldRecreateView == YES
         ||  surf->targetW != requestedW || surf->targetH != requestedH
         ||  surf->disableDepthAndStencil != UnityDisableDepthAndStencilBuffers()
-        ||  (_supportsMSAA && surf->msaaSamples != requestedMSAA)
+        ||  surf->msaaSamples != requestedMSAA
         ||  surf->srgb != requestedSRGB
         ||  surf->wideColor != requestedWideColor
         ||  surf->hdr != requestedHDR
@@ -127,7 +131,7 @@ extern bool _supportsMSAA;
 
         RenderingSurfaceParams params =
         {
-            .msaaSampleCount        = UnityGetDesiredMSAASampleCount(MSAA_DEFAULT_SAMPLE_COUNT),
+            .msaaSampleCount        = UnityGetDesiredMSAASampleCount(1),
             .renderW                = (int)requestedW,
             .renderH                = (int)requestedH,
             .srgb                   = UnityGetSRGBRequested(),
@@ -149,16 +153,22 @@ extern bool _supportsMSAA;
         if (_unityAppReady)
         {
             // seems like ios sometimes got confused about abrupt swap chain destroy
-            // draw 2 times to fill both buffers
+            // draw 2 times to fill "both" buffers (we assume double buffering)
             // present only once to make sure correct image goes to CA
             // if we are calling this from inside repaint, second draw and present will be done automatically
+            // please note that we still need to pretend we did come from displaylink to make sure vsync magic works
+            // NOTE: unity does handle "draw frame with exact same timestamp" just fine
             _skipPresent = true;
             if (!UnityIsPaused())
             {
+                UnityDisplayLinkCallback(GetAppController().unityDisplayLink.timestamp);
                 UnityRepaint();
                 // we are not inside repaint so we need to draw second time ourselves
                 if (_viewIsRotating)
+                {
+                    UnityDisplayLinkCallback(GetAppController().unityDisplayLink.timestamp);
                     UnityRepaint();
+                }
             }
             _skipPresent = false;
         }
@@ -174,14 +184,14 @@ extern bool _supportsMSAA;
 - (void)recreateGLESSurface         { [self recreateRenderingSurface]; }
 @end
 
-static Class UnityRenderingView_LayerClassGLES(id self_, SEL _cmd)
-{
-    return [CAEAGLLayer class];
-}
-
 static Class UnityRenderingView_LayerClassMTL(id self_, SEL _cmd)
 {
     return NSClassFromString(@"CAMetalLayer");
+}
+
+static Class UnityRenderingView_LayerClassNULL(id self_, SEL _cmd)
+{
+    return NSClassFromString(@"CALayer");
 }
 
 @implementation UnityRenderingView
@@ -192,12 +202,7 @@ static Class UnityRenderingView_LayerClassMTL(id self_, SEL _cmd)
 
 + (void)InitializeForAPI:(UnityRenderingAPI)api
 {
-    IMP layerClassImpl = 0;
-    if (api == apiOpenGLES2 || api == apiOpenGLES3)
-        layerClassImpl = (IMP)UnityRenderingView_LayerClassGLES;
-    else if (api == apiMetal)
-        layerClassImpl = (IMP)UnityRenderingView_LayerClassMTL;
-
+    IMP layerClassImpl = api == apiMetal ? (IMP)UnityRenderingView_LayerClassMTL : (IMP)UnityRenderingView_LayerClassNULL;
     class_replaceMethod(object_getClass([UnityRenderingView class]), @selector(layerClass), layerClassImpl, UIView_LayerClass_Enc);
 }
 

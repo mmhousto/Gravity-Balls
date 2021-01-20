@@ -53,7 +53,7 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             COMPILER_WARN_UNUSED_RESULT
-            inline bool TryAcquire()
+            FORCE_INLINE bool TryAcquire()
             {
                 return Baselib_Lock_TryAcquire(&m_LockData);
             }
@@ -71,7 +71,7 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             COMPILER_WARN_UNUSED_RESULT
-            inline bool TryTimedAcquire(const timeout_ms timeoutInMilliseconds)
+            FORCE_INLINE bool TryTimedAcquire(const timeout_ms timeoutInMilliseconds)
             {
                 return Baselib_Lock_TryTimedAcquire(&m_LockData, timeoutInMilliseconds.count());
             }
@@ -82,7 +82,7 @@ namespace baselib
             // If no lock was previously held calling this function result in a no-op.
             //
             // When the lock is released this function is guaranteed to emit a release barrier.
-            inline void Release()
+            FORCE_INLINE void Release()
             {
                 return Baselib_Lock_Release(&m_LockData);
             }
@@ -97,11 +97,11 @@ namespace baselib
             //      enteredCriticalSection++;
             //  });
             template<class FunctionType>
-            inline void AcquireScoped(const FunctionType& func)
+            FORCE_INLINE void AcquireScoped(const FunctionType& func)
             {
+                ReleaseOnDestroy releaseScope(*this);
                 Acquire();
                 func();
-                Release();
             }
 
             // Try to acquire lock and invoke user defined function.
@@ -117,12 +117,12 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             template<class FunctionType>
-            inline bool TryAcquireScoped(const FunctionType& func)
+            FORCE_INLINE bool TryAcquireScoped(const FunctionType& func)
             {
                 if (TryAcquire())
                 {
+                    ReleaseOnDestroy releaseScope(*this);
                     func();
-                    Release();
                     return true;
                 }
                 return false;
@@ -145,18 +145,27 @@ namespace baselib
             //
             // Return:          true if lock was acquired.
             template<class FunctionType>
-            inline bool TryTimedAcquireScoped(const timeout_ms timeoutInMilliseconds, const FunctionType& func)
+            FORCE_INLINE bool TryTimedAcquireScoped(const timeout_ms timeoutInMilliseconds, const FunctionType& func)
             {
                 if (TryTimedAcquire(timeoutInMilliseconds))
                 {
+                    ReleaseOnDestroy releaseScope(*this);
                     func();
-                    Release();
                     return true;
                 }
                 return false;
             }
 
         private:
+            class ReleaseOnDestroy
+            {
+            public:
+                FORCE_INLINE ReleaseOnDestroy(Lock& lockReference) : m_LockReference(lockReference) {}
+                FORCE_INLINE ~ReleaseOnDestroy() { m_LockReference.Release(); }
+            private:
+                Lock& m_LockReference;
+            };
+
             Baselib_Lock   m_LockData;
         };
     }

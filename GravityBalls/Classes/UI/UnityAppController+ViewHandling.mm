@@ -28,6 +28,8 @@ extern bool _unityAppReady;
 - (void)updateAppOrientation:(UIInterfaceOrientation)orientation
 {
     _curOrientation = orientation;
+    [_unityView boundsUpdated];
+
     [_unityView willRotateToOrientation: orientation fromOrientation: (UIInterfaceOrientation)UIInterfaceOrientationUnknown];
     [_unityView didRotate];
 }
@@ -141,12 +143,10 @@ extern bool _unityAppReady;
     NSAssert(_rootView != nil, @"_rootView  should be inited at this point");
     NSAssert(_rootController != nil, @"_rootController should be inited at this point");
 
-    [_window makeKeyAndVisible];
     [UIView setAnimationsEnabled: NO];
-
-    // TODO: extract it?
-
     ShowSplashScreen(_window);
+    // make window visible only after we have set up initial controller we want to show
+    [_window makeKeyAndVisible];
 
 #if UNITY_SUPPORT_ROTATION
     // to be able to query orientation from view controller we should actually show it.

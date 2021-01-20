@@ -11,7 +11,29 @@ BASELIB_C_INTERFACE
 // Max alignment that can be passed to Baselib_Memory_AlignedAlloc and Baselib_Memory_AlignedReallocate functions
 static const size_t Baselib_Memory_MaxAlignment = 64 * 1024;
 
+// We can't handle platform varying constants in the C# bindings right now.
+#if !defined(BASELIB_BINDING_GENERATION)
+
+// Minimum guaranteed alignment for Baselib_Memory_Allocate/Baselib_Memory_AlignedAlloc in bytes.
+//
+// Guaranteed to be at least 8.
+// Note that on some platforms it is possible to overwrite the internally used allocator in which case this guarantee may no longer be upheld.
+static const size_t Baselib_Memory_MinGuaranteedAlignment = PLATFORM_MEMORY_MALLOC_MIN_ALIGNMENT;
+
+#else
+
+// Minimum guaranteed alignment for Baselib_Memory_Allocate/Baselib_Memory_AlignedAlloc in bytes.
+//
+// Guaranteed to be at least 8.
+// Note that on some platforms it is possible to overwrite the internally used allocator in which case this guarantee may no longer be upheld.
+static const size_t Baselib_Memory_MinGuaranteedAlignment = 8;
+
+#endif // !defined(BASELIB_BINDING_GENERATION)
+
 // Information about available pages sizes.
+//
+// Page sizes do not reflect necessarily hardware ("physical") page sizes, but rather "virtual" page sizes that the OS is dealing with.
+// I.e. a virtual page may refer to several hardware pages, but the OS exposes only a single state for this group of pages.
 typedef struct Baselib_Memory_PageSizeInfo
 {
     // Commonly used page size on this platform.
@@ -39,6 +61,7 @@ BASELIB_API void Baselib_Memory_GetPageSizeInfo(Baselib_Memory_PageSizeInfo* out
 
 // Allocates memory using a system allocator like malloc.
 //
+// We guarantee that the returned address is at least aligned by Baselib_Memory_MinGuaranteedAlignment bytes.
 // Return value is guaranteed to be a unique pointer. This is true for zero sized allocations as well.
 // Allocation failures trigger process abort.
 BASELIB_API void* Baselib_Memory_Allocate(size_t size);
@@ -61,7 +84,8 @@ BASELIB_API void Baselib_Memory_Free(void* ptr);
 
 // Allocates memory using a system allocator like malloc and guarantees that the returned pointer is aligned to the specified alignment.
 //
-// Alignment needs to be a power of two which is also a multiple of sizeof(void *) but less or equal to Baselib_Memory_MaxAlignment.
+// Alignment parameter needs to be a power of two which is also a multiple of sizeof(void *) but less or equal to Baselib_Memory_MaxAlignment.
+// Any alignment smaller than Baselib_Memory_MinGuaranteedAlignment, will be clamped to Baselib_Memory_MinGuaranteedAlignment.
 //
 // Return value is guaranteed to be a unique pointer. This is true for zero sized allocations as well.
 // Allocation failures or invalid alignments will trigger process abort.
@@ -87,7 +111,7 @@ BASELIB_API void Baselib_Memory_AlignedFree(void* ptr);
 
 
 // Page state options
-typedef enum
+typedef enum Baselib_Memory_PageState
 {
     // The page are in a reserved state and any access will cause a seg-fault/access violation.
     // On some platforms that support this state this may be just a hint to the OS and there is no guarantee pages in this state behave differently from Baselib_Memory_PageState_NoAccess.

@@ -6,9 +6,6 @@
 #include "os/c-api/il2cpp-config-platforms.h"
 #include "os/c-api/il2cpp-config-api-platforms.h"
 
-/* il2cpp-config-api.h need this define */
-#define IL2CPP_COMPILER_MSVC (IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE)
-
 #include "il2cpp-config-api.h"
 
 #include "il2cpp-sanitizers.h"
@@ -39,26 +36,6 @@
 #define IL2CPP_CXX_ABI_MSVC 1
 #else
 #define IL2CPP_CXX_ABI_MSVC 0
-#endif
-
-#if IL2CPP_COMPILER_MSVC
-#ifndef STDCALL
-#define STDCALL __stdcall
-#endif
-#ifndef CDECL
-#define CDECL __cdecl
-#endif
-#ifndef FASTCALL
-#define FASTCALL __fastcall
-#endif
-#ifndef THISCALL
-#define THISCALL __thiscall
-#endif
-#else
-#define STDCALL
-#define CDECL
-#define FASTCALL
-#define THISCALL
 #endif
 
 typedef void (STDCALL *SynchronizationContextCallback)(intptr_t arg);
@@ -138,12 +115,12 @@ typedef void (STDCALL *SynchronizationContextCallback)(intptr_t arg);
 
 #define IL2CPP_THREADS_ALL_ACCESS (!IL2CPP_THREADS_STD && IL2CPP_TARGET_XBOXONE)
 
-#if (IL2CPP_SUPPORT_THREADS && (!IL2CPP_THREADS_STD && !IL2CPP_THREADS_PTHREAD && !IL2CPP_THREADS_WIN32 && !IL2CPP_THREADS_XBOXONE && !IL2CPP_THREADS_N3DS && !IL2CPP_THREADS_PS4 && !IL2CPP_THREADS_PSP2 && !IL2CPP_THREADS_SWITCH))
+#if (IL2CPP_SUPPORT_THREADS && (!IL2CPP_THREADS_STD && !IL2CPP_THREADS_PTHREAD && !IL2CPP_THREADS_WIN32 && !IL2CPP_THREADS_XBOXONE && !IL2CPP_THREADS_N3DS && !IL2CPP_THREADS_PS4 && !IL2CPP_THREADS_PSP2 && !IL2CPP_THREADS_SWITCH && !IL2CPP_THREADS_CUSTOM))
 #error "No thread implementation defined"
 #endif
 
 /* Platform support to cleanup attached threads even when native threads are not exited cleanly */
-#define IL2CPP_HAS_NATIVE_THREAD_CLEANUP (IL2CPP_THREADS_PTHREAD || IL2CPP_THREADS_WIN32)
+#define IL2CPP_HAS_NATIVE_THREAD_CLEANUP (IL2CPP_THREADS_PTHREAD || IL2CPP_THREADS_WIN32 || IL2CPP_TARGET_SWITCH)
 
 #define IL2CPP_THREAD_IMPL_HAS_COM_APARTMENTS IL2CPP_TARGET_WINDOWS
 
@@ -160,6 +137,24 @@ typedef void (STDCALL *SynchronizationContextCallback)(intptr_t arg);
 #else
     #define IL2CPP_ENABLE_STACKTRACES 1
 #endif // IL2CPP_TINY
+
+#ifndef IL2CPP_DISABLE_GC
+#if IL2CPP_TINY && IL2CPP_TARGET_JAVASCRIPT
+#define IL2CPP_DISABLE_GC 1
+#endif
+#endif
+
+#ifndef FORCE_PINVOKE_INTERNAL
+#if IL2CPP_TINY && IL2CPP_TARGET_IOS
+#define FORCE_PINVOKE_INTERNAL 1
+#endif
+#endif
+
+#ifndef HOST_WASM
+#if IL2CPP_TINY_DEBUGGER && IL2CPP_TARGET_JAVASCRIPT
+#define HOST_WASM 1
+#endif
+#endif
 
 /* Platforms which use OS specific implementation to extract stracktrace */
 #if !defined(IL2CPP_ENABLE_NATIVE_STACKTRACES)
@@ -253,6 +248,12 @@ static const uint16_t kInvalidIl2CppMethodSlot = 65535;
 #define RUNTIMEMESSAGE(name)    __FILE_UTF8__ "(" $Line ") : FIXME: Missing runtime implementation: " name
 #define NOTSUPPORTEDICALLMESSAGE(target, name, reason)  __FILE_UTF8__ "(" $Line ") : Unsupported internal call for " target ":" name " - " reason
 
+#ifndef IL2CPP_DEFAULT_DATA_DIR_PATH
+#define IL2CPP_DEFAULT_DATA_DIR_PATH Data
+#endif
+
+#define IL2CPP_DEFAULT_DATA_DIR_PATH_STR MAKE_STRING(STRINGIZE, IL2CPP_DEFAULT_DATA_DIR_PATH)
+
 // Keeping this for future usage if needed.
 //#if defined(_MSC_VER)
 //  #define PRAGMA_MESSAGE(value) __pragma(message(value))
@@ -342,10 +343,10 @@ static const uint16_t kInvalidIl2CppMethodSlot = 65535;
 
 #define IL2CPP_USE_GENERIC_COM  (!IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_WINDOWS_GAMES)
 #define IL2CPP_USE_GENERIC_COM_SAFEARRAYS   (!IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINDOWS_GAMES)
-#define IL2CPP_USE_GENERIC_WINDOWSRUNTIME (!IL2CPP_TARGET_WINDOWS || RUNTIME_MONO || RUNTIME_NONE || IL2CPP_TINY || IL2CPP_TARGET_WINDOWS_GAMES)
+#define IL2CPP_USE_GENERIC_WINDOWSRUNTIME (!IL2CPP_TARGET_WINDOWS || RUNTIME_NONE || IL2CPP_TINY || IL2CPP_TARGET_WINDOWS_GAMES)
 
 #ifndef IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE
-#define IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE (IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINDOWS_GAMES || (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX))
+#define IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE (IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINDOWS_GAMES || IL2CPP_TARGET_JAVASCRIPT || (!IL2CPP_TARGET_WINDOWS && !IL2CPP_TARGET_POSIX))
 #endif
 
 #ifndef IL2CPP_HAS_CLOSE_EXEC
@@ -431,12 +432,17 @@ static const uintptr_t kIl2CppUIntPtrMax = UINT32_MAX;
 #endif
 
 static const int ipv6AddressSize = 16;
+#if !defined(IL2CPP_SUPPORT_IPV6)
 #define IL2CPP_SUPPORT_IPV6 !IL2CPP_TARGET_PS4 && !IL2CPP_TARGET_SWITCH
+#endif
+
 #define IL2CPP_SUPPORT_IPV6_SUPPORT_QUERY (IL2CPP_SUPPORT_IPV6 && IL2CPP_TARGET_LINUX)
 
 // Android: "There is no support for locales in the C library" https://code.google.com/p/android/issues/detail?id=57313
 // PS4/PS2: strtol_d doesn't exist
+#if !defined(IL2CPP_SUPPORT_LOCALE_INDEPENDENT_PARSING)
 #define IL2CPP_SUPPORT_LOCALE_INDEPENDENT_PARSING (!IL2CPP_TARGET_ANDROID && !IL2CPP_TARGET_PS4 && !IL2CPP_TARGET_PSP2 && !IL2CPP_TARGET_LUMIN)
+#endif
 
 #define NO_UNUSED_WARNING(expr) (void)(expr)
 
@@ -464,6 +470,7 @@ typedef int32_t il2cpp_hresult_t;
 #define IL2CPP_E_OUTOFMEMORY                 ((il2cpp_hresult_t)0x8007000E)
 #define IL2CPP_E_INVALIDARG                  ((il2cpp_hresult_t)0x80070057)
 #define IL2CPP_COR_E_EXCEPTION               ((il2cpp_hresult_t)0x80131500)
+#define IL2CPP_COR_E_EXECUTIONENGINE         ((il2cpp_hresult_t)0x80131506)
 #define IL2CPP_COR_E_INVALIDOPERATION        ((il2cpp_hresult_t)0x80131509)
 #define IL2CPP_COR_E_PLATFORMNOTSUPPORTED    ((il2cpp_hresult_t)0x80131539)
 #define IL2CPP_COR_E_OPERATIONCANCELED       ((il2cpp_hresult_t)0x8013153B)
@@ -509,7 +516,9 @@ static const Il2CppChar kIl2CppNewLine[] = { '\n', '\0' };
 #define IL2CPP_USE_GENERIC_CPU_INFO 0
 #endif
 
+#if !defined(IL2CPP_CAN_CHECK_EXECUTABLE)
 #define IL2CPP_CAN_CHECK_EXECUTABLE IL2CPP_TARGET_WINDOWS || (IL2CPP_TARGET_POSIX && !IL2CPP_TARGET_PS4)
+#endif
 
 #if IL2CPP_MONO_DEBUGGER
 #define IL2CPP_DEBUG_BREAK() il2cpp::utils::Debugger::UserBreak()
@@ -533,6 +542,8 @@ char(*il2cpp_array_size_helper(Type(&array)[Size]))[Size];
 #ifndef IL2CPP_MUTATE_METHOD_POINTERS
 #define IL2CPP_MUTATE_METHOD_POINTERS !IL2CPP_TARGET_PS4
 #endif
+
+#define IL2CPP_USE_GENERIC_ASSERT !(IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_WINRT || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PS5)
 
 #if !IL2CPP_DEBUG
 #define IL2CPP_ASSERT(expr) void(0)

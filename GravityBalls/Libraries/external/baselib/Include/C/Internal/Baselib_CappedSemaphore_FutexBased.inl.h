@@ -6,7 +6,7 @@
 #include "../Baselib_Thread.h"
 
 #if !PLATFORM_FUTEX_NATIVE_SUPPORT
-    #error "Only use this implementation on top of a proper futex, in all other situations us Baselib_Sempahore_SemaphoreBased.inl.h"
+    #error "Only use this implementation on top of a proper futex, in all other situations us Baselib_CappedSemaphore_SemaphoreBased.inl.h"
 #endif
 
 // Space out to different cache lines.
@@ -22,13 +22,13 @@ typedef struct Baselib_CappedSemaphore
     const int32_t cap;
 } Baselib_CappedSemaphore;
 
-static inline Baselib_CappedSemaphore Baselib_CappedSemaphore_Create(const uint16_t cap)
+BASELIB_INLINE_API Baselib_CappedSemaphore Baselib_CappedSemaphore_Create(const uint16_t cap)
 {
     Baselib_CappedSemaphore semaphore = { 0, {0}, 0, {0}, cap };
     return semaphore;
 }
 
-static inline bool Detail_Baselib_CappedSemaphore_ConsumeWakeup(Baselib_CappedSemaphore* semaphore)
+BASELIB_INLINE_API bool Detail_Baselib_CappedSemaphore_ConsumeWakeup(Baselib_CappedSemaphore* semaphore)
 {
     int32_t previousCount = Baselib_atomic_load_32_relaxed(&semaphore->wakeups);
     while (previousCount > 0)
@@ -39,7 +39,7 @@ static inline bool Detail_Baselib_CappedSemaphore_ConsumeWakeup(Baselib_CappedSe
     return false;
 }
 
-static inline bool Baselib_CappedSemaphore_TryAcquire(Baselib_CappedSemaphore* semaphore)
+BASELIB_INLINE_API bool Baselib_CappedSemaphore_TryAcquire(Baselib_CappedSemaphore* semaphore)
 {
     int32_t previousCount = Baselib_atomic_load_32_relaxed(&semaphore->count);
     while (previousCount > 0)
@@ -50,7 +50,7 @@ static inline bool Baselib_CappedSemaphore_TryAcquire(Baselib_CappedSemaphore* s
     return false;
 }
 
-static inline void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* semaphore)
+BASELIB_INLINE_API void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* semaphore)
 {
     const int32_t previousCount = Baselib_atomic_fetch_add_32_acquire(&semaphore->count, -1);
     if (OPTIMIZER_LIKELY(previousCount > 0))
@@ -62,7 +62,7 @@ static inline void Baselib_CappedSemaphore_Acquire(Baselib_CappedSemaphore* sema
     }
 }
 
-static inline bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemaphore* semaphore, const uint32_t timeoutInMilliseconds)
+BASELIB_INLINE_API bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemaphore* semaphore, const uint32_t timeoutInMilliseconds)
 {
     const int32_t previousCount = Baselib_atomic_fetch_add_32_acquire(&semaphore->count, -1);
     if (OPTIMIZER_LIKELY(previousCount > 0))
@@ -103,7 +103,7 @@ static inline bool Baselib_CappedSemaphore_TryTimedAcquire(Baselib_CappedSemapho
     return true;
 }
 
-static inline uint16_t Baselib_CappedSemaphore_Release(Baselib_CappedSemaphore* semaphore,  const uint16_t _count)
+BASELIB_INLINE_API uint16_t Baselib_CappedSemaphore_Release(Baselib_CappedSemaphore* semaphore,  const uint16_t _count)
 {
     int32_t count = _count;
     int32_t previousCount = Baselib_atomic_load_32_relaxed(&semaphore->count);
@@ -127,7 +127,7 @@ static inline uint16_t Baselib_CappedSemaphore_Release(Baselib_CappedSemaphore* 
     return count;
 }
 
-static inline uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThreads(Baselib_CappedSemaphore* semaphore)
+BASELIB_INLINE_API uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThreads(Baselib_CappedSemaphore* semaphore)
 {
     const int32_t count = Baselib_atomic_exchange_32_release(&semaphore->count, 0);
     if (OPTIMIZER_LIKELY(count >= 0))
@@ -138,7 +138,7 @@ static inline uint32_t Baselib_CappedSemaphore_ResetAndReleaseWaitingThreads(Bas
     return threadsToWakeup;
 }
 
-static inline void Baselib_CappedSemaphore_Free(Baselib_CappedSemaphore* semaphore)
+BASELIB_INLINE_API void Baselib_CappedSemaphore_Free(Baselib_CappedSemaphore* semaphore)
 {
     if (!semaphore)
         return;

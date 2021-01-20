@@ -13,6 +13,9 @@ public class PlayServices : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
+        #if UNITY_IPHONE
+        Social.localUser.Authenticate (ProcessAuthentication);
+        #elif UNITY_ANDROID
         try
         {
             PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
@@ -34,13 +37,33 @@ public class PlayServices : MonoBehaviour
         {
             Debug.Log(exception);
         }
+        #else
+        //do error things here
+        #endif
+    }
+
+    void ProcessAuthentication(bool success) {
+        if(success) {
+            Debug.Log ("Authentication successful");
+            Social.CreateLeaderboard();
+            Social.CreateLeaderboard().id = "AllTimeLeader";
+
+        }
+        else
+        {
+            Debug.Log ("Failed to authenticate");
+        }
     }
 
     public static void AddScoreToLeaderboard()
     {
         if (Social.localUser.authenticated)
         {
-            Social.ReportScore(playerScore, "CgkIqYy2998KEAIQAA", success => { });
+            #if UNITY_IPHONE
+                Social.ReportScore(playerScore, "AllTimeLeader", success => { });
+            #elif UNITY_ANDROID
+                Social.ReportScore(playerScore, "CgkIqYy2998KEAIQAA", success => { });
+            #endif
         }
     }
 

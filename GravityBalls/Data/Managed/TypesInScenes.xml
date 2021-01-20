@@ -8,11 +8,11 @@
 		<type fullname="UnityEngine.Material" preserve="nothing"/>
 		<type fullname="UnityEditor.TimeManager" preserve="nothing"/>
 		<type fullname="UnityEditor.InputManager" preserve="nothing"/>
+		<type fullname="UnityEngine.Shader" preserve="nothing"/>
 		<type fullname="UnityEditor.PhysicsManager" preserve="nothing"/>
 		<type fullname="UnityEngine.TextAsset" preserve="nothing"/>
 		<type fullname="UnityEditor.MonoScript" preserve="nothing"/>
 		<type fullname="UnityEditor.AudioManager" preserve="nothing"/>
-		<type fullname="UnityEngine.Shader" preserve="nothing"/>
 		<type fullname="UnityEditor.Physics2DSettings" preserve="nothing"/>
 		<type fullname="UnityEditor.PlayerSettings" preserve="nothing"/>
 		<type fullname="UnityEditor.UnityConnectSettings" preserve="nothing"/>
@@ -33,12 +33,12 @@
 		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.GameObject" preserve="nothing"/>
 		<type fullname="UnityEngine.SpriteRenderer" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.MonoBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.RectTransform" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.LightmapSettings" preserve="nothing"/>
 		<type fullname="UnityEngine.LightingSettings" preserve="nothing"/>
-		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Rigidbody" preserve="nothing"/>
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider" preserve="nothing"/>
@@ -62,6 +62,7 @@
 		<type fullname="GameManager" preserve="nothing"/>
 		<type fullname="InventoryManager" preserve="nothing"/>
 		<type fullname="MainMenu" preserve="nothing"/>
+		<type fullname="PlayServices" preserve="nothing"/>
 		<type fullname="PlayerData" preserve="nothing"/>
 		<type fullname="UIScaler" preserve="nothing"/>
 		<type fullname="basicItem" preserve="nothing"/>

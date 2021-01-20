@@ -21,27 +21,7 @@ namespace baselib
         {
         public:
             // Expose base class constructors.
-            // Don't use this until PS4 compiler bug is resolved, use full specialization instead
-            // See https://ps4.siedev.net/support/issue/191224
-            // using baselib::Thread::Thread;
-
-            ApplicationThread() = default;
-            template<class FunctionType , class ... Args>
-            ApplicationThread(FunctionType && f, Args && ... args)
-                : baselib::Thread(std::forward<FunctionType>(f), std::forward<Args>(args)...)
-            {
-            }
-            ApplicationThread(const ApplicationThread&) = delete;
-            ApplicationThread& operator=(const ApplicationThread&) = delete;
-            ApplicationThread(ApplicationThread&& other)
-            {
-                *this = std::move(other);
-            }
-            ApplicationThread& operator=(ApplicationThread&& other)
-            {
-                baselib::Thread::operator=(std::move(other));
-                return *this;
-            }
+            using baselib::Thread::Thread;
 
             void Join()
             {

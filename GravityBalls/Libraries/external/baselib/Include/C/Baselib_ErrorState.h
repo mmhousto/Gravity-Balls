@@ -17,8 +17,23 @@ typedef enum Baselib_ErrorState_NativeErrorCodeType_t
 
     // All platform error codes types must be bigger or equal to this value.
     Baselib_ErrorState_NativeErrorCodeType_PlatformDefined,
-} Baselib_ErrorCode_NativeErrorCodeType_t;
+} Baselib_ErrorState_NativeErrorCodeType_t;
 typedef uint8_t Baselib_ErrorState_NativeErrorCodeType;
+
+// Extra information type.
+typedef enum Baselib_ErrorState_ExtraInformationType_t
+{
+    // Extra information is not present.
+    Baselib_ErrorState_ExtraInformationType_None = 0,
+
+    // Extra information is a pointer of const char* type.
+    // Pointer guaranteed to be valid for lifetime of the program (static strings, buffers, etc).
+    Baselib_ErrorState_ExtraInformationType_StaticString,
+
+    // Extra information is a generation counter to ErrorState internal static buffer.
+    Baselib_ErrorState_ExtraInformationType_GenerationCounter,
+} Baselib_ErrorState_ExtraInformationType_t;
+typedef uint8_t Baselib_ErrorState_ExtraInformationType;
 
 // Baselib error information.
 //
@@ -27,17 +42,25 @@ typedef uint8_t Baselib_ErrorState_NativeErrorCodeType;
 // Note that even if an error state is expected, there might be no full argument validation. For details check documentation of individual functions.
 typedef struct Baselib_ErrorState
 {
-    Baselib_ErrorCode                      code;
-    Baselib_ErrorState_NativeErrorCodeType nativeErrorCodeType;
-    uint64_t                               nativeErrorCode;
-    Baselib_SourceLocation                 sourceLocation;
+    Baselib_SourceLocation                  sourceLocation;
+    uint64_t                                nativeErrorCode;
+    uint64_t                                extraInformation;
+    Baselib_ErrorCode                       code;
+    Baselib_ErrorState_NativeErrorCodeType  nativeErrorCodeType;
+    Baselib_ErrorState_ExtraInformationType extraInformationType;
 } Baselib_ErrorState;
 
 // Creates a new error state object that is initialized to Baselib_ErrorCode_Success.
 static inline Baselib_ErrorState Baselib_ErrorState_Create(void)
 {
-    Baselib_ErrorState errorState;
-    errorState.code = Baselib_ErrorCode_Success;
+    Baselib_ErrorState errorState = {
+        { NULL, NULL, 0 },
+        0,
+        0,
+        Baselib_ErrorCode_Success,
+        Baselib_ErrorState_NativeErrorCodeType_None,
+        Baselib_ErrorState_ExtraInformationType_None
+    };
     return errorState;
 }
 
@@ -56,39 +79,33 @@ static inline bool Baselib_ErrorState_ErrorRaised(const Baselib_ErrorState* erro
 }
 
 static inline void Baselib_ErrorState_RaiseError(
-    Baselib_ErrorState*                    errorState,
-    Baselib_ErrorCode                      errorCode,
-    Baselib_ErrorState_NativeErrorCodeType nativeErrorCodeType,
-    uint64_t                               nativeErrorCode,
-    Baselib_SourceLocation                 sourceLocation
+    Baselib_ErrorState*                     errorState,
+    Baselib_ErrorCode                       errorCode,
+    Baselib_ErrorState_NativeErrorCodeType  nativeErrorCodeType,
+    uint64_t                                nativeErrorCode,
+    Baselib_ErrorState_ExtraInformationType extraInformationType,
+    uint64_t                                extraInformation,
+    Baselib_SourceLocation                  sourceLocation
 )
 {
     if (!errorState)
         return;
     if (errorState->code != Baselib_ErrorCode_Success)
         return;
-    errorState->code                = errorCode;
-    errorState->nativeErrorCodeType = nativeErrorCodeType;
-    errorState->nativeErrorCode     = nativeErrorCode;
-    errorState->sourceLocation      = sourceLocation;
+    errorState->sourceLocation       = sourceLocation;
+    errorState->nativeErrorCode      = nativeErrorCode;
+    errorState->extraInformation     = extraInformation;
+    errorState->code                 = errorCode;
+    errorState->nativeErrorCodeType  = nativeErrorCodeType;
+    errorState->extraInformationType = extraInformationType;
 }
 
-// Helper to raise baselib error without native error code
-#define Baselib_ErrorState_RaiseErrorBaselib(errorState, errorCode) \
-    Baselib_ErrorState_RaiseError(                                  \
-        errorState,                                                 \
-        errorCode,                                                  \
-        Baselib_ErrorState_NativeErrorCodeType_None,                \
-        0,                                                          \
-        BASELIB_SOURCELOCATION                                      \
-    )
-
-typedef enum
+typedef enum Baselib_ErrorState_ExplainVerbosity
 {
     // Include error type with platform specific value (if specified).
     Baselib_ErrorState_ExplainVerbosity_ErrorType = 0,
     // Include error type with platform specific value (if specified),
-    // source location (subject to ENABLE_SOURCELOCATION define) and an error explanation if available.
+    // source location (subject to BASELIB_ENABLE_SOURCELOCATION define) and an error explanation if available.
     Baselib_ErrorState_ExplainVerbosity_ErrorType_SourceLocation_Explanation = 1,
 } Baselib_ErrorState_ExplainVerbosity;
 BASELIB_ENUM_ENSURE_ABI_COMPATIBILITY(Baselib_ErrorState_ExplainVerbosity);

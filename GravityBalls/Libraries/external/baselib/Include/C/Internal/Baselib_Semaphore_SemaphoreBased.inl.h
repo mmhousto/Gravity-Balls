@@ -11,17 +11,17 @@
 typedef struct Baselib_Semaphore
 {
     int32_t count;
-    char _cachelineSpacer0[PLATFORM_CACHE_LINE_SIZE - sizeof(int32_t)];
     const Baselib_SystemSemaphore_Handle handle;
+    char _cachelineSpacer0[PLATFORM_CACHE_LINE_SIZE - sizeof(int32_t) - sizeof(Baselib_SystemSemaphore_Handle)];
 } Baselib_Semaphore;
 
-static inline Baselib_Semaphore Baselib_Semaphore_Create(void)
+BASELIB_INLINE_API Baselib_Semaphore Baselib_Semaphore_Create(void)
 {
-    Baselib_Semaphore semaphore = {0, {0}, Baselib_SystemSemaphore_Create()};
+    Baselib_Semaphore semaphore = {0, Baselib_SystemSemaphore_Create(), {0}};
     return semaphore;
 }
 
-static inline bool Baselib_Semaphore_TryAcquire(Baselib_Semaphore* semaphore)
+BASELIB_INLINE_API bool Baselib_Semaphore_TryAcquire(Baselib_Semaphore* semaphore)
 {
     int32_t previousCount = Baselib_atomic_load_32_relaxed(&semaphore->count);
     while (previousCount > 0)
@@ -32,7 +32,7 @@ static inline bool Baselib_Semaphore_TryAcquire(Baselib_Semaphore* semaphore)
     return false;
 }
 
-static inline void Baselib_Semaphore_Acquire(Baselib_Semaphore* semaphore)
+BASELIB_INLINE_API void Baselib_Semaphore_Acquire(Baselib_Semaphore* semaphore)
 {
     const int32_t previousCount = Baselib_atomic_fetch_add_32_acquire(&semaphore->count, -1);
     if (OPTIMIZER_LIKELY(previousCount > 0))
@@ -41,7 +41,7 @@ static inline void Baselib_Semaphore_Acquire(Baselib_Semaphore* semaphore)
     Baselib_SystemSemaphore_Acquire(semaphore->handle);
 }
 
-static inline bool Baselib_Semaphore_TryTimedAcquire(Baselib_Semaphore* semaphore, const uint32_t timeoutInMilliseconds)
+BASELIB_INLINE_API bool Baselib_Semaphore_TryTimedAcquire(Baselib_Semaphore* semaphore, const uint32_t timeoutInMilliseconds)
 {
     const int32_t previousCount = Baselib_atomic_fetch_add_32_acquire(&semaphore->count, -1);
     if (OPTIMIZER_LIKELY(previousCount > 0))
@@ -71,7 +71,7 @@ static inline bool Baselib_Semaphore_TryTimedAcquire(Baselib_Semaphore* semaphor
     return true;
 }
 
-static inline void Baselib_Semaphore_Release(Baselib_Semaphore* semaphore, const uint16_t _count)
+BASELIB_INLINE_API void Baselib_Semaphore_Release(Baselib_Semaphore* semaphore, const uint16_t _count)
 {
     const int32_t count = _count;
     int32_t previousCount = Baselib_atomic_fetch_add_32_release(&semaphore->count, count);
@@ -99,7 +99,7 @@ static inline void Baselib_Semaphore_Release(Baselib_Semaphore* semaphore, const
     }
 }
 
-static inline uint32_t Baselib_Semaphore_ResetAndReleaseWaitingThreads(Baselib_Semaphore* semaphore)
+BASELIB_INLINE_API uint32_t Baselib_Semaphore_ResetAndReleaseWaitingThreads(Baselib_Semaphore* semaphore)
 {
     const int32_t count = Baselib_atomic_exchange_32_release(&semaphore->count, 0);
     if (OPTIMIZER_LIKELY(count >= 0))
@@ -109,7 +109,7 @@ static inline uint32_t Baselib_Semaphore_ResetAndReleaseWaitingThreads(Baselib_S
     return threadsToWakeup;
 }
 
-static inline void Baselib_Semaphore_Free(Baselib_Semaphore* semaphore)
+BASELIB_INLINE_API void Baselib_Semaphore_Free(Baselib_Semaphore* semaphore)
 {
     if (!semaphore)
         return;

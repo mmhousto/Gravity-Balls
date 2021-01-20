@@ -29,7 +29,8 @@ namespace baselib
             EventSemaphore(EventSemaphore&& other) = delete;
             EventSemaphore& operator=(EventSemaphore&& other) = delete;
 
-            // Creates an event semaphore synchronization primitive.  Initial state of event is unset.
+            // Creates an event semaphore synchronization primitive. Initial state of event is unset.
+            //
             // If there are not enough system resources to create a semaphore, process abort is triggered.
             EventSemaphore() : m_EventSemaphoreData(Baselib_EventSemaphore_Create())
             {
@@ -42,6 +43,17 @@ namespace baselib
                 Baselib_EventSemaphore_Free(&m_EventSemaphoreData);
             }
 
+            // Try to acquire semaphore.
+            //
+            // When semaphore is acquired this function is guaranteed to emit an acquire barrier.
+            //
+            // \returns true if event is set, false other wise.
+            COMPILER_WARN_UNUSED_RESULT
+            inline bool TryAcquire()
+            {
+                return Baselib_EventSemaphore_TryAcquire(&m_EventSemaphoreData);
+            }
+
             // Acquire semaphore.
             //
             // This function is guaranteed to emit an acquire barrier.
@@ -52,54 +64,30 @@ namespace baselib
 
             // Try to acquire semaphore.
             //
-            // When semaphore is acquired this function is guaranteed to emit an acquire barrier.
-            //
-            // Return: true if event is set, false other wise.
-            COMPILER_WARN_UNUSED_RESULT
-            inline bool TryAcquire()
-            {
-                return Baselib_EventSemaphore_TryAcquire(&m_EventSemaphoreData);
-            }
-
-            // Try to acquire semaphore.
-            // If event is set this function return true, otherwise the thread will wait for event to be set or release to be called.
+            // If event is set this function return true, otherwise the thread will wait for event to be set or for release to be called.
             //
             // When semaphore is acquired this function is guaranteed to emit an acquire barrier.
             //
-            // TryAcquire with a zero timeout differs from TryAcquire() in that TryAcquire() is guaranteed to be a user space operation
-            // while TryAcquire with zero timeout may enter the kernel and cause a context switch.
+            // Acquire with a zero timeout differs from TryAcquire in that TryAcquire is guaranteed to be a user space operation
+            // while Acquire may enter the kernel and cause a context switch.
             //
             // Timeout passed to this function may be subject to system clock resolution.
             // If the system clock has a resolution of e.g. 16ms that means this function may exit with a timeout error 16ms earlier than originally scheduled.
             //
-            // Return:  true if semaphore was acquired.
+            // \returns     true if semaphore was acquired.
             COMPILER_WARN_UNUSED_RESULT
             inline bool TryTimedAcquire(const timeout_ms timeoutInMilliseconds)
             {
                 return Baselib_EventSemaphore_TryTimedAcquire(&m_EventSemaphoreData, timeoutInMilliseconds.count());
             }
 
-            // Release up to `count` number of threads.
-            //
-            // If there are threads waiting, then up to `count` number of threads are released without changing the state of the event.
-            // I.e if the event was unset it will remain unset.
-            //
-            // When threads are released this function is guaranteed to emit a release barrier.
-            //
-            // Return:  number of woken threads.
-            inline uint16_t Release(const uint16_t count)
-            {
-                return Baselib_EventSemaphore_Release(&m_EventSemaphoreData, count);
-            }
-
-            // Set event
+            // Sets the event
             //
             // Setting the event will cause all waiting threads to wakeup. And will let all future acquiring threads through until Baselib_EventSemaphore_Reset is called.
+            // It is guaranteed that any thread waiting previously on the EventSemaphore will be woken up, even if the semaphore is immediately reset. (no lock stealing)
             //
             // Guaranteed to emit a release barrier.
-            //
-            // Return:  number of woken threads.
-            inline uint16_t Set()
+            inline void Set()
             {
                 return Baselib_EventSemaphore_Set(&m_EventSemaphoreData);
             }
@@ -107,11 +95,23 @@ namespace baselib
             // Reset event
             //
             // Resetting the event will cause all future acquiring threads to enter a wait state.
+            // Has no effect if the EventSemaphore is already in a reset state.
             //
             // Guaranteed to emit a release barrier.
             inline void Reset()
             {
                 return Baselib_EventSemaphore_Reset(&m_EventSemaphoreData);
+            }
+
+            // Reset event and release all waiting threads
+            //
+            // Resetting the event will cause all future acquiring threads to enter a wait state.
+            // If there were any threads waiting (i.e. the EventSemaphore was already in a release state) they will be released.
+            //
+            // Guaranteed to emit a release barrier.
+            inline void ResetAndRelease()
+            {
+                return Baselib_EventSemaphore_ResetAndReleaseWaitingThreads(&m_EventSemaphoreData);
             }
 
         private:

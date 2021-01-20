@@ -7,8 +7,12 @@
     #define PLATFORM_SWITCH 1
 #elif defined __ORBIS__
     #define PLATFORM_PS4 1
+#elif defined __PROSPERO__
+    #define PLATFORM_PS5 1
 #elif defined __EMSCRIPTEN__
     #define PLATFORM_WEBGL 1
+#elif defined __wasi__
+    #define PLATFORM_WASI 1
 #elif defined(__APPLE__)
     #include <TargetConditionals.h>
     #if TARGET_OS_IOS
@@ -24,7 +28,7 @@
     #if defined(LUMIN)
         #define PLATFORM_LUMIN 1
     #elif defined(GGP)
-        #define PLATFORM_GGP 1
+        #define PLATFORM_STADIA 1
     #elif defined(ANDROID) || defined(__ANDROID__)
         #define PLATFORM_ANDROID 1
     #else

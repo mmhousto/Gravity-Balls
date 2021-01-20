@@ -6,21 +6,15 @@
 #endif
 
 
-
 #include "codegen/il2cpp-codegen-metadata.h"
 
 
 
 
 
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
-extern const Il2CppCodeGenModule g_UnityEngineCodeGenModule;
-const Il2CppCodeGenModule g_UnityEngineCodeGenModule = 
+extern const CustomAttributesCacheGenerator g_UnityEngine_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_CodeGenModule;
+const Il2CppCodeGenModule g_UnityEngine_CodeGenModule = 
 {
 	"UnityEngine.dll",
 	0,
@@ -31,6 +25,11 @@ const Il2CppCodeGenModule g_UnityEngineCodeGenModule =
 	0,
 	NULL,
 	0,
+	NULL,
+	NULL,
+	g_UnityEngine_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 };

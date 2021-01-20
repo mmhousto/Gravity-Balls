@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../C/Baselib_Memory.h"
+#include "../C/Baselib_Atomic_LLSC.h"
 #include "mpmc_node.h"
 
 namespace baselib
@@ -42,13 +43,13 @@ namespace baselib
         //  the information yet. Therefore the consumer threads calls will yield null until that particular producer thread wakes back up.
         //
         template<typename T>
-        class alignas(PLATFORM_CACHE_LINE_SIZE)mpmc_node_queue
+        class alignas(sizeof(intptr_t) * 2)mpmc_node_queue
         {
         public:
             // Create a new queue instance.
             mpmc_node_queue()
             {
-                m_Front.obj.ptr = 0;
+                m_FrontIntPtr = 1;
                 m_Front.obj.idx = 1;
                 m_Back.obj = 0;
                 atomic_thread_fence(memory_order_seq_cst);
@@ -72,8 +73,15 @@ namespace baselib
                 {
                     // store the new front (reload) and add one which will put idx back to an
                     // even number, releasing the consumer threads (ptr is always null and idx odd at this point).
-                    m_FrontPair.ptr.store(node, memory_order_relaxed);
-                    m_FrontPair.idx.fetch_add(1, memory_order_release);
+                    if (PLATFORM_LLSC_NATIVE_SUPPORT)
+                    {
+                        m_FrontPair.ptr.store(node, memory_order_release);
+                    }
+                    else
+                    {
+                        m_FrontPair.ptr.store(node, memory_order_relaxed);
+                        m_FrontPair.idx.fetch_add(1, memory_order_release);
+                    }
                 }
             }
 
@@ -87,8 +95,15 @@ namespace baselib
                 }
                 else
                 {
-                    m_FrontPair.ptr.store(first_node, memory_order_relaxed);
-                    m_FrontPair.idx.fetch_add(1, memory_order_release);
+                    if (PLATFORM_LLSC_NATIVE_SUPPORT)
+                    {
+                        m_FrontPair.ptr.store(first_node, memory_order_release);
+                    }
+                    else
+                    {
+                        m_FrontPair.ptr.store(first_node, memory_order_relaxed);
+                        m_FrontPair.idx.fetch_add(1, memory_order_release);
+                    }
                 }
             }
 
@@ -101,49 +116,91 @@ namespace baselib
             T* try_pop_front()
             {
                 T* node, *next;
-                SequencedFrontPtr front, value;
-
-                // Get front node. The DCAS while operation will update front on retry
-                front = m_Front.load(memory_order_acquire);
-                do
+                if (PLATFORM_LLSC_NATIVE_SUPPORT)
                 {
-                    // If front is zero, queue is empty. If counter is odd, queue back is being reloaded. Both should return 0.
-                    if ((front.idx & 1) | (!front.ptr))
-                        return 0;
-
-                    node = front.ptr;
-                    next = static_cast<T*>(node->next.load(memory_order_relaxed));
-                    if (!next)
+                    intptr_t value;
+                    Baselib_atomic_llsc_ptr_acquire_release_v(&m_Front, &node, &next,
                     {
-                        // - filters obsolete nodes
-                        // - Exclusive access (re-entrant block)
-                        value.ptr = front.ptr;
-                        value.idx = front.idx | 1;
-                        if (!m_Front.compare_exchange_strong(front, value, memory_order_acquire, memory_order_relaxed))
-                            return 0;
-
-                        // - filters incomplete nodes
-                        // - check if node is back == retrigger new back
-                        value.ptr = node;
-                        if (!m_Back.compare_exchange_strong(value.ptr, 0, memory_order_acquire, memory_order_relaxed))
+                        // If front bit 0 is set, queue back is being reloaded or queue is empty.
+                        value = reinterpret_cast<intptr_t>(node);
+                        if (value & 1)
                         {
-                            // Back progressed or node is incomplete, restore access and return 0
-                            m_FrontPair.idx.fetch_and(~1, memory_order_release);
+                            Baselib_atomic_llsc_break();
                             return 0;
                         }
 
-                        // Success, back == front node, front was set to zero above and index / access is restored by producers, so we return the back node.
-                        // Version check invalidates any obsolete nodes in still in process in other threads.
-                        return node;
+                        // Fetch next node. If zero, node is the current backnode. LLSC Monitor is internally cleared by subsequent cmpxchg.
+                        if (!(next = static_cast<T*>(node->next.obj)))
+                            goto BackNode;
+                    });
+                    return node;
+
+                BackNode:
+                    // - filters obsolete nodes
+                    // - Exclusive access (re-entrant block)
+                    T * front = node;
+                    if (!m_FrontPair.ptr.compare_exchange_strong(front, reinterpret_cast<T*>(value | 1), memory_order_acquire, memory_order_relaxed))
+                        return 0;
+
+                    // - filters incomplete nodes
+                    // - check if node is back == retrigger new back
+                    if (!m_Back.compare_exchange_strong(front, 0, memory_order_acquire, memory_order_relaxed))
+                    {
+                        // Back progressed or node is incomplete, restore access and return 0
+                        m_FrontIntPtr.fetch_and(~1, memory_order_release);
+                        return 0;
                     }
 
-                    // On success, replace the current with the next node and return node. On fail, retry with updated front.
-                    value.ptr = next;
-                    value.idx = front.idx + 2;
+                    // Success, back == front node, back was set to zero above and index / access is restored by producers, so we return the back node.
+                    // LLSC monitors invalidates any obsolete nodes still in process in other threads.
+                    return node;
                 }
-                while (!m_Front.compare_exchange_strong(front, value, memory_order_acquire, memory_order_relaxed));
+                else
+                {
+                    SequencedFrontPtr front, value;
 
-                return node;
+                    // Get front node. The DCAS while operation will update front on retry
+                    front = m_Front.load(memory_order_acquire);
+                    do
+                    {
+                        // If front idx bit 0 is set, queue back is being reloaded or queue is empty.
+                        if (front.idx & 1)
+                            return 0;
+
+                        // Fetch next node. If zero, node is the current backnode
+                        node = front.ptr;
+                        if (!(next = static_cast<T*>(node->next.load(memory_order_relaxed))))
+                            goto BackNodeDCAS;
+
+                        // On success, replace the current with the next node and return node. On fail, retry with updated front.
+                        value.ptr = next;
+                        value.idx = front.idx + 2;
+                    }
+                    while (!m_Front.compare_exchange_strong(front, value, memory_order_acquire, memory_order_relaxed));
+                    return node;
+
+                BackNodeDCAS:
+                    // - filters obsolete nodes
+                    // - Exclusive access (re-entrant block)
+                    value.ptr = front.ptr;
+                    value.idx = front.idx | 1;
+                    if (!m_Front.compare_exchange_strong(front, value, memory_order_acquire, memory_order_relaxed))
+                        return 0;
+
+                    // - filters incomplete nodes
+                    // - check if node is back == retrigger new back
+                    value.ptr = node;
+                    if (!m_Back.compare_exchange_strong(value.ptr, 0, memory_order_acquire, memory_order_relaxed))
+                    {
+                        // Back progressed or node is incomplete, restore access and return 0
+                        m_FrontPair.idx.fetch_and(~1, memory_order_release);
+                        return 0;
+                    }
+
+                    // Success, back == front node, back was set to zero above and index / access is restored by producers, so we return the back node.
+                    // Version check invalidates any obsolete nodes in still in process in other threads.
+                    return node;
+                }
             }
 
         private:
@@ -159,13 +216,17 @@ namespace baselib
                 atomic<intptr_t> idx;
             } FrontPair;
 
+            // Space out atomic members to individual cache lines. Required for native LLSC operations on some architectures, others to avoid false sharing
+            char _cachelineSpacer0[PLATFORM_CACHE_LINE_SIZE];
             union
             {
+                atomic<intptr_t> m_FrontIntPtr;
                 FrontPair m_FrontPair;
                 atomic<SequencedFrontPtr> m_Front;
             };
-
-            alignas(PLATFORM_CACHE_LINE_SIZE) atomic<T*> m_Back;
+            char _cachelineSpacer1[PLATFORM_CACHE_LINE_SIZE - sizeof(SequencedFrontPtr)];
+            atomic<T*> m_Back;
+            char _cachelineSpacer2[PLATFORM_CACHE_LINE_SIZE - sizeof(T*)];
 
             // FrontPair is atomic reflections of the SequencedFront fields used for CAS vs DCAS ops. They must match in size and layout.
             // Do note that we can not check layout (offsetof) as the template class is incomplete!

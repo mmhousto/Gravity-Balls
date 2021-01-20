@@ -2,7 +2,6 @@
 
 #include "CVTextureCache.h"
 #include "CMVideoSampling.h"
-#include "GlesHelper.h"
 
 #import <AVFoundation/AVFoundation.h>
 

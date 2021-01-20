@@ -17,7 +17,7 @@ BASELIB_C_INTERFACE
 // For the not so easy cases.
 // * Use Baselib_WakeupFallbackStrategy_OneByOne when wake count is low, or significantly lower than the number of waiting threads.
 // * Use Baselib_WakeupFallbackStrategy_All if wake count is high.
-typedef enum
+typedef enum Baselib_WakeupFallbackStrategy
 {
     // Do one syscall for each waiting thread or notification.
     Baselib_WakeupFallbackStrategy_OneByOne,
