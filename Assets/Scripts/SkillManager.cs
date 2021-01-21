@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SkillManager : MonoBehaviour
 {
-	public static int lives, coins, newCoins;
+	public static int lives = 1, coins, newCoins;
 	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
     private bool isSettingsActive = false;
     // Start is called before the first frame update
@@ -50,13 +50,15 @@ public class SkillManager : MonoBehaviour
     }
 
     public void loadMenu(){
+        Destroy(GameObject.Find("PlayerData"));
         SceneManager.LoadScene(0);
     }
     // Update is called once per frame
     void Update()
     {
-        if(lives == 0){
+        if(lives < 1){
             PlayerPrefs.SetInt("CoinsC", coins);
+            PlayServices.AddScoreToSkillLeaderboard();
         	pauseBtn.gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
             if(isSettingsActive == true) {

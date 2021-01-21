@@ -67,6 +67,18 @@ public class PlayServices : MonoBehaviour
         }
     }
 
+    public static void AddScoreToSkillLeaderboard()
+    {
+        if (Social.localUser.authenticated)
+        {
+            #if UNITY_IPHONE
+                Social.ReportScore(playerScore, "SkillLeader", success => { });
+            #elif UNITY_ANDROID
+                Social.ReportScore(playerScore, "", success => { });
+            #endif
+        }
+    }
+
     public void ShowLeaderboard()
     {
         if (Social.localUser.authenticated)

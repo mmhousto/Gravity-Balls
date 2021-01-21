@@ -10,6 +10,7 @@ public class DisplayAd : MonoBehaviour {
 	public string myVideoPlacement = "gameOver";
 	public bool adStarted;
 	private bool testMode = true;
+    public GameObject gameOver;
 
     // Start is called before the first frame update
     void Start() {
@@ -22,7 +23,7 @@ public class DisplayAd : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Advertisement.isInitialized && Advertisement.IsReady(myVideoPlacement) && !adStarted && GameManager.lives == 0) {
+        if (Advertisement.isInitialized && Advertisement.IsReady(myVideoPlacement) && !adStarted && GameManager.lives == 0 && gameOver.activeSelf == true) {
         	Advertisement.Show(myVideoPlacement);
         	adStarted = true;
         }
