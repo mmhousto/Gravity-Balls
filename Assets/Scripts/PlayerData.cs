@@ -7,7 +7,8 @@ using TMPro;
 public class PlayerData : MonoBehaviour
 {
     private static string paddle;
-	private static int hiScore, coins, paddleNum;
+	private static int hiScore, skillHiScore, coins, paddleNum;
+    public static int plays;
 	private string paddlePath;
     private int ownPaddle1 = 1;
     private int ownPaddle2 = 0;
@@ -19,7 +20,9 @@ public class PlayerData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        plays = PlayerPrefs.GetInt("Plays", 0);
         hiScore = PlayerPrefs.GetInt("HighScore", 0);
+        skillHiScore = PlayerPrefs.GetInt("SkillHighScore", 0);
         coins = PlayerPrefs.GetInt("Coins", 0);
         ownPaddle1 = PlayerPrefs.GetInt("ownPaddle1", 1);
         ownPaddle2 = PlayerPrefs.GetInt("ownPaddle2", 0);
@@ -35,7 +38,9 @@ public class PlayerData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        plays = PlayerPrefs.GetInt("Plays", 0);
         hiScore = PlayerPrefs.GetInt("HighScore", 0);
+        skillHiScore = PlayerPrefs.GetInt("SkillHighScore", 0);
         coins = PlayerPrefs.GetInt("Coins", 0);
         ownPaddle1 = PlayerPrefs.GetInt("ownPaddle1", 1);
         ownPaddle2 = PlayerPrefs.GetInt("ownPaddle2", 0);
@@ -48,6 +53,11 @@ public class PlayerData : MonoBehaviour
         musicOn = PlayerPrefs.GetInt("music", 1);
     }
 
+    public static void addPlay(){
+        plays += 1;
+        PlayerPrefs.SetInt("Plays", plays);
+    }
+
     public static int getMusicOn() {
         return musicOn;
     }
@@ -58,6 +68,10 @@ public class PlayerData : MonoBehaviour
 
     public static int getHiScore(){
         return hiScore;
+    }
+
+    public static int getSkillHiScore(){
+        return skillHiScore;
     }
 
     public static int getcoins(){

@@ -74,7 +74,7 @@ public class PlayServices : MonoBehaviour
             #if UNITY_IPHONE
                 Social.ReportScore(playerScore, "SkillLeader", success => { });
             #elif UNITY_ANDROID
-                Social.ReportScore(playerScore, "", success => { });
+                Social.ReportScore(playerScore, "CgkIqYy2998KEAIQAg", success => { });
             #endif
         }
     }

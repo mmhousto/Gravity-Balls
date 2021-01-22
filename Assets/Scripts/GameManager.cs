@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerData.addPlay();
+        Debug.Log(PlayerData.plays);
         Time.timeScale = 1;
         lives = 5;
         PlayerPrefs.SetInt("CoinsC", 0);

@@ -23,7 +23,7 @@ public class DisplayAd : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Advertisement.isInitialized && Advertisement.IsReady(myVideoPlacement) && !adStarted && GameManager.lives == 0 && gameOver.activeSelf == true) {
+        if (Advertisement.isInitialized && Advertisement.IsReady(myVideoPlacement) && !adStarted && (GameManager.lives == 0 || SkillManager.lives == 0) && gameOver.activeSelf == true && (PlayerData.plays % 3 == 0)) {
         	Advertisement.Show(myVideoPlacement);
         	adStarted = true;
         }

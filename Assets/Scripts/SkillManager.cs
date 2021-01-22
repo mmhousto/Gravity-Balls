@@ -11,6 +11,7 @@ public class SkillManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerData.addPlay();
         Time.timeScale = 1;
         lives = 1;
         PlayerPrefs.SetInt("CoinsC", 0);
