@@ -8,7 +8,7 @@ public class paddle : MonoBehaviour
 	public bool isPaddle1;
     private SpriteRenderer spriteRenderer;
     public Sprite basic, dark, pro;
-	public float speed = 20f;
+	public float speed = 10f;
     private Vector3 touchPosition, tP2;
     private Rigidbody rb;
     private Vector3 direction;

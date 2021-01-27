@@ -342,7 +342,7 @@ MonoBehaviour:
   basic: {fileID: 21300000, guid: b4615ebf014ec4a779e3ac547ee7abcd, type: 3}
   dark: {fileID: 21300000, guid: 4683cc8ca0e994f8e9340abbee5c8387, type: 3}
   pro: {fileID: 21300000, guid: 23e8ad5750c2e407f8e5d294ad270a8c, type: 3}
-  speed: 5
+  speed: 10
   brickWall: {fileID: 1952172614}
   paddleP1: {fileID: 10741994}
   coinCollect: {fileID: 10741998}
