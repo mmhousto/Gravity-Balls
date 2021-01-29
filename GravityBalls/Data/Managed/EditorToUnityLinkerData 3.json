@@ -1,4 +1,5 @@
 {
+    "serializedTypes": [],
     "typesInScenes": [
         {
             "managedAssemblyName": "",
@@ -21,7 +22,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -66,7 +68,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -85,17 +88,28 @@
         },
         {
             "managedAssemblyName": "",
-            "nativeClass": "ResourceManager",
+            "nativeClass": "RuntimeInitializeOnLoadManager",
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": []
         },
         {
             "managedAssemblyName": "",
-            "nativeClass": "RuntimeInitializeOnLoadManager",
+            "nativeClass": "ResourceManager",
             "fullManagedTypeName": "",
             "moduleName": "Core",
             "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "Shader",
+            "fullManagedTypeName": "UnityEngine.Shader",
+            "moduleName": "Core",
+            "usedInScenes": [
+                "Assets/Scenes/MainScreen.unity",
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
+            ]
         },
         {
             "managedAssemblyName": "",
@@ -111,7 +125,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -128,7 +143,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -138,7 +154,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -148,7 +165,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -167,16 +185,6 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "Shader",
-            "fullManagedTypeName": "UnityEngine.Shader",
-            "moduleName": "Core",
-            "usedInScenes": [
-                "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
-            ]
-        },
-        {
-            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Physics2DSettings",
             "fullManagedTypeName": "UnityEditor.Physics2DSettings",
             "moduleName": "Physics2D",
@@ -189,7 +197,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -227,7 +236,8 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -237,7 +247,8 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -247,7 +258,8 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -257,7 +269,8 @@
             "moduleName": "UI",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -276,7 +289,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -286,7 +300,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -296,7 +311,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -306,7 +322,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -316,7 +333,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -326,7 +344,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -336,7 +355,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -346,7 +366,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -356,7 +377,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -366,7 +388,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -376,7 +399,19 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioClip",
+            "fullManagedTypeName": "UnityEngine.AudioClip",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Scenes/MainScreen.unity",
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -386,7 +421,8 @@
             "moduleName": "AI",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -396,7 +432,8 @@
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -406,7 +443,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -416,7 +454,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -426,7 +465,8 @@
             "moduleName": "UI",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -436,7 +476,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -446,7 +487,8 @@
             "moduleName": "Core",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -460,21 +502,12 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "AudioClip",
-            "fullManagedTypeName": "UnityEngine.AudioClip",
-            "moduleName": "Audio",
-            "usedInScenes": [
-                "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity"
-            ]
-        },
-        {
-            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "Rigidbody",
             "fullManagedTypeName": "UnityEngine.Rigidbody",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -483,7 +516,8 @@
             "fullManagedTypeName": "UnityEngine.Collider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -492,7 +526,8 @@
             "fullManagedTypeName": "UnityEngine.BoxCollider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -501,7 +536,8 @@
             "fullManagedTypeName": "UnityEngine.SphereCollider",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -510,7 +546,8 @@
             "fullManagedTypeName": "UnityEngine.ParticleSystemRenderer",
             "moduleName": "ParticleSystem",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -519,7 +556,8 @@
             "fullManagedTypeName": "UnityEngine.ParticleSystem",
             "moduleName": "ParticleSystem",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -528,7 +566,8 @@
             "fullManagedTypeName": "UnityEngine.MeshRenderer",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -537,7 +576,8 @@
             "fullManagedTypeName": "UnityEngine.Light",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -546,7 +586,8 @@
             "fullManagedTypeName": "UnityEngine.Mesh",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -555,7 +596,8 @@
             "fullManagedTypeName": "UnityEngine.PhysicMaterial",
             "moduleName": "Physics",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -564,7 +606,8 @@
             "fullManagedTypeName": "UnityEngine.MeshFilter",
             "moduleName": "Core",
             "usedInScenes": [
-                "Assets/Scenes/gameSingle.unity"
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
             ]
         },
         {
@@ -626,6 +669,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "PlayServices",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "PlayerData",
             "moduleName": "",
             "usedInScenes": []
@@ -633,7 +683,28 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "SkillManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "SkillSpawner",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "UIScaler",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UrlOpener",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -879,12 +950,6 @@
         {
             "name": "AnnotationManager",
             "module": "Core",
-            "baseName": "Object",
-            "baseModule": "Core"
-        },
-        {
-            "name": "AssetDatabaseV1",
-            "module": "AssetDatabase",
             "baseName": "Object",
             "baseModule": "Core"
         },
@@ -1651,12 +1716,6 @@
             "baseModule": "Core"
         },
         {
-            "name": "WorldAnchor",
-            "module": "VR",
-            "baseName": "Component",
-            "baseModule": "Core"
-        },
-        {
             "name": "GameObject",
             "module": "Core",
             "baseName": "EditorExtension",
@@ -1742,7 +1801,7 @@
         },
         {
             "name": "ComputeShaderImporter",
-            "module": "Core",
+            "module": "Editor",
             "baseName": "AssetImporter",
             "baseModule": "Editor"
         },
@@ -1814,7 +1873,7 @@
         },
         {
             "name": "PackageManifestImporter",
-            "module": "Editor",
+            "module": "PackageManagerUI",
             "baseName": "AssetImporter",
             "baseModule": "Editor"
         },
@@ -1831,6 +1890,12 @@
             "baseModule": "Editor"
         },
         {
+            "name": "PreviewImporter",
+            "module": "Editor",
+            "baseName": "AssetImporter",
+            "baseModule": "Editor"
+        },
+        {
             "name": "RayTracingShaderImporter",
             "module": "Core",
             "baseName": "AssetImporter",
@@ -1839,6 +1904,12 @@
         {
             "name": "ReferencesArtifactGenerator",
             "module": "Editor",
+            "baseName": "AssetImporter",
+            "baseModule": "Editor"
+        },
+        {
+            "name": "RuleSetFileImporter",
+            "module": "Core",
             "baseName": "AssetImporter",
             "baseModule": "Editor"
         },
@@ -2282,7 +2353,13 @@
         },
         {
             "name": "PackageManifest",
-            "module": "Editor",
+            "module": "PackageManagerUI",
+            "baseName": "TextAsset",
+            "baseModule": "Core"
+        },
+        {
+            "name": "RuleSetFileAsset",
+            "module": "Core",
             "baseName": "TextAsset",
             "baseModule": "Core"
         },

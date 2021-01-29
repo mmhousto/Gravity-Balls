@@ -863,20 +863,6 @@
             "usedInScenes": []
         },
         {
-            "managedAssemblyName": "UnityEngine.Advertisements.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Advertisements.Placeholder",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
-            "managedAssemblyName": "UnityEngine.Advertisements.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder",
-            "moduleName": "",
-            "usedInScenes": []
-        },
-        {
             "managedAssemblyName": "UnityEngine.UI.dll",
             "nativeClass": "",
             "fullManagedTypeName": "UnityEngine.EventSystems.EventSystem",

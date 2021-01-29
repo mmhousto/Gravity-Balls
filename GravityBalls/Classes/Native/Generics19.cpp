@@ -446,8 +446,6 @@ struct IDictionaryEnumerator_t8A89A8564EADF5FFB8494092DFED7D7C063F1501;
 struct IEnumerator_t5956F3AFB7ECF1117E3BC5890E7FC7B7F7A04105;
 // System.InvalidOperationException
 struct InvalidOperationException_t10D3EE59AD28EC641ACEE05BCA4271A527E5ECAB;
-// System.Collections.Generic.KeyNotFoundException
-struct KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952;
 // System.Threading.ManualResetEventSlim
 struct ManualResetEventSlim_tDEDF52539E364C425BA581F3AAF42843AFAD366E;
 // UnityEngine.Material
@@ -514,7 +512,6 @@ IL2CPP_EXTERN_C RuntimeClass* IEnumerable_t47A618747A1BB2A868710316F737209484916
 IL2CPP_EXTERN_C RuntimeClass* Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidCastException_tD99F9FF94C3859C78E90F68C2F77A1558BCAF463_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidOperationException_t10D3EE59AD28EC641ACEE05BCA4271A527E5ECAB_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* OperationCanceledException_tA90317406FAE39FB4E2C6AA84E12135E1D56B6FB_il2cpp_TypeInfo_var;
@@ -588,8 +585,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_System_Collections_ICollection
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_System_Collections_ICollection_CopyTo_mEF2558D436E4E2A1321A00862A4A1C8B87D6A2FC_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_System_Collections_IDictionary_set_Item_m1110A190602850E778779D1BAE20FB78FA0668E5_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_System_Collections_IDictionary_set_Item_mD5360D5C2352519B61A1522C63E326CC62E981D9_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_get_Item_m1D43F328440CAEB10A195CD40E3C8CBB0B45A201_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_get_Item_m92CA5580E1988F09C0804235707C6BC3A1D55E65_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_set_Capacity_m26FA5958A11E7EF60913AD382D4903ACB2F17F41_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_set_Capacity_m43E6F61B145FB029236496F80A8F7CFC2478838E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* SortedList_2_set_Item_m3EA2F47D25047DC10881EC20B3914B12EAF1E3AB_RuntimeMethod_var;
@@ -7772,15 +7767,6 @@ public:
 };
 
 
-// System.Collections.Generic.KeyNotFoundException
-struct  KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952  : public SystemException_tC551B4D6EE3772B5F32C71EE8C719F4B43ECCC62
-{
-public:
-
-public:
-};
-
-
 // System.OperationCanceledException
 struct  OperationCanceledException_tA90317406FAE39FB4E2C6AA84E12135E1D56B6FB  : public SystemException_tC551B4D6EE3772B5F32C71EE8C719F4B43ECCC62
 {
@@ -10251,8 +10237,6 @@ inline void Enumerator__ctor_m756BB38DF06052D15A282101408725A630DE8B86 (Enumerat
 {
 	((  void (*) (Enumerator_t24E7A6A50544E0FBAF62A9ADBBC8734923EB8A0E *, SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E *, int32_t, const RuntimeMethod*))Enumerator__ctor_m756BB38DF06052D15A282101408725A630DE8B86_gshared)(__this, ___sortedList0, ___getEnumeratorRetType1, method);
 }
-// System.Void System.Collections.Generic.KeyNotFoundException::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyNotFoundException__ctor_mDC226A7A5A3DA52C5886236F32F19F36E6B1C1C1 (KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952 * __this, const RuntimeMethod* method);
 // System.String SR::Format(System.String,System.Object,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* SR_Format_m60020D8FC246DAA800C991565515D51118F2B16A (String_t* ___resourceFormat0, RuntimeObject * ___p11, RuntimeObject * ___p22, const RuntimeMethod* method);
 // !0 System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>::get_Key()
@@ -16228,38 +16212,6 @@ IL_0023:
 		return (int32_t)L_10;
 	}
 }
-// TValue System.Collections.Generic.SortedList`2<System.Int32,System.Int32Enum>::get_Item(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SortedList_2_get_Item_m92CA5580E1988F09C0804235707C6BC3A1D55E65_gshared (SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E * __this, int32_t ___key0, const RuntimeMethod* method)
-{
-	int32_t V_0 = 0;
-	{
-		int32_t L_0 = ___key0;
-		NullCheck((SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E *)__this);
-		int32_t L_1;
-		L_1 = ((  int32_t (*) (SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E *, int32_t, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 10)->methodPointer)((SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E *)__this, (int32_t)L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 10));
-		V_0 = (int32_t)L_1;
-		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) < ((int32_t)0)))
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		Int32EnumU5BU5D_t9327F857579EE00EB201E1913599094BF837D3CD* L_3 = (Int32EnumU5BU5D_t9327F857579EE00EB201E1913599094BF837D3CD*)__this->get_values_1();
-		int32_t L_4 = V_0;
-		NullCheck(L_3);
-		int32_t L_5 = L_4;
-		int32_t L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
-		return (int32_t)L_6;
-	}
-
-IL_0019:
-	{
-		KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952 * L_7 = (KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952_il2cpp_TypeInfo_var)));
-		KeyNotFoundException__ctor_mDC226A7A5A3DA52C5886236F32F19F36E6B1C1C1(L_7, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&SortedList_2_get_Item_m92CA5580E1988F09C0804235707C6BC3A1D55E65_RuntimeMethod_var)));
-	}
-}
 // System.Void System.Collections.Generic.SortedList`2<System.Int32,System.Int32Enum>::set_Item(TKey,TValue)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SortedList_2_set_Item_m6D6B4CE24BACCFD47697D821E74851D3ECFCCA45_gshared (SortedList_2_t01BCA08D70CC638EA5D1952F7414A5D57DC1D32E * __this, int32_t ___key0, int32_t ___value1, const RuntimeMethod* method)
 {
@@ -17708,38 +17660,6 @@ IL_0023:
 		int32_t L_9 = L_8;
 		RuntimeObject * L_10 = (L_7)->GetAt(static_cast<il2cpp_array_size_t>(L_9));
 		return (RuntimeObject *)L_10;
-	}
-}
-// TValue System.Collections.Generic.SortedList`2<System.Object,System.Object>::get_Item(TKey)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * SortedList_2_get_Item_m1D43F328440CAEB10A195CD40E3C8CBB0B45A201_gshared (SortedList_2_t24779EF2FE8C87E99D9FE00F3E49EB1BD886BDF0 * __this, RuntimeObject * ___key0, const RuntimeMethod* method)
-{
-	int32_t V_0 = 0;
-	{
-		RuntimeObject * L_0 = ___key0;
-		NullCheck((SortedList_2_t24779EF2FE8C87E99D9FE00F3E49EB1BD886BDF0 *)__this);
-		int32_t L_1;
-		L_1 = ((  int32_t (*) (SortedList_2_t24779EF2FE8C87E99D9FE00F3E49EB1BD886BDF0 *, RuntimeObject *, const RuntimeMethod*))IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 10)->methodPointer)((SortedList_2_t24779EF2FE8C87E99D9FE00F3E49EB1BD886BDF0 *)__this, (RuntimeObject *)L_0, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 10));
-		V_0 = (int32_t)L_1;
-		int32_t L_2 = V_0;
-		if ((((int32_t)L_2) < ((int32_t)0)))
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE* L_3 = (ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE*)__this->get_values_1();
-		int32_t L_4 = V_0;
-		NullCheck(L_3);
-		int32_t L_5 = L_4;
-		RuntimeObject * L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
-		return (RuntimeObject *)L_6;
-	}
-
-IL_0019:
-	{
-		KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952 * L_7 = (KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&KeyNotFoundException_t0A3BE653F7FA27DEA1C91C2FB3DAA6C8D0CBB952_il2cpp_TypeInfo_var)));
-		KeyNotFoundException__ctor_mDC226A7A5A3DA52C5886236F32F19F36E6B1C1C1(L_7, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_7, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&SortedList_2_get_Item_m1D43F328440CAEB10A195CD40E3C8CBB0B45A201_RuntimeMethod_var)));
 	}
 }
 // System.Void System.Collections.Generic.SortedList`2<System.Object,System.Object>::set_Item(TKey,TValue)

@@ -6,31 +6,25 @@
 #endif
 
 
-
 #include "codegen/il2cpp-codegen-metadata.h"
 
 
 
 
 
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
 // 0x00000001 System.Boolean UnityEngine.Advertisements.UnityAdsSettings::get_testMode()
-extern void UnityAdsSettings_get_testMode_mB7505FA841B82FB37A830EB43FE95DAB6FE38824 ();
+extern void UnityAdsSettings_get_testMode_mB7505FA841B82FB37A830EB43FE95DAB6FE38824 (void);
 static Il2CppMethodPointer s_methodPointers[1] = 
 {
 	UnityAdsSettings_get_testMode_mB7505FA841B82FB37A830EB43FE95DAB6FE38824,
 };
 static const int32_t s_InvokerIndices[1] = 
 {
-	49,
+	4112,
 };
-extern const Il2CppCodeGenModule g_UnityEngine_UnityConnectModuleCodeGenModule;
-const Il2CppCodeGenModule g_UnityEngine_UnityConnectModuleCodeGenModule = 
+extern const CustomAttributesCacheGenerator g_UnityEngine_UnityConnectModule_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_UnityConnectModule_CodeGenModule;
+const Il2CppCodeGenModule g_UnityEngine_UnityConnectModule_CodeGenModule = 
 {
 	"UnityEngine.UnityConnectModule.dll",
 	1,
@@ -41,6 +35,11 @@ const Il2CppCodeGenModule g_UnityEngine_UnityConnectModuleCodeGenModule =
 	0,
 	NULL,
 	0,
+	NULL,
+	NULL,
+	g_UnityEngine_UnityConnectModule_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 };

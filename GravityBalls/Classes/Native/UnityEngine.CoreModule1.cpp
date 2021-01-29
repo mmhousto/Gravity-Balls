@@ -7855,6 +7855,22 @@ public:
 };
 
 
+// UnityEngine.PlayerLoop.PreLateUpdate/Physics2DLateUpdate
+struct  Physics2DLateUpdate_t9102D905FE91BCB2893E02C6824C5AAC56B47072 
+{
+public:
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Physics2DLateUpdate_t9102D905FE91BCB2893E02C6824C5AAC56B47072__padding[1];
+	};
+
+public:
+};
+
+
 // UnityEngine.PlayerLoop.PreLateUpdate/ScriptRunBehaviourLateUpdate
 struct  ScriptRunBehaviourLateUpdate_t58F4C9331E2958013C6CB7FEF18E370AD5043B9A 
 {
@@ -38325,6 +38341,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateFunction_EndInvoke_mB4BC0AA40E9C83
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

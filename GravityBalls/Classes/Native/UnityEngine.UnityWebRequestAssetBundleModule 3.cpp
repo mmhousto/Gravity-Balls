@@ -12,28 +12,26 @@
 
 
 
+// System.Byte[]
+struct ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726;
+// System.IntPtr[]
+struct IntPtrU5BU5D_t27FC72B0409D75AAF33EC42498E8094E95FEE9A6;
+// System.Diagnostics.StackTrace[]
+struct StackTraceU5BU5D_t4AD999C288CB6D1F38A299D12B1598D606588971;
+// UnityEngine.AssetBundle
+struct AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E9E628FA4;
 // UnityEngine.Networking.CertificateHandler
 struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E;
+// UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB;
 // UnityEngine.Networking.DownloadHandlerAssetBundle
 struct DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3;
 // System.Collections.IDictionary
 struct IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A;
-// System.Runtime.Serialization.SafeSerializationManager
-struct SafeSerializationManager_tDE44F029589A028F8A3053C5C06153FAB4AAE29F;
-// System.Void
-struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
-// UnityEngine.AssetBundle
-struct AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E9E628FA4;
-// System.Byte[]
-struct ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726;
-// UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB;
-// System.IntPtr[]
-struct IntPtrU5BU5D_t27FC72B0409D75AAF33EC42498E8094E95FEE9A6;
 // System.NotSupportedException
 struct NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339;
-// System.Diagnostics.StackTrace[]
-struct StackTraceU5BU5D_t4AD999C288CB6D1F38A299D12B1598D606588971;
+// System.Runtime.Serialization.SafeSerializationManager
+struct SafeSerializationManager_tDE44F029589A028F8A3053C5C06153FAB4AAE29F;
 // System.String
 struct String_t;
 // UnityEngine.Networking.UnityWebRequest
@@ -42,6 +40,8 @@ struct UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E;
 struct UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA;
 // System.Uri
 struct Uri_t4A915E1CC15B2C650F478099AD448E9466CBF612;
+// System.Void
+struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
 
 IL2CPP_EXTERN_C RuntimeClass* DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339_il2cpp_TypeInfo_var;
@@ -51,9 +51,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteral3781CFEEF925855A4B7284E1783A7D715A6333F6
 IL2CPP_EXTERN_C String_t* _stringLiteral7332B675802A1BF6F3B744C748D24F45B779C484;
 IL2CPP_EXTERN_C const RuntimeMethod* DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885_RuntimeMethod_var;
-IL2CPP_EXTERN_C const uint32_t DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t UnityWebRequestAssetBundle_GetAssetBundle_m2C155DBCEF9A2047E3E833A346B4BBBF8A4DA219_MetadataUsageId;
 struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E_marshaled_com;
 struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_com;
 struct Exception_t_marshaled_com;
@@ -132,6 +129,15 @@ public:
 };
 
 
+// UnityEngine.Networking.UnityWebRequestAssetBundle
+struct  UnityWebRequestAssetBundle_t3A11BA7C193E8D3556FCA9196FE1D13CDA7EAD50  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+
 // System.ValueType
 struct  ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52  : public RuntimeObject
 {
@@ -149,15 +155,6 @@ struct ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52_marshaled_com
 {
 };
 
-// UnityEngine.Networking.UnityWebRequestAssetBundle
-struct  UnityWebRequestAssetBundle_t3A11BA7C193E8D3556FCA9196FE1D13CDA7EAD50  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-
 // System.Byte
 struct  Byte_t0111FAB8B8685667EDDAF77683F0D8F86B659056 
 {
@@ -172,6 +169,54 @@ public:
 	inline void set_m_value_0(uint8_t value)
 	{
 		___m_value_0 = value;
+	}
+};
+
+
+// UnityEngine.Hash128
+struct  Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A 
+{
+public:
+	// System.UInt32 UnityEngine.Hash128::m_u32_0
+	uint32_t ___m_u32_0_0;
+	// System.UInt32 UnityEngine.Hash128::m_u32_1
+	uint32_t ___m_u32_1_1;
+	// System.UInt32 UnityEngine.Hash128::m_u32_2
+	uint32_t ___m_u32_2_2;
+	// System.UInt32 UnityEngine.Hash128::m_u32_3
+	uint32_t ___m_u32_3_3;
+
+public:
+	inline static int32_t get_offset_of_m_u32_0_0() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_0_0)); }
+	inline uint32_t get_m_u32_0_0() const { return ___m_u32_0_0; }
+	inline uint32_t* get_address_of_m_u32_0_0() { return &___m_u32_0_0; }
+	inline void set_m_u32_0_0(uint32_t value)
+	{
+		___m_u32_0_0 = value;
+	}
+
+	inline static int32_t get_offset_of_m_u32_1_1() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_1_1)); }
+	inline uint32_t get_m_u32_1_1() const { return ___m_u32_1_1; }
+	inline uint32_t* get_address_of_m_u32_1_1() { return &___m_u32_1_1; }
+	inline void set_m_u32_1_1(uint32_t value)
+	{
+		___m_u32_1_1 = value;
+	}
+
+	inline static int32_t get_offset_of_m_u32_2_2() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_2_2)); }
+	inline uint32_t get_m_u32_2_2() const { return ___m_u32_2_2; }
+	inline uint32_t* get_address_of_m_u32_2_2() { return &___m_u32_2_2; }
+	inline void set_m_u32_2_2(uint32_t value)
+	{
+		___m_u32_2_2 = value;
+	}
+
+	inline static int32_t get_offset_of_m_u32_3_3() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_3_3)); }
+	inline uint32_t get_m_u32_3_3() const { return ___m_u32_3_3; }
+	inline uint32_t* get_address_of_m_u32_3_3() { return &___m_u32_3_3; }
+	inline void set_m_u32_3_3(uint32_t value)
+	{
+		___m_u32_3_3 = value;
 	}
 };
 
@@ -244,53 +289,102 @@ public:
 };
 
 
-// UnityEngine.Hash128
-struct  Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A 
+// UnityEngine.CachedAssetBundle
+struct  CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 
 {
 public:
-	// System.UInt32 UnityEngine.Hash128::m_u32_0
-	uint32_t ___m_u32_0_0;
-	// System.UInt32 UnityEngine.Hash128::m_u32_1
-	uint32_t ___m_u32_1_1;
-	// System.UInt32 UnityEngine.Hash128::m_u32_2
-	uint32_t ___m_u32_2_2;
-	// System.UInt32 UnityEngine.Hash128::m_u32_3
-	uint32_t ___m_u32_3_3;
+	// System.String UnityEngine.CachedAssetBundle::m_Name
+	String_t* ___m_Name_0;
+	// UnityEngine.Hash128 UnityEngine.CachedAssetBundle::m_Hash
+	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
 
 public:
-	inline static int32_t get_offset_of_m_u32_0_0() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_0_0)); }
-	inline uint32_t get_m_u32_0_0() const { return ___m_u32_0_0; }
-	inline uint32_t* get_address_of_m_u32_0_0() { return &___m_u32_0_0; }
-	inline void set_m_u32_0_0(uint32_t value)
+	inline static int32_t get_offset_of_m_Name_0() { return static_cast<int32_t>(offsetof(CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8, ___m_Name_0)); }
+	inline String_t* get_m_Name_0() const { return ___m_Name_0; }
+	inline String_t** get_address_of_m_Name_0() { return &___m_Name_0; }
+	inline void set_m_Name_0(String_t* value)
 	{
-		___m_u32_0_0 = value;
+		___m_Name_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___m_Name_0), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_m_u32_1_1() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_1_1)); }
-	inline uint32_t get_m_u32_1_1() const { return ___m_u32_1_1; }
-	inline uint32_t* get_address_of_m_u32_1_1() { return &___m_u32_1_1; }
-	inline void set_m_u32_1_1(uint32_t value)
+	inline static int32_t get_offset_of_m_Hash_1() { return static_cast<int32_t>(offsetof(CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8, ___m_Hash_1)); }
+	inline Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  get_m_Hash_1() const { return ___m_Hash_1; }
+	inline Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A * get_address_of_m_Hash_1() { return &___m_Hash_1; }
+	inline void set_m_Hash_1(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  value)
 	{
-		___m_u32_1_1 = value;
-	}
-
-	inline static int32_t get_offset_of_m_u32_2_2() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_2_2)); }
-	inline uint32_t get_m_u32_2_2() const { return ___m_u32_2_2; }
-	inline uint32_t* get_address_of_m_u32_2_2() { return &___m_u32_2_2; }
-	inline void set_m_u32_2_2(uint32_t value)
-	{
-		___m_u32_2_2 = value;
-	}
-
-	inline static int32_t get_offset_of_m_u32_3_3() { return static_cast<int32_t>(offsetof(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A, ___m_u32_3_3)); }
-	inline uint32_t get_m_u32_3_3() const { return ___m_u32_3_3; }
-	inline uint32_t* get_address_of_m_u32_3_3() { return &___m_u32_3_3; }
-	inline void set_m_u32_3_3(uint32_t value)
-	{
-		___m_u32_3_3 = value;
+		___m_Hash_1 = value;
 	}
 };
 
+// Native definition for P/Invoke marshalling of UnityEngine.CachedAssetBundle
+struct CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8_marshaled_pinvoke
+{
+	char* ___m_Name_0;
+	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
+};
+// Native definition for COM marshalling of UnityEngine.CachedAssetBundle
+struct CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8_marshaled_com
+{
+	Il2CppChar* ___m_Name_0;
+	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
+};
+
+// UnityEngine.Networking.CertificateHandler
+struct  CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E  : public RuntimeObject
+{
+public:
+	// System.IntPtr UnityEngine.Networking.CertificateHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
+
+public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
+};
+
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.CertificateHandler
+struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Networking.CertificateHandler
+struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E_marshaled_com
+{
+	intptr_t ___m_Ptr_0;
+};
+
+// UnityEngine.Networking.DownloadHandler
+struct  DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB  : public RuntimeObject
+{
+public:
+	// System.IntPtr UnityEngine.Networking.DownloadHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
+
+public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
+};
+
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Networking.DownloadHandler
+struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_com
+{
+	intptr_t ___m_Ptr_0;
+};
 
 // System.Exception
 struct  Exception_t  : public RuntimeObject
@@ -518,131 +612,6 @@ struct Exception_t_marshaled_com
 	Il2CppSafeArray/*NONE*/* ___native_trace_ips_15;
 };
 
-// UnityEngine.CachedAssetBundle
-struct  CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 
-{
-public:
-	// System.String UnityEngine.CachedAssetBundle::m_Name
-	String_t* ___m_Name_0;
-	// UnityEngine.Hash128 UnityEngine.CachedAssetBundle::m_Hash
-	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
-
-public:
-	inline static int32_t get_offset_of_m_Name_0() { return static_cast<int32_t>(offsetof(CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8, ___m_Name_0)); }
-	inline String_t* get_m_Name_0() const { return ___m_Name_0; }
-	inline String_t** get_address_of_m_Name_0() { return &___m_Name_0; }
-	inline void set_m_Name_0(String_t* value)
-	{
-		___m_Name_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___m_Name_0), (void*)value);
-	}
-
-	inline static int32_t get_offset_of_m_Hash_1() { return static_cast<int32_t>(offsetof(CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8, ___m_Hash_1)); }
-	inline Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  get_m_Hash_1() const { return ___m_Hash_1; }
-	inline Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A * get_address_of_m_Hash_1() { return &___m_Hash_1; }
-	inline void set_m_Hash_1(Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  value)
-	{
-		___m_Hash_1 = value;
-	}
-};
-
-// Native definition for P/Invoke marshalling of UnityEngine.CachedAssetBundle
-struct CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8_marshaled_pinvoke
-{
-	char* ___m_Name_0;
-	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
-};
-// Native definition for COM marshalling of UnityEngine.CachedAssetBundle
-struct CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8_marshaled_com
-{
-	Il2CppChar* ___m_Name_0;
-	Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  ___m_Hash_1;
-};
-
-// UnityEngine.Networking.CertificateHandler
-struct  CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Networking.CertificateHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-
-public:
-	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E, ___m_Ptr_0)); }
-	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
-	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
-	inline void set_m_Ptr_0(intptr_t value)
-	{
-		___m_Ptr_0 = value;
-	}
-};
-
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.CertificateHandler
-struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Networking.CertificateHandler
-struct CertificateHandler_tDA66C86D1302CE4266DBB078361F7A363C7B005E_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
-};
-
-// UnityEngine.Networking.DownloadHandler
-struct  DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Networking.DownloadHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-
-public:
-	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB, ___m_Ptr_0)); }
-	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
-	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
-	inline void set_m_Ptr_0(intptr_t value)
-	{
-		___m_Ptr_0 = value;
-	}
-};
-
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Networking.DownloadHandler
-struct DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
-};
-
-// UnityEngine.Networking.UploadHandler
-struct  UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA  : public RuntimeObject
-{
-public:
-	// System.IntPtr UnityEngine.Networking.UploadHandler::m_Ptr
-	intptr_t ___m_Ptr_0;
-
-public:
-	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA, ___m_Ptr_0)); }
-	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
-	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
-	inline void set_m_Ptr_0(intptr_t value)
-	{
-		___m_Ptr_0 = value;
-	}
-};
-
-// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandler
-struct UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA_marshaled_pinvoke
-{
-	intptr_t ___m_Ptr_0;
-};
-// Native definition for COM marshalling of UnityEngine.Networking.UploadHandler
-struct UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA_marshaled_com
-{
-	intptr_t ___m_Ptr_0;
-};
-
 // UnityEngine.Object
 struct  Object_tF2F3778131EFF286AF62B7B013A170F95A91571A  : public RuntimeObject
 {
@@ -687,14 +656,33 @@ struct Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_marshaled_com
 	intptr_t ___m_CachedPtr_0;
 };
 
-// System.SystemException
-struct  SystemException_tC551B4D6EE3772B5F32C71EE8C719F4B43ECCC62  : public Exception_t
+// UnityEngine.Networking.UploadHandler
+struct  UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA  : public RuntimeObject
 {
 public:
+	// System.IntPtr UnityEngine.Networking.UploadHandler::m_Ptr
+	intptr_t ___m_Ptr_0;
 
 public:
+	inline static int32_t get_offset_of_m_Ptr_0() { return static_cast<int32_t>(offsetof(UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA, ___m_Ptr_0)); }
+	inline intptr_t get_m_Ptr_0() const { return ___m_Ptr_0; }
+	inline intptr_t* get_address_of_m_Ptr_0() { return &___m_Ptr_0; }
+	inline void set_m_Ptr_0(intptr_t value)
+	{
+		___m_Ptr_0 = value;
+	}
 };
 
+// Native definition for P/Invoke marshalling of UnityEngine.Networking.UploadHandler
+struct UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA_marshaled_pinvoke
+{
+	intptr_t ___m_Ptr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Networking.UploadHandler
+struct UploadHandler_t5F80A2A6874D4D330751BE3524009C21C9B74BDA_marshaled_com
+{
+	intptr_t ___m_Ptr_0;
+};
 
 // UnityEngine.AssetBundle
 struct  AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E9E628FA4  : public Object_tF2F3778131EFF286AF62B7B013A170F95A91571A
@@ -721,6 +709,15 @@ struct DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3_mars
 struct DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3_marshaled_com : public DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB_marshaled_com
 {
 };
+
+// System.SystemException
+struct  SystemException_tC551B4D6EE3772B5F32C71EE8C719F4B43ECCC62  : public Exception_t
+{
+public:
+
+public:
+};
+
 
 // UnityEngine.Networking.UnityWebRequest
 struct  UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E  : public RuntimeObject
@@ -958,7 +955,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t DownloadHandlerAssetBundle_CreateCac
 		String_t* L_1 = ___url1;
 		String_t* L_2 = ___name2;
 		uint32_t L_3 = ___crc4;
-		intptr_t L_4 = DownloadHandlerAssetBundle_CreateCached_Injected_m225667904F10871FC65304B9DBCB4578FE9377D2(L_0, L_1, L_2, (Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A *)(&___hash3), L_3, /*hidden argument*/NULL);
+		intptr_t L_4;
+		L_4 = DownloadHandlerAssetBundle_CreateCached_Injected_m225667904F10871FC65304B9DBCB4578FE9377D2(L_0, L_1, L_2, (Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A *)(&___hash3), L_3, /*hidden argument*/NULL);
 		return (intptr_t)L_4;
 	}
 }
@@ -970,7 +968,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DownloadHandlerAssetBundle_InternalCreat
 		String_t* L_1 = ___name1;
 		Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  L_2 = ___hash2;
 		uint32_t L_3 = ___crc3;
-		intptr_t L_4 = DownloadHandlerAssetBundle_CreateCached_mE8DEDE3622B495AE1CA534BAD70F86A3AF41477D(__this, L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
+		intptr_t L_4;
+		L_4 = DownloadHandlerAssetBundle_CreateCached_mE8DEDE3622B495AE1CA534BAD70F86A3AF41477D(__this, L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
 		((DownloadHandler_tEEAE0DD53DB497C8A491C4F7B7A14C3CA027B1DB *)__this)->set_m_Ptr_0((intptr_t)L_4);
 		return;
 	}
@@ -981,8 +980,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DownloadHandlerAssetBundle__ctor_m491425
 	{
 		DownloadHandler__ctor_m8E441D5C617BA103B97FE41893F0A4A323701B0F(__this, /*hidden argument*/NULL);
 		String_t* L_0 = ___url0;
-		String_t* L_1 = CachedAssetBundle_get_name_m08907939D330FAB52F5A08EFA5BBB3849A1893C9((CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 *)(&___cachedBundle1), /*hidden argument*/NULL);
-		Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  L_2 = CachedAssetBundle_get_hash_mCD87C4B6DF6F8971992E1F831EE89983251FF8F6((CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 *)(&___cachedBundle1), /*hidden argument*/NULL);
+		String_t* L_1;
+		L_1 = CachedAssetBundle_get_name_m08907939D330FAB52F5A08EFA5BBB3849A1893C9((CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 *)(&___cachedBundle1), /*hidden argument*/NULL);
+		Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A  L_2;
+		L_2 = CachedAssetBundle_get_hash_mCD87C4B6DF6F8971992E1F831EE89983251FF8F6((CachedAssetBundle_t68C1A58DFDCC4AE5408B8ACE2DC290B77788F6A8 *)(&___cachedBundle1), /*hidden argument*/NULL);
 		uint32_t L_3 = ___crc2;
 		DownloadHandlerAssetBundle_InternalCreateAssetBundleCached_m2F4C9DD99E26350A7DC685CD918DE5792D9B7106(__this, L_0, L_1, L_2, L_3, /*hidden argument*/NULL);
 		return;
@@ -991,31 +992,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DownloadHandlerAssetBundle__ctor_m491425
 // System.Byte[] UnityEngine.Networking.DownloadHandlerAssetBundle::GetData()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3 (DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3 * __this, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 * L_0 = (NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 *)il2cpp_codegen_object_new(NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339_il2cpp_TypeInfo_var);
-		NotSupportedException__ctor_m40BC57BDA6E0E119B73700CC809A14B57DC65A90(L_0, _stringLiteral0BB65972F14A2F3D2FC2C6B9F0DB6FC90955D868, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3_RuntimeMethod_var);
+		NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 * L_0 = (NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339_il2cpp_TypeInfo_var)));
+		NotSupportedException__ctor_m40BC57BDA6E0E119B73700CC809A14B57DC65A90(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral0BB65972F14A2F3D2FC2C6B9F0DB6FC90955D868)), /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&DownloadHandlerAssetBundle_GetData_m559C00EFAE6DAEFB753A247C6B842F32191923D3_RuntimeMethod_var)));
 	}
 }
 // System.String UnityEngine.Networking.DownloadHandlerAssetBundle::GetText()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885 (DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3 * __this, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 * L_0 = (NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 *)il2cpp_codegen_object_new(NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339_il2cpp_TypeInfo_var);
-		NotSupportedException__ctor_m40BC57BDA6E0E119B73700CC809A14B57DC65A90(L_0, _stringLiteral7332B675802A1BF6F3B744C748D24F45B779C484, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885_RuntimeMethod_var);
+		NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 * L_0 = (NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_tB9D89F0E9470A2C423D239D7C68EE0CFD77F9339_il2cpp_TypeInfo_var)));
+		NotSupportedException__ctor_m40BC57BDA6E0E119B73700CC809A14B57DC65A90(L_0, ((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteral7332B675802A1BF6F3B744C748D24F45B779C484)), /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&DownloadHandlerAssetBundle_GetText_mF7330136649D26AACD775000E871F44B83891885_RuntimeMethod_var)));
 	}
 }
 // UnityEngine.AssetBundle UnityEngine.Networking.DownloadHandlerAssetBundle::get_assetBundle()
@@ -1025,8 +1014,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E
 	static DownloadHandlerAssetBundle_get_assetBundle_m083E8230E8A5644AE6176135C86B4E1A6283190D_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (DownloadHandlerAssetBundle_get_assetBundle_m083E8230E8A5644AE6176135C86B4E1A6283190D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Networking.DownloadHandlerAssetBundle::get_assetBundle()");
-	AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E9E628FA4 * retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	AssetBundle_t4D34D7FDF0F230DC641DC1FCFA2C0E7E9E628FA4 * icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.IntPtr UnityEngine.Networking.DownloadHandlerAssetBundle::CreateCached_Injected(UnityEngine.Networking.DownloadHandlerAssetBundle,System.String,System.String,UnityEngine.Hash128&,System.UInt32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t DownloadHandlerAssetBundle_CreateCached_Injected_m225667904F10871FC65304B9DBCB4578FE9377D2 (DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3 * ___obj0, String_t* ___url1, String_t* ___name2, Hash128_t1858EA099934FD6F2B769E5661C17A276A2AFE7A * ___hash3, uint32_t ___crc4, const RuntimeMethod* method)
@@ -1035,8 +1024,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t DownloadHandlerAssetBundle_CreateCac
 	static DownloadHandlerAssetBundle_CreateCached_Injected_m225667904F10871FC65304B9DBCB4578FE9377D2_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (DownloadHandlerAssetBundle_CreateCached_Injected_m225667904F10871FC65304B9DBCB4578FE9377D2_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Networking.DownloadHandlerAssetBundle::CreateCached_Injected(UnityEngine.Networking.DownloadHandlerAssetBundle,System.String,System.String,UnityEngine.Hash128&,System.UInt32)");
-	intptr_t retVal = _il2cpp_icall_func(___obj0, ___url1, ___name2, ___hash3, ___crc4);
-	return retVal;
+	intptr_t icallRetVal = _il2cpp_icall_func(___obj0, ___url1, ___name2, ___hash3, ___crc4);
+	return icallRetVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -1052,7 +1041,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FD
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (UnityWebRequestAssetBundle_GetAssetBundle_m2C155DBCEF9A2047E3E833A346B4BBBF8A4DA219_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&DownloadHandlerAssetBundle_t49C00CF1C75BD0D6DFA01C3C490EBD4ABAAD76F3_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3781CFEEF925855A4B7284E1783A7D715A6333F6);
 		s_Il2CppMethodInitialized = true;
 	}
 	UnityWebRequest_tB75B39F6951CA0DBA2D5BEDF85FDCAAC6026A37E * V_0 = NULL;

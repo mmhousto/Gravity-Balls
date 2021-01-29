@@ -28138,8 +28138,8 @@ IL_018e:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void paddle__ctor_mFD258C44F242AA18C75FF0652826E3C9D48A9839 (paddle_tA909AD8EF43A3BDEDFEC102DC8D685A8F24D94F4 * __this, const RuntimeMethod* method)
 {
 	{
-		// public float speed = 20f;
-		__this->set_speed_13((20.0f));
+		// public float speed = 10f;
+		__this->set_speed_13((10.0f));
 		// private bool isActive = false;
 		__this->set_isActive_21((bool)0);
 		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);

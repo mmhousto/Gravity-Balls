@@ -54,22 +54,6 @@ struct GenericInterfaceActionInvoker0
 	}
 };
 
-// System.DelegateData
-struct DelegateData_t17DD30660E330C49381DAA99F934BE75CB11F288;
-// UnityEngine.Font
-struct Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9;
-// System.Reflection.MethodInfo
-struct MethodInfo_t;
-// UnityEngine.TextGenerationSettings
-struct TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A;
-// UnityEngine.TextGenerator
-struct TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70;
-// UnityEngine.TextMesh
-struct TextMesh_t830C2452CE189A0D35CD9ED26B6B74D506B01273;
-// System.Void
-struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
-// UnityEngine.Font/FontTextureRebuildCallback
-struct FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB;
 // System.Action`1<UnityEngine.Font>
 struct Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7;
 // System.Action`1<System.Object>
@@ -86,34 +70,50 @@ struct List_1_t6D5A50DDC9282F1B1127D04D53FD5A743391289D;
 struct List_1_tE41795D86BBD10D66F8F64CC87147539BC5AB2EB;
 // System.Collections.Generic.List`1<UnityEngine.UIVertex>
 struct List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F;
-// System.AsyncCallback
-struct AsyncCallback_tA7921BEF974919C46FF8F9D9867C567B200BB0EA;
 // System.Byte[]
 struct ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726;
 // System.Char[]
 struct CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34;
-// System.Delegate
-struct Delegate_t;
 // System.Delegate[]
 struct DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8;
-// UnityEngine.GameObject
-struct GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319;
-// System.IAsyncResult
-struct IAsyncResult_tC9F97BF36FCF122D29D3101D80642278297BF370;
-// UnityEngine.Material
-struct Material_t8927C00353A72755313F046D0CE85178AE8218EE;
-// UnityEngine.Object
-struct Object_tF2F3778131EFF286AF62B7B013A170F95A91571A;
 // System.Object[]
 struct ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE;
-// System.String
-struct String_t;
 // UnityEngine.UICharInfo[]
 struct UICharInfoU5BU5D_t5B6AEA3245EC021FAA20582D295434FF61FBF1F0;
 // UnityEngine.UILineInfo[]
 struct UILineInfoU5BU5D_tBE1D9E4EC8C7A5A1F98B7CCF93D8A8A2FF9B2F69;
 // UnityEngine.UIVertex[]
 struct UIVertexU5BU5D_tE3D523C48DFEBC775876720DE2539A79FB7E5E5A;
+// System.AsyncCallback
+struct AsyncCallback_tA7921BEF974919C46FF8F9D9867C567B200BB0EA;
+// System.Delegate
+struct Delegate_t;
+// System.DelegateData
+struct DelegateData_t17DD30660E330C49381DAA99F934BE75CB11F288;
+// UnityEngine.Font
+struct Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9;
+// UnityEngine.GameObject
+struct GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319;
+// System.IAsyncResult
+struct IAsyncResult_tC9F97BF36FCF122D29D3101D80642278297BF370;
+// UnityEngine.Material
+struct Material_t8927C00353A72755313F046D0CE85178AE8218EE;
+// System.Reflection.MethodInfo
+struct MethodInfo_t;
+// UnityEngine.Object
+struct Object_tF2F3778131EFF286AF62B7B013A170F95A91571A;
+// System.String
+struct String_t;
+// UnityEngine.TextGenerationSettings
+struct TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A;
+// UnityEngine.TextGenerator
+struct TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70;
+// UnityEngine.TextMesh
+struct TextMesh_t830C2452CE189A0D35CD9ED26B6B74D506B01273;
+// System.Void
+struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
+// UnityEngine.Font/FontTextureRebuildCallback
+struct FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB;
 
 IL2CPP_EXTERN_C RuntimeClass* Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var;
@@ -123,12 +123,9 @@ IL2CPP_EXTERN_C RuntimeClass* IntPtr_t_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t6D5A50DDC9282F1B1127D04D53FD5A743391289D_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* List_1_tE41795D86BBD10D66F8F64CC87147539BC5AB2EB_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9_il2cpp_TypeInfo_var;
-IL2CPP_EXTERN_C RuntimeClass* Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C String_t* _stringLiteral0052C2B75AF160293B7E2B988F2F9D83DCD1D4D6;
 IL2CPP_EXTERN_C String_t* _stringLiteral7EE2EC0E141890ED13D1EEC3562248EA95485987;
 IL2CPP_EXTERN_C String_t* _stringLiteralC26096054589E56273AC485218FA5B65675C933E;
@@ -137,20 +134,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* Action_1_Invoke_m2D7BCE2827DFE8ADEF8678D601
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m48440717C5233283529CCE706924A7C9A0082118_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_m6432106765DE3FF8E8DFA123340C6730E73EB6A6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* List_1__ctor_mE6BD12F7DC059A982D57E31C3D6E59C3E46B9CBE_RuntimeMethod_var;
-IL2CPP_EXTERN_C const uint32_t Font_InvokeTextureRebuilt_Internal_m35C57E19A7E53A2F2A94DF909E6903DFFEE7679B_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t Font__ctor_m7E2532960BF01745ADB54BBCC43DBBE650A83E4C_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t Font_add_textureRebuilt_m845CA21057A59FC4D5F53DE784DBB5C32BBEA6FC_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t Font_remove_textureRebuilt_m3F7109BC4D5DFB55F846E05C448048A267112FC9_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator_Finalize_m75F6D3C34EDF6AD36EFAC32F70C24361605E2D0A_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator_PopulateWithErrors_mE5FA5DB6EBB1EBA92C3A09DC213EB8607396F265_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator_Populate_Internal_m1E27E45E04E4709DD18502776659E882E2252554_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator_System_IDisposable_Dispose_m068B4B5E7B8E1BDAE6C849561DE80BEE6440814C_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator_ValidatedSettings_mA1F21390BC9F8A8C257E43B9A3E8D1BF3C7B5EFB_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t TextGenerator__ctor_m1476375B22A72960883563CFB9590528F2439EE0_MetadataUsageId;
-IL2CPP_EXTERN_C const uint32_t UIVertex__cctor_m0354096E8F1EBF96E7089A869E74F4BCEAD4BDE4_MetadataUsageId;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A;;
@@ -181,10 +164,6 @@ public:
 
 
 // System.Object
-
-struct Il2CppArrayBounds;
-
-// System.Array
 
 
 // System.Collections.Generic.List`1<UnityEngine.UICharInfo>
@@ -387,6 +366,10 @@ public:
 	}
 };
 
+struct Il2CppArrayBounds;
+
+// System.Array
+
 
 // System.String
 struct  String_t  : public RuntimeObject
@@ -546,144 +529,6 @@ public:
 		___categoryForLatin1_3 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&___categoryForLatin1_3), (void*)value);
 	}
-};
-
-
-// System.Enum
-struct  Enum_t23B90B40F60E677A8025267341651C94AE079CDA  : public ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52
-{
-public:
-
-public:
-};
-
-struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_StaticFields
-{
-public:
-	// System.Char[] System.Enum::enumSeperatorCharArray
-	CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* ___enumSeperatorCharArray_0;
-
-public:
-	inline static int32_t get_offset_of_enumSeperatorCharArray_0() { return static_cast<int32_t>(offsetof(Enum_t23B90B40F60E677A8025267341651C94AE079CDA_StaticFields, ___enumSeperatorCharArray_0)); }
-	inline CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
-	inline CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
-	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* value)
-	{
-		___enumSeperatorCharArray_0 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___enumSeperatorCharArray_0), (void*)value);
-	}
-};
-
-// Native definition for P/Invoke marshalling of System.Enum
-struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_marshaled_pinvoke
-{
-};
-// Native definition for COM marshalling of System.Enum
-struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_marshaled_com
-{
-};
-
-// System.Int32
-struct  Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046 
-{
-public:
-	// System.Int32 System.Int32::m_value
-	int32_t ___m_value_0;
-
-public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046, ___m_value_0)); }
-	inline int32_t get_m_value_0() const { return ___m_value_0; }
-	inline int32_t* get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(int32_t value)
-	{
-		___m_value_0 = value;
-	}
-};
-
-
-// System.IntPtr
-struct  IntPtr_t 
-{
-public:
-	// System.Void* System.IntPtr::m_value
-	void* ___m_value_0;
-
-public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
-	inline void* get_m_value_0() const { return ___m_value_0; }
-	inline void** get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(void* value)
-	{
-		___m_value_0 = value;
-	}
-};
-
-struct IntPtr_t_StaticFields
-{
-public:
-	// System.IntPtr System.IntPtr::Zero
-	intptr_t ___Zero_1;
-
-public:
-	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
-	inline intptr_t get_Zero_1() const { return ___Zero_1; }
-	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
-	inline void set_Zero_1(intptr_t value)
-	{
-		___Zero_1 = value;
-	}
-};
-
-
-// System.Single
-struct  Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E 
-{
-public:
-	// System.Single System.Single::m_value
-	float ___m_value_0;
-
-public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E, ___m_value_0)); }
-	inline float get_m_value_0() const { return ___m_value_0; }
-	inline float* get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(float value)
-	{
-		___m_value_0 = value;
-	}
-};
-
-
-// System.UInt32
-struct  UInt32_tE60352A06233E4E69DD198BCC67142159F686B15 
-{
-public:
-	// System.UInt32 System.UInt32::m_value
-	uint32_t ___m_value_0;
-
-public:
-	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(UInt32_tE60352A06233E4E69DD198BCC67142159F686B15, ___m_value_0)); }
-	inline uint32_t get_m_value_0() const { return ___m_value_0; }
-	inline uint32_t* get_address_of_m_value_0() { return &___m_value_0; }
-	inline void set_m_value_0(uint32_t value)
-	{
-		___m_value_0 = value;
-	}
-};
-
-
-// System.Void
-struct  Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5 
-{
-public:
-	union
-	{
-		struct
-		{
-		};
-		uint8_t Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5__padding[1];
-	};
-
-public:
 };
 
 
@@ -847,6 +692,92 @@ public:
 };
 
 
+// System.Enum
+struct  Enum_t23B90B40F60E677A8025267341651C94AE079CDA  : public ValueType_tDBF999C1B75C48C68621878250DBF6CDBCF51E52
+{
+public:
+
+public:
+};
+
+struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_StaticFields
+{
+public:
+	// System.Char[] System.Enum::enumSeperatorCharArray
+	CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* ___enumSeperatorCharArray_0;
+
+public:
+	inline static int32_t get_offset_of_enumSeperatorCharArray_0() { return static_cast<int32_t>(offsetof(Enum_t23B90B40F60E677A8025267341651C94AE079CDA_StaticFields, ___enumSeperatorCharArray_0)); }
+	inline CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
+	inline CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
+	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t7B7FC5BC8091AA3B9CB0B29CDD80B5EE9254AA34* value)
+	{
+		___enumSeperatorCharArray_0 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___enumSeperatorCharArray_0), (void*)value);
+	}
+};
+
+// Native definition for P/Invoke marshalling of System.Enum
+struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.Enum
+struct Enum_t23B90B40F60E677A8025267341651C94AE079CDA_marshaled_com
+{
+};
+
+// System.Int32
+struct  Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046 
+{
+public:
+	// System.Int32 System.Int32::m_value
+	int32_t ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046, ___m_value_0)); }
+	inline int32_t get_m_value_0() const { return ___m_value_0; }
+	inline int32_t* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(int32_t value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+
+// System.IntPtr
+struct  IntPtr_t 
+{
+public:
+	// System.Void* System.IntPtr::m_value
+	void* ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
+	inline void* get_m_value_0() const { return ___m_value_0; }
+	inline void** get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(void* value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct IntPtr_t_StaticFields
+{
+public:
+	// System.IntPtr System.IntPtr::Zero
+	intptr_t ___Zero_1;
+
+public:
+	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
+	inline intptr_t get_Zero_1() const { return ___Zero_1; }
+	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
+	inline void set_Zero_1(intptr_t value)
+	{
+		___Zero_1 = value;
+	}
+};
+
+
 // UnityEngine.Rect
 struct  Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 
 {
@@ -895,6 +826,24 @@ public:
 };
 
 
+// System.Single
+struct  Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E 
+{
+public:
+	// System.Single System.Single::m_value
+	float ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Single_tE07797BA3C98D4CA9B5A19413C19A76688AB899E, ___m_value_0)); }
+	inline float get_m_value_0() const { return ___m_value_0; }
+	inline float* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(float value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+
 // UnityEngine.UILineInfo
 struct  UILineInfo_tD082FF4894030AD4EBF57ACF6A997135E4B8B67C 
 {
@@ -939,6 +888,24 @@ public:
 	inline void set_leading_3(float value)
 	{
 		___leading_3 = value;
+	}
+};
+
+
+// System.UInt32
+struct  UInt32_tE60352A06233E4E69DD198BCC67142159F686B15 
+{
+public:
+	// System.UInt32 System.UInt32::m_value
+	uint32_t ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(UInt32_tE60352A06233E4E69DD198BCC67142159F686B15, ___m_value_0)); }
+	inline uint32_t get_m_value_0() const { return ___m_value_0; }
+	inline uint32_t* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(uint32_t value)
+	{
+		___m_value_0 = value;
 	}
 };
 
@@ -1295,6 +1262,22 @@ public:
 };
 
 
+// System.Void
+struct  Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5 
+{
+public:
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5__padding[1];
+	};
+
+public:
+};
+
+
 // System.Delegate
 struct  Delegate_t  : public RuntimeObject
 {
@@ -1603,14 +1586,14 @@ public:
 	Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  ___tangent_2;
 	// UnityEngine.Color32 UnityEngine.UIVertex::color
 	Color32_tDB54A78627878A7D2DE42BB028D64306A18E858D  ___color_3;
-	// UnityEngine.Vector2 UnityEngine.UIVertex::uv0
-	Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___uv0_4;
-	// UnityEngine.Vector2 UnityEngine.UIVertex::uv1
-	Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___uv1_5;
-	// UnityEngine.Vector2 UnityEngine.UIVertex::uv2
-	Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___uv2_6;
-	// UnityEngine.Vector2 UnityEngine.UIVertex::uv3
-	Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___uv3_7;
+	// UnityEngine.Vector4 UnityEngine.UIVertex::uv0
+	Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  ___uv0_4;
+	// UnityEngine.Vector4 UnityEngine.UIVertex::uv1
+	Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  ___uv1_5;
+	// UnityEngine.Vector4 UnityEngine.UIVertex::uv2
+	Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  ___uv2_6;
+	// UnityEngine.Vector4 UnityEngine.UIVertex::uv3
+	Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  ___uv3_7;
 
 public:
 	inline static int32_t get_offset_of_position_0() { return static_cast<int32_t>(offsetof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A, ___position_0)); }
@@ -1646,33 +1629,33 @@ public:
 	}
 
 	inline static int32_t get_offset_of_uv0_4() { return static_cast<int32_t>(offsetof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A, ___uv0_4)); }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  get_uv0_4() const { return ___uv0_4; }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9 * get_address_of_uv0_4() { return &___uv0_4; }
-	inline void set_uv0_4(Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  value)
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  get_uv0_4() const { return ___uv0_4; }
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7 * get_address_of_uv0_4() { return &___uv0_4; }
+	inline void set_uv0_4(Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  value)
 	{
 		___uv0_4 = value;
 	}
 
 	inline static int32_t get_offset_of_uv1_5() { return static_cast<int32_t>(offsetof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A, ___uv1_5)); }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  get_uv1_5() const { return ___uv1_5; }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9 * get_address_of_uv1_5() { return &___uv1_5; }
-	inline void set_uv1_5(Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  value)
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  get_uv1_5() const { return ___uv1_5; }
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7 * get_address_of_uv1_5() { return &___uv1_5; }
+	inline void set_uv1_5(Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  value)
 	{
 		___uv1_5 = value;
 	}
 
 	inline static int32_t get_offset_of_uv2_6() { return static_cast<int32_t>(offsetof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A, ___uv2_6)); }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  get_uv2_6() const { return ___uv2_6; }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9 * get_address_of_uv2_6() { return &___uv2_6; }
-	inline void set_uv2_6(Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  value)
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  get_uv2_6() const { return ___uv2_6; }
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7 * get_address_of_uv2_6() { return &___uv2_6; }
+	inline void set_uv2_6(Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  value)
 	{
 		___uv2_6 = value;
 	}
 
 	inline static int32_t get_offset_of_uv3_7() { return static_cast<int32_t>(offsetof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A, ___uv3_7)); }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  get_uv3_7() const { return ___uv3_7; }
-	inline Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9 * get_address_of_uv3_7() { return &___uv3_7; }
-	inline void set_uv3_7(Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  value)
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  get_uv3_7() const { return ___uv3_7; }
+	inline Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7 * get_address_of_uv3_7() { return &___uv3_7; }
+	inline void set_uv3_7(Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  value)
 	{
 		___uv3_7 = value;
 	}
@@ -1733,35 +1716,6 @@ public:
 };
 
 
-// System.MulticastDelegate
-struct  MulticastDelegate_t  : public Delegate_t
-{
-public:
-	// System.Delegate[] System.MulticastDelegate::delegates
-	DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* ___delegates_11;
-
-public:
-	inline static int32_t get_offset_of_delegates_11() { return static_cast<int32_t>(offsetof(MulticastDelegate_t, ___delegates_11)); }
-	inline DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* get_delegates_11() const { return ___delegates_11; }
-	inline DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8** get_address_of_delegates_11() { return &___delegates_11; }
-	inline void set_delegates_11(DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* value)
-	{
-		___delegates_11 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___delegates_11), (void*)value);
-	}
-};
-
-// Native definition for P/Invoke marshalling of System.MulticastDelegate
-struct MulticastDelegate_t_marshaled_pinvoke : public Delegate_t_marshaled_pinvoke
-{
-	Delegate_t_marshaled_pinvoke** ___delegates_11;
-};
-// Native definition for COM marshalling of System.MulticastDelegate
-struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
-{
-	Delegate_t_marshaled_com** ___delegates_11;
-};
-
 // UnityEngine.Component
 struct  Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684  : public Object_tF2F3778131EFF286AF62B7B013A170F95A91571A
 {
@@ -1775,7 +1729,7 @@ public:
 struct  Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9  : public Object_tF2F3778131EFF286AF62B7B013A170F95A91571A
 {
 public:
-	// UnityEngine.Font_FontTextureRebuildCallback UnityEngine.Font::m_FontTextureRebuildCallback
+	// UnityEngine.Font/FontTextureRebuildCallback UnityEngine.Font::m_FontTextureRebuildCallback
 	FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB * ___m_FontTextureRebuildCallback_5;
 
 public:
@@ -1824,6 +1778,35 @@ public:
 public:
 };
 
+
+// System.MulticastDelegate
+struct  MulticastDelegate_t  : public Delegate_t
+{
+public:
+	// System.Delegate[] System.MulticastDelegate::delegates
+	DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* ___delegates_11;
+
+public:
+	inline static int32_t get_offset_of_delegates_11() { return static_cast<int32_t>(offsetof(MulticastDelegate_t, ___delegates_11)); }
+	inline DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* get_delegates_11() const { return ___delegates_11; }
+	inline DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8** get_address_of_delegates_11() { return &___delegates_11; }
+	inline void set_delegates_11(DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* value)
+	{
+		___delegates_11 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___delegates_11), (void*)value);
+	}
+};
+
+// Native definition for P/Invoke marshalling of System.MulticastDelegate
+struct MulticastDelegate_t_marshaled_pinvoke : public Delegate_t_marshaled_pinvoke
+{
+	Delegate_t_marshaled_pinvoke** ___delegates_11;
+};
+// Native definition for COM marshalling of System.MulticastDelegate
+struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
+{
+	Delegate_t_marshaled_com** ___delegates_11;
+};
 
 // UnityEngine.TextGenerationSettings
 struct  TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A 
@@ -2076,15 +2059,6 @@ public:
 };
 
 
-// UnityEngine.Font_FontTextureRebuildCallback
-struct  FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB  : public MulticastDelegate_t
-{
-public:
-
-public:
-};
-
-
 // UnityEngine.TextGenerator
 struct  TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70  : public RuntimeObject
 {
@@ -2240,6 +2214,15 @@ struct TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70_marshaled_com
 
 // UnityEngine.TextMesh
 struct  TextMesh_t830C2452CE189A0D35CD9ED26B6B74D506B01273  : public Component_t62FBC8D2420DA4BE9037AFE430740F6B3EECA684
+{
+public:
+
+public:
+};
+
+
+// UnityEngine.Font/FontTextureRebuildCallback
+struct  FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB  : public MulticastDelegate_t
 {
 public:
 
@@ -2454,8 +2437,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Vector4__ctor_mCAB598A37C4D5E80282277E82
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  Vector3_get_zero_m1A8F7993167785F750B6B01762D22C2597C84EF6 (const RuntimeMethod* method);
 // UnityEngine.Vector3 UnityEngine.Vector3::get_back()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  Vector3_get_back_mD521DF1A2C26E145578E07D618E1E4D08A1C6220 (const RuntimeMethod* method);
-// UnityEngine.Vector2 UnityEngine.Vector2::get_zero()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  Vector2_get_zero_m621041B9DF5FAE86C1EF4CB28C224FEA089CB828 (const RuntimeMethod* method);
+// UnityEngine.Vector4 UnityEngine.Vector4::get_zero()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  Vector4_get_zero_m9E807FEBC8B638914DF4A0BA87C0BD95A19F5200 (const RuntimeMethod* method);
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -2475,7 +2458,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_add_textureRebuilt_m845CA21057A59FC
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (Font_add_textureRebuilt_m845CA21057A59FC4D5F53DE784DBB5C32BBEA6FC_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * V_0 = NULL;
@@ -2492,11 +2476,13 @@ IL_0006:
 		V_1 = L_1;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_2 = V_1;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_3 = ___value0;
-		Delegate_t * L_4 = Delegate_Combine_m631D10D6CFF81AB4F237B9D549B235A54F45FA55(L_2, L_3, /*hidden argument*/NULL);
+		Delegate_t * L_4;
+		L_4 = Delegate_Combine_m631D10D6CFF81AB4F237B9D549B235A54F45FA55(L_2, L_3, /*hidden argument*/NULL);
 		V_2 = ((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *)CastclassSealed((RuntimeObject*)L_4, Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7_il2cpp_TypeInfo_var));
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_5 = V_2;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_6 = V_1;
-		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_7 = InterlockedCompareExchangeImpl<Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *>((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 **)(((Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_StaticFields*)il2cpp_codegen_static_fields_for(Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var))->get_address_of_textureRebuilt_4()), L_5, L_6);
+		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *>((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 **)(((Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_StaticFields*)il2cpp_codegen_static_fields_for(Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var))->get_address_of_textureRebuilt_4()), L_5, L_6);
 		V_0 = L_7;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_8 = V_0;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_9 = V_1;
@@ -2515,7 +2501,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_remove_textureRebuilt_m3F7109BC4D5D
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (Font_remove_textureRebuilt_m3F7109BC4D5DFB55F846E05C448048A267112FC9_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * V_0 = NULL;
@@ -2532,11 +2519,13 @@ IL_0006:
 		V_1 = L_1;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_2 = V_1;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_3 = ___value0;
-		Delegate_t * L_4 = Delegate_Remove_m8B4AD17254118B2904720D55C9B34FB3DCCBD7D4(L_2, L_3, /*hidden argument*/NULL);
+		Delegate_t * L_4;
+		L_4 = Delegate_Remove_m8B4AD17254118B2904720D55C9B34FB3DCCBD7D4(L_2, L_3, /*hidden argument*/NULL);
 		V_2 = ((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *)CastclassSealed((RuntimeObject*)L_4, Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7_il2cpp_TypeInfo_var));
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_5 = V_2;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_6 = V_1;
-		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_7 = InterlockedCompareExchangeImpl<Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *>((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 **)(((Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_StaticFields*)il2cpp_codegen_static_fields_for(Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var))->get_address_of_textureRebuilt_4()), L_5, L_6);
+		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_7;
+		L_7 = InterlockedCompareExchangeImpl<Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 *>((Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 **)(((Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_StaticFields*)il2cpp_codegen_static_fields_for(Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var))->get_address_of_textureRebuilt_4()), L_5, L_6);
 		V_0 = L_7;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_8 = V_0;
 		Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * L_9 = V_1;
@@ -2556,8 +2545,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Material_t8927C00353A72755313F046D0CE85178AE8
 	static Font_get_material_m799A85F3FF161469D8AF8CC0CCA6D550A6491565_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Font_get_material_m799A85F3FF161469D8AF8CC0CCA6D550A6491565_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::get_material()");
-	Material_t8927C00353A72755313F046D0CE85178AE8218EE * retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	Material_t8927C00353A72755313F046D0CE85178AE8218EE * icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.Boolean UnityEngine.Font::get_dynamic()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_get_dynamic_m2CA1DFFB862B41EAE100830F654880CD668F23AD (Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * __this, const RuntimeMethod* method)
@@ -2566,8 +2555,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_get_dynamic_m2CA1DFFB862B41EAE10083
 	static Font_get_dynamic_m2CA1DFFB862B41EAE100830F654880CD668F23AD_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Font_get_dynamic_m2CA1DFFB862B41EAE100830F654880CD668F23AD_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::get_dynamic()");
-	bool retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	bool icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.Int32 UnityEngine.Font::get_fontSize()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_fontSize_m284493C6ABD87266D2DC3D32619D9972F6711261 (Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * __this, const RuntimeMethod* method)
@@ -2576,8 +2565,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Font_get_fontSize_m284493C6ABD87266D2
 	static Font_get_fontSize_m284493C6ABD87266D2DC3D32619D9972F6711261_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Font_get_fontSize_m284493C6ABD87266D2DC3D32619D9972F6711261_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::get_fontSize()");
-	int32_t retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	int32_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.Void UnityEngine.Font::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m7E2532960BF01745ADB54BBCC43DBBE650A83E4C (Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * __this, const RuntimeMethod* method)
@@ -2585,7 +2574,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font__ctor_m7E2532960BF01745ADB54BBCC43D
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (Font__ctor_m7E2532960BF01745ADB54BBCC43DBBE650A83E4C_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -2601,7 +2590,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_InvokeTextureRebuilt_Internal_m35C5
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (Font_InvokeTextureRebuilt_Internal_m35C57E19A7E53A2F2A94DF909E6903DFFEE7679B_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_Invoke_m2D7BCE2827DFE8ADEF8678D60134051CA05F652E_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	Action_1_tC07E78969BFFC97261F80F4C08915A046DFDD9C7 * G_B2_0 = NULL;
@@ -2663,7 +2653,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_m91E1618BC3221EBB83518
 	bool V_0 = false;
 	{
 		Il2CppChar L_0 = ___c0;
-		bool L_1 = Font_HasCharacter_mEC8A3BB085240EC6B44999C19588319DB644B2AC(__this, L_0, /*hidden argument*/NULL);
+		bool L_1;
+		L_1 = Font_HasCharacter_mEC8A3BB085240EC6B44999C19588319DB644B2AC(__this, L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		goto IL_000b;
 	}
@@ -2681,8 +2672,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Font_HasCharacter_mEC8A3BB085240EC6B4499
 	static Font_HasCharacter_mEC8A3BB085240EC6B44999C19588319DB644B2AC_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Font_HasCharacter_mEC8A3BB085240EC6B44999C19588319DB644B2AC_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Font::HasCharacter(System.Int32)");
-	bool retVal = _il2cpp_icall_func(__this, ___c0);
-	return retVal;
+	bool icallRetVal = _il2cpp_icall_func(__this, ___c0);
+	return icallRetVal;
 }
 // System.Void UnityEngine.Font::Internal_CreateFont(UnityEngine.Font,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Font_Internal_CreateFont_m56BBBD1E61D1DDBD2D67BA3DEC0852E1526E2E5C (Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * ___self0, String_t* ___name1, const RuntimeMethod* method)
@@ -2766,12 +2757,6 @@ IL2CPP_EXTERN_C void TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B75
 // System.Boolean UnityEngine.TextGenerationSettings::CompareColors(UnityEngine.Color,UnityEngine.Color)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83 (TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * __this, Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___left0, Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___right1, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
 	bool V_0 = false;
 	int32_t G_B5_0 = 0;
 	{
@@ -2779,8 +2764,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m2D
 		float L_1 = L_0.get_r_0();
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_2 = ___right1;
 		float L_3 = L_2.get_r_0();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_4 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_1, L_3, /*hidden argument*/NULL);
+		bool L_4;
+		L_4 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_1, L_3, /*hidden argument*/NULL);
 		if (!L_4)
 		{
 			goto IL_004d;
@@ -2791,8 +2776,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m2D
 		float L_6 = L_5.get_g_1();
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_7 = ___right1;
 		float L_8 = L_7.get_g_1();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_9 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_6, L_8, /*hidden argument*/NULL);
+		bool L_9;
+		L_9 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_6, L_8, /*hidden argument*/NULL);
 		if (!L_9)
 		{
 			goto IL_004d;
@@ -2803,8 +2788,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m2D
 		float L_11 = L_10.get_b_2();
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_12 = ___right1;
 		float L_13 = L_12.get_b_2();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_14 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_11, L_13, /*hidden argument*/NULL);
+		bool L_14;
+		L_14 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_11, L_13, /*hidden argument*/NULL);
 		if (!L_14)
 		{
 			goto IL_004d;
@@ -2815,8 +2800,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareColors_m2D
 		float L_16 = L_15.get_a_3();
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_17 = ___right1;
 		float L_18 = L_17.get_a_3();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_19 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_16, L_18, /*hidden argument*/NULL);
+		bool L_19;
+		L_19 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_16, L_18, /*hidden argument*/NULL);
 		G_B5_0 = ((int32_t)(L_19));
 		goto IL_004e;
 	}
@@ -2842,17 +2827,13 @@ IL2CPP_EXTERN_C  bool TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2
 {
 	int32_t _offset = 1;
 	TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * _thisAdjusted = reinterpret_cast<TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *>(__this + _offset);
-	return TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83(_thisAdjusted, ___left0, ___right1, method);
+	bool _returnValue;
+	_returnValue = TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83(_thisAdjusted, ___left0, ___right1, method);
+	return _returnValue;
 }
 // System.Boolean UnityEngine.TextGenerationSettings::CompareVector2(UnityEngine.Vector2,UnityEngine.Vector2)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530 (TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * __this, Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___left0, Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  ___right1, const RuntimeMethod* method)
 {
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_method (TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530_MetadataUsageId);
-		s_Il2CppMethodInitialized = true;
-	}
 	bool V_0 = false;
 	int32_t G_B3_0 = 0;
 	{
@@ -2860,8 +2841,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareVector2_mE
 		float L_1 = L_0.get_x_0();
 		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_2 = ___right1;
 		float L_3 = L_2.get_x_0();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_4 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_1, L_3, /*hidden argument*/NULL);
+		bool L_4;
+		L_4 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_1, L_3, /*hidden argument*/NULL);
 		if (!L_4)
 		{
 			goto IL_0027;
@@ -2872,8 +2853,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_CompareVector2_mE
 		float L_6 = L_5.get_y_1();
 		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_7 = ___right1;
 		float L_8 = L_7.get_y_1();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_9 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_6, L_8, /*hidden argument*/NULL);
+		bool L_9;
+		L_9 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_6, L_8, /*hidden argument*/NULL);
 		G_B3_0 = ((int32_t)(L_9));
 		goto IL_0028;
 	}
@@ -2899,7 +2880,9 @@ IL2CPP_EXTERN_C  bool TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F3
 {
 	int32_t _offset = 1;
 	TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * _thisAdjusted = reinterpret_cast<TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *>(__this + _offset);
-	return TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530(_thisAdjusted, ___left0, ___right1, method);
+	bool _returnValue;
+	_returnValue = TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530(_thisAdjusted, ___left0, ___right1, method);
+	return _returnValue;
 }
 // System.Boolean UnityEngine.TextGenerationSettings::Equals(UnityEngine.TextGenerationSettings)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70 (TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * __this, TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  ___other0, const RuntimeMethod* method)
@@ -2907,19 +2890,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	bool V_0 = false;
-	int32_t G_B21_0 = 0;
+	int32_t G_B18_0 = 0;
 	{
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_0 = __this->get_color_1();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___other0;
 		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_2 = L_1.get_color_1();
-		bool L_3 = TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_0, L_2, /*hidden argument*/NULL);
+		bool L_3;
+		L_3 = TextGenerationSettings_CompareColors_m2D96C913B3B3004B54E2DF50B1D080E2756D6F83((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_0, L_2, /*hidden argument*/NULL);
 		if (!L_3)
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2928,18 +2912,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		int32_t L_6 = L_5.get_fontSize_2();
 		if ((!(((uint32_t)L_4) == ((uint32_t)L_6))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
 		float L_7 = __this->get_scaleFactor_5();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_8 = ___other0;
 		float L_9 = L_8.get_scaleFactor_5();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_10 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_7, L_9, /*hidden argument*/NULL);
+		bool L_10;
+		L_10 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_7, L_9, /*hidden argument*/NULL);
 		if (!L_10)
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2948,7 +2932,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		int32_t L_13 = L_12.get_resizeTextMinSize_10();
 		if ((!(((uint32_t)L_11) == ((uint32_t)L_13))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2957,18 +2941,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		int32_t L_16 = L_15.get_resizeTextMaxSize_11();
 		if ((!(((uint32_t)L_14) == ((uint32_t)L_16))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
 		float L_17 = __this->get_lineSpacing_3();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_18 = ___other0;
 		float L_19 = L_18.get_lineSpacing_3();
-		IL2CPP_RUNTIME_CLASS_INIT(Mathf_t4D4AC358D24F6DDC32EC291DDE1DF2C3B752A194_il2cpp_TypeInfo_var);
-		bool L_20 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_17, L_19, /*hidden argument*/NULL);
+		bool L_20;
+		L_20 = Mathf_Approximately_mC2A3F657E3FD0CCAD4A4936CEE2F67D624A2AA55(L_17, L_19, /*hidden argument*/NULL);
 		if (!L_20)
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2977,7 +2961,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		int32_t L_23 = L_22.get_fontStyle_6();
 		if ((!(((uint32_t)L_21) == ((uint32_t)L_23))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2986,7 +2970,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		bool L_26 = L_25.get_richText_4();
 		if ((!(((uint32_t)L_24) == ((uint32_t)L_26))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -2995,7 +2979,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		int32_t L_29 = L_28.get_textAnchor_7();
 		if ((!(((uint32_t)L_27) == ((uint32_t)L_29))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -3004,7 +2988,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		bool L_32 = L_31.get_alignByGeometry_8();
 		if ((!(((uint32_t)L_30) == ((uint32_t)L_32))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
@@ -3013,115 +2997,93 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerationSettings_Equals_m39EB4E712
 		bool L_35 = L_34.get_resizeTextForBestFit_9();
 		if ((!(((uint32_t)L_33) == ((uint32_t)L_35))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		int32_t L_36 = __this->get_resizeTextMinSize_10();
+		bool L_36 = __this->get_updateBounds_12();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_37 = ___other0;
-		int32_t L_38 = L_37.get_resizeTextMinSize_10();
+		bool L_38 = L_37.get_updateBounds_12();
 		if ((!(((uint32_t)L_36) == ((uint32_t)L_38))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		int32_t L_39 = __this->get_resizeTextMaxSize_11();
+		int32_t L_39 = __this->get_horizontalOverflow_14();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_40 = ___other0;
-		int32_t L_41 = L_40.get_resizeTextMaxSize_11();
+		int32_t L_41 = L_40.get_horizontalOverflow_14();
 		if ((!(((uint32_t)L_39) == ((uint32_t)L_41))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		bool L_42 = __this->get_resizeTextForBestFit_9();
+		int32_t L_42 = __this->get_verticalOverflow_13();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_43 = ___other0;
-		bool L_44 = L_43.get_resizeTextForBestFit_9();
+		int32_t L_44 = L_43.get_verticalOverflow_13();
 		if ((!(((uint32_t)L_42) == ((uint32_t)L_44))))
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		bool L_45 = __this->get_updateBounds_12();
+		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_45 = __this->get_generationExtents_15();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_46 = ___other0;
-		bool L_47 = L_46.get_updateBounds_12();
-		if ((!(((uint32_t)L_45) == ((uint32_t)L_47))))
+		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_47 = L_46.get_generationExtents_15();
+		bool L_48;
+		L_48 = TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_45, L_47, /*hidden argument*/NULL);
+		if (!L_48)
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		int32_t L_48 = __this->get_horizontalOverflow_14();
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_49 = ___other0;
-		int32_t L_50 = L_49.get_horizontalOverflow_14();
-		if ((!(((uint32_t)L_48) == ((uint32_t)L_50))))
+		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_49 = __this->get_pivot_16();
+		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_50 = ___other0;
+		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_51 = L_50.get_pivot_16();
+		bool L_52;
+		L_52 = TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_49, L_51, /*hidden argument*/NULL);
+		if (!L_52)
 		{
-			goto IL_015e;
+			goto IL_012b;
 		}
 	}
 	{
-		int32_t L_51 = __this->get_verticalOverflow_13();
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_52 = ___other0;
-		int32_t L_53 = L_52.get_verticalOverflow_13();
-		if ((!(((uint32_t)L_51) == ((uint32_t)L_53))))
-		{
-			goto IL_015e;
-		}
-	}
-	{
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_54 = __this->get_generationExtents_15();
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_55 = ___other0;
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_56 = L_55.get_generationExtents_15();
-		bool L_57 = TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_54, L_56, /*hidden argument*/NULL);
-		if (!L_57)
-		{
-			goto IL_015e;
-		}
-	}
-	{
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_58 = __this->get_pivot_16();
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_59 = ___other0;
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_60 = L_59.get_pivot_16();
-		bool L_61 = TextGenerationSettings_CompareVector2_mE4B7BA9402E9183E2F373151C64BEDF29D3F9530((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)__this, L_58, L_60, /*hidden argument*/NULL);
-		if (!L_61)
-		{
-			goto IL_015e;
-		}
-	}
-	{
-		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_62 = __this->get_font_0();
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_63 = ___other0;
-		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_64 = L_63.get_font_0();
+		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_53 = __this->get_font_0();
+		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_54 = ___other0;
+		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_55 = L_54.get_font_0();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_65 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_62, L_64, /*hidden argument*/NULL);
-		G_B21_0 = ((int32_t)(L_65));
-		goto IL_015f;
+		bool L_56;
+		L_56 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_53, L_55, /*hidden argument*/NULL);
+		G_B18_0 = ((int32_t)(L_56));
+		goto IL_012c;
 	}
 
-IL_015e:
+IL_012b:
 	{
-		G_B21_0 = 0;
+		G_B18_0 = 0;
 	}
 
-IL_015f:
+IL_012c:
 	{
-		V_0 = (bool)G_B21_0;
-		goto IL_0162;
+		V_0 = (bool)G_B18_0;
+		goto IL_012f;
 	}
 
-IL_0162:
+IL_012f:
 	{
-		bool L_66 = V_0;
-		return L_66;
+		bool L_57 = V_0;
+		return L_57;
 	}
 }
 IL2CPP_EXTERN_C  bool TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70_AdjustorThunk (RuntimeObject * __this, TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  ___other0, const RuntimeMethod* method)
 {
 	int32_t _offset = 1;
 	TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A * _thisAdjusted = reinterpret_cast<TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *>(__this + _offset);
-	return TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70(_thisAdjusted, ___other0, method);
+	bool _returnValue;
+	_returnValue = TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70(_thisAdjusted, ___other0, method);
+	return _returnValue;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -3179,12 +3141,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator__ctor_m1476375B22A72960883
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator__ctor_m1476375B22A72960883563CFB9590528F2439EE0_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_m48440717C5233283529CCE706924A7C9A0082118_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_m6432106765DE3FF8E8DFA123340C6730E73EB6A6_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1__ctor_mE6BD12F7DC059A982D57E31C3D6E59C3E46B9CBE_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t6D5A50DDC9282F1B1127D04D53FD5A743391289D_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_tE41795D86BBD10D66F8F64CC87147539BC5AB2EB_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		Object__ctor_m88880E0413421D13FD95325EDCE231707CE1F405(__this, /*hidden argument*/NULL);
-		intptr_t L_0 = TextGenerator_Internal_Create_m683DDAEC169F2DB8F6D96AE1BEC2966CD10F4B9E(/*hidden argument*/NULL);
+		intptr_t L_0;
+		L_0 = TextGenerator_Internal_Create_m683DDAEC169F2DB8F6D96AE1BEC2966CD10F4B9E(/*hidden argument*/NULL);
 		__this->set_m_Ptr_0((intptr_t)L_0);
 		int32_t L_1 = ___initialCapacity0;
 		List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F * L_2 = (List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F *)il2cpp_codegen_object_new(List_1_t8907FD137E854241E2657BF53E6CEFF7370FAC5F_il2cpp_TypeInfo_var);
@@ -3206,7 +3174,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Finalize_m75F6D3C34EDF6AD3
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator_Finalize_m75F6D3C34EDF6AD36EFAC32F70C24361605E2D0A_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IDisposable_t099785737FC6A1E3699919A94109383715A8D807_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	Exception_t * __last_unhandled_exception = 0;
@@ -3238,8 +3206,8 @@ FINALLY_000b:
 	} // end finally (depth: 1)
 	IL2CPP_CLEANUP(11)
 	{
-		IL2CPP_JUMP_TBL(0x13, IL_0013)
 		IL2CPP_RETHROW_IF_UNHANDLED(Exception_t *)
+		IL2CPP_JUMP_TBL(0x13, IL_0013)
 	}
 
 IL_0013:
@@ -3253,13 +3221,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_System_IDisposable_Dispose
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator_System_IDisposable_Dispose_m068B4B5E7B8E1BDAE6C849561DE80BEE6440814C_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&IntPtr_t_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	bool V_0 = false;
 	{
 		intptr_t L_0 = __this->get_m_Ptr_0();
-		bool L_1 = IntPtr_op_Inequality_m212AF0E66AA81FEDC982B1C8A44ADDA24B995EB8((intptr_t)L_0, (intptr_t)(0), /*hidden argument*/NULL);
+		bool L_1;
+		L_1 = IntPtr_op_Inequality_m212AF0E66AA81FEDC982B1C8A44ADDA24B995EB8((intptr_t)L_0, (intptr_t)(0), /*hidden argument*/NULL);
 		V_0 = L_1;
 		bool L_2 = V_0;
 		if (!L_2)
@@ -3282,7 +3251,8 @@ IL_002e:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCountVisible_mA4D21FA8F79BCED441624DF5655B7DF079881076 (TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70 * __this, const RuntimeMethod* method)
 {
 	{
-		int32_t L_0 = TextGenerator_get_characterCount_mD4396E0258CB4E23B8ADA5F869504A69CA34580B(__this, /*hidden argument*/NULL);
+		int32_t L_0;
+		L_0 = TextGenerator_get_characterCount_mD4396E0258CB4E23B8ADA5F869504A69CA34580B(__this, /*hidden argument*/NULL);
 		return ((int32_t)il2cpp_codegen_subtract((int32_t)L_0, (int32_t)1));
 	}
 }
@@ -3292,7 +3262,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TextGenerationSettings_tAD927E4DCB8644B1B2BB8
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator_ValidatedSettings_mA1F21390BC9F8A8C257E43B9A3E8D1BF3C7B5EFB_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral0052C2B75AF160293B7E2B988F2F9D83DCD1D4D6);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC26096054589E56273AC485218FA5B65675C933E);
 		s_Il2CppMethodInitialized = true;
 	}
 	bool V_0 = false;
@@ -3308,7 +3282,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TextGenerationSettings_tAD927E4DCB8644B1B2BB8
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_0 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_1 = L_0.get_font_0();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_2 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_1, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
+		bool L_2;
+		L_2 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_1, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
 		if (!L_2)
 		{
 			goto IL_001c;
@@ -3318,7 +3293,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TextGenerationSettings_tAD927E4DCB8644B1B2BB8
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_3 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_4 = L_3.get_font_0();
 		NullCheck(L_4);
-		bool L_5 = Font_get_dynamic_m2CA1DFFB862B41EAE100830F654880CD668F23AD(L_4, /*hidden argument*/NULL);
+		bool L_5;
+		L_5 = Font_get_dynamic_m2CA1DFFB862B41EAE100830F654880CD668F23AD(L_4, /*hidden argument*/NULL);
 		G_B3_0 = ((int32_t)(L_5));
 		goto IL_001d;
 	}
@@ -3377,7 +3353,8 @@ IL_003c:
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_13 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_14 = L_13.get_font_0();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_15 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_14, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
+		bool L_15;
+		L_15 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_14, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
 		V_3 = L_15;
 		bool L_16 = V_3;
 		if (!L_16)
@@ -3393,7 +3370,8 @@ IL_003c:
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_21 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_22 = L_21.get_font_0();
 		NullCheck(L_22);
-		String_t* L_23 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_22, /*hidden argument*/NULL);
+		String_t* L_23;
+		L_23 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_22, /*hidden argument*/NULL);
 		NullCheck(L_20);
 		ArrayElementTypeCheck (L_20, L_23);
 		(L_20)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_23);
@@ -3422,7 +3400,8 @@ IL_0087:
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_27 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_28 = L_27.get_font_0();
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_29 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_28, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
+		bool L_29;
+		L_29 = Object_op_Inequality_mE1F187520BD83FB7D86A6D850710C4D42B864E90(L_28, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
 		V_5 = L_29;
 		bool L_30 = V_5;
 		if (!L_30)
@@ -3438,7 +3417,8 @@ IL_0087:
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_35 = ___settings0;
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_36 = L_35.get_font_0();
 		NullCheck(L_36);
-		String_t* L_37 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_36, /*hidden argument*/NULL);
+		String_t* L_37;
+		L_37 = Object_get_name_m0C7BC870ED2F0DC5A2FB09628136CD7D1CB82CFB(L_36, /*hidden argument*/NULL);
 		NullCheck(L_34);
 		ArrayElementTypeCheck (L_34, L_37);
 		(L_34)->SetAt(static_cast<il2cpp_array_size_t>(0), (RuntimeObject *)L_37);
@@ -3511,18 +3491,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TextGenerator_GetPreferredWidth_mF951E0
 		(&___settings1)->set_updateBounds_12((bool)1);
 		String_t* L_0 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___settings1;
-		TextGenerator_Populate_m90DBFEA8769DCDD3F62949A677230E041358FD26(__this, L_0, L_1, /*hidden argument*/NULL);
-		Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878  L_2 = TextGenerator_get_rectExtents_m2573486A6322644F0EA3FB2AE05C5D5C52BC285B(__this, /*hidden argument*/NULL);
-		V_0 = L_2;
-		float L_3 = Rect_get_width_m4A0500D95CA84917787A8E90D26E66D49DFA90EF((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_0), /*hidden argument*/NULL);
-		V_1 = L_3;
+		bool L_2;
+		L_2 = TextGenerator_Populate_m90DBFEA8769DCDD3F62949A677230E041358FD26(__this, L_0, L_1, /*hidden argument*/NULL);
+		Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878  L_3;
+		L_3 = TextGenerator_get_rectExtents_m2573486A6322644F0EA3FB2AE05C5D5C52BC285B(__this, /*hidden argument*/NULL);
+		V_0 = L_3;
+		float L_4;
+		L_4 = Rect_get_width_m4A0500D95CA84917787A8E90D26E66D49DFA90EF((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_0), /*hidden argument*/NULL);
+		V_1 = L_4;
 		goto IL_0033;
 	}
 
 IL_0033:
 	{
-		float L_4 = V_1;
-		return L_4;
+		float L_5 = V_1;
+		return L_5;
 	}
 }
 // System.Single UnityEngine.TextGenerator::GetPreferredHeight(System.String,UnityEngine.TextGenerationSettings)
@@ -3536,18 +3519,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float TextGenerator_GetPreferredHeight_mE685E
 		(&___settings1)->set_updateBounds_12((bool)1);
 		String_t* L_0 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___settings1;
-		TextGenerator_Populate_m90DBFEA8769DCDD3F62949A677230E041358FD26(__this, L_0, L_1, /*hidden argument*/NULL);
-		Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878  L_2 = TextGenerator_get_rectExtents_m2573486A6322644F0EA3FB2AE05C5D5C52BC285B(__this, /*hidden argument*/NULL);
-		V_0 = L_2;
-		float L_3 = Rect_get_height_m42FEF31015A269E6E2B7E6F62E72E5BF6602302A((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_0), /*hidden argument*/NULL);
-		V_1 = L_3;
+		bool L_2;
+		L_2 = TextGenerator_Populate_m90DBFEA8769DCDD3F62949A677230E041358FD26(__this, L_0, L_1, /*hidden argument*/NULL);
+		Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878  L_3;
+		L_3 = TextGenerator_get_rectExtents_m2573486A6322644F0EA3FB2AE05C5D5C52BC285B(__this, /*hidden argument*/NULL);
+		V_0 = L_3;
+		float L_4;
+		L_4 = Rect_get_height_m42FEF31015A269E6E2B7E6F62E72E5BF6602302A((Rect_t7D9187DB6339DBA5741C09B6CCEF2F54F1966878 *)(&V_0), /*hidden argument*/NULL);
+		V_1 = L_4;
 		goto IL_002b;
 	}
 
 IL_002b:
 	{
-		float L_4 = V_1;
-		return L_4;
+		float L_5 = V_1;
+		return L_5;
 	}
 }
 // System.Boolean UnityEngine.TextGenerator::PopulateWithErrors(System.String,UnityEngine.TextGenerationSettings,UnityEngine.GameObject)
@@ -3556,7 +3542,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_PopulateWithErrors_mE5FA5D
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator_PopulateWithErrors_mE5FA5DB6EBB1EBA92C3A09DC213EB8607396F265_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C585CF5ADE_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral7EE2EC0E141890ED13D1EEC3562248EA95485987);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralEEEF4964BE1943E118BB297F57BDB9955C6DA372);
 		s_Il2CppMethodInitialized = true;
 	}
 	int32_t V_0 = 0;
@@ -3567,7 +3556,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_PopulateWithErrors_mE5FA5D
 	{
 		String_t* L_0 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___settings1;
-		int32_t L_2 = TextGenerator_PopulateWithError_mCE3D60B71CB4B77197EDE7E1EC11831CBDD5C2C5(__this, L_0, L_1, /*hidden argument*/NULL);
+		int32_t L_2;
+		L_2 = TextGenerator_PopulateWithError_mCE3D60B71CB4B77197EDE7E1EC11831CBDD5C2C5(__this, L_0, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		int32_t L_3 = V_0;
 		V_1 = (bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0);
@@ -3648,7 +3638,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_m90DBFEA8769DCDD3
 	{
 		String_t* L_0 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___settings1;
-		int32_t L_2 = TextGenerator_PopulateWithError_mCE3D60B71CB4B77197EDE7E1EC11831CBDD5C2C5(__this, L_0, L_1, /*hidden argument*/NULL);
+		int32_t L_2;
+		L_2 = TextGenerator_PopulateWithError_mCE3D60B71CB4B77197EDE7E1EC11831CBDD5C2C5(__this, L_0, L_1, /*hidden argument*/NULL);
 		V_0 = L_2;
 		int32_t L_3 = V_0;
 		V_1 = (bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0);
@@ -3677,7 +3668,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateWithError_mCE3D
 	{
 		String_t* L_1 = ___str0;
 		String_t* L_2 = __this->get_m_LastString_1();
-		bool L_3 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_1, L_2, /*hidden argument*/NULL);
+		bool L_3;
+		L_3 = String_op_Equality_m2B91EE68355F142F67095973D32EB5828B7B73CB(L_1, L_2, /*hidden argument*/NULL);
 		if (!L_3)
 		{
 			goto IL_0026;
@@ -3685,7 +3677,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateWithError_mCE3D
 	}
 	{
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_4 = __this->get_m_LastSettings_2();
-		bool L_5 = TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)(&___settings1), L_4, /*hidden argument*/NULL);
+		bool L_5;
+		L_5 = TextGenerationSettings_Equals_m39EB4E712D3C4A3DEE0A3A09EB2CD80EED5B6E70((TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A *)(&___settings1), L_4, /*hidden argument*/NULL);
 		G_B4_0 = ((int32_t)(L_5));
 		goto IL_0027;
 	}
@@ -3714,7 +3707,8 @@ IL_0034:
 	{
 		String_t* L_8 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_9 = ___settings1;
-		int32_t L_10 = TextGenerator_PopulateAlways_mA85E7B11C3267E35D10842423DA7874CBF5A77CF(__this, L_8, L_9, /*hidden argument*/NULL);
+		int32_t L_10;
+		L_10 = TextGenerator_PopulateAlways_mA85E7B11C3267E35D10842423DA7874CBF5A77CF(__this, L_8, L_9, /*hidden argument*/NULL);
 		__this->set_m_LastValid_4(L_10);
 		int32_t L_11 = __this->get_m_LastValid_4();
 		V_1 = L_11;
@@ -3744,7 +3738,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateAlways_mA85E7B1
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_1 = ___settings1;
 		__this->set_m_LastSettings_2(L_1);
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_2 = ___settings1;
-		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_3 = TextGenerator_ValidatedSettings_mA1F21390BC9F8A8C257E43B9A3E8D1BF3C7B5EFB(__this, L_2, /*hidden argument*/NULL);
+		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_3;
+		L_3 = TextGenerator_ValidatedSettings_mA1F21390BC9F8A8C257E43B9A3E8D1BF3C7B5EFB(__this, L_2, /*hidden argument*/NULL);
 		V_0 = L_3;
 		String_t* L_4 = ___str0;
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_5 = V_0;
@@ -3783,18 +3778,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_PopulateAlways_mA85E7B1
 		bool L_38 = L_37.get_generateOutOfBounds_17();
 		TextGenerationSettings_tAD927E4DCB8644B1B2BB810B5FB13C90B753898A  L_39 = V_0;
 		bool L_40 = L_39.get_alignByGeometry_8();
-		TextGenerator_Populate_Internal_m1E27E45E04E4709DD18502776659E882E2252554(__this, L_4, L_6, L_8, L_10, L_12, L_14, L_16, L_18, L_20, L_22, L_24, L_26, L_28, L_30, L_32, L_34, L_36, L_38, L_40, (int32_t*)(&V_1), /*hidden argument*/NULL);
-		int32_t L_41 = V_1;
-		__this->set_m_LastValid_4(L_41);
+		bool L_41;
+		L_41 = TextGenerator_Populate_Internal_m1E27E45E04E4709DD18502776659E882E2252554(__this, L_4, L_6, L_8, L_10, L_12, L_14, L_16, L_18, L_20, L_22, L_24, L_26, L_28, L_30, L_32, L_34, L_36, L_38, L_40, (int32_t*)(&V_1), /*hidden argument*/NULL);
 		int32_t L_42 = V_1;
-		V_2 = L_42;
+		__this->set_m_LastValid_4(L_42);
+		int32_t L_43 = V_1;
+		V_2 = L_43;
 		goto IL_00b4;
 	}
 
 IL_00b4:
 	{
-		int32_t L_43 = V_2;
-		return L_43;
+		int32_t L_44 = V_2;
+		return L_44;
 	}
 }
 // System.Collections.Generic.IList`1<UnityEngine.UIVertex> UnityEngine.TextGenerator::get_verts()
@@ -3914,8 +3910,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_characterCount_mD43
 	static TextGenerator_get_characterCount_mD4396E0258CB4E23B8ADA5F869504A69CA34580B_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TextGenerator_get_characterCount_mD4396E0258CB4E23B8ADA5F869504A69CA34580B_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::get_characterCount()");
-	int32_t retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	int32_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.Int32 UnityEngine.TextGenerator::get_lineCount()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_lineCount_m20F5297212E59393F574E277D9A5E5843E72FD6A (TextGenerator_t893F256D3587633108E00E5731CDC5A77AFF1B70 * __this, const RuntimeMethod* method)
@@ -3924,8 +3920,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t TextGenerator_get_lineCount_m20F52972
 	static TextGenerator_get_lineCount_m20F5297212E59393F574E277D9A5E5843E72FD6A_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TextGenerator_get_lineCount_m20F5297212E59393F574E277D9A5E5843E72FD6A_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::get_lineCount()");
-	int32_t retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	int32_t icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.IntPtr UnityEngine.TextGenerator::Internal_Create()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TextGenerator_Internal_Create_m683DDAEC169F2DB8F6D96AE1BEC2966CD10F4B9E (const RuntimeMethod* method)
@@ -3934,8 +3930,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t TextGenerator_Internal_Create_m683DD
 	static TextGenerator_Internal_Create_m683DDAEC169F2DB8F6D96AE1BEC2966CD10F4B9E_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TextGenerator_Internal_Create_m683DDAEC169F2DB8F6D96AE1BEC2966CD10F4B9E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::Internal_Create()");
-	intptr_t retVal = _il2cpp_icall_func();
-	return retVal;
+	intptr_t icallRetVal = _il2cpp_icall_func();
+	return icallRetVal;
 }
 // System.Void UnityEngine.TextGenerator::Internal_Destroy(System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextGenerator_Internal_Destroy_m336988E8A30047421161672F2CA40557BC3452F6 (intptr_t ___ptr0, const RuntimeMethod* method)
@@ -3971,7 +3967,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_m4DFCDDE
 		bool L_18 = ___generateOutOfBounds19;
 		bool L_19 = ___alignByGeometry20;
 		uint32_t* L_20 = ___error21;
-		bool L_21 = TextGenerator_Populate_Internal_Injected_m521AC47E26C872BEDDC23AF447EEA2E45EE088F3(__this, L_0, L_1, (Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 *)(&___color2), L_2, L_3, L_4, L_5, L_6, L_7, L_8, L_9, L_10, L_11, L_12, L_13, L_14, L_15, L_16, L_17, L_18, L_19, (uint32_t*)L_20, /*hidden argument*/NULL);
+		bool L_21;
+		L_21 = TextGenerator_Populate_Internal_Injected_m521AC47E26C872BEDDC23AF447EEA2E45EE088F3(__this, L_0, L_1, (Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 *)(&___color2), L_2, L_3, L_4, L_5, L_6, L_7, L_8, L_9, L_10, L_11, L_12, L_13, L_14, L_15, L_16, L_17, L_18, L_19, (uint32_t*)L_20, /*hidden argument*/NULL);
 		return L_21;
 	}
 }
@@ -3981,7 +3978,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_m1E27E45
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (TextGenerator_Populate_Internal_m1E27E45E04E4709DD18502776659E882E2252554_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	uint32_t V_0 = 0;
@@ -3991,7 +3988,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_m1E27E45
 	{
 		Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * L_0 = ___font1;
 		IL2CPP_RUNTIME_CLASS_INIT(Object_tF2F3778131EFF286AF62B7B013A170F95A91571A_il2cpp_TypeInfo_var);
-		bool L_1 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_0, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
+		bool L_1;
+		L_1 = Object_op_Equality_mEE9EC7EB5C7DC3E95B94AB904E1986FC4D566D54(L_0, (Object_tF2F3778131EFF286AF62B7B013A170F95A91571A *)NULL, /*hidden argument*/NULL);
 		V_2 = L_1;
 		bool L_2 = V_2;
 		if (!L_2)
@@ -4034,7 +4032,8 @@ IL_0015:
 		float L_26 = L_25.get_y_1();
 		bool L_27 = ___generateOutOfBounds17;
 		bool L_28 = ___alignByGeometry18;
-		bool L_29 = TextGenerator_Populate_Internal_m4DFCDDEC2D327C33EFEBD4FC71264A91A10D1F37(__this, L_4, L_5, L_6, L_7, L_8, L_9, L_10, L_11, L_12, L_13, L_14, L_15, L_16, L_17, L_18, L_20, L_22, L_24, L_26, L_27, L_28, (uint32_t*)(&V_0), /*hidden argument*/NULL);
+		bool L_29;
+		L_29 = TextGenerator_Populate_Internal_m4DFCDDEC2D327C33EFEBD4FC71264A91A10D1F37(__this, L_4, L_5, L_6, L_7, L_8, L_9, L_10, L_11, L_12, L_13, L_14, L_15, L_16, L_17, L_18, L_20, L_22, L_24, L_26, L_27, L_28, (uint32_t*)(&V_0), /*hidden argument*/NULL);
 		V_1 = L_29;
 		int32_t* L_30 = ___error19;
 		uint32_t L_31 = V_0;
@@ -4093,8 +4092,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool TextGenerator_Populate_Internal_Injected
 	static TextGenerator_Populate_Internal_Injected_m521AC47E26C872BEDDC23AF447EEA2E45EE088F3_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TextGenerator_Populate_Internal_Injected_m521AC47E26C872BEDDC23AF447EEA2E45EE088F3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextGenerator::Populate_Internal_Injected(System.String,UnityEngine.Font,UnityEngine.Color&,System.Int32,System.Single,System.Single,UnityEngine.FontStyle,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,UnityEngine.TextAnchor,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.UInt32&)");
-	bool retVal = _il2cpp_icall_func(__this, ___str0, ___font1, ___color2, ___fontSize3, ___scaleFactor4, ___lineSpacing5, ___style6, ___richText7, ___resizeTextForBestFit8, ___resizeTextMinSize9, ___resizeTextMaxSize10, ___verticalOverFlow11, ___horizontalOverflow12, ___updateBounds13, ___anchor14, ___extentsX15, ___extentsY16, ___pivotX17, ___pivotY18, ___generateOutOfBounds19, ___alignByGeometry20, ___error21);
-	return retVal;
+	bool icallRetVal = _il2cpp_icall_func(__this, ___str0, ___font1, ___color2, ___fontSize3, ___scaleFactor4, ___lineSpacing5, ___style6, ___richText7, ___resizeTextForBestFit8, ___resizeTextMinSize9, ___resizeTextMaxSize10, ___verticalOverFlow11, ___horizontalOverflow12, ___updateBounds13, ___anchor14, ___extentsX15, ___extentsY16, ___pivotX17, ___pivotY18, ___generateOutOfBounds19, ___alignByGeometry20, ___error21);
+	return icallRetVal;
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -4120,8 +4119,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A
 	static TextMesh_get_font_m8357275CF280F529C27AAEF51BBBF3E5FA304419_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TextMesh_get_font_m8357275CF280F529C27AAEF51BBBF3E5FA304419_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TextMesh::get_font()");
-	Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * retVal = _il2cpp_icall_func(__this);
-	return retVal;
+	Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * icallRetVal = _il2cpp_icall_func(__this);
+	return icallRetVal;
 }
 // System.Void UnityEngine.TextMesh::set_font(UnityEngine.Font)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TextMesh_set_font_mF87EE065DC748F4B29F6FE3E809A6CD1EA3AB711 (TextMesh_t830C2452CE189A0D35CD9ED26B6B74D506B01273 * __this, Font_tB53D3F362CB1A0B92307B362826F212AE2D2A6A9 * ___value0, const RuntimeMethod* method)
@@ -4217,7 +4216,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIVertex__cctor_m0354096E8F1EBF96E7089A8
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_method (UIVertex__cctor_m0354096E8F1EBF96E7089A869E74F4BCEAD4BDE4_MetadataUsageId);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A  V_0;
@@ -4232,23 +4231,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIVertex__cctor_m0354096E8F1EBF96E7089A8
 		Vector4__ctor_mCAB598A37C4D5E80282277E828B8A3EAD936D3B2((&L_1), (1.0f), (0.0f), (0.0f), (-1.0f), /*hidden argument*/NULL);
 		((UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_StaticFields*)il2cpp_codegen_static_fields_for(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var))->set_s_DefaultTangent_9(L_1);
 		il2cpp_codegen_initobj((&V_0), sizeof(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A ));
-		IL2CPP_RUNTIME_CLASS_INIT(Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E_il2cpp_TypeInfo_var);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_2 = Vector3_get_zero_m1A8F7993167785F750B6B01762D22C2597C84EF6(/*hidden argument*/NULL);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_2;
+		L_2 = Vector3_get_zero_m1A8F7993167785F750B6B01762D22C2597C84EF6(/*hidden argument*/NULL);
 		(&V_0)->set_position_0(L_2);
-		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_3 = Vector3_get_back_mD521DF1A2C26E145578E07D618E1E4D08A1C6220(/*hidden argument*/NULL);
+		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_3;
+		L_3 = Vector3_get_back_mD521DF1A2C26E145578E07D618E1E4D08A1C6220(/*hidden argument*/NULL);
 		(&V_0)->set_normal_1(L_3);
 		Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  L_4 = ((UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_StaticFields*)il2cpp_codegen_static_fields_for(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var))->get_s_DefaultTangent_9();
 		(&V_0)->set_tangent_2(L_4);
 		Color32_tDB54A78627878A7D2DE42BB028D64306A18E858D  L_5 = ((UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_StaticFields*)il2cpp_codegen_static_fields_for(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var))->get_s_DefaultColor_8();
 		(&V_0)->set_color_3(L_5);
-		IL2CPP_RUNTIME_CLASS_INIT(Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9_il2cpp_TypeInfo_var);
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_6 = Vector2_get_zero_m621041B9DF5FAE86C1EF4CB28C224FEA089CB828(/*hidden argument*/NULL);
+		Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  L_6;
+		L_6 = Vector4_get_zero_m9E807FEBC8B638914DF4A0BA87C0BD95A19F5200(/*hidden argument*/NULL);
 		(&V_0)->set_uv0_4(L_6);
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_7 = Vector2_get_zero_m621041B9DF5FAE86C1EF4CB28C224FEA089CB828(/*hidden argument*/NULL);
+		Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  L_7;
+		L_7 = Vector4_get_zero_m9E807FEBC8B638914DF4A0BA87C0BD95A19F5200(/*hidden argument*/NULL);
 		(&V_0)->set_uv1_5(L_7);
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_8 = Vector2_get_zero_m621041B9DF5FAE86C1EF4CB28C224FEA089CB828(/*hidden argument*/NULL);
+		Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  L_8;
+		L_8 = Vector4_get_zero_m9E807FEBC8B638914DF4A0BA87C0BD95A19F5200(/*hidden argument*/NULL);
 		(&V_0)->set_uv2_6(L_8);
-		Vector2_tBB32F2736AEC229A7BFBCE18197EC0F6AC7EC2D9  L_9 = Vector2_get_zero_m621041B9DF5FAE86C1EF4CB28C224FEA089CB828(/*hidden argument*/NULL);
+		Vector4_tA56A37FC5661BCC89C3DDC24BE12BA5BCB6A02C7  L_9;
+		L_9 = Vector4_get_zero_m9E807FEBC8B638914DF4A0BA87C0BD95A19F5200(/*hidden argument*/NULL);
 		(&V_0)->set_uv3_7(L_9);
 		UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A  L_10 = V_0;
 		((UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_StaticFields*)il2cpp_codegen_static_fields_for(UIVertex_tD94AAC5F0B42DBC441AAA8ADBFCFF9E5C320C03A_il2cpp_TypeInfo_var))->set_simpleVert_10(L_10);
@@ -4280,14 +4283,14 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_FontTextureRebuildCallback_tBF11A51
 	il2cppPInvokeFunc();
 
 }
-// System.Void UnityEngine.Font_FontTextureRebuildCallback::.ctor(System.Object,System.IntPtr)
+// System.Void UnityEngine.Font/FontTextureRebuildCallback::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback__ctor_m58D67535ED1CC9895AB016CBB713A730A73480E0 (FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
 	__this->set_method_ptr_0(il2cpp_codegen_get_method_pointer((RuntimeMethod*)___method1));
 	__this->set_method_3(___method1);
 	__this->set_m_target_2(___object0);
 }
-// System.Void UnityEngine.Font_FontTextureRebuildCallback::Invoke()
+// System.Void UnityEngine.Font/FontTextureRebuildCallback::Invoke()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_Invoke_m7F5D9CAA51DC8C9779104ACF46F668654B35EA1F (FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB * __this, const RuntimeMethod* method)
 {
 	DelegateU5BU5D_t677D8FE08A5F99E8EE49150B73966CD6E9BF7DB8* delegateArrayToInvoke = __this->get_delegates_11();
@@ -4334,7 +4337,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_Invoke_m7F5D9
 		else
 		{
 			// closed
-			if (il2cpp_codegen_method_is_virtual(targetMethod) && !il2cpp_codegen_object_is_of_sealed_type(targetThis) && il2cpp_codegen_delegate_has_invoker((Il2CppDelegate*)__this))
+			if (targetThis != NULL && il2cpp_codegen_method_is_virtual(targetMethod) && !il2cpp_codegen_object_is_of_sealed_type(targetThis) && il2cpp_codegen_delegate_has_invoker((Il2CppDelegate*)__this))
 			{
 				if (il2cpp_codegen_method_is_generic_instance(targetMethod))
 				{
@@ -4359,13 +4362,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_Invoke_m7F5D9
 		}
 	}
 }
-// System.IAsyncResult UnityEngine.Font_FontTextureRebuildCallback::BeginInvoke(System.AsyncCallback,System.Object)
+// System.IAsyncResult UnityEngine.Font/FontTextureRebuildCallback::BeginInvoke(System.AsyncCallback,System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FontTextureRebuildCallback_BeginInvoke_m3F36739573BA8EE2C6C3BF90DC37E9D78AD7365F (FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB * __this, AsyncCallback_tA7921BEF974919C46FF8F9D9867C567B200BB0EA * ___callback0, RuntimeObject * ___object1, const RuntimeMethod* method)
 {
 	void *__d_args[1] = {0};
-	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback0, (RuntimeObject*)___object1);
+	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___callback0, (RuntimeObject*)___object1);;
 }
-// System.Void UnityEngine.Font_FontTextureRebuildCallback::EndInvoke(System.IAsyncResult)
+// System.Void UnityEngine.Font/FontTextureRebuildCallback::EndInvoke(System.IAsyncResult)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FontTextureRebuildCallback_EndInvoke_m3FDA95B07122814A8E63A8B7FFB5BCA7EC157B2C (FontTextureRebuildCallback_tBF11A511EBD8D237A1C5885D460B42A45DDBB2DB * __this, RuntimeObject* ___result0, const RuntimeMethod* method)
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___result0, 0);

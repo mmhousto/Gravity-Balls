@@ -12,23 +12,51 @@ namespace baselib
         {
             // Index of the most significant bit in a 32bit mask. Returns -1 if no bits are set.
             inline int HighestBit(uint32_t value);
+            // Index of the most significant bit in a 32bit mask of size_t value. Returns -1 if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 4, bool>::type = 0>
+            inline int HighestBit(T value) { return HighestBit(static_cast<uint32_t>(value)); }
+
             // Index of the most significant bit in a 64bit mask. Returns -1 if no bits are set.
             inline int HighestBit(uint64_t value);
+            // Index of the most significant bit in a 64bit mask of size_t value. Returns -1 if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 8, bool>::type = 0>
+            inline int HighestBit(T value) { return HighestBit(static_cast<uint64_t>(value)); }
 
             // Index of the most significant bit in a 32bit mask. Unspecified result if no bits are set.
             inline int HighestBitNonZero(uint32_t value);
+            // Index of the most significant bit in a 32bit mask of size_t value. Unspecified result if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 4, bool>::type = 0>
+            inline int HighestBitNonZero(T value) { return HighestBitNonZero(static_cast<uint32_t>(value)); }
+
             // Index of the most significant bit in a 64bit mask. Unspecified result if no bits are set.
             inline int HighestBitNonZero(uint64_t value);
+            // Index of the most significant bit in a 64bit mask of size_t value. Unspecified result if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 8, bool>::type = 0>
+            inline int HighestBitNonZero(T value) { return HighestBitNonZero(static_cast<uint64_t>(value)); }
 
-            // Index of the least significant bit in a 64bit mask. Returns -1 if no bits are set.
+            // Index of the least significant bit in a 32bit mask. Returns -1 if no bits are set.
             inline int LowestBit(uint32_t value);
+            // Index of the least significant bit in a 32bit mask of size_t value. Returns -1 if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 4, bool>::type = 0>
+            inline int LowestBit(T value) { return LowestBit(static_cast<uint32_t>(value)); }
+
             // Index of the least significant bit in a 64bit mask. Returns -1 if no bits are set.
             inline int LowestBit(uint64_t value);
+            // Index of the least significant bit in a 64bit mask of size_t value. Returns -1 if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 8, bool>::type = 0>
+            inline int LowestBit(T value) { return LowestBit(static_cast<uint64_t>(value)); }
+
+            // Index of the least significant bit in a 32bit mask. Unspecified result if no bits are set.
+            inline int LowestBitNonZero(uint32_t value);
+            // Index of the least significant bit in a 32bit mask of size_t value. Unspecified result if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 4, bool>::type = 0>
+            inline int LowestBitNonZero(T value) { return LowestBitNonZero(static_cast<uint32_t>(value)); }
 
             // Index of the least significant bit in a 64bit mask. Unspecified result if no bits are set.
-            inline int LowestBitNonZero(uint32_t value);
-            // Index of the least significant bit in a 64bit mask. Unspecified result if no bits are set.
             inline int LowestBitNonZero(uint64_t value);
+            // Index of the least significant bit in a 64bit mask of size_t value. Unspecified result if no bits are set.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 8, bool>::type = 0>
+            inline int LowestBitNonZero(T value) { return LowestBitNonZero(static_cast<uint64_t>(value)); }
 
             // Returns number of set bits in a 64 bit mask.
             inline int BitsInMask(uint64_t mask);
@@ -102,6 +130,10 @@ namespace baselib
                 return value + 1;
             }
 
+            // Returns the next power-of-two of a 32bit number of size_t value, or the current value if it is a power two.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 4, bool>::type = 0>
+            inline uint32_t CeilPowerOfTwo(T value) { return CeilPowerOfTwo(static_cast<uint32_t>(value)); }
+
             // Returns the next power-of-two of a 64bit number or the current value if it is a power two.
             inline uint64_t CeilPowerOfTwo(uint64_t value)
             {
@@ -114,6 +146,10 @@ namespace baselib
                 value |= value >> 1;
                 return value + 1;
             }
+
+            // Returns the next power-of-two of a 64bit number of size_t value, or the current value if it is a power two.
+            template<typename T, typename std::enable_if<std::is_same<size_t, T>::value && sizeof(T) == 8, bool>::type = 0>
+            inline uint64_t CeilPowerOfTwo(T value) { return CeilPowerOfTwo(static_cast<uint64_t>(value)); }
 
             // Returns the closest power-of-two of a 32bit number.
             template<typename T>

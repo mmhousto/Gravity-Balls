@@ -6,21 +6,15 @@
 #endif
 
 
-
 #include "codegen/il2cpp-codegen-metadata.h"
 
 
 
 
 
-IL2CPP_EXTERN_C_BEGIN
-IL2CPP_EXTERN_C_END
-
-
-
-
-extern const Il2CppCodeGenModule g_UnityEngine_TilemapModuleCodeGenModule;
-const Il2CppCodeGenModule g_UnityEngine_TilemapModuleCodeGenModule = 
+extern const CustomAttributesCacheGenerator g_UnityEngine_TilemapModule_AttributeGenerators[];
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_TilemapModule_CodeGenModule;
+const Il2CppCodeGenModule g_UnityEngine_TilemapModule_CodeGenModule = 
 {
 	"UnityEngine.TilemapModule.dll",
 	0,
@@ -31,6 +25,11 @@ const Il2CppCodeGenModule g_UnityEngine_TilemapModuleCodeGenModule =
 	0,
 	NULL,
 	0,
+	NULL,
+	NULL,
+	g_UnityEngine_TilemapModule_AttributeGenerators,
+	NULL, // module initializer,
+	NULL,
 	NULL,
 	NULL,
 };

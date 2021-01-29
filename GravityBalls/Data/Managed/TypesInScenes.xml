@@ -95,10 +95,6 @@
 	<assembly fullname="Unity.VectorGraphics">
 		<type fullname="SVGImage" preserve="nothing"/>
 	</assembly>
-	<assembly fullname="UnityEngine.Advertisements">
-		<type fullname="UnityEngine.Advertisements.Placeholder" preserve="nothing"/>
-		<type fullname="UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder" preserve="nothing"/>
-	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>
 		<type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="nothing"/>

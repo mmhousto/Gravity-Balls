@@ -12949,80 +12949,90 @@ public:
 struct  SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8  : public EventArgs_tBCAACA538A5195B6D6C8DFCC3524A2A4A67FD8BA
 {
 public:
+	// System.Boolean System.Net.Sockets.SocketAsyncEventArgs::disposed
+	bool ___disposed_1;
 	// System.Int32 modreq(System.Runtime.CompilerServices.IsVolatile) System.Net.Sockets.SocketAsyncEventArgs::in_progress
-	int32_t ___in_progress_1;
+	int32_t ___in_progress_2;
 	// System.Net.EndPoint System.Net.Sockets.SocketAsyncEventArgs::remote_ep
-	EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * ___remote_ep_2;
+	EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * ___remote_ep_3;
 	// System.Net.Sockets.Socket System.Net.Sockets.SocketAsyncEventArgs::current_socket
-	Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * ___current_socket_3;
+	Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * ___current_socket_4;
 	// System.Net.Sockets.Socket System.Net.Sockets.SocketAsyncEventArgs::<AcceptSocket>k__BackingField
-	Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * ___U3CAcceptSocketU3Ek__BackingField_4;
+	Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * ___U3CAcceptSocketU3Ek__BackingField_5;
 	// System.Int32 System.Net.Sockets.SocketAsyncEventArgs::<BytesTransferred>k__BackingField
-	int32_t ___U3CBytesTransferredU3Ek__BackingField_5;
+	int32_t ___U3CBytesTransferredU3Ek__BackingField_6;
 	// System.Net.Sockets.SocketError System.Net.Sockets.SocketAsyncEventArgs::<SocketError>k__BackingField
-	int32_t ___U3CSocketErrorU3Ek__BackingField_6;
+	int32_t ___U3CSocketErrorU3Ek__BackingField_7;
 	// System.EventHandler`1<System.Net.Sockets.SocketAsyncEventArgs> System.Net.Sockets.SocketAsyncEventArgs::Completed
-	EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * ___Completed_7;
+	EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * ___Completed_8;
 
 public:
-	inline static int32_t get_offset_of_in_progress_1() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___in_progress_1)); }
-	inline int32_t get_in_progress_1() const { return ___in_progress_1; }
-	inline int32_t* get_address_of_in_progress_1() { return &___in_progress_1; }
-	inline void set_in_progress_1(int32_t value)
+	inline static int32_t get_offset_of_disposed_1() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___disposed_1)); }
+	inline bool get_disposed_1() const { return ___disposed_1; }
+	inline bool* get_address_of_disposed_1() { return &___disposed_1; }
+	inline void set_disposed_1(bool value)
 	{
-		___in_progress_1 = value;
+		___disposed_1 = value;
 	}
 
-	inline static int32_t get_offset_of_remote_ep_2() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___remote_ep_2)); }
-	inline EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * get_remote_ep_2() const { return ___remote_ep_2; }
-	inline EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA ** get_address_of_remote_ep_2() { return &___remote_ep_2; }
-	inline void set_remote_ep_2(EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * value)
+	inline static int32_t get_offset_of_in_progress_2() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___in_progress_2)); }
+	inline int32_t get_in_progress_2() const { return ___in_progress_2; }
+	inline int32_t* get_address_of_in_progress_2() { return &___in_progress_2; }
+	inline void set_in_progress_2(int32_t value)
 	{
-		___remote_ep_2 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___remote_ep_2), (void*)value);
+		___in_progress_2 = value;
 	}
 
-	inline static int32_t get_offset_of_current_socket_3() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___current_socket_3)); }
-	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * get_current_socket_3() const { return ___current_socket_3; }
-	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 ** get_address_of_current_socket_3() { return &___current_socket_3; }
-	inline void set_current_socket_3(Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * value)
+	inline static int32_t get_offset_of_remote_ep_3() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___remote_ep_3)); }
+	inline EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * get_remote_ep_3() const { return ___remote_ep_3; }
+	inline EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA ** get_address_of_remote_ep_3() { return &___remote_ep_3; }
+	inline void set_remote_ep_3(EndPoint_t18D4AE8D03090A2B262136E59F95CE61418C34DA * value)
 	{
-		___current_socket_3 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___current_socket_3), (void*)value);
+		___remote_ep_3 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___remote_ep_3), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CAcceptSocketU3Ek__BackingField_4() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CAcceptSocketU3Ek__BackingField_4)); }
-	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * get_U3CAcceptSocketU3Ek__BackingField_4() const { return ___U3CAcceptSocketU3Ek__BackingField_4; }
-	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 ** get_address_of_U3CAcceptSocketU3Ek__BackingField_4() { return &___U3CAcceptSocketU3Ek__BackingField_4; }
-	inline void set_U3CAcceptSocketU3Ek__BackingField_4(Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * value)
+	inline static int32_t get_offset_of_current_socket_4() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___current_socket_4)); }
+	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * get_current_socket_4() const { return ___current_socket_4; }
+	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 ** get_address_of_current_socket_4() { return &___current_socket_4; }
+	inline void set_current_socket_4(Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * value)
 	{
-		___U3CAcceptSocketU3Ek__BackingField_4 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___U3CAcceptSocketU3Ek__BackingField_4), (void*)value);
+		___current_socket_4 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___current_socket_4), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CBytesTransferredU3Ek__BackingField_5() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CBytesTransferredU3Ek__BackingField_5)); }
-	inline int32_t get_U3CBytesTransferredU3Ek__BackingField_5() const { return ___U3CBytesTransferredU3Ek__BackingField_5; }
-	inline int32_t* get_address_of_U3CBytesTransferredU3Ek__BackingField_5() { return &___U3CBytesTransferredU3Ek__BackingField_5; }
-	inline void set_U3CBytesTransferredU3Ek__BackingField_5(int32_t value)
+	inline static int32_t get_offset_of_U3CAcceptSocketU3Ek__BackingField_5() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CAcceptSocketU3Ek__BackingField_5)); }
+	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * get_U3CAcceptSocketU3Ek__BackingField_5() const { return ___U3CAcceptSocketU3Ek__BackingField_5; }
+	inline Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 ** get_address_of_U3CAcceptSocketU3Ek__BackingField_5() { return &___U3CAcceptSocketU3Ek__BackingField_5; }
+	inline void set_U3CAcceptSocketU3Ek__BackingField_5(Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * value)
 	{
-		___U3CBytesTransferredU3Ek__BackingField_5 = value;
+		___U3CAcceptSocketU3Ek__BackingField_5 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___U3CAcceptSocketU3Ek__BackingField_5), (void*)value);
 	}
 
-	inline static int32_t get_offset_of_U3CSocketErrorU3Ek__BackingField_6() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CSocketErrorU3Ek__BackingField_6)); }
-	inline int32_t get_U3CSocketErrorU3Ek__BackingField_6() const { return ___U3CSocketErrorU3Ek__BackingField_6; }
-	inline int32_t* get_address_of_U3CSocketErrorU3Ek__BackingField_6() { return &___U3CSocketErrorU3Ek__BackingField_6; }
-	inline void set_U3CSocketErrorU3Ek__BackingField_6(int32_t value)
+	inline static int32_t get_offset_of_U3CBytesTransferredU3Ek__BackingField_6() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CBytesTransferredU3Ek__BackingField_6)); }
+	inline int32_t get_U3CBytesTransferredU3Ek__BackingField_6() const { return ___U3CBytesTransferredU3Ek__BackingField_6; }
+	inline int32_t* get_address_of_U3CBytesTransferredU3Ek__BackingField_6() { return &___U3CBytesTransferredU3Ek__BackingField_6; }
+	inline void set_U3CBytesTransferredU3Ek__BackingField_6(int32_t value)
 	{
-		___U3CSocketErrorU3Ek__BackingField_6 = value;
+		___U3CBytesTransferredU3Ek__BackingField_6 = value;
 	}
 
-	inline static int32_t get_offset_of_Completed_7() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___Completed_7)); }
-	inline EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * get_Completed_7() const { return ___Completed_7; }
-	inline EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE ** get_address_of_Completed_7() { return &___Completed_7; }
-	inline void set_Completed_7(EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * value)
+	inline static int32_t get_offset_of_U3CSocketErrorU3Ek__BackingField_7() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___U3CSocketErrorU3Ek__BackingField_7)); }
+	inline int32_t get_U3CSocketErrorU3Ek__BackingField_7() const { return ___U3CSocketErrorU3Ek__BackingField_7; }
+	inline int32_t* get_address_of_U3CSocketErrorU3Ek__BackingField_7() { return &___U3CSocketErrorU3Ek__BackingField_7; }
+	inline void set_U3CSocketErrorU3Ek__BackingField_7(int32_t value)
 	{
-		___Completed_7 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___Completed_7), (void*)value);
+		___U3CSocketErrorU3Ek__BackingField_7 = value;
+	}
+
+	inline static int32_t get_offset_of_Completed_8() { return static_cast<int32_t>(offsetof(SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8, ___Completed_8)); }
+	inline EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * get_Completed_8() const { return ___Completed_8; }
+	inline EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE ** get_address_of_Completed_8() { return &___Completed_8; }
+	inline void set_Completed_8(EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * value)
+	{
+		___Completed_8 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___Completed_8), (void*)value);
 	}
 };
 
@@ -17300,6 +17310,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Byte_ToString_m104307B82FDCE07CA77D
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Int32_ToString_m027A8C9419D2FE56ED5D2EE42A6F3B3CE0130471 (int32_t* __this, RuntimeObject* ___provider0, const RuntimeMethod* method);
 // System.String System.String::Concat(System.String[])
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_mFEA7EFA1A6E75B96B1B7BC4526AAC864BFF83CC9 (StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* ___values0, const RuntimeMethod* method);
+// System.Void System.Net.Sockets.SocketAsyncEventArgs::Dispose(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_Dispose_m75C974426B784853880FD3146091228ABBD0CE06 (SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * __this, bool ___disposing0, const RuntimeMethod* method);
 // System.Void System.EventHandler`1<System.Net.Sockets.SocketAsyncEventArgs>::Invoke(System.Object,!0)
 inline void EventHandler_1_Invoke_m1B35EE55470784C7BA72C6D6EAE755514C99F0E8 (EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * __this, RuntimeObject * ___sender0, SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * ___e1, const RuntimeMethod* method)
 {
@@ -29464,7 +29476,7 @@ IL_0039:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * SocketAsyncEventArgs_get_AcceptSocket_m6119FCE739596BD55C2847460DC69ADB285070A7 (SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * __this, const RuntimeMethod* method)
 {
 	{
-		Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * L_0 = __this->get_U3CAcceptSocketU3Ek__BackingField_4();
+		Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * L_0 = __this->get_U3CAcceptSocketU3Ek__BackingField_5();
 		return L_0;
 	}
 }
@@ -29473,7 +29485,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_set_AcceptSocket_mA
 {
 	{
 		Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * L_0 = ___value0;
-		__this->set_U3CAcceptSocketU3Ek__BackingField_4(L_0);
+		__this->set_U3CAcceptSocketU3Ek__BackingField_5(L_0);
 		return;
 	}
 }
@@ -29482,7 +29494,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_set_BytesTransferre
 {
 	{
 		int32_t L_0 = ___value0;
-		__this->set_U3CBytesTransferredU3Ek__BackingField_5(L_0);
+		__this->set_U3CBytesTransferredU3Ek__BackingField_6(L_0);
 		return;
 	}
 }
@@ -29491,7 +29503,45 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_set_SocketError_mE9
 {
 	{
 		int32_t L_0 = ___value0;
-		__this->set_U3CSocketErrorU3Ek__BackingField_6(L_0);
+		__this->set_U3CSocketErrorU3Ek__BackingField_7(L_0);
+		return;
+	}
+}
+// System.Void System.Net.Sockets.SocketAsyncEventArgs::Dispose(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_Dispose_m75C974426B784853880FD3146091228ABBD0CE06 (SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * __this, bool ___disposing0, const RuntimeMethod* method)
+{
+	{
+		__this->set_disposed_1((bool)1);
+		bool L_0 = ___disposing0;
+		if (!L_0)
+		{
+			goto IL_0014;
+		}
+	}
+	{
+		int32_t L_1 = __this->get_in_progress_2();
+		il2cpp_codegen_memory_barrier();
+		return;
+	}
+
+IL_0014:
+	{
+		return;
+	}
+}
+// System.Void System.Net.Sockets.SocketAsyncEventArgs::Dispose()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_Dispose_m3DBF8461B4A792A6DEDF567964587CCEA75AFA63 (SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GC_tD6F0377620BF01385965FD29272CF088A4309C0D_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		SocketAsyncEventArgs_Dispose_m75C974426B784853880FD3146091228ABBD0CE06(__this, (bool)1, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(GC_tD6F0377620BF01385965FD29272CF088A4309C0D_il2cpp_TypeInfo_var);
+		GC_SuppressFinalize_mEE880E988C6AF32AA2F67F2D62715281EAA41555(__this, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -29499,7 +29549,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_set_SocketError_mE9
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SocketAsyncEventArgs_Complete_m94BBD1E035C5474D203D0E8CEDDE6A32BA61E061 (SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * __this, const RuntimeMethod* method)
 {
 	{
-		VirtActionInvoker1< SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * >::Invoke(4 /* System.Void System.Net.Sockets.SocketAsyncEventArgs::OnCompleted(System.Net.Sockets.SocketAsyncEventArgs) */, __this, __this);
+		VirtActionInvoker1< SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * >::Invoke(5 /* System.Void System.Net.Sockets.SocketAsyncEventArgs::OnCompleted(System.Net.Sockets.SocketAsyncEventArgs) */, __this, __this);
 		return;
 	}
 }
@@ -29528,7 +29578,7 @@ IL_0004:
 	{
 		SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * L_1 = ___e0;
 		NullCheck(L_1);
-		EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * L_2 = L_1->get_Completed_7();
+		EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * L_2 = L_1->get_Completed_8();
 		V_0 = L_2;
 		EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * L_3 = V_0;
 		if (!L_3)
@@ -29540,7 +29590,7 @@ IL_0004:
 		EventHandler_1_t74C6C22D88FDF5301EB9838B325E0BE62472C5FE * L_4 = V_0;
 		SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * L_5 = ___e0;
 		NullCheck(L_5);
-		Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * L_6 = L_5->get_current_socket_3();
+		Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09 * L_6 = L_5->get_current_socket_4();
 		SocketAsyncEventArgs_t6A1533E6F40045C89AB7F19555158F25D47BA8D8 * L_7 = ___e0;
 		NullCheck(L_4);
 		EventHandler_1_Invoke_m1B35EE55470784C7BA72C6D6EAE755514C99F0E8(L_4, L_6, L_7, /*hidden argument*/EventHandler_1_Invoke_m1B35EE55470784C7BA72C6D6EAE755514C99F0E8_RuntimeMethod_var);
