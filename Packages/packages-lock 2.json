@@ -60,7 +60,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.purchasing": {
-      "version": "2.2.2",
+      "version": "2.2.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
