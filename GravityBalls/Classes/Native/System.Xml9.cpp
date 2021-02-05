@@ -28892,7 +28892,7 @@ IL_0008:
 				ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726* L_2 = __this->get_bufBytes_3();
 				int32_t L_3 = __this->get_bufPos_7();
 				NullCheck(L_1);
-				VirtActionInvoker3< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726*, int32_t, int32_t >::Invoke(28 /* System.Void System.IO.Stream::Write(System.Byte[],System.Int32,System.Int32) */, L_1, L_2, 1, ((int32_t)il2cpp_codegen_subtract((int32_t)L_3, (int32_t)1)));
+				VirtActionInvoker3< ByteU5BU5D_tDBBEB0E8362242FA7223000D978B0DD19D4B0726*, int32_t, int32_t >::Invoke(30 /* System.Void System.IO.Stream::Write(System.Byte[],System.Int32,System.Int32) */, L_1, L_2, 1, ((int32_t)il2cpp_codegen_subtract((int32_t)L_3, (int32_t)1)));
 			}
 
 IL_0022:
