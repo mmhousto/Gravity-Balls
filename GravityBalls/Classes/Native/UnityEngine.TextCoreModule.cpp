@@ -2183,18 +2183,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GlyphMetrics_Equals_mCCF68C73B7AE05D97A0
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GlyphMetrics_Equals_m54C8D6CAD2653668377F5F7A9F78FD7C4F05E4A8 (GlyphMetrics_t46B609AF0FC41272561342E8B5AEF35E4E1B537B * __this, GlyphMetrics_t46B609AF0FC41272561342E8B5AEF35E4E1B537B  ___other0, const RuntimeMethod* method);
 // UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::get_firstAdjustmentRecord()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_m92BC7561227D482635EF8AB93B8F20808017FBF8 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_firstAdjustmentRecord(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m780CD1495A667852B44DA8EF210172484F917C77 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method);
 // UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::get_secondAdjustmentRecord()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m488CCBCB6802727334E2135E65EBB027A0A01EAD (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_secondAdjustmentRecord(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_mE8AFF0F392DE4B0590C0F7F2AF3D2D85AD756EFE (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method);
-// UnityEngine.TextCore.LowLevel.FontFeatureLookupFlags UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::get_featureLookupFlags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GlyphPairAdjustmentRecord_get_featureLookupFlags_m3BBC32A004335C153CABFFA25F02164DEF20AE58 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, const RuntimeMethod* method);
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_featureLookupFlags(UnityEngine.TextCore.LowLevel.FontFeatureLookupFlags)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_featureLookupFlags_m6F0E8C3CBE5A06B42E8EE4EC0B91028EBE731834 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, int32_t ___value0, const RuntimeMethod* method);
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::.ctor(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord,UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord__ctor_mA474AC63D0E4A5B8127FC38A7CC74DC1817BB264 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___firstAdjustmentRecord0, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___secondAdjustmentRecord1, const RuntimeMethod* method);
 // System.Int32 UnityEngine.TextCore.GlyphRect::get_x()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GlyphRect_get_x_m004398D85360A389BCCD4F8B38347C0555F86166 (GlyphRect_t4F6A791326A28C2CEC6B13B0BD50A4F78280289D * __this, const RuntimeMethod* method);
 // System.Int32 UnityEngine.TextCore.GlyphRect::get_y()
@@ -5033,21 +5023,6 @@ IL2CPP_EXTERN_C  GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA
 	_returnValue = GlyphPairAdjustmentRecord_get_firstAdjustmentRecord_m92BC7561227D482635EF8AB93B8F20808017FBF8(_thisAdjusted, method);
 	return _returnValue;
 }
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_firstAdjustmentRecord(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m780CD1495A667852B44DA8EF210172484F917C77 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method)
-{
-	{
-		GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  L_0 = ___value0;
-		__this->set_m_FirstAdjustmentRecord_0(L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m780CD1495A667852B44DA8EF210172484F917C77_AdjustorThunk (RuntimeObject * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * _thisAdjusted = reinterpret_cast<GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 *>(__this + _offset);
-	GlyphPairAdjustmentRecord_set_firstAdjustmentRecord_m780CD1495A667852B44DA8EF210172484F917C77(_thisAdjusted, ___value0, method);
-}
 // UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::get_secondAdjustmentRecord()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m488CCBCB6802727334E2135E65EBB027A0A01EAD (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, const RuntimeMethod* method)
 {
@@ -5072,78 +5047,6 @@ IL2CPP_EXTERN_C  GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA
 	GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  _returnValue;
 	_returnValue = GlyphPairAdjustmentRecord_get_secondAdjustmentRecord_m488CCBCB6802727334E2135E65EBB027A0A01EAD(_thisAdjusted, method);
 	return _returnValue;
-}
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_secondAdjustmentRecord(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_mE8AFF0F392DE4B0590C0F7F2AF3D2D85AD756EFE (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method)
-{
-	{
-		GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  L_0 = ___value0;
-		__this->set_m_SecondAdjustmentRecord_1(L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_mE8AFF0F392DE4B0590C0F7F2AF3D2D85AD756EFE_AdjustorThunk (RuntimeObject * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___value0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * _thisAdjusted = reinterpret_cast<GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 *>(__this + _offset);
-	GlyphPairAdjustmentRecord_set_secondAdjustmentRecord_mE8AFF0F392DE4B0590C0F7F2AF3D2D85AD756EFE(_thisAdjusted, ___value0, method);
-}
-// UnityEngine.TextCore.LowLevel.FontFeatureLookupFlags UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::get_featureLookupFlags()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t GlyphPairAdjustmentRecord_get_featureLookupFlags_m3BBC32A004335C153CABFFA25F02164DEF20AE58 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, const RuntimeMethod* method)
-{
-	int32_t V_0 = 0;
-	{
-		int32_t L_0 = __this->get_m_FeatureLookupFlags_2();
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		int32_t L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  int32_t GlyphPairAdjustmentRecord_get_featureLookupFlags_m3BBC32A004335C153CABFFA25F02164DEF20AE58_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * _thisAdjusted = reinterpret_cast<GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 *>(__this + _offset);
-	int32_t _returnValue;
-	_returnValue = GlyphPairAdjustmentRecord_get_featureLookupFlags_m3BBC32A004335C153CABFFA25F02164DEF20AE58(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::set_featureLookupFlags(UnityEngine.TextCore.LowLevel.FontFeatureLookupFlags)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord_set_featureLookupFlags_m6F0E8C3CBE5A06B42E8EE4EC0B91028EBE731834 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, int32_t ___value0, const RuntimeMethod* method)
-{
-	{
-		int32_t L_0 = ___value0;
-		__this->set_m_FeatureLookupFlags_2(L_0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void GlyphPairAdjustmentRecord_set_featureLookupFlags_m6F0E8C3CBE5A06B42E8EE4EC0B91028EBE731834_AdjustorThunk (RuntimeObject * __this, int32_t ___value0, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * _thisAdjusted = reinterpret_cast<GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 *>(__this + _offset);
-	GlyphPairAdjustmentRecord_set_featureLookupFlags_m6F0E8C3CBE5A06B42E8EE4EC0B91028EBE731834(_thisAdjusted, ___value0, method);
-}
-// System.Void UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord::.ctor(UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord,UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GlyphPairAdjustmentRecord__ctor_mA474AC63D0E4A5B8127FC38A7CC74DC1817BB264 (GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___firstAdjustmentRecord0, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___secondAdjustmentRecord1, const RuntimeMethod* method)
-{
-	{
-		GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  L_0 = ___firstAdjustmentRecord0;
-		__this->set_m_FirstAdjustmentRecord_0(L_0);
-		GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  L_1 = ___secondAdjustmentRecord1;
-		__this->set_m_SecondAdjustmentRecord_1(L_1);
-		__this->set_m_FeatureLookupFlags_2(0);
-		return;
-	}
-}
-IL2CPP_EXTERN_C  void GlyphPairAdjustmentRecord__ctor_mA474AC63D0E4A5B8127FC38A7CC74DC1817BB264_AdjustorThunk (RuntimeObject * __this, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___firstAdjustmentRecord0, GlyphAdjustmentRecord_tF7DD4F1F660B62990292705F25D43A7EF3ED35EA  ___secondAdjustmentRecord1, const RuntimeMethod* method)
-{
-	int32_t _offset = 1;
-	GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 * _thisAdjusted = reinterpret_cast<GlyphPairAdjustmentRecord_tAD8F88FFC3A19DFDC31C2E0FA901E7CEAEE8A169 *>(__this + _offset);
-	GlyphPairAdjustmentRecord__ctor_mA474AC63D0E4A5B8127FC38A7CC74DC1817BB264(_thisAdjusted, ___firstAdjustmentRecord0, ___secondAdjustmentRecord1, method);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

@@ -18084,7 +18084,7 @@ inline void HashSet_1__ctor_mF1247FA13C1F59B28E7048BFABB8E206D160FD64 (HashSet_1
 	((  void (*) (HashSet_1_tDFDEC884936A4BFB3ED41935F9313D9685C1FECA *, const RuntimeMethod*))HashSet_1__ctor_m2CDA40DEC2900A9CB00F8348FF386DF44ABD0EC7_gshared)(__this, method);
 }
 // UnityEngine.Purchasing.Product[] UnityEngine.Purchasing.ProductCollection::get_all()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* ProductCollection_get_all_m8F08A78D6AF774BE9A1A0C14E69747293EDC6E11 (ProductCollection_t5877A1A47DA0DA2C32488E6D2DD23B77E6B6065C * __this, const RuntimeMethod* method);
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* ProductCollection_get_all_m8F08A78D6AF774BE9A1A0C14E69747293EDC6E11_inline (ProductCollection_t5877A1A47DA0DA2C32488E6D2DD23B77E6B6065C * __this, const RuntimeMethod* method);
 // System.Boolean UnityEngine.Purchasing.Product::get_availableToPurchase()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Product_get_availableToPurchase_mBAB83F4E1E276628EA5948A67C2F79F31A003CBF_inline (Product_t8D04681E6E43F5FBB6065B70408B9B0F13B5797E * __this, const RuntimeMethod* method);
 // System.Boolean System.Collections.Generic.HashSet`1<UnityEngine.Purchasing.Product>::Add(!0)
@@ -18880,7 +18880,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Dropdown_RefreshShownValue_m1D58FF9265C3
 // UnityEngine.UI.Button UnityEngine.Purchasing.UIFakeStore::GetOkayButton()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * UIFakeStore_GetOkayButton_m6C951047BDEB20D5C23FB565B98EA91A5E724687 (UIFakeStore_tDB0C365E19F2F3401E7D213877B6C86A17FAF7E1 * __this, const RuntimeMethod* method);
 // UnityEngine.UI.Button/ButtonClickedEvent UnityEngine.UI.Button::get_onClick()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4 (Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * __this, const RuntimeMethod* method);
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline (Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Events.UnityAction::.ctor(System.Object,System.IntPtr)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityAction__ctor_m48C04C4C0F46918CF216A2410A4E58D31B6362BA (UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method);
 // System.Void UnityEngine.Events.UnityEvent::AddListener(UnityEngine.Events.UnityAction)
@@ -18888,7 +18888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityEvent_AddListener_m0ACFF0706176ECCB
 // UnityEngine.UI.Button UnityEngine.Purchasing.UIFakeStore::GetCancelButton()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * UIFakeStore_GetCancelButton_m7FD8BDE41AEAFE06A09738AFE26669D014C6E7AB (UIFakeStore_tDB0C365E19F2F3401E7D213877B6C86A17FAF7E1 * __this, const RuntimeMethod* method);
 // UnityEngine.UI.Dropdown/DropdownEvent UnityEngine.UI.Dropdown::get_onValueChanged()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA (Dropdown_t099F5232BB75810BC79EED6E27DDCED46C3BCD96 * __this, const RuntimeMethod* method);
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA_inline (Dropdown_t099F5232BB75810BC79EED6E27DDCED46C3BCD96 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Events.UnityAction`1<System.Int32>::.ctor(System.Object,System.IntPtr)
 inline void UnityAction_1__ctor_m595DA2ECB187B2DF951D640BFEBCE02F3F800A3F (UnityAction_1_t5CF46572372725E6225588C466A7AF5C8597AA79 * __this, RuntimeObject * ___object0, intptr_t ___method1, const RuntimeMethod* method)
 {
@@ -33491,7 +33491,7 @@ IL_0039:
 		L_7 = InterfaceFuncInvoker0< ProductCollection_t5877A1A47DA0DA2C32488E6D2DD23B77E6B6065C * >::Invoke(0 /* UnityEngine.Purchasing.ProductCollection UnityEngine.Purchasing.Extension.IStoreCallback::get_products() */, IStoreCallback_t3176FA3F472DF5F252CDB5D87E60B2538A44C05F_il2cpp_TypeInfo_var, L_6);
 		NullCheck(L_7);
 		ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* L_8;
-		L_8 = ProductCollection_get_all_m8F08A78D6AF774BE9A1A0C14E69747293EDC6E11(L_7, /*hidden argument*/NULL);
+		L_8 = ProductCollection_get_all_m8F08A78D6AF774BE9A1A0C14E69747293EDC6E11_inline(L_7, /*hidden argument*/NULL);
 		V_1 = L_8;
 		ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* L_9 = V_1;
 		V_4 = L_9;
@@ -41521,7 +41521,7 @@ IL_01ee:
 		L_65 = UIFakeStore_GetOkayButton_m6C951047BDEB20D5C23FB565B98EA91A5E724687(__this, /*hidden argument*/NULL);
 		NullCheck(L_65);
 		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_66;
-		L_66 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4(L_65, /*hidden argument*/NULL);
+		L_66 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline(L_65, /*hidden argument*/NULL);
 		UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099 * L_67 = (UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099 *)il2cpp_codegen_object_new(UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099_il2cpp_TypeInfo_var);
 		UnityAction__ctor_m48C04C4C0F46918CF216A2410A4E58D31B6362BA(L_67, __this, (intptr_t)((intptr_t)UIFakeStore_U3CInstantiateDialogU3Eb__16_1_mCD2B6BE3F0ECD4269FE93D98C7B6F310F1CB28BB_RuntimeMethod_var), /*hidden argument*/NULL);
 		NullCheck(L_66);
@@ -41530,7 +41530,7 @@ IL_01ee:
 		L_68 = UIFakeStore_GetCancelButton_m7FD8BDE41AEAFE06A09738AFE26669D014C6E7AB(__this, /*hidden argument*/NULL);
 		NullCheck(L_68);
 		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_69;
-		L_69 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4(L_68, /*hidden argument*/NULL);
+		L_69 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline(L_68, /*hidden argument*/NULL);
 		UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099 * L_70 = (UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099 *)il2cpp_codegen_object_new(UnityAction_t22E545F8BE0A62EE051C6A83E209587A0DB1C099_il2cpp_TypeInfo_var);
 		UnityAction__ctor_m48C04C4C0F46918CF216A2410A4E58D31B6362BA(L_70, __this, (intptr_t)((intptr_t)UIFakeStore_U3CInstantiateDialogU3Eb__16_2_m76DB199348FDE897D31F286DA229C6B6BE4DE972_RuntimeMethod_var), /*hidden argument*/NULL);
 		NullCheck(L_69);
@@ -41539,7 +41539,7 @@ IL_01ee:
 		L_71 = UIFakeStore_GetDropdown_m2EF554EC88D5F9F23FB5B3AE756D7D2900E62F42(__this, /*hidden argument*/NULL);
 		NullCheck(L_71);
 		DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * L_72;
-		L_72 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA(L_71, /*hidden argument*/NULL);
+		L_72 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA_inline(L_71, /*hidden argument*/NULL);
 		UnityAction_1_t5CF46572372725E6225588C466A7AF5C8597AA79 * L_73 = (UnityAction_1_t5CF46572372725E6225588C466A7AF5C8597AA79 *)il2cpp_codegen_object_new(UnityAction_1_t5CF46572372725E6225588C466A7AF5C8597AA79_il2cpp_TypeInfo_var);
 		UnityAction_1__ctor_m595DA2ECB187B2DF951D640BFEBCE02F3F800A3F(L_73, __this, (intptr_t)((intptr_t)UIFakeStore_U3CInstantiateDialogU3Eb__16_3_m6165C20F46356DD728A7EE5BD747FD1A6077E314_RuntimeMethod_var), /*hidden argument*/UnityAction_1__ctor_m595DA2ECB187B2DF951D640BFEBCE02F3F800A3F_RuntimeMethod_var);
 		NullCheck(L_72);
@@ -41557,7 +41557,7 @@ IL_01ee:
 		L_76 = UIFakeStore_GetDropdown_m2EF554EC88D5F9F23FB5B3AE756D7D2900E62F42(__this, /*hidden argument*/NULL);
 		NullCheck(L_76);
 		DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * L_77;
-		L_77 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA(L_76, /*hidden argument*/NULL);
+		L_77 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA_inline(L_76, /*hidden argument*/NULL);
 		NullCheck(L_77);
 		UnityEventBase_RemoveAllListeners_m934834C85F5CFE62BEDA9CF4DE9C5B8B5470F1D9(L_77, /*hidden argument*/NULL);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_78;
@@ -41582,7 +41582,7 @@ IL_0281:
 		L_81 = UIFakeStore_GetCancelButton_m7FD8BDE41AEAFE06A09738AFE26669D014C6E7AB(__this, /*hidden argument*/NULL);
 		NullCheck(L_81);
 		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_82;
-		L_82 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4(L_81, /*hidden argument*/NULL);
+		L_82 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline(L_81, /*hidden argument*/NULL);
 		NullCheck(L_82);
 		UnityEventBase_RemoveAllListeners_m934834C85F5CFE62BEDA9CF4DE9C5B8B5470F1D9(L_82, /*hidden argument*/NULL);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_83;
@@ -42101,7 +42101,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIFakeStore_CloseDialog_mA99544E8B6B31D1
 		L_0 = UIFakeStore_GetOkayButton_m6C951047BDEB20D5C23FB565B98EA91A5E724687(__this, /*hidden argument*/NULL);
 		NullCheck(L_0);
 		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_1;
-		L_1 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4(L_0, /*hidden argument*/NULL);
+		L_1 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline(L_0, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		UnityEventBase_RemoveAllListeners_m934834C85F5CFE62BEDA9CF4DE9C5B8B5470F1D9(L_1, /*hidden argument*/NULL);
 		Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * L_2;
@@ -42121,7 +42121,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UIFakeStore_CloseDialog_mA99544E8B6B31D1
 		L_5 = UIFakeStore_GetCancelButton_m7FD8BDE41AEAFE06A09738AFE26669D014C6E7AB(__this, /*hidden argument*/NULL);
 		NullCheck(L_5);
 		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_6;
-		L_6 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4(L_5, /*hidden argument*/NULL);
+		L_6 = Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline(L_5, /*hidden argument*/NULL);
 		NullCheck(L_6);
 		UnityEventBase_RemoveAllListeners_m934834C85F5CFE62BEDA9CF4DE9C5B8B5470F1D9(L_6, /*hidden argument*/NULL);
 	}
@@ -42145,7 +42145,7 @@ IL_003b:
 		L_10 = UIFakeStore_GetDropdown_m2EF554EC88D5F9F23FB5B3AE756D7D2900E62F42(__this, /*hidden argument*/NULL);
 		NullCheck(L_10);
 		DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * L_11;
-		L_11 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA(L_10, /*hidden argument*/NULL);
+		L_11 = Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA_inline(L_10, /*hidden argument*/NULL);
 		NullCheck(L_11);
 		UnityEventBase_RemoveAllListeners_m934834C85F5CFE62BEDA9CF4DE9C5B8B5470F1D9(L_11, /*hidden argument*/NULL);
 	}
@@ -42733,6 +42733,14 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ProfileData_set_StoreName_mA
 		return;
 	}
 }
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* ProductCollection_get_all_m8F08A78D6AF774BE9A1A0C14E69747293EDC6E11_inline (ProductCollection_t5877A1A47DA0DA2C32488E6D2DD23B77E6B6065C * __this, const RuntimeMethod* method)
+{
+	{
+		// get { return m_Products; }
+		ProductU5BU5D_t1202CB7487EB88A76294BF6E7F42E297D74B8062* L_0 = __this->get_m_Products_2();
+		return L_0;
+	}
+}
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Product_get_availableToPurchase_mBAB83F4E1E276628EA5948A67C2F79F31A003CBF_inline (Product_t8D04681E6E43F5FBB6065B70408B9B0F13B5797E * __this, const RuntimeMethod* method)
 {
 	{
@@ -42934,6 +42942,22 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t AppleInAppPurchaseReceipt
 {
 	{
 		int32_t L_0 = __this->get_U3CisIntroductoryPricePeriodU3Ek__BackingField_10();
+		return L_0;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * Button_get_onClick_m28BD8C670676D4E2B292B5A7F59387D4BF61F8F4_inline (Button_tA893FC15AB26E1439AC25BDCA7079530587BB65D * __this, const RuntimeMethod* method)
+{
+	{
+		// get { return m_OnClick; }
+		ButtonClickedEvent_tE6D6D94ED8100451CF00D2BED1FB2253F37BB14F * L_0 = __this->get_m_OnClick_20();
+		return L_0;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * Dropdown_get_onValueChanged_m05479714AEB528CF5CE93ED09870E98E6EC94CFA_inline (Dropdown_t099F5232BB75810BC79EED6E27DDCED46C3BCD96 * __this, const RuntimeMethod* method)
+{
+	{
+		// public DropdownEvent onValueChanged { get { return m_OnValueChanged; } set { m_OnValueChanged = value; } }
+		DropdownEvent_tEB2C75C3DBC789936B31D9A979FD62E047846CFB * L_0 = __this->get_m_OnValueChanged_27();
 		return L_0;
 	}
 }

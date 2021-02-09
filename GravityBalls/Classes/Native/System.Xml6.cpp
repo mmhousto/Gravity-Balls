@@ -18738,7 +18738,7 @@ IL_005b:
 			L_21 = Uri_get_Host_m05E1D82C4E6B14A2369AEDED218F9089DE336E64(L_20, /*hidden argument*/NULL);
 			NullCheck(L_18);
 			RuntimeObject * L_22;
-			L_22 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(22 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_18, L_21);
+			L_22 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(21 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_18, L_21);
 			V_5 = ((OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D *)CastclassClass((RuntimeObject*)L_22, OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D_il2cpp_TypeInfo_var));
 			OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D * L_23 = V_5;
 			if (L_23)
@@ -18922,7 +18922,7 @@ IL_0004:
 			String_t* L_2 = ___host0;
 			NullCheck(L_1);
 			RuntimeObject * L_3;
-			L_3 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(22 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
+			L_3 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(21 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_1, L_2);
 			V_2 = ((OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D *)CastclassClass((RuntimeObject*)L_3, OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D_il2cpp_TypeInfo_var));
 			OpenedHost_t6FB01A846223728993AC983CC229BDF288367D4D * L_4 = V_2;
 			if (!L_4)
@@ -18953,7 +18953,7 @@ IL_0034:
 			Hashtable_t7565AB92A12227AD5BADD6911F10D87EE52509AC * L_10 = __this->get_connections_0();
 			String_t* L_11 = ___host0;
 			NullCheck(L_10);
-			VirtActionInvoker1< RuntimeObject * >::Invoke(29 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_10, L_11);
+			VirtActionInvoker1< RuntimeObject * >::Invoke(28 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_10, L_11);
 		}
 
 IL_0040:

@@ -26695,20 +26695,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Debugger_IsAttached_internal_m81941416A3
 	using namespace il2cpp::icalls;
 	return ((Debugger_IsAttached_internal_m81941416A35907E444557701300AF6F74DA577BA_ftn)mscorlib::System::Diagnostics::Debugger::IsAttached_internal) ();
 }
-// System.Boolean System.Diagnostics.Debugger::IsLogging()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Debugger_IsLogging_mB314E259273AA74F5F38A89399C784004A1844C3 (const RuntimeMethod* method)
-{
-	typedef bool (*Debugger_IsLogging_mB314E259273AA74F5F38A89399C784004A1844C3_ftn) ();
-	using namespace il2cpp::icalls;
-	return ((Debugger_IsLogging_mB314E259273AA74F5F38A89399C784004A1844C3_ftn)mscorlib::System::Diagnostics::Debugger::IsLogging) ();
-}
-// System.Void System.Diagnostics.Debugger::Log(System.Int32,System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debugger_Log_m59EFED1E6A53CDCF53A2AC546C487F6BFEB8402F (int32_t ___level0, String_t* ___category1, String_t* ___message2, const RuntimeMethod* method)
-{
-	typedef void (*Debugger_Log_m59EFED1E6A53CDCF53A2AC546C487F6BFEB8402F_ftn) (int32_t, String_t*, String_t*);
-	using namespace il2cpp::icalls;
-	((Debugger_Log_m59EFED1E6A53CDCF53A2AC546C487F6BFEB8402F_ftn)mscorlib::System::Diagnostics::Debugger::Log) (___level0, ___category1, ___message2);
-}
 // System.Void System.Diagnostics.Debugger::NotifyOfCrossThreadDependency()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debugger_NotifyOfCrossThreadDependency_mFCE44794D4BF98E3BE828CF918C48620FF36AFBD (const RuntimeMethod* method)
 {
@@ -26820,24 +26806,6 @@ IL_001d:
 	{
 		__this->set_name_0(_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
 		__this->set_type_2(_stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709);
-		return;
-	}
-}
-// System.Void System.Diagnostics.DebuggerDisplayAttribute::set_Name(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggerDisplayAttribute_set_Name_mD8C1008599A85E2B65BC5D76EDDF9715E38152C0 (DebuggerDisplayAttribute_tA5070C1A6CAB579DAC66A469530D946F6F42727F * __this, String_t* ___value0, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->set_name_0(L_0);
-		return;
-	}
-}
-// System.Void System.Diagnostics.DebuggerDisplayAttribute::set_Type(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebuggerDisplayAttribute_set_Type_m0AF74221DA37ECB3752C70348AA64AB9E425EF89 (DebuggerDisplayAttribute_tA5070C1A6CAB579DAC66A469530D946F6F42727F * __this, String_t* ___value0, const RuntimeMethod* method)
-{
-	{
-		String_t* L_0 = ___value0;
-		__this->set_type_2(L_0);
 		return;
 	}
 }
