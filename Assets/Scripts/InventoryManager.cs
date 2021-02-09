@@ -81,7 +81,7 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int> {
             coins -= price[paddleInt];
             PlayerPrefs.SetInt("Coins", coins);
             ownPaddle[paddleInt] = 1;
-            PlayerPrefs.SetInt("ownPaddle1", 1);
+            PlayerPrefs.SetInt("ownPaddle" + (paddleInt+1), 1);
         } else {
         //not enough coins
         }
