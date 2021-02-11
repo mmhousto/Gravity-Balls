@@ -45,6 +45,15 @@ public class paddle : MonoBehaviour
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 4) {
             spriteRenderer.sprite = basic;
             spriteRenderer.color = Color.yellow;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 5) {
+            spriteRenderer.sprite = basic;
+            spriteRenderer.color = Color.green;
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 6) {
+            spriteRenderer.sprite = basic;
+            spriteRenderer.color = new Color(1, 0.4f, 0, 1);
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 7) {
+            spriteRenderer.sprite = basic;
+            spriteRenderer.color = Color.cyan;
         }
     }
 

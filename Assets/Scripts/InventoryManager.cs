@@ -15,15 +15,19 @@ public interface IBuyable<T> {
     void Buy(T paddlePrice);
 }
 
-public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int> {
-	public GameObject Paddle1, Paddle2, Paddle3, Paddle4, Paddle5;
+public interface IClickable<T> {
+    void Click(T paddleInt);
+}
+
+public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int>, IClickable<int> {
+	public GameObject Paddle1, Paddle2, Paddle3, Paddle4, Paddle5, Paddle6, Paddle7, Paddle8;
 	public GameObject paddleBasic, paddleDark, paddlePro;
 	public List<GameObject> paddlesT = new List<GameObject>();
 	private TextMeshProUGUI paddleName, priceLbl;
 	private int coins;
 	private string[] sprites = new string[] {"Paddles/begginer-paddle.svg", "Paddles/paddle-dark.svg", "Paddles/paddle-pro.svg"};
-	private int[] price = new int[] {0, 20, 50, 5, 5};
-	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0};
+	private int[] price = new int[] {0, 20, 50, 5, 5, 5, 5, 5};
+	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0, 0, 0, 0};
     private GameObject selectedPaddle;
 
     // Start is called before the first frame update
@@ -33,6 +37,9 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int> {
         paddlesT.Add(Paddle3);
         paddlesT.Add(Paddle4);
         paddlesT.Add(Paddle5);
+        paddlesT.Add(Paddle6);
+        paddlesT.Add(Paddle7);
+        paddlesT.Add(Paddle8);
         coins = PlayerPrefs.GetInt("Coins");
         selectedPaddle = paddlesT[PlayerPrefs.GetInt("selectedPaddle")];
         for(int i = 0; i < ownPaddle.Length; i++) {
@@ -87,55 +94,15 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int> {
         }
     }
 
-    // Basic Paddle
-    public void btn1Clicked() {
-        // if player owns paddle then select it, else buy. 
-        if(ownPaddle[0] == 1) {
-            Use(0);// calls use interface method
+    /* The Click interface method, used to determine if need to use the paddle or buy one first */
+    public void Click(int paddleInt) {
+    	if(ownPaddle[paddleInt] == 1) {
+            Use(paddleInt);// calls use interface method
         } else {
-            Buy(0);// calls buy interface mathod
+            Buy(paddleInt);// calls buy interface mathod
         }
-
     }
 
-    // Dark Paddle
-    public void btn2Clicked() {
-        if(ownPaddle[1] == 1) {
-            Use(1);
-        } else {
-            Buy(1);
-        }
-
-    }
-
-    // Pro
-    public void btn3Clicked() {
-        if(ownPaddle[2] == 1) {
-            Use(2);
-        } else {
-            Buy(2);
-        }
-
-    }
-
-    // Red
-    public void btnRedClicked() {
-        if(ownPaddle[3] == 1) {
-            Use(3);
-        } else {
-            Buy(3);
-        }
-
-    }
-
-    //Gold
-    public void btnGoldClicked() {
-        if(ownPaddle[4] == 1) {
-            Use(4);
-        } else {
-            Buy(4);
-        }
-
-    }
+//
 
 }
