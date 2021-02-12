@@ -6007,8 +6007,8 @@ struct WaitForSeconds_t8F9189BE6E467C98C99177038881F8982E0E4013_marshaled_com : 
 	float ___m_Seconds_0;
 };
 
-// <PrivateImplementationDetails>/__StaticArrayInitTypeSizeU3D20
-struct  __StaticArrayInitTypeSizeU3D20_tA7878E15E0E5AC780F6ED4F6E87AD8233A152598 
+// <PrivateImplementationDetails>/__StaticArrayInitTypeSizeU3D32
+struct  __StaticArrayInitTypeSizeU3D32_t1DFB229ADDC86DD5A295F9C768E8E5D0DF92913F 
 {
 public:
 	union
@@ -6019,7 +6019,7 @@ public:
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D20_tA7878E15E0E5AC780F6ED4F6E87AD8233A152598__padding[20];
+		uint8_t __StaticArrayInitTypeSizeU3D32_t1DFB229ADDC86DD5A295F9C768E8E5D0DF92913F__padding[32];
 	};
 
 public:
@@ -20136,6 +20136,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC6
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteRenderer_set_color_mF2888B03FBD14DAD540AB3F6617231712EB5CD33 (SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * __this, Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  ___value0, const RuntimeMethod* method);
 // UnityEngine.Color UnityEngine.Color::get_yellow()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  Color_get_yellow_m9FD4BDABA7E40E136BE57EE7872CEA6B1B2FA1D1 (const RuntimeMethod* method);
+// UnityEngine.Color UnityEngine.Color::get_green()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  Color_get_green_mFF9BD42534D385A0717B1EAD083ADF08712984B9 (const RuntimeMethod* method);
+// System.Void UnityEngine.Color::.ctor(System.Single,System.Single,System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Color__ctor_m679019E6084BF7A6F82590F66F5F695F6A50ECC5 (Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659 * __this, float ___r0, float ___g1, float ___b2, float ___a3, const RuntimeMethod* method);
+// UnityEngine.Color UnityEngine.Color::get_cyan()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  Color_get_cyan_m0C608BC083FD98C45C1F4F15AE803D288C647686 (const RuntimeMethod* method);
 // UnityEngine.Quaternion UnityEngine.Transform::get_rotation()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_t6D28618CF65156D4A0AD747370DDFD0C514A31B4  Transform_get_rotation_m4AA3858C00DF4C9614B80352558C4C37D08D2200 (Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * __this, const RuntimeMethod* method);
 // !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion)
@@ -25401,7 +25407,7 @@ IL_0101:
 		L_26 = PlayerPrefs_GetInt_m6BCF9F844298D1810A68BAF23ECBA68C6960A986(_stringLiteralC992FF2819D6924E3C5B0C2AE11D67D7AA770451, /*hidden argument*/NULL);
 		if ((!(((uint32_t)L_26) == ((uint32_t)4))))
 		{
-			goto IL_012f;
+			goto IL_0130;
 		}
 	}
 	{
@@ -25416,9 +25422,88 @@ IL_0101:
 		L_30 = Color_get_yellow_m9FD4BDABA7E40E136BE57EE7872CEA6B1B2FA1D1(/*hidden argument*/NULL);
 		NullCheck(L_29);
 		SpriteRenderer_set_color_mF2888B03FBD14DAD540AB3F6617231712EB5CD33(L_29, L_30, /*hidden argument*/NULL);
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 5) {
+		return;
 	}
 
-IL_012f:
+IL_0130:
+	{
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 5) {
+		int32_t L_31;
+		L_31 = PlayerPrefs_GetInt_m6BCF9F844298D1810A68BAF23ECBA68C6960A986(_stringLiteralC992FF2819D6924E3C5B0C2AE11D67D7AA770451, /*hidden argument*/NULL);
+		if ((!(((uint32_t)L_31) == ((uint32_t)5))))
+		{
+			goto IL_015f;
+		}
+	}
+	{
+		// spriteRenderer.sprite = basic;
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_32 = __this->get_spriteRenderer_9();
+		Sprite_t5B10B1178EC2E6F53D33FFD77557F31C08A51ED9 * L_33 = __this->get_basic_10();
+		NullCheck(L_32);
+		SpriteRenderer_set_sprite_mBCFFBF3F10C068FD1174C4506DF73E204303FC1A(L_32, L_33, /*hidden argument*/NULL);
+		// spriteRenderer.color = Color.green;
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_34 = __this->get_spriteRenderer_9();
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_35;
+		L_35 = Color_get_green_mFF9BD42534D385A0717B1EAD083ADF08712984B9(/*hidden argument*/NULL);
+		NullCheck(L_34);
+		SpriteRenderer_set_color_mF2888B03FBD14DAD540AB3F6617231712EB5CD33(L_34, L_35, /*hidden argument*/NULL);
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 6) {
+		return;
+	}
+
+IL_015f:
+	{
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 6) {
+		int32_t L_36;
+		L_36 = PlayerPrefs_GetInt_m6BCF9F844298D1810A68BAF23ECBA68C6960A986(_stringLiteralC992FF2819D6924E3C5B0C2AE11D67D7AA770451, /*hidden argument*/NULL);
+		if ((!(((uint32_t)L_36) == ((uint32_t)6))))
+		{
+			goto IL_01a2;
+		}
+	}
+	{
+		// spriteRenderer.sprite = basic;
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_37 = __this->get_spriteRenderer_9();
+		Sprite_t5B10B1178EC2E6F53D33FFD77557F31C08A51ED9 * L_38 = __this->get_basic_10();
+		NullCheck(L_37);
+		SpriteRenderer_set_sprite_mBCFFBF3F10C068FD1174C4506DF73E204303FC1A(L_37, L_38, /*hidden argument*/NULL);
+		// spriteRenderer.color = new Color(1, 0.4f, 0, 1);
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_39 = __this->get_spriteRenderer_9();
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_40;
+		memset((&L_40), 0, sizeof(L_40));
+		Color__ctor_m679019E6084BF7A6F82590F66F5F695F6A50ECC5((&L_40), (1.0f), (0.400000006f), (0.0f), (1.0f), /*hidden argument*/NULL);
+		NullCheck(L_39);
+		SpriteRenderer_set_color_mF2888B03FBD14DAD540AB3F6617231712EB5CD33(L_39, L_40, /*hidden argument*/NULL);
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 7) {
+		return;
+	}
+
+IL_01a2:
+	{
+		// } else if (PlayerPrefs.GetInt("selectedPaddle") == 7) {
+		int32_t L_41;
+		L_41 = PlayerPrefs_GetInt_m6BCF9F844298D1810A68BAF23ECBA68C6960A986(_stringLiteralC992FF2819D6924E3C5B0C2AE11D67D7AA770451, /*hidden argument*/NULL);
+		if ((!(((uint32_t)L_41) == ((uint32_t)7))))
+		{
+			goto IL_01d0;
+		}
+	}
+	{
+		// spriteRenderer.sprite = basic;
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_42 = __this->get_spriteRenderer_9();
+		Sprite_t5B10B1178EC2E6F53D33FFD77557F31C08A51ED9 * L_43 = __this->get_basic_10();
+		NullCheck(L_42);
+		SpriteRenderer_set_sprite_mBCFFBF3F10C068FD1174C4506DF73E204303FC1A(L_42, L_43, /*hidden argument*/NULL);
+		// spriteRenderer.color = Color.cyan;
+		SpriteRenderer_t3F35AD5498243C170B46F5FFDB582AAEF78615EF * L_44 = __this->get_spriteRenderer_9();
+		Color_tF40DAF76C04FFECF3FE6024F85A294741C9CC659  L_45;
+		L_45 = Color_get_cyan_m0C608BC083FD98C45C1F4F15AE803D288C647686(/*hidden argument*/NULL);
+		NullCheck(L_44);
+		SpriteRenderer_set_color_mF2888B03FBD14DAD540AB3F6617231712EB5CD33(L_44, L_45, /*hidden argument*/NULL);
+	}
+
+IL_01d0:
 	{
 		// }
 		return;
