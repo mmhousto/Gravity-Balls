@@ -15,9 +15,9 @@ public class DisplayAd : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         #if UNITY_IOS
-        	Advertisement.Initialize(myGameIdIOS, testMode);
+        	Advertisement.Initialize(myGameIdIOS, !testMode);
         #else
-        	Advertisement.Initialize(myGameIdAndroid, testMode);
+        	Advertisement.Initialize(myGameIdAndroid, !testMode);
         #endif
     }
 
