@@ -131,7 +131,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.02
+  bundleVersion: 1.04
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -879,7 +879,7 @@ PlayerSettings:
   cloudProjectId: 46dbb497-b277-4270-9ac5-64c8f831b20b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Gravity Balls
+  projectName: Paddle Balls
   organizationId: mmhouston6
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

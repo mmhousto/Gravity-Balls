@@ -29090,11 +29090,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisplayAd_Start_mE549FB4CC5E12552928ADE1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// Advertisement.Initialize(myGameIdIOS, !testMode);
+		// Advertisement.Initialize(myGameIdIOS, testMode);
 		String_t* L_0 = __this->get_myGameIdIOS_5();
 		bool L_1 = __this->get_testMode_8();
 		IL2CPP_RUNTIME_CLASS_INIT(Advertisement_tC6D6E04BBC0DC02AE49C39B3DD0E4C25E25957B5_il2cpp_TypeInfo_var);
-		Advertisement_Initialize_mA681F25E9A74978C82A98E2DFD8A3C4BC8E6E89F(L_0, (bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0), /*hidden argument*/NULL);
+		Advertisement_Initialize_mA681F25E9A74978C82A98E2DFD8A3C4BC8E6E89F(L_0, L_1, /*hidden argument*/NULL);
 		// }
 		return;
 	}
@@ -29206,8 +29206,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DisplayAd__ctor_m5912AE45C47052E717486B5
 		__this->set_myGameIdIOS_5(_stringLiteral262D8CEFB21EE6CA5FC6FD0EA9B81F2834DE3E6C);
 		// public string myVideoPlacement = "gameOver";
 		__this->set_myVideoPlacement_6(_stringLiteral64A766FE2C2D373D78EDEA7D1C01DA9F83F3DC0D);
-		// private bool testMode = true;
-		__this->set_testMode_8((bool)1);
 		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);
 		return;
 	}

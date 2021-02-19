@@ -25,6 +25,14 @@ public class paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        #if UNITY_IOS
+            switchL.enabled = false;
+            switchR.enabled = false;
+        #elif UNITY_ANDROID
+            switchL.enabled = false;
+            switchR.enabled = false;
+        #else
+        #endif
         AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
         brickHits = 0;
         paddleP1 = GetComponent<GameObject>();
@@ -81,9 +89,13 @@ public class paddle : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision) {
         if(collision.transform.tag == "extend") {
-            transform.localScale += new Vector3(0.08f, 0f, 0f);
-            extendPaddle.Play();
-            StartCoroutine(waitResize());
+            if(transform.localScale.x < 0.25){
+                extendPaddle.Play();
+            } else {
+                transform.localScale += new Vector3(0.08f, 0f, 0f);
+                extendPaddle.Play();
+                StartCoroutine(waitResize());
+            }
         }
         if(collision.transform.tag == "life") {
             GameManager.lives += 1;

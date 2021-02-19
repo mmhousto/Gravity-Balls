@@ -9,15 +9,15 @@ public class DisplayAd : MonoBehaviour {
 	public string myGameIdIOS = "3917196";
 	public string myVideoPlacement = "gameOver";
 	public bool adStarted;
-	private bool testMode = true;
+	private bool testMode = false;
     public GameObject gameOver;
 
     // Start is called before the first frame update
     void Start() {
         #if UNITY_IOS
-        	Advertisement.Initialize(myGameIdIOS, !testMode);
+        	Advertisement.Initialize(myGameIdIOS, testMode);
         #else
-        	Advertisement.Initialize(myGameIdAndroid, !testMode);
+        	Advertisement.Initialize(myGameIdAndroid, testMode);
         #endif
     }
 
