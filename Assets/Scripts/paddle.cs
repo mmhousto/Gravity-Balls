@@ -89,7 +89,7 @@ public class paddle : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision) {
         if(collision.transform.tag == "extend") {
-            if(transform.localScale.x < 0.25){
+            if(transform.localScale.x >= 0.25){
                 extendPaddle.Play();
             } else {
                 transform.localScale += new Vector3(0.08f, 0f, 0f);
