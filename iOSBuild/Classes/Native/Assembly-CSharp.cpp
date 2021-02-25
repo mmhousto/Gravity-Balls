@@ -29920,39 +29920,39 @@ IL_000e:
 		{
 			case 0:
 			{
-				goto IL_02a1;
+				goto IL_02a5;
 			}
 			case 1:
 			{
-				goto IL_023a;
+				goto IL_023e;
 			}
 			case 2:
 			{
-				goto IL_01d3;
+				goto IL_01d7;
 			}
 			case 3:
 			{
-				goto IL_016c;
+				goto IL_0170;
 			}
 			case 4:
 			{
-				goto IL_0105;
+				goto IL_0109;
 			}
 			case 5:
 			{
-				goto IL_009e;
+				goto IL_00a2;
 			}
 			case 6:
 			{
-				goto IL_0037;
+				goto IL_003b;
 			}
 		}
 	}
 	{
-		return;
+		goto IL_037e;
 	}
 
-IL_0037:
+IL_003b:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_3 = __this->get_life1_7();
@@ -30000,7 +30000,7 @@ IL_0037:
 		return;
 	}
 
-IL_009e:
+IL_00a2:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_15 = __this->get_life1_7();
@@ -30048,7 +30048,7 @@ IL_009e:
 		return;
 	}
 
-IL_0105:
+IL_0109:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_27 = __this->get_life1_7();
@@ -30096,7 +30096,7 @@ IL_0105:
 		return;
 	}
 
-IL_016c:
+IL_0170:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_39 = __this->get_life1_7();
@@ -30144,7 +30144,7 @@ IL_016c:
 		return;
 	}
 
-IL_01d3:
+IL_01d7:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_51 = __this->get_life1_7();
@@ -30192,7 +30192,7 @@ IL_01d3:
 		return;
 	}
 
-IL_023a:
+IL_023e:
 	{
 		// life1.gameObject.SetActive(true);
 		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_63 = __this->get_life1_7();
@@ -30240,7 +30240,7 @@ IL_023a:
 		return;
 	}
 
-IL_02a1:
+IL_02a5:
 	{
 		// PlayerPrefs.SetInt("CoinsC", coins);
 		int32_t L_75 = ((GameManager_t9013B33302D2B40A51D0E8059DEE0DC180218AA1_StaticFields*)il2cpp_codegen_static_fields_for(GameManager_t9013B33302D2B40A51D0E8059DEE0DC180218AA1_il2cpp_TypeInfo_var))->get_coins_5();
@@ -30307,7 +30307,7 @@ IL_02a1:
 		bool L_92 = __this->get_isSettingsActive_18();
 		if (!L_92)
 		{
-			goto IL_0356;
+			goto IL_035a;
 		}
 	}
 	{
@@ -30320,13 +30320,13 @@ IL_02a1:
 		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_94, (bool)0, /*hidden argument*/NULL);
 	}
 
-IL_0356:
+IL_035a:
 	{
 		// if(isSettingsActive == false) {
 		bool L_95 = __this->get_isSettingsActive_18();
 		if (L_95)
 		{
-			goto IL_036f;
+			goto IL_0373;
 		}
 	}
 	{
@@ -30339,7 +30339,114 @@ IL_0356:
 		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_97, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_036f:
+IL_0373:
+	{
+		// Time.timeScale = 0;
+		Time_set_timeScale_m1987DE9E74FC6C0126CE4F59A6293E3B85BD01EA((0.0f), /*hidden argument*/NULL);
+		// break;
+		return;
+	}
+
+IL_037e:
+	{
+		// PlayerPrefs.SetInt("CoinsC", coins);
+		int32_t L_98 = ((GameManager_t9013B33302D2B40A51D0E8059DEE0DC180218AA1_StaticFields*)il2cpp_codegen_static_fields_for(GameManager_t9013B33302D2B40A51D0E8059DEE0DC180218AA1_il2cpp_TypeInfo_var))->get_coins_5();
+		PlayerPrefs_SetInt_m0C5C977E960B9CA8F9AB73AF4129C3DCABD067B6(_stringLiteral2C33EE3A3891C519324BA4397B0B7FD4E8AAA739, L_98, /*hidden argument*/NULL);
+		// PlayServices.AddScoreToLeaderboard();
+		PlayServices_AddScoreToLeaderboard_mEAD31EE08E7E2FFBA0249E6AF712714C0B0E881F(/*hidden argument*/NULL);
+		// life1.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_99 = __this->get_life1_7();
+		NullCheck(L_99);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_100;
+		L_100 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_99, /*hidden argument*/NULL);
+		NullCheck(L_100);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_100, (bool)0, /*hidden argument*/NULL);
+		// life2.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_101 = __this->get_life2_8();
+		NullCheck(L_101);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_102;
+		L_102 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_101, /*hidden argument*/NULL);
+		NullCheck(L_102);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_102, (bool)0, /*hidden argument*/NULL);
+		// life3.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_103 = __this->get_life3_9();
+		NullCheck(L_103);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_104;
+		L_104 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_103, /*hidden argument*/NULL);
+		NullCheck(L_104);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_104, (bool)0, /*hidden argument*/NULL);
+		// life4.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_105 = __this->get_life4_10();
+		NullCheck(L_105);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_106;
+		L_106 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_105, /*hidden argument*/NULL);
+		NullCheck(L_106);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_106, (bool)0, /*hidden argument*/NULL);
+		// life5.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_107 = __this->get_life5_11();
+		NullCheck(L_107);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_108;
+		L_108 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_107, /*hidden argument*/NULL);
+		NullCheck(L_108);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_108, (bool)0, /*hidden argument*/NULL);
+		// life6.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_109 = __this->get_life6_12();
+		NullCheck(L_109);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_110;
+		L_110 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_109, /*hidden argument*/NULL);
+		NullCheck(L_110);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_110, (bool)0, /*hidden argument*/NULL);
+		// pauseBtn.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_111 = __this->get_pauseBtn_17();
+		NullCheck(L_111);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_112;
+		L_112 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_111, /*hidden argument*/NULL);
+		NullCheck(L_112);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_112, (bool)0, /*hidden argument*/NULL);
+		// gameOver.gameObject.SetActive(true);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_113 = __this->get_gameOver_13();
+		NullCheck(L_113);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_114;
+		L_114 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_113, /*hidden argument*/NULL);
+		NullCheck(L_114);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_114, (bool)1, /*hidden argument*/NULL);
+		// if(isSettingsActive == true) {
+		bool L_115 = __this->get_isSettingsActive_18();
+		if (!L_115)
+		{
+			goto IL_0433;
+		}
+	}
+	{
+		// gameOver.gameObject.SetActive(false);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_116 = __this->get_gameOver_13();
+		NullCheck(L_116);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_117;
+		L_117 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_116, /*hidden argument*/NULL);
+		NullCheck(L_117);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_117, (bool)0, /*hidden argument*/NULL);
+	}
+
+IL_0433:
+	{
+		// if(isSettingsActive == false) {
+		bool L_118 = __this->get_isSettingsActive_18();
+		if (L_118)
+		{
+			goto IL_044c;
+		}
+	}
+	{
+		// gameOver.gameObject.SetActive(true);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_119 = __this->get_gameOver_13();
+		NullCheck(L_119);
+		GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * L_120;
+		L_120 = GameObject_get_gameObject_mD5FFECF7C3AC5039E847DF7A8842478539B701D6(L_119, /*hidden argument*/NULL);
+		NullCheck(L_120);
+		GameObject_SetActive_mCF1EEF2A314F3AE85DA581FF52EB06ACEF2FFF86(L_120, (bool)1, /*hidden argument*/NULL);
+	}
+
+IL_044c:
 	{
 		// Time.timeScale = 0;
 		Time_set_timeScale_m1987DE9E74FC6C0126CE4F59A6293E3B85BD01EA((0.0f), /*hidden argument*/NULL);

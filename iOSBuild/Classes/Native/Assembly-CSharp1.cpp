@@ -25727,14 +25727,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void paddle_OnCollisionEnter_m2E3E64BAC9F4EB2
 		}
 	}
 	{
-		// if(transform.localScale.x < 0.25){
+		// if(transform.localScale.x >= 0.25){
 		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_4;
 		L_4 = Component_get_transform_mE8496EBC45BEB1BADB5F314960F1DF1C952FA11F(__this, /*hidden argument*/NULL);
 		NullCheck(L_4);
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_5;
 		L_5 = Transform_get_localScale_mD9DF6CA81108C2A6002B5EA2BE25A6CD2723D046(L_4, /*hidden argument*/NULL);
 		float L_6 = L_5.get_x_2();
-		if ((!(((double)((double)((double)L_6))) < ((double)(0.25)))))
+		if ((!(((double)((double)((double)L_6))) >= ((double)(0.25)))))
 		{
 			goto IL_0040;
 		}

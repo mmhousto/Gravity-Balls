@@ -131,7 +131,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.04
+  bundleVersion: 1.06
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -151,6 +151,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.MorganHouston.GravityBalls
+    Standalone: com.MorganHouston.GravityBalls
     iPhone: com.MorganHouston.GravityBalls
   buildNumber:
     Standalone: 0

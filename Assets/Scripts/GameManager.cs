@@ -135,6 +135,25 @@ public class GameManager : MonoBehaviour
                 }
         		Time.timeScale = 0;
         		break;
+        	default:
+        		PlayerPrefs.SetInt("CoinsC", coins);
+                PlayServices.AddScoreToLeaderboard();
+        		life1.gameObject.SetActive(false);
+        		life2.gameObject.SetActive(false);
+        		life3.gameObject.SetActive(false);
+        		life4.gameObject.SetActive(false);
+        		life5.gameObject.SetActive(false);
+        		life6.gameObject.SetActive(false);
+        		pauseBtn.gameObject.SetActive(false);
+                gameOver.gameObject.SetActive(true);
+                if(isSettingsActive == true) {
+        		  gameOver.gameObject.SetActive(false);
+                }
+                if(isSettingsActive == false) {
+                  gameOver.gameObject.SetActive(true);
+                }
+        		Time.timeScale = 0;
+        		break;
         }
 
     }
