@@ -13,12 +13,15 @@ public class PlayServices : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
-        #if UNITY_IPHONE
+#if UNITY_IPHONE
         Social.localUser.Authenticate (ProcessAuthentication);
-        #elif UNITY_ANDROID
+#elif UNITY_ANDROID
         try
         {
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().RequestEmail()
+                .RequestServerAuthCode(false)
+                .RequestIdToken()
+                .Build();
             PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.DebugLogEnabled = true;
             PlayGamesPlatform.Activate();
@@ -26,6 +29,8 @@ public class PlayServices : MonoBehaviour
                 if (success)
                 {
                     Debug.Log("Logged In!");
+                    Social.CreateLeaderboard();
+                    Social.CreateLeaderboard().id = "CgkIqYy2998KEAIQAA";
                 }
                 else
                 {
@@ -37,9 +42,9 @@ public class PlayServices : MonoBehaviour
         {
             Debug.Log(exception);
         }
-        #else
+#else
         //do error things here
-        #endif
+#endif
     }
 
     void ProcessAuthentication(bool success) {
