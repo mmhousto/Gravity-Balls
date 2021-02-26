@@ -18,7 +18,7 @@ public class PlayServices : MonoBehaviour
 #elif UNITY_ANDROID
         try
         {
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().RequestEmail()
+            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
                 .RequestServerAuthCode(false)
                 .RequestIdToken()
                 .Build();
@@ -44,6 +44,7 @@ public class PlayServices : MonoBehaviour
         }
 #else
         //do error things here
+        Debug.Log("Error!");
 #endif
     }
 
