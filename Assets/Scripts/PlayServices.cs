@@ -9,51 +9,61 @@ using UnityEngine.SocialPlatforms;
 public class PlayServices : MonoBehaviour
 {
     static int playerScore;
+
+    void Awake()
+    {
+#if UNITY_ANDROID
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();
+#endif
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this);
 #if UNITY_IPHONE
         Social.localUser.Authenticate (ProcessAuthentication);
+
 #elif UNITY_ANDROID
-        try
+        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) =>
         {
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
-                .RequestServerAuthCode(false)
-                .RequestIdToken()
-                .Build();
-            PlayGamesPlatform.InitializeInstance(config);
-            PlayGamesPlatform.DebugLogEnabled = true;
-            PlayGamesPlatform.Activate();
-            Social.localUser.Authenticate((bool success) => {
-                if (success)
-                {
-                    Debug.Log("Logged In!");
-                    Social.CreateLeaderboard();
-                    Social.CreateLeaderboard().id = "CgkIqYy2998KEAIQAA";
-                }
-                else
-                {
-                    Debug.Log("Failed to Login!");
-                }
-            });
-        }
-        catch (Exception exception)
-        {
-            Debug.Log(exception);
-        }
+            Debug.Log(result);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    Debug.Log("Signed In!");
+                    break;
+                default:
+                    Debug.Log("Error Signing In!");
+                    break;
+            }
+        });
+           
 #else
         //do error things here
-        Debug.Log("Error!");
+        Debug.Log("Playing on Web!");
+
 #endif
     }
 
     void ProcessAuthentication(bool success) {
         if(success) {
             Debug.Log ("Authentication successful");
+#if UNITY_IPHONE
             Social.CreateLeaderboard();
             Social.CreateLeaderboard().id = "AllTimeLeader";
-
+            Social.CreateLeaderboard();
+            Social.CreateLeaderboard().id = "SkillLeader";
+#elif UNITY_ANDROID
+            Social.CreateLeaderboard();
+            Social.CreateLeaderboard().id = "CgkItYzmyokEEAIQAg";
+            Social.CreateLeaderboard();
+            Social.CreateLeaderboard().id = "CgkItYzmyokEEAIQAw";
+#else
+            //do error things here
+            Debug.Log("Playing on Web!");
+#endif
         }
         else
         {
@@ -65,11 +75,11 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-            #if UNITY_IPHONE
+#if UNITY_IPHONE
                 Social.ReportScore(playerScore, "AllTimeLeader", success => { });
-            #elif UNITY_ANDROID
-                Social.ReportScore(playerScore, "CgkIqYy2998KEAIQAA", success => { });
-            #endif
+#elif UNITY_ANDROID
+                PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAg", success => { });
+#endif
         }
     }
 
@@ -77,13 +87,14 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-            #if UNITY_IPHONE
+#if UNITY_IPHONE
                 Social.ReportScore(playerScore, "SkillLeader", success => { });
-            #elif UNITY_ANDROID
-                Social.ReportScore(playerScore, "CgkIqYy2998KEAIQAg", success => { });
-            #endif
+#elif UNITY_ANDROID
+                PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAw", success => { });
+#endif
         }
     }
+
 
     public void ShowLeaderboard()
     {
@@ -95,6 +106,27 @@ public class PlayServices : MonoBehaviour
         {
             Debug.Log("NOT SIGNED IN!");
         }
+    }
+
+    public void SignInAccount()
+    {
+#if UNITY_IPHONE
+                
+#elif UNITY_ANDROID
+        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptAlways, (result) =>
+        {
+            Debug.Log(result);
+        });
+#endif
+    }
+
+    public void SignOutAccount()
+    {
+#if UNITY_IPHONE
+                
+#elif UNITY_ANDROID
+                PlayGamesPlatform.Instance.SignOut();
+#endif
     }
 
     public void ShowAchievements()
