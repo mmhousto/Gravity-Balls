@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SkillManager : MonoBehaviour
 {
 	public static int lives = 1, coins, newCoins;
-	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
+	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private bool isSettingsActive = false;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class SkillManager : MonoBehaviour
         PlayerPrefs.SetInt("CoinsC", 0);
         coins = PlayerPrefs.GetInt("CoinsC", 0);
         gameOver.gameObject.SetActive(false);
+        scoreBox.gameObject.SetActive(true);
     }
 
     public static void collectCoin() {
@@ -26,11 +27,13 @@ public class SkillManager : MonoBehaviour
     public void puaseGame(){
         Time.timeScale = 0;
         pauseMenu.gameObject.SetActive(true);
+        scoreBox.gameObject.SetActive(false);
 
     }
 
     public void resumeGame(){
         pauseMenu.gameObject.SetActive(false);
+        scoreBox.gameObject.SetActive(true);
         Time.timeScale = 1;
     }
 
@@ -44,10 +47,12 @@ public class SkillManager : MonoBehaviour
 
     public void toSettings(){
         isSettingsActive = true;
+        scoreBox.gameObject.SetActive(false);
     }
 
     public void offSettings(){
         isSettingsActive = false;
+        scoreBox.gameObject.SetActive(true);
     }
 
     public void loadMenu(){

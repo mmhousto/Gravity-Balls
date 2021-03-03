@@ -9,12 +9,16 @@ using UnityEngine.SocialPlatforms;
 public class PlayServices : MonoBehaviour
 {
     static int playerScore;
+    public GameObject signIn, signOut;
 
     void Awake()
     {
 #if UNITY_ANDROID
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
+#elif UNITY_IPHONE
+        signIn.SetActive(false);
+        signOut.SetActive(false);
 #endif
     }
 
@@ -39,11 +43,6 @@ public class PlayServices : MonoBehaviour
                     break;
             }
         });
-           
-#else
-        //do error things here
-        Debug.Log("Playing on Web!");
-
 #endif
     }
 
@@ -110,9 +109,7 @@ public class PlayServices : MonoBehaviour
 
     public void SignInAccount()
     {
-#if UNITY_IPHONE
-                
-#elif UNITY_ANDROID
+#if UNITY_ANDROID
         PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptAlways, (result) =>
         {
             Debug.Log(result);
@@ -122,11 +119,10 @@ public class PlayServices : MonoBehaviour
 
     public void SignOutAccount()
     {
-#if UNITY_IPHONE
-                
-#elif UNITY_ANDROID
-                PlayGamesPlatform.Instance.SignOut();
-#endif
+#if UNITY_ANDROID
+        PlayGamesPlatform.Instance.SignOut();
+        Debug.Log("Signed OUT!");
+#endif   
     }
 
     public void ShowAchievements()

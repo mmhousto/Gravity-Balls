@@ -51,6 +51,11 @@ public class spawner : MonoBehaviour
             spawnedItem = false;
         }
 
+        if((score.Score == 70) && (!spawnedBall)){
+            Spawn(gravBall);
+            SpawnCoin();
+        }
+
         if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0)){
         	Spawn(gravBall);
             SpawnCoin();

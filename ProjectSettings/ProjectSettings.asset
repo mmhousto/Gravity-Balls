@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Morgan Houston
-  productName: Gravity Balls
+  productName: Paddle Balls
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
@@ -131,7 +131,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.052
+  bundleVersion: 1.053
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -793,7 +793,7 @@ PlayerSettings:
   blurSplashScreenBackground: 0
   spritePackerPolicy: 
   webGLMemorySize: 16
-  webGLExceptionSupport: 1
+  webGLExceptionSupport: 2
   webGLNameFilesAsHashes: 0
   webGLDataCaching: 1
   webGLDebugSymbols: 0
