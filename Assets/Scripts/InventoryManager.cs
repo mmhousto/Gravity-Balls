@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int>, ICl
 	private TextMeshProUGUI paddleName, priceLbl;
 	private int coins;
 	private string[] sprites = new string[] {"Paddles/begginer-paddle.svg", "Paddles/paddle-dark.svg", "Paddles/paddle-pro.svg"};
-	private int[] price = new int[] {0, 20, 50, 5, 5, 5, 5, 5};
+	private int[] price = new int[] {0, 50, 75, 20, 20, 20, 20, 20};
 	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0, 0, 0, 0};
     private GameObject selectedPaddle;
 

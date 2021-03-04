@@ -3594,9 +3594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5
-
-'
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -5298,7 +5296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50
+  m_text: 75
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -6853,9 +6851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '20
-
-'
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -8930,9 +8926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5
-
-'
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -9141,9 +9135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5
-
-'
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -10888,9 +10880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5
-
-'
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
@@ -13984,9 +13974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '5
-
-'
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6cc4f84226bc94a8997250401dd81b00, type: 2}
