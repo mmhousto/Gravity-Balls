@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
     private int ownPaddle5 = 0;
     private static int musicOn = 1;
     private static string volume = "medium";
+
     // Start is called before the first frame update
     void Start()
     {

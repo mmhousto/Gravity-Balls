@@ -2740,8 +2740,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.0009765625, y: -124}
-  m_SizeDelta: {x: -0.2000122, y: 378.189}
+  m_AnchoredPosition: {x: 0.0009765625, y: -101.81}
+  m_SizeDelta: {x: -0.2, y: 845.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387314010
 MonoBehaviour:
@@ -2763,22 +2763,33 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Saroj Khanal for UX/UI
+  m_text: 'UI/UX
+
+    Saroj Khanal
 
 
-    Icons from Flaticon
+    ICONS
 
-    made by
+    from Flaticon made by
 
     Good
     Ware, Freepik, Kiranshastry, and Those Icons
 
 
-    CasualGameSounds for audio
+    AUDIO
+
+    CasualGameSounds
 
 
-    The
-    Internet'
+    MUSIC
+
+    Strapped
+    Beat
+
+    by Shaolin Dub
+
+
+    The Internet'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
   m_sharedMaterial: {fileID: 8807780848322885556, guid: f9507309ab93d4be3bfe0e215328fb19, type: 2}
@@ -2805,8 +2816,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3219,6 +3230,7 @@ GameObject:
   - component: {fileID: 401501526}
   - component: {fileID: 401501525}
   - component: {fileID: 401501528}
+  - component: {fileID: 401501527}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: dontDestroy
@@ -3265,6 +3277,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &401501527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401501524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083b0cd4f8fa44ba0b3a6ab2ea5ab673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &401501528
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3275,11 +3299,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61d0f495ab6ec184b9993c08873a6314, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.691
-  m_Pitch: 0.6
-  Loop: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3321,7 +3345,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.9
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6685,7 +6709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -206, y: 370.00018}
+  m_AnchoredPosition: {x: -206, y: 370.00024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935808778

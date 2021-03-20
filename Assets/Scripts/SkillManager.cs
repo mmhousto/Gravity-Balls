@@ -65,7 +65,7 @@ public class SkillManager : MonoBehaviour
         if(lives < 1){
             PlayerPrefs.SetInt("CoinsC", coins);
             PlayServices.AddScoreToSkillLeaderboard();
-        	pauseBtn.gameObject.SetActive(false);
+            pauseBtn.gameObject.SetActive(false);
             gameOver.gameObject.SetActive(true);
             if(isSettingsActive == true) {
         		gameOver.gameObject.SetActive(false);

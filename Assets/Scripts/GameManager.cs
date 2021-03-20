@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerData.addPlay();
-        Debug.Log(PlayerData.plays);
         Time.timeScale = 1;
         lives = 5;
         PlayerPrefs.SetInt("CoinsC", 0);
@@ -124,7 +123,7 @@ public class GameManager : MonoBehaviour
         	case 0:
                 PlayerPrefs.SetInt("CoinsC", coins);
                 PlayServices.AddScoreToLeaderboard();
-        		life1.gameObject.SetActive(false);
+                life1.gameObject.SetActive(false);
         		life2.gameObject.SetActive(false);
         		life3.gameObject.SetActive(false);
         		life4.gameObject.SetActive(false);
@@ -143,7 +142,7 @@ public class GameManager : MonoBehaviour
         	default:
         		PlayerPrefs.SetInt("CoinsC", coins);
                 PlayServices.AddScoreToLeaderboard();
-        		life1.gameObject.SetActive(false);
+                life1.gameObject.SetActive(false);
         		life2.gameObject.SetActive(false);
         		life3.gameObject.SetActive(false);
         		life4.gameObject.SetActive(false);
