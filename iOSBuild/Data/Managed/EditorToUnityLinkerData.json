@@ -611,6 +611,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp-firstpass.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Purchasing.IAPButton",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp-firstpass.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "VoxelBusters.NativePlugins.NPSettings",
             "moduleName": "",
             "usedInScenes": []

@@ -311,9 +311,9 @@ struct U3CU3Ec__234_1_tC49D73A2336E416C150496E242200C465EC0A6BD;
 // System.Net.HttpWebRequest/<>c__234`1<System.Object>
 struct U3CU3Ec__234_1_tA32D433EC2C3DC5AE0D654AE848F1E2D2A3BDB3D;
 // UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Int32Enum>
-struct U3CU3Ec__DisplayClass14_0_1_t376FE58CA7F84FCB3014134FE5D26E9E3A4A4483;
+struct U3CU3Ec__DisplayClass14_0_1_t33F68EF96EBE916E0D52A1EB71F053A16C3AEE5F;
 // UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Object>
-struct U3CU3Ec__DisplayClass14_0_1_t654A34A73D9F319A4327712301E607B176AB4798;
+struct U3CU3Ec__DisplayClass14_0_1_t892DEAB0551364EEBA28F38119EBFC8696F06CAE;
 // System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_0<System.Nullable`1<System.Int32>>
 struct U3CU3Ec__DisplayClass35_0_tF4B3E43B25DA16F4486DF2504C9738292D9F04DC;
 // System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_0<System.ValueTuple`2<System.Boolean,System.Object>>
@@ -1515,14 +1515,14 @@ public:
 
 
 // UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Int32Enum>
-struct  U3CU3Ec__DisplayClass14_0_1_t376FE58CA7F84FCB3014134FE5D26E9E3A4A4483  : public RuntimeObject
+struct  U3CU3Ec__DisplayClass14_0_1_t33F68EF96EBE916E0D52A1EB71F053A16C3AEE5F  : public RuntimeObject
 {
 public:
 	// System.Action`2<System.Boolean,T> UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1::callback
 	Action_2_t733B6400DAAC2076CC6DBCA5467F390BA21398B7 * ___callback_0;
 
 public:
-	inline static int32_t get_offset_of_callback_0() { return static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_1_t376FE58CA7F84FCB3014134FE5D26E9E3A4A4483, ___callback_0)); }
+	inline static int32_t get_offset_of_callback_0() { return static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_1_t33F68EF96EBE916E0D52A1EB71F053A16C3AEE5F, ___callback_0)); }
 	inline Action_2_t733B6400DAAC2076CC6DBCA5467F390BA21398B7 * get_callback_0() const { return ___callback_0; }
 	inline Action_2_t733B6400DAAC2076CC6DBCA5467F390BA21398B7 ** get_address_of_callback_0() { return &___callback_0; }
 	inline void set_callback_0(Action_2_t733B6400DAAC2076CC6DBCA5467F390BA21398B7 * value)
@@ -1534,14 +1534,14 @@ public:
 
 
 // UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Object>
-struct  U3CU3Ec__DisplayClass14_0_1_t654A34A73D9F319A4327712301E607B176AB4798  : public RuntimeObject
+struct  U3CU3Ec__DisplayClass14_0_1_t892DEAB0551364EEBA28F38119EBFC8696F06CAE  : public RuntimeObject
 {
 public:
 	// System.Action`2<System.Boolean,T> UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1::callback
 	Action_2_t48DF0C0D4F3A3AB463DECA881851C95F1A5B0E72 * ___callback_0;
 
 public:
-	inline static int32_t get_offset_of_callback_0() { return static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_1_t654A34A73D9F319A4327712301E607B176AB4798, ___callback_0)); }
+	inline static int32_t get_offset_of_callback_0() { return static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass14_0_1_t892DEAB0551364EEBA28F38119EBFC8696F06CAE, ___callback_0)); }
 	inline Action_2_t48DF0C0D4F3A3AB463DECA881851C95F1A5B0E72 * get_callback_0() const { return ___callback_0; }
 	inline Action_2_t48DF0C0D4F3A3AB463DECA881851C95F1A5B0E72 ** get_address_of_callback_0() { return &___callback_0; }
 	inline void set_callback_0(Action_2_t48DF0C0D4F3A3AB463DECA881851C95F1A5B0E72 * value)
@@ -12367,7 +12367,7 @@ IL_0014:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Int32Enum>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_m1B29B8F0986CB500EE1D0841917892328CCCC51F_gshared (U3CU3Ec__DisplayClass14_0_1_t376FE58CA7F84FCB3014134FE5D26E9E3A4A4483 * __this, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_m394C6BEACC33262195E944BA052DFB13E796B98A_gshared (U3CU3Ec__DisplayClass14_0_1_t33F68EF96EBE916E0D52A1EB71F053A16C3AEE5F * __this, const RuntimeMethod* method)
 {
 	{
 		NullCheck((RuntimeObject *)__this);
@@ -12376,7 +12376,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_m1B29B
 	}
 }
 // System.Void UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Int32Enum>::<StartUI>b__0(System.Boolean,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1_U3CStartUIU3Eb__0_mDF729282B4928623A9FBED555707153576C03052_gshared (U3CU3Ec__DisplayClass14_0_1_t376FE58CA7F84FCB3014134FE5D26E9E3A4A4483 * __this, bool ___result0, int32_t ___codeValue1, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1_U3CStartUIU3Eb__0_m38D36F68ED321EF831ECF6211251F11850BAD228_gshared (U3CU3Ec__DisplayClass14_0_1_t33F68EF96EBE916E0D52A1EB71F053A16C3AEE5F * __this, bool ___result0, int32_t ___codeValue1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -12407,7 +12407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1_U3CStartUIU3
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Object>::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_mB5CFB7204ED9575E8BC52B64178DA5AD5029D4D7_gshared (U3CU3Ec__DisplayClass14_0_1_t654A34A73D9F319A4327712301E607B176AB4798 * __this, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_m0F9DE9BF854C2905217671F92348EE2686452DCD_gshared (U3CU3Ec__DisplayClass14_0_1_t892DEAB0551364EEBA28F38119EBFC8696F06CAE * __this, const RuntimeMethod* method)
 {
 	{
 		NullCheck((RuntimeObject *)__this);
@@ -12416,7 +12416,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1__ctor_mB5CFB
 	}
 }
 // System.Void UnityEngine.Purchasing.UIFakeStore/<>c__DisplayClass14_0`1<System.Object>::<StartUI>b__0(System.Boolean,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1_U3CStartUIU3Eb__0_m1D28E5DC7C3CEF9B893A7170D9F2837680577B44_gshared (U3CU3Ec__DisplayClass14_0_1_t654A34A73D9F319A4327712301E607B176AB4798 * __this, bool ___result0, int32_t ___codeValue1, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0_1_U3CStartUIU3Eb__0_m72E309E8CA17E289E018F44759FFBB844812FD4C_gshared (U3CU3Ec__DisplayClass14_0_1_t892DEAB0551364EEBA28F38119EBFC8696F06CAE * __this, bool ___result0, int32_t ___codeValue1, const RuntimeMethod* method)
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)

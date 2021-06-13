@@ -13,589 +13,589 @@
 
 
 // 0x00000001 System.String UnityEngine.Purchasing.Security.DistinguishedName::get_Country()
-extern void DistinguishedName_get_Country_m5705D26EF7F51682CD6344E1B426EBFC8888FDF2 (void);
+extern void DistinguishedName_get_Country_m157DD2B52F1B76D25169A01E124AF14579F8ED52 (void);
 // 0x00000002 System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_Country(System.String)
-extern void DistinguishedName_set_Country_m644113FCE1577A71446C0B2A9698D49EBDF3FE05 (void);
+extern void DistinguishedName_set_Country_m9FA247108B60F4E1344E450B404169BDF28DEF9A (void);
 // 0x00000003 System.String UnityEngine.Purchasing.Security.DistinguishedName::get_Organization()
-extern void DistinguishedName_get_Organization_mC1AAC91B7B901000C39D1D4126B4D80E8FD4D66F (void);
+extern void DistinguishedName_get_Organization_mCF93722B5CE3CEC3A951CA2DCF536241DF1443F3 (void);
 // 0x00000004 System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_Organization(System.String)
-extern void DistinguishedName_set_Organization_mBF5D0A889055E8A3950EA043EC75913BEC047D9B (void);
+extern void DistinguishedName_set_Organization_mF539876E869E9FF1E736B375188336ADC7624827 (void);
 // 0x00000005 System.String UnityEngine.Purchasing.Security.DistinguishedName::get_OrganizationalUnit()
-extern void DistinguishedName_get_OrganizationalUnit_m6B0C07ADF10572753BFFBF0BBF1116D11A9FAA51 (void);
+extern void DistinguishedName_get_OrganizationalUnit_m5F4109BDBB40977061F2E2361EF048F9ED9459CA (void);
 // 0x00000006 System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_OrganizationalUnit(System.String)
-extern void DistinguishedName_set_OrganizationalUnit_mE9D6C9B59DDA526C02C569C374A693BA4FC7FF1F (void);
+extern void DistinguishedName_set_OrganizationalUnit_mB2F3A100B70517C5319AA791CEB21D257A94BCED (void);
 // 0x00000007 System.String UnityEngine.Purchasing.Security.DistinguishedName::get_Dnq()
-extern void DistinguishedName_get_Dnq_mF2E929E4588D1650BD6D51ED672EB8FD2179D560 (void);
+extern void DistinguishedName_get_Dnq_m15EED9600F75A719439938F17830B1637D858ECA (void);
 // 0x00000008 System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_Dnq(System.String)
-extern void DistinguishedName_set_Dnq_mCAFB509FB06425554BC57BB3B6960559DFE57083 (void);
+extern void DistinguishedName_set_Dnq_m1F728A29C29A5E667D6E7E0346CCFA7A30404AE0 (void);
 // 0x00000009 System.String UnityEngine.Purchasing.Security.DistinguishedName::get_State()
-extern void DistinguishedName_get_State_mE65222C233A29D23B5F340C0B918C3F225404EF3 (void);
+extern void DistinguishedName_get_State_m3A1FB4CCE37EB42CB96E64C3A86E4537C6CB82AC (void);
 // 0x0000000A System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_State(System.String)
-extern void DistinguishedName_set_State_m82D2C570043AB77B9EE30368EC9A9FF5098674E0 (void);
+extern void DistinguishedName_set_State_m88AA839A5572D82295F4B085CFC18671419F27FF (void);
 // 0x0000000B System.String UnityEngine.Purchasing.Security.DistinguishedName::get_CommonName()
-extern void DistinguishedName_get_CommonName_mA97F153E2C29237AEAD1C2F409B618421805AB07 (void);
+extern void DistinguishedName_get_CommonName_m41FD94A2E3537F9DA228F0228730070119560B2F (void);
 // 0x0000000C System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_CommonName(System.String)
-extern void DistinguishedName_set_CommonName_m40789277F6F29B5148ABE0C7FBFEE3D7392F9BD0 (void);
+extern void DistinguishedName_set_CommonName_mCB697202E58D8821DB2860256803719455691943 (void);
 // 0x0000000D System.Void UnityEngine.Purchasing.Security.DistinguishedName::set_SerialNumber(System.String)
-extern void DistinguishedName_set_SerialNumber_m046B03F0AFB9FAB98C340DD3778A3F95DEE65AF0 (void);
+extern void DistinguishedName_set_SerialNumber_m057BE65B3101DEE2EF66E9FF5BDD1A741EA7EA32 (void);
 // 0x0000000E System.Void UnityEngine.Purchasing.Security.DistinguishedName::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void DistinguishedName__ctor_mE470469A9A676895F9838CAD2DA3CE63BC3F0E53 (void);
+extern void DistinguishedName__ctor_mF86CACF226C221D2EB73A79651601FC97A053940 (void);
 // 0x0000000F System.Boolean UnityEngine.Purchasing.Security.DistinguishedName::Equals(UnityEngine.Purchasing.Security.DistinguishedName)
-extern void DistinguishedName_Equals_m89E11F96B162EB322E857EC6D2A03A0CC5877AA6 (void);
+extern void DistinguishedName_Equals_m52D16D76413F2962A013DE7692027A94B0F1B723 (void);
 // 0x00000010 System.String UnityEngine.Purchasing.Security.DistinguishedName::ToString()
-extern void DistinguishedName_ToString_m60422951E4513B6DD5F88F520C123FE7F90675DF (void);
+extern void DistinguishedName_ToString_m8F2E021201C3E80A613FE0DC03CDC566324BFFA4 (void);
 // 0x00000011 System.Void UnityEngine.Purchasing.Security.X509Cert::set_SerialNumber(System.String)
-extern void X509Cert_set_SerialNumber_m0E2A92D44F00AC5041C7D87FC9F752695B2B6706 (void);
+extern void X509Cert_set_SerialNumber_m13E238AB16C2758CB6CD07F4A3D93CFE3D395F61 (void);
 // 0x00000012 System.Void UnityEngine.Purchasing.Security.X509Cert::set_ValidAfter(System.DateTime)
-extern void X509Cert_set_ValidAfter_m285BB1F29D6CB01B79FFA7DE5C24AD843BEBDE1D (void);
+extern void X509Cert_set_ValidAfter_m2EB2BDD79EAC3E5D2121CF9C9E0EDF1B22D70C43 (void);
 // 0x00000013 System.Void UnityEngine.Purchasing.Security.X509Cert::set_ValidBefore(System.DateTime)
-extern void X509Cert_set_ValidBefore_mA7B9CCB54BFD6FF9719E9E18A6B02AAD1BC117B0 (void);
+extern void X509Cert_set_ValidBefore_m3E5FBCC92677120AA5F339F785F65DCAF0CA949F (void);
 // 0x00000014 System.Void UnityEngine.Purchasing.Security.X509Cert::set_PubKey(UnityEngine.Purchasing.Security.RSAKey)
-extern void X509Cert_set_PubKey_m0CA3D6DF1696DA516F78271942D59ABEB47A60EA (void);
+extern void X509Cert_set_PubKey_m7A9971797143DCCF4B18979AB900874BA654BD86 (void);
 // 0x00000015 System.Void UnityEngine.Purchasing.Security.X509Cert::set_SelfSigned(System.Boolean)
-extern void X509Cert_set_SelfSigned_m16DA548EB14E0F84FB8FBF180EAB4F71FF9808A1 (void);
+extern void X509Cert_set_SelfSigned_m27531D603830C730306B7CC35D0C0D0A5E96BE6D (void);
 // 0x00000016 UnityEngine.Purchasing.Security.DistinguishedName UnityEngine.Purchasing.Security.X509Cert::get_Subject()
-extern void X509Cert_get_Subject_mC4302418A522A6DA1A68D4B2833CF706C597E3DC (void);
+extern void X509Cert_get_Subject_m9701D01645E40CBA76206871A54F10516788B18B (void);
 // 0x00000017 System.Void UnityEngine.Purchasing.Security.X509Cert::set_Subject(UnityEngine.Purchasing.Security.DistinguishedName)
-extern void X509Cert_set_Subject_m16BD17E2E8E323908D0951F86E531393FA2DEF34 (void);
+extern void X509Cert_set_Subject_mBE649EC34353D754C78934304934D52126B6318C (void);
 // 0x00000018 UnityEngine.Purchasing.Security.DistinguishedName UnityEngine.Purchasing.Security.X509Cert::get_Issuer()
-extern void X509Cert_get_Issuer_m6848D49F13208378FA8D38AC792F7EA6EC92BAD1 (void);
+extern void X509Cert_get_Issuer_m72B64D194C52EB2B53A22C2B1A91449A3C2F2561 (void);
 // 0x00000019 System.Void UnityEngine.Purchasing.Security.X509Cert::set_Issuer(UnityEngine.Purchasing.Security.DistinguishedName)
-extern void X509Cert_set_Issuer_m6B59AFA4A236511371019062639EC7D8D5CD4D66 (void);
+extern void X509Cert_set_Issuer_mB1CFF279F72029B4FD5A1DEF7E2ED21ECF13F34E (void);
 // 0x0000001A System.Void UnityEngine.Purchasing.Security.X509Cert::set_Signature(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void X509Cert_set_Signature_mD98147C16D232D664C0723883C63F99BF928B81E (void);
+extern void X509Cert_set_Signature_mE21877BFCE23ADED6FA05C8B1A7C19A76679838F (void);
 // 0x0000001B System.Void UnityEngine.Purchasing.Security.X509Cert::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void X509Cert__ctor_mED9080BFDEA52940B2417AEB7D115D2FF8D81EF8 (void);
+extern void X509Cert__ctor_m15452EAB21FFCB79867DC723367D95B6C60B0B72 (void);
 // 0x0000001C System.Void UnityEngine.Purchasing.Security.X509Cert::ParseNode(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void X509Cert_ParseNode_m8DC538F79F401455E1C373EAAC9F2AF96F8D0D3E (void);
+extern void X509Cert_ParseNode_m7BEDAABCD421F6DBAE16BFB634E7DDD730A63C4E (void);
 // 0x0000001D System.DateTime UnityEngine.Purchasing.Security.X509Cert::ParseTime(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void X509Cert_ParseTime_m48258C44A3B297A8C511F18249685B2385B8CD5D (void);
+extern void X509Cert_ParseTime_m1C0FBF727A66BD3125B30027A4A705FF127B04CF (void);
 // 0x0000001E System.Void UnityEngine.Purchasing.Security.InvalidX509Data::.ctor()
-extern void InvalidX509Data__ctor_mEB9B07DF4CAB42C23BFDC0FB405652C767BA2150 (void);
+extern void InvalidX509Data__ctor_mC813B35A8F415E38E1D7A74FDD5DAED89F27891E (void);
 // 0x0000001F LipingShare.LCLib.Asn1Processor.Asn1Node UnityEngine.Purchasing.Security.PKCS7::get_data()
-extern void PKCS7_get_data_mACFEA70C1748947E5C7E414D540BBB1E332807EF (void);
+extern void PKCS7_get_data_m1871D8A0427E6A93D72B81A3085E4FBF00ED2AD1 (void);
 // 0x00000020 System.Void UnityEngine.Purchasing.Security.PKCS7::set_data(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void PKCS7_set_data_mAED515F87D45572C43F675765637237B81F9BDDA (void);
+extern void PKCS7_set_data_m6E89804BC54099F4B4D610C3745FB575B71DEAB1 (void);
 // 0x00000021 System.Collections.Generic.List`1<UnityEngine.Purchasing.Security.SignerInfo> UnityEngine.Purchasing.Security.PKCS7::get_sinfos()
-extern void PKCS7_get_sinfos_m2F912CADC0A9B395173C87E6A030599E5F55B2F2 (void);
+extern void PKCS7_get_sinfos_m748935C5A47DDC30D072BBC1DF53FDBD05D2AB72 (void);
 // 0x00000022 System.Void UnityEngine.Purchasing.Security.PKCS7::set_sinfos(System.Collections.Generic.List`1<UnityEngine.Purchasing.Security.SignerInfo>)
-extern void PKCS7_set_sinfos_mCF9E7896BDA5C4E77AD50A8D274CB26C7CD8B8FF (void);
+extern void PKCS7_set_sinfos_m2D912B83FED611E6C4779654B9DA90949A07CB41 (void);
 // 0x00000023 System.Collections.Generic.List`1<UnityEngine.Purchasing.Security.X509Cert> UnityEngine.Purchasing.Security.PKCS7::get_certChain()
-extern void PKCS7_get_certChain_m0C37456FDA55978284D75C7C40BE4766EBC09F6E (void);
+extern void PKCS7_get_certChain_m6FF845BEEC289B22B182A97BB6F68D8E8BED7DA3 (void);
 // 0x00000024 System.Void UnityEngine.Purchasing.Security.PKCS7::set_certChain(System.Collections.Generic.List`1<UnityEngine.Purchasing.Security.X509Cert>)
-extern void PKCS7_set_certChain_mCD15737D78033CCA7C1DF8BFFFC975974C73730A (void);
+extern void PKCS7_set_certChain_m572E90BA5DDD0371EB9A395A51F6FD821F00399A (void);
 // 0x00000025 System.Void UnityEngine.Purchasing.Security.PKCS7::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void PKCS7__ctor_mA0D1C214D5EC40EB565222E5A6DF25AFCD40B774 (void);
+extern void PKCS7__ctor_m779839B5A14960404DCB3AA6245E4A015C9ADC18 (void);
 // 0x00000026 System.Void UnityEngine.Purchasing.Security.PKCS7::CheckStructure()
-extern void PKCS7_CheckStructure_m920B48FEEF6354721835224D56C5F1003C28579E (void);
+extern void PKCS7_CheckStructure_m4FA7B227EBA421987745C8F427669FD3485BAA8D (void);
 // 0x00000027 System.Int32 UnityEngine.Purchasing.Security.SignerInfo::get_Version()
-extern void SignerInfo_get_Version_m71B767BEA10336B9A7287001407BC3E673EA8CFE (void);
+extern void SignerInfo_get_Version_m038EAD01447C25AC08735C9CD6300BA740C63BB0 (void);
 // 0x00000028 System.Void UnityEngine.Purchasing.Security.SignerInfo::set_Version(System.Int32)
-extern void SignerInfo_set_Version_m9CB7D635795A0A0659C497001D8074B223087605 (void);
+extern void SignerInfo_set_Version_m06D8B2388B5016ACC8741A06FC4DB52304C8315B (void);
 // 0x00000029 System.Void UnityEngine.Purchasing.Security.SignerInfo::set_IssuerSerialNumber(System.String)
-extern void SignerInfo_set_IssuerSerialNumber_mA89B275579C7CA5FDBCAEBF2C6FF9C178BA562BB (void);
+extern void SignerInfo_set_IssuerSerialNumber_m43A5682BFEE69E6AFA4E2773485DD8869080E902 (void);
 // 0x0000002A System.Void UnityEngine.Purchasing.Security.SignerInfo::set_EncryptedDigest(System.Byte[])
-extern void SignerInfo_set_EncryptedDigest_m3B87783A3B6E4F2CC828FA992213C11481EEEA66 (void);
+extern void SignerInfo_set_EncryptedDigest_mD3575212D55E351A8022490EDDB2FECA4847EFA1 (void);
 // 0x0000002B System.Void UnityEngine.Purchasing.Security.SignerInfo::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void SignerInfo__ctor_mA4BEC8CE242182B13E3F6AEF545B14DA69719C99 (void);
+extern void SignerInfo__ctor_mC41D0C044EA6922FA1FE49C894D770FEEF529277 (void);
 // 0x0000002C System.Void UnityEngine.Purchasing.Security.IAPSecurityException::.ctor()
-extern void IAPSecurityException__ctor_mE7BEC67ED3D093794039C26BC3F1F6B3F6E65297 (void);
+extern void IAPSecurityException__ctor_m32CCBB07794ED03A282BB32204C4E76AAAE89BEC (void);
 // 0x0000002D System.Void UnityEngine.Purchasing.Security.InvalidPKCS7Data::.ctor()
-extern void InvalidPKCS7Data__ctor_m26C25C402F21C892C0A0D4D146247F36B7963716 (void);
+extern void InvalidPKCS7Data__ctor_m4A94EB203E545D46A8C3CC4E11AAF2EBDFF54920 (void);
 // 0x0000002E System.Void UnityEngine.Purchasing.Security.InvalidTimeFormat::.ctor()
-extern void InvalidTimeFormat__ctor_m463B812F45BB363E7451502C5F7D12C24736566F (void);
+extern void InvalidTimeFormat__ctor_mA5E2F9963D2B7B6D7BF5C1DA106195BED3280863 (void);
 // 0x0000002F System.Void UnityEngine.Purchasing.Security.UnsupportedSignerInfoVersion::.ctor()
-extern void UnsupportedSignerInfoVersion__ctor_m7CC8C1E0AEE818F421BEB0E29D744B0BA19DE712 (void);
+extern void UnsupportedSignerInfoVersion__ctor_mF22EE4649673DF0CAEC115147F2EFC17E3FD7BEA (void);
 // 0x00000030 System.Void UnityEngine.Purchasing.Security.RSAKey::set_rsa(System.Security.Cryptography.RSACryptoServiceProvider)
-extern void RSAKey_set_rsa_mB6062514DAEE13A3B05A54032AA3FC6947AA92A6 (void);
+extern void RSAKey_set_rsa_m7EF83991458B68DF4745BE44C93C427424345767 (void);
 // 0x00000031 System.Void UnityEngine.Purchasing.Security.RSAKey::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void RSAKey__ctor_m0CFD0216714518B5C40B3AA7649896A7E28C9AF8 (void);
+extern void RSAKey__ctor_mFD34C71175C0BCF3013FC257FF8D4B14C37486C9 (void);
 // 0x00000032 System.Security.Cryptography.RSACryptoServiceProvider UnityEngine.Purchasing.Security.RSAKey::ParseNode(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void RSAKey_ParseNode_m3721FD76B85C9C7D2E32A0DBC9C19B17BD0FAF98 (void);
+extern void RSAKey_ParseNode_m3D32E36AFC8A70764B5459021CBB904CEB99ECA0 (void);
 // 0x00000033 System.String UnityEngine.Purchasing.Security.RSAKey::ToXML(System.String,System.String)
-extern void RSAKey_ToXML_mABB9357CD1CFCEDFE604C32453CBD96BC0823FB9 (void);
+extern void RSAKey_ToXML_mF5F723766157ED7CC93AADED83EBC632EDD2BEA7 (void);
 // 0x00000034 System.Void UnityEngine.Purchasing.Security.InvalidRSAData::.ctor()
-extern void InvalidRSAData__ctor_mCDF2F3C240FC5ED3000F5280CCC100B196B098D1 (void);
+extern void InvalidRSAData__ctor_mAFB378FB3FD0C4B6F7C85CB337BC162EFABDCEAD (void);
 // 0x00000035 UnityEngine.Purchasing.Security.AppleReceipt UnityEngine.Purchasing.Security.AppleReceiptParser::Parse(System.Byte[])
-extern void AppleReceiptParser_Parse_mC5F46A1B701064EA82517DDD173B3507F8FC5E55 (void);
+extern void AppleReceiptParser_Parse_m9E41042460D690C3A2259CAE305C3DE7019824D8 (void);
 // 0x00000036 UnityEngine.Purchasing.Security.AppleReceipt UnityEngine.Purchasing.Security.AppleReceiptParser::Parse(System.Byte[],UnityEngine.Purchasing.Security.PKCS7&)
-extern void AppleReceiptParser_Parse_mCEDDD6693E09CD6006BF83FF4492C105D03EAF15 (void);
+extern void AppleReceiptParser_Parse_m05494531B6D60B6AEFD6D2AFBE68BD07701D9D8A (void);
 // 0x00000037 System.Globalization.CultureInfo UnityEngine.Purchasing.Security.AppleReceiptParser::PushInvariantCultureOnThread()
-extern void AppleReceiptParser_PushInvariantCultureOnThread_mF1313D362DAF78F9D08A3A023278DAE05B40F0FE (void);
+extern void AppleReceiptParser_PushInvariantCultureOnThread_m03DF6F31EB14F6D8F56DD260EB8B9F8BE2BC1A44 (void);
 // 0x00000038 System.Void UnityEngine.Purchasing.Security.AppleReceiptParser::PopCultureOffThread(System.Globalization.CultureInfo)
-extern void AppleReceiptParser_PopCultureOffThread_m8714A497AA0A67C0CF5AED535E95A6D3A6358F3A (void);
+extern void AppleReceiptParser_PopCultureOffThread_mBDE67E39910BCF56CE82D25672542BA99AABF049 (void);
 // 0x00000039 UnityEngine.Purchasing.Security.AppleReceipt UnityEngine.Purchasing.Security.AppleReceiptParser::ParseReceipt(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void AppleReceiptParser_ParseReceipt_m445615EC36C08D251DB99D8036B993BC0CD678DD (void);
+extern void AppleReceiptParser_ParseReceipt_mF8B94955145DBB4FA399CBA4BE74AC5C837A0364 (void);
 // 0x0000003A UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt UnityEngine.Purchasing.Security.AppleReceiptParser::ParseInAppReceipt(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void AppleReceiptParser_ParseInAppReceipt_mC4CC07F2F5AF71B452CAFBE5DD0E87B638B46507 (void);
+extern void AppleReceiptParser_ParseInAppReceipt_m73AFA47025BCF0F2ED680EBFB1459732DFE5C26C (void);
 // 0x0000003B System.DateTime UnityEngine.Purchasing.Security.AppleReceiptParser::TryParseDateTimeNode(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void AppleReceiptParser_TryParseDateTimeNode_m2C8A5D8F80B1E53D2CFA11B186F4E6432ED3863F (void);
+extern void AppleReceiptParser_TryParseDateTimeNode_m6CFF7FDF0B65508ED49B22E44B071BD54A9E6F6E (void);
 // 0x0000003C System.Boolean UnityEngine.Purchasing.Security.AppleReceiptParser::ArrayEquals(T[],T[])
 // 0x0000003D System.Void UnityEngine.Purchasing.Security.AppleReceiptParser::.ctor()
-extern void AppleReceiptParser__ctor_m55B3CB7314526AA9C53998BEB520F537A3AA41D6 (void);
+extern void AppleReceiptParser__ctor_m198D90CDE64ECA18FC0C9D81D79D6A8BC2E2C5BC (void);
 // 0x0000003E System.Void UnityEngine.Purchasing.Security.AppleReceiptParser::.cctor()
-extern void AppleReceiptParser__cctor_m992F3A1736B89E1E234665685C3B199444A91C87 (void);
+extern void AppleReceiptParser__cctor_m9944C351312895222D2C382AB3D2C126D9A886E5 (void);
 // 0x0000003F System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_bundleID(System.String)
-extern void AppleReceipt_set_bundleID_mDF46B9F133DFCFFDB4212DF8B126E0268CF90BA2 (void);
+extern void AppleReceipt_set_bundleID_m92F780FEDC1939BF19603D619B8C56A9957B973F (void);
 // 0x00000040 System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_appVersion(System.String)
-extern void AppleReceipt_set_appVersion_m45D28FE48142F9A94067B4EA98E802172726A5DD (void);
+extern void AppleReceipt_set_appVersion_m54E1B6B1799B3791724207C341E192861ADE2C8A (void);
 // 0x00000041 System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_opaque(System.Byte[])
-extern void AppleReceipt_set_opaque_mEBEF271969CB83B35E461ADFDCFFC1627822FF1C (void);
+extern void AppleReceipt_set_opaque_m398EE497790C9EA9009B6AAF7E7EC0A239083D26 (void);
 // 0x00000042 System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_hash(System.Byte[])
-extern void AppleReceipt_set_hash_m8D6F86D0B0F6EC7079785CF75D8F0E4CA9C97C02 (void);
+extern void AppleReceipt_set_hash_mA3DC67A717037D17667BC36397392AE674EB5A3C (void);
 // 0x00000043 System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_originalApplicationVersion(System.String)
-extern void AppleReceipt_set_originalApplicationVersion_m24F0DA997CCDFFCA9ECA1C2FE8DD838CC93FE39A (void);
+extern void AppleReceipt_set_originalApplicationVersion_mECD30F9F5ABBB91C95AE72B1583530B721C0D28B (void);
 // 0x00000044 System.Void UnityEngine.Purchasing.Security.AppleReceipt::set_receiptCreationDate(System.DateTime)
-extern void AppleReceipt_set_receiptCreationDate_mFF453929F2F9985A91FF7AE15BB58E65093D5C6A (void);
+extern void AppleReceipt_set_receiptCreationDate_m85B1F80B0DFDD26FAC95F91B45A41F2D101F284E (void);
 // 0x00000045 System.Void UnityEngine.Purchasing.Security.AppleReceipt::.ctor()
-extern void AppleReceipt__ctor_m26F83FA546F6D5353BFEEA200300A9CC47012F59 (void);
+extern void AppleReceipt__ctor_m35C6C984CF3B231F12063FE6FEC52305A9F58866 (void);
 // 0x00000046 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_quantity(System.Int32)
-extern void AppleInAppPurchaseReceipt_set_quantity_m22590A81D6389A778420FFE195A57769F743D550 (void);
+extern void AppleInAppPurchaseReceipt_set_quantity_m6D5C6567ADF9D1362653F5767E5F18194473D7C4 (void);
 // 0x00000047 System.String UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_productID()
-extern void AppleInAppPurchaseReceipt_get_productID_m69B056541911080F0D4E28AC8CC97A33561D11AB (void);
+extern void AppleInAppPurchaseReceipt_get_productID_mD366EDB6DECD6B7FDBC2E2087F98331D6E3F238C (void);
 // 0x00000048 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_productID(System.String)
-extern void AppleInAppPurchaseReceipt_set_productID_m20F762AEF279CDA0CFD98927253F2FDCCDF620FB (void);
+extern void AppleInAppPurchaseReceipt_set_productID_m4FFD5BE2D157679AC18ECEED6E05CC6AA7DA361B (void);
 // 0x00000049 System.String UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_transactionID()
-extern void AppleInAppPurchaseReceipt_get_transactionID_m46DB6A4DAFD7009B9860855490EF0A984F191032 (void);
+extern void AppleInAppPurchaseReceipt_get_transactionID_mD1002134ADC173A34BFBAD7FBBA46DC119D44C36 (void);
 // 0x0000004A System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_transactionID(System.String)
-extern void AppleInAppPurchaseReceipt_set_transactionID_mBFFEE85BA57FFBE4FF6436F54160FC3AD05C136E (void);
+extern void AppleInAppPurchaseReceipt_set_transactionID_m52670129F56664AF2849DD9DC82A4FB03C83BA65 (void);
 // 0x0000004B System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_originalTransactionIdentifier(System.String)
-extern void AppleInAppPurchaseReceipt_set_originalTransactionIdentifier_m1B614AF5282203FEB6787937278774782CF8B10F (void);
+extern void AppleInAppPurchaseReceipt_set_originalTransactionIdentifier_mC8718D156C1D0791C30D4019B8BAC3316952CD3E (void);
 // 0x0000004C System.DateTime UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_purchaseDate()
-extern void AppleInAppPurchaseReceipt_get_purchaseDate_m5AE8CD0C8251831AD21D14BBAEB4860C1E9BB282 (void);
+extern void AppleInAppPurchaseReceipt_get_purchaseDate_mC22FFE4988F46B92B2CF5B852780F16B5BBB6CE2 (void);
 // 0x0000004D System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_purchaseDate(System.DateTime)
-extern void AppleInAppPurchaseReceipt_set_purchaseDate_mA828DE7D0673B51906630C88E0BDE2FECF264A60 (void);
+extern void AppleInAppPurchaseReceipt_set_purchaseDate_m11974FBFA2F4B63E263D94A5A5A4861442606782 (void);
 // 0x0000004E System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_originalPurchaseDate(System.DateTime)
-extern void AppleInAppPurchaseReceipt_set_originalPurchaseDate_m9DA5BCCC243EE856336E10EE5B5B7A71D960332C (void);
+extern void AppleInAppPurchaseReceipt_set_originalPurchaseDate_m6E6FF9B588168E7EC786D17612AC20F56BA1ABC5 (void);
 // 0x0000004F System.DateTime UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_subscriptionExpirationDate()
-extern void AppleInAppPurchaseReceipt_get_subscriptionExpirationDate_m70C6028F669275496266AE76BB58692679556955 (void);
+extern void AppleInAppPurchaseReceipt_get_subscriptionExpirationDate_mACFC51931D9645A49A5CBAB24667E170341B23C7 (void);
 // 0x00000050 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_subscriptionExpirationDate(System.DateTime)
-extern void AppleInAppPurchaseReceipt_set_subscriptionExpirationDate_m30254E8B697D017BFBE7127F3522D68F9FDBE8C2 (void);
+extern void AppleInAppPurchaseReceipt_set_subscriptionExpirationDate_m59741BB14025DD1E9F49BCDDF400A279F648542E (void);
 // 0x00000051 System.DateTime UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_cancellationDate()
-extern void AppleInAppPurchaseReceipt_get_cancellationDate_mD118D32C8BF457BC3B788272B41E13D5D3AF4962 (void);
+extern void AppleInAppPurchaseReceipt_get_cancellationDate_mC55F70493F3B069CB37AF05A097F8232581E4FC9 (void);
 // 0x00000052 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_cancellationDate(System.DateTime)
-extern void AppleInAppPurchaseReceipt_set_cancellationDate_m8F969A29F12BC25677AE30D3444BF0290DB3C4F7 (void);
+extern void AppleInAppPurchaseReceipt_set_cancellationDate_m23C7B503E096DEFFAC0C5A4275543052021DD911 (void);
 // 0x00000053 System.Int32 UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_isFreeTrial()
-extern void AppleInAppPurchaseReceipt_get_isFreeTrial_m74294F600D07D85F1FCB0356154413E63F6923EE (void);
+extern void AppleInAppPurchaseReceipt_get_isFreeTrial_m0FBF18D2C714B5BF56B2D90BD4936A3915374A4C (void);
 // 0x00000054 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_isFreeTrial(System.Int32)
-extern void AppleInAppPurchaseReceipt_set_isFreeTrial_mB19383B992BA8F6BAA17CE2AC08CA115765C2E87 (void);
+extern void AppleInAppPurchaseReceipt_set_isFreeTrial_m408B34CE16162532C4CDBD3B330DC938C492B273 (void);
 // 0x00000055 System.Int32 UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_productType()
-extern void AppleInAppPurchaseReceipt_get_productType_m0366D0DB879D97D5787C361F968276BA183AC1E0 (void);
+extern void AppleInAppPurchaseReceipt_get_productType_m6358EE606CA6496AC1EDAD9A4E4099DC87B485F6 (void);
 // 0x00000056 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_productType(System.Int32)
-extern void AppleInAppPurchaseReceipt_set_productType_m32FE4D498205722BD554DBE10275BCDD6D8411EA (void);
+extern void AppleInAppPurchaseReceipt_set_productType_mDBDB45F498F407FC70626F371FF0CE71434FA288 (void);
 // 0x00000057 System.Int32 UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::get_isIntroductoryPricePeriod()
-extern void AppleInAppPurchaseReceipt_get_isIntroductoryPricePeriod_m61886CA7AA2EF9047ACAF35AEC111ABD5FFAED6B (void);
+extern void AppleInAppPurchaseReceipt_get_isIntroductoryPricePeriod_m15F316591C359527E0755F2B859075758DF1FD7A (void);
 // 0x00000058 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::set_isIntroductoryPricePeriod(System.Int32)
-extern void AppleInAppPurchaseReceipt_set_isIntroductoryPricePeriod_mC8B1461C75E76317F987DDC68F25C7C11770FC13 (void);
+extern void AppleInAppPurchaseReceipt_set_isIntroductoryPricePeriod_m31C57E76238A788E71FCFB6EE3DC61957FC47B7B (void);
 // 0x00000059 System.Void UnityEngine.Purchasing.Security.AppleInAppPurchaseReceipt::.ctor()
-extern void AppleInAppPurchaseReceipt__ctor_m6B2B8E1887E40BB5B8C83ABBA56E0D8BA5CF4255 (void);
+extern void AppleInAppPurchaseReceipt__ctor_mF05C6F69BDE94196F25F05A0E9C52223CFDC5928 (void);
 // 0x0000005A System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::.ctor(LipingShare.LCLib.Asn1Processor.Asn1Node,System.Int64)
-extern void Asn1Node__ctor_mDB8FFCC2140DEA8EBE553F40D25DE9FEEF784149 (void);
+extern void Asn1Node__ctor_m22350DE526EC75EC41E2FAD343927210503EED8E (void);
 // 0x0000005B System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::Init()
-extern void Asn1Node_Init_m83A3832F254F034F6B9239B7243A9A7C00F6A65D (void);
+extern void Asn1Node_Init_m87882E03A4ECB219EDB56ADC79A54DD86C597B29 (void);
 // 0x0000005C System.String LipingShare.LCLib.Asn1Processor.Asn1Node::GetHexPrintingStr(LipingShare.LCLib.Asn1Processor.Asn1Node,System.String,System.String,System.Int32)
-extern void Asn1Node_GetHexPrintingStr_mB0BCB3A3DEBD600BA4C5C202F60AD5462CD56715 (void);
+extern void Asn1Node_GetHexPrintingStr_mF6092831329057DD6FD37A399D3C5008FF706308 (void);
 // 0x0000005D System.String LipingShare.LCLib.Asn1Processor.Asn1Node::FormatLineString(System.String,System.Int32,System.Int32,System.String)
-extern void Asn1Node_FormatLineString_mDD2D67F042C50BAE1A1E224BD9C2A37717ED3FFC (void);
+extern void Asn1Node_FormatLineString_mEB03ED94E460D1238DEE12EB0AEFF696034346A0 (void);
 // 0x0000005E System.String LipingShare.LCLib.Asn1Processor.Asn1Node::FormatLineHexString(System.String,System.Int32,System.Int32,System.String)
-extern void Asn1Node_FormatLineHexString_m61F88396AC29B9620066691F9C426B02F85E495A (void);
+extern void Asn1Node_FormatLineHexString_m0D0D92949284C608272605271D38D4798D31414E (void);
 // 0x0000005F System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::.ctor()
-extern void Asn1Node__ctor_mC4302864A7578A5524B4D2287D44D0F3781BDB35 (void);
+extern void Asn1Node__ctor_m3927B51635F3EFF4DDBC20182D1C84470898A216 (void);
 // 0x00000060 System.Byte LipingShare.LCLib.Asn1Processor.Asn1Node::get_Tag()
-extern void Asn1Node_get_Tag_mB6633947EBB9DAF6A42D02EBFD1C25BA29314A62 (void);
+extern void Asn1Node_get_Tag_m2B980E78E6953CADC1DB5D97BE64528D4816F353 (void);
 // 0x00000061 System.Byte LipingShare.LCLib.Asn1Processor.Asn1Node::get_MaskedTag()
-extern void Asn1Node_get_MaskedTag_mBA788BF663018C3D4CA5AC0DADA6FBEE80137465 (void);
+extern void Asn1Node_get_MaskedTag_mF11D97EF9E0B7ECBFF9F9C41E24BFADB3A5C8714 (void);
 // 0x00000062 System.Boolean LipingShare.LCLib.Asn1Processor.Asn1Node::LoadData(System.IO.Stream)
-extern void Asn1Node_LoadData_mF02656A7717C38039376F0F728548829047D84DF (void);
+extern void Asn1Node_LoadData_m8CCACCA1C75A09906C36CAA5A02E6DC96C34BA88 (void);
 // 0x00000063 System.Boolean LipingShare.LCLib.Asn1Processor.Asn1Node::SaveData(System.IO.Stream)
-extern void Asn1Node_SaveData_m1E2C91A8485B5E492A7F2D0F2383E2B516AB2868 (void);
+extern void Asn1Node_SaveData_mD2EB3A823C0481B210345E8D12EF21BA6925F580 (void);
 // 0x00000064 System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::ClearAll()
-extern void Asn1Node_ClearAll_mC5BF553394379A26EDCE5F416508BE4B5619D4F1 (void);
+extern void Asn1Node_ClearAll_mFE4640DD1FDA287E21B75486B9ED34E01766920C (void);
 // 0x00000065 System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::AddChild(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void Asn1Node_AddChild_mE3E2E15599C9354162FDDF61E218D6D94BD45E3F (void);
+extern void Asn1Node_AddChild_m28BEEC5A546F010053DD22F77362CE8370A4E4F6 (void);
 // 0x00000066 System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Node::get_ChildNodeCount()
-extern void Asn1Node_get_ChildNodeCount_m98CF5036E2856785560F54BB3CE57236455C530B (void);
+extern void Asn1Node_get_ChildNodeCount_mA381253B2A1957E921B09BD3379D0BA02AF90019 (void);
 // 0x00000067 LipingShare.LCLib.Asn1Processor.Asn1Node LipingShare.LCLib.Asn1Processor.Asn1Node::GetChildNode(System.Int32)
-extern void Asn1Node_GetChildNode_m508FD388D83A71A7CDE1677E1A8CDE6784E5E1F4 (void);
+extern void Asn1Node_GetChildNode_mB002CCF1AD5FD255F122F489FCACEE111CC23C42 (void);
 // 0x00000068 System.String LipingShare.LCLib.Asn1Processor.Asn1Node::get_TagName()
-extern void Asn1Node_get_TagName_m292FA2F7E4E06A3ED2D3569C4466ADB81B446190 (void);
+extern void Asn1Node_get_TagName_m6AC0A4455F2CD68FB4A83C49A52A00CF7B3A05F0 (void);
 // 0x00000069 LipingShare.LCLib.Asn1Processor.Asn1Node LipingShare.LCLib.Asn1Processor.Asn1Node::get_ParentNode()
-extern void Asn1Node_get_ParentNode_m0B7D8D129CEC2DC6587E690AF0A5C69B029496BE (void);
+extern void Asn1Node_get_ParentNode_m451F42B3655BAB662583F68501627CA6261581A2 (void);
 // 0x0000006A System.String LipingShare.LCLib.Asn1Processor.Asn1Node::GetText(LipingShare.LCLib.Asn1Processor.Asn1Node,System.Int32)
-extern void Asn1Node_GetText_m59A3FD93DA1840327C89626AC2A9FB69178B7B11 (void);
+extern void Asn1Node_GetText_m4310CDE0CC72881555E11EEC5B645E123E6DD4F9 (void);
 // 0x0000006B System.String LipingShare.LCLib.Asn1Processor.Asn1Node::GetDataStr(System.Boolean)
-extern void Asn1Node_GetDataStr_mCD49BFA97F965E39F38C67EE38627805AEFA6C53 (void);
+extern void Asn1Node_GetDataStr_mEBF365F501F5181D92752832D2D5CF6B989D6018 (void);
 // 0x0000006C System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Node::get_DataLength()
-extern void Asn1Node_get_DataLength_m9A3C699840CD412EBD16D322F45B59CE19633B28 (void);
+extern void Asn1Node_get_DataLength_m72CD93035CAD2EBEAB6CF94405932D343602CF79 (void);
 // 0x0000006D System.Byte[] LipingShare.LCLib.Asn1Processor.Asn1Node::get_Data()
-extern void Asn1Node_get_Data_m13A1B4001D3DEA938F5C59CA045B94B2B9E15345 (void);
+extern void Asn1Node_get_Data_m2698B0BE639C6A0BE2D6AF7498375AAD0D4E77B0 (void);
 // 0x0000006E System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Node::get_Deepness()
-extern void Asn1Node_get_Deepness_m17913AF1A1313BF900FAA0B4124E5D82F7171ABD (void);
+extern void Asn1Node_get_Deepness_mD2B01EF824FA33094E4BDD9E974A3B75BF1D69AB (void);
 // 0x0000006F System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::set_RequireRecalculatePar(System.Boolean)
-extern void Asn1Node_set_RequireRecalculatePar_m81C238E10C4C9D9AA102474366C8DF414842424C (void);
+extern void Asn1Node_set_RequireRecalculatePar_m7C5105D9E70877C9333E47E266E267E8D4DF52B3 (void);
 // 0x00000070 System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::RecalculateTreePar()
-extern void Asn1Node_RecalculateTreePar_m4C76D6D631D5E58EFAA62C0DBFDD9DCB1C22B582 (void);
+extern void Asn1Node_RecalculateTreePar_mA23F98F90CE85ECCA835E4457D1C26BD5D9CA226 (void);
 // 0x00000071 System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Node::ResetBranchDataLength(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void Asn1Node_ResetBranchDataLength_m63977EDC8A63E9B8BD1279EE45A41AFFD597EF2D (void);
+extern void Asn1Node_ResetBranchDataLength_m352802BE8330D7BA52DEFC9AED8C00EA05627C77 (void);
 // 0x00000072 System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::ResetDataLengthFieldWidth(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void Asn1Node_ResetDataLengthFieldWidth_mFBC2F6B8F8FEBD225252A8916B2B8D26C3C2B567 (void);
+extern void Asn1Node_ResetDataLengthFieldWidth_m7A926B8287F017141590F9A881A1894B2BD86B1B (void);
 // 0x00000073 System.Void LipingShare.LCLib.Asn1Processor.Asn1Node::ResetChildNodePar(LipingShare.LCLib.Asn1Processor.Asn1Node,System.Int64)
-extern void Asn1Node_ResetChildNodePar_mF5E253CB07250C204A9D2DA13472C4C433735B8D (void);
+extern void Asn1Node_ResetChildNodePar_m32FEC6DA0CC4745E4891C1D87DC04CEA9FD922B1 (void);
 // 0x00000074 System.String LipingShare.LCLib.Asn1Processor.Asn1Node::GetListStr(LipingShare.LCLib.Asn1Processor.Asn1Node,System.Int32)
-extern void Asn1Node_GetListStr_mAF100A86377875C27A179A1098162583CF378691 (void);
+extern void Asn1Node_GetListStr_m0C0666B7796F3CD8A529B586634D6BFC6940D390 (void);
 // 0x00000075 System.String LipingShare.LCLib.Asn1Processor.Asn1Node::GetIndentStr(LipingShare.LCLib.Asn1Processor.Asn1Node)
-extern void Asn1Node_GetIndentStr_mA323DD1D9D6764287ABF871C2F5D6938EC66571C (void);
+extern void Asn1Node_GetIndentStr_m55CDA663614EC0DF8D5DA04CD0DCFF52AC9F9D30 (void);
 // 0x00000076 System.Boolean LipingShare.LCLib.Asn1Processor.Asn1Node::GeneralDecode(System.IO.Stream)
-extern void Asn1Node_GeneralDecode_m53F6E971F44EB1E058DDB407926CDD5776729F5D (void);
+extern void Asn1Node_GeneralDecode_mE03D9141A8729BC4556959EAA44BDE08BDAD07E9 (void);
 // 0x00000077 System.Boolean LipingShare.LCLib.Asn1Processor.Asn1Node::ListDecode(System.IO.Stream)
-extern void Asn1Node_ListDecode_m76D48C7772D4251A23A930850843A51CA9FE14D3 (void);
+extern void Asn1Node_ListDecode_mE632EDFE4F453B612BF91316D7D9CD14656D945F (void);
 // 0x00000078 System.Boolean LipingShare.LCLib.Asn1Processor.Asn1Node::InternalLoadData(System.IO.Stream)
-extern void Asn1Node_InternalLoadData_m7E610633DC3D84A9B9F93F0F71B1BC39429E3137 (void);
+extern void Asn1Node_InternalLoadData_mBF6DA8B05A39BAE226A74FF310E134EEBDE12D63 (void);
 // 0x00000079 System.Void LipingShare.LCLib.Asn1Processor.Asn1Parser::.ctor()
-extern void Asn1Parser__ctor_m852EC36F43EEB8DF4D03E3BA5AE393CC804AF307 (void);
+extern void Asn1Parser__ctor_m82D7944674CA81797E10CDE60C05FAF1D281794E (void);
 // 0x0000007A System.Void LipingShare.LCLib.Asn1Processor.Asn1Parser::LoadData(System.IO.Stream)
-extern void Asn1Parser_LoadData_m36FA36C5B521ADF0287F3C1FFAB6FACF4E273F88 (void);
+extern void Asn1Parser_LoadData_mB0C8987D6183B96644060F67F64B4BF9D306C235 (void);
 // 0x0000007B LipingShare.LCLib.Asn1Processor.Asn1Node LipingShare.LCLib.Asn1Processor.Asn1Parser::get_RootNode()
-extern void Asn1Parser_get_RootNode_mABC8BBF8AC88ADE20AC11EB634C0CC2F7E5351FD (void);
+extern void Asn1Parser_get_RootNode_m9CAC415D72588F591B0D1BDFA2B69A8EAF3B931D (void);
 // 0x0000007C System.String LipingShare.LCLib.Asn1Processor.Asn1Parser::GetNodeTextHeader(System.Int32)
-extern void Asn1Parser_GetNodeTextHeader_mD20100C50FA6E82D8340DA9F947C7D383C4C1243 (void);
+extern void Asn1Parser_GetNodeTextHeader_m49234F1BD24E3387A68D654F011BA7C6E44665CE (void);
 // 0x0000007D System.String LipingShare.LCLib.Asn1Processor.Asn1Parser::ToString()
-extern void Asn1Parser_ToString_mF88EE558B4DF02E40B06FFFC7065D19D2EFF0D37 (void);
+extern void Asn1Parser_ToString_mF8CE34B183E124A7D9931DDA8CF4B3302170EA73 (void);
 // 0x0000007E System.String LipingShare.LCLib.Asn1Processor.Asn1Parser::GetNodeText(LipingShare.LCLib.Asn1Processor.Asn1Node,System.Int32)
-extern void Asn1Parser_GetNodeText_m139690669927DBC4B0A630AB0ECD83EBFF9D4B12 (void);
+extern void Asn1Parser_GetNodeText_m5E75D356335934F1228A521EF4D6C3E92B863A40 (void);
 // 0x0000007F System.String LipingShare.LCLib.Asn1Processor.Asn1Util::FormatString(System.String,System.Int32,System.Int32)
-extern void Asn1Util_FormatString_m9A5636464D32AC80092AF316FD6868FDE2BEC7FB (void);
+extern void Asn1Util_FormatString_m5D85DF29DF660EA75589DD51B8E02C1A10D5BDBC (void);
 // 0x00000080 System.String LipingShare.LCLib.Asn1Processor.Asn1Util::GenStr(System.Int32,System.Char)
-extern void Asn1Util_GenStr_mDCDEB6D112E1B97AF1BFB453D3FD313B6889B0C4 (void);
+extern void Asn1Util_GenStr_mFCA85BFBDF8C7D8C2EDEB91C925718804A590117 (void);
 // 0x00000081 System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Util::BytesToLong(System.Byte[])
-extern void Asn1Util_BytesToLong_m7F65560A77AB53FAC45C657D9698B12963F36819 (void);
+extern void Asn1Util_BytesToLong_mFA3824FDB96AD367B107BAA60FD3A12B2EA5F22D (void);
 // 0x00000082 System.String LipingShare.LCLib.Asn1Processor.Asn1Util::BytesToString(System.Byte[])
-extern void Asn1Util_BytesToString_m90990BE8787022D58423E1212347AC2D72C367CA (void);
+extern void Asn1Util_BytesToString_m44A14DB4F85291B571C4D53776D9E3D5BC6AA938 (void);
 // 0x00000083 System.String LipingShare.LCLib.Asn1Processor.Asn1Util::ToHexString(System.Byte[])
-extern void Asn1Util_ToHexString_m3BBDE355AEA488AF6E91206F3E6A4FE26CB4FF33 (void);
+extern void Asn1Util_ToHexString_m1A5435449D50461103BE0C98A13601EB807994DE (void);
 // 0x00000084 System.Int32 LipingShare.LCLib.Asn1Processor.Asn1Util::BytePrecision(System.UInt64)
-extern void Asn1Util_BytePrecision_m71119C2047CBEB5E6542ABE25307F935995ADDB9 (void);
+extern void Asn1Util_BytePrecision_m0B0ADD5DBA9E77F52ED4B468C12FA103B83D8AE0 (void);
 // 0x00000085 System.Int32 LipingShare.LCLib.Asn1Processor.Asn1Util::DERLengthEncode(System.IO.Stream,System.UInt64)
-extern void Asn1Util_DERLengthEncode_m68CC3EF1C6790B6CF0B33FAD73921E1235553A15 (void);
+extern void Asn1Util_DERLengthEncode_mD8FC4811667B0371D35479DFF62AFA1D2DE2DBE6 (void);
 // 0x00000086 System.Int64 LipingShare.LCLib.Asn1Processor.Asn1Util::DerLengthDecode(System.IO.Stream,System.Boolean&)
-extern void Asn1Util_DerLengthDecode_m4098243E0284DE2B4D4DAAEF73F7E064D4D73B56 (void);
+extern void Asn1Util_DerLengthDecode_m2AF86096D3AACD8F06AD60F3175DB35BF7EF54C5 (void);
 // 0x00000087 System.String LipingShare.LCLib.Asn1Processor.Asn1Util::GetTagName(System.Byte)
-extern void Asn1Util_GetTagName_m25BDB1AF80D6F8038CC9F44F1F68B7D923715CA9 (void);
+extern void Asn1Util_GetTagName_mE327C31021466482DF804EF977A88278D5C6D537 (void);
 // 0x00000088 System.Void LipingShare.LCLib.Asn1Processor.Asn1Util::.cctor()
-extern void Asn1Util__cctor_m95A709B6DCD1FC17A3C100BD75867BABB213A5FC (void);
+extern void Asn1Util__cctor_m57021A76347B8F96E30DEF933AF9FC765CB95F14 (void);
 // 0x00000089 System.String LipingShare.LCLib.Asn1Processor.Oid::GetOidName(System.String)
-extern void Oid_GetOidName_mC84B297D2F1B3CBC9DFDD3680CFD60271BD84970 (void);
+extern void Oid_GetOidName_m95C0637D5EF5B0E687D52382B924FA6ECE4A0D11 (void);
 // 0x0000008A System.String LipingShare.LCLib.Asn1Processor.Oid::Decode(System.Byte[])
-extern void Oid_Decode_mCE8258875EFE26F5D2C3F2BDED6217DDC64E5356 (void);
+extern void Oid_Decode_mAB921EDEC3BF5F48DADC823D7FFA627D368C2D24 (void);
 // 0x0000008B System.String LipingShare.LCLib.Asn1Processor.Oid::Decode(System.IO.Stream)
-extern void Oid_Decode_mAD126798FD7C7692183A8CFAF896D38B4F3663FA (void);
+extern void Oid_Decode_m7C4DF55042765D96A273656A11A361130548CBDB (void);
 // 0x0000008C System.Void LipingShare.LCLib.Asn1Processor.Oid::.ctor()
-extern void Oid__ctor_m7FBB39374D2C0A01FDDAF2F9ED19EA23A24D1DB1 (void);
+extern void Oid__ctor_mC10AAB37B779050A5B18F4856839BCFE14B76F57 (void);
 // 0x0000008D System.Int32 LipingShare.LCLib.Asn1Processor.Oid::DecodeValue(System.IO.Stream,System.UInt64&)
-extern void Oid_DecodeValue_m979270583937E60F71EA390DE18C263C90534B9A (void);
+extern void Oid_DecodeValue_mFE83E8F74E068BD14B269BCC31AD0D865A1C21DC (void);
 // 0x0000008E System.Void LipingShare.LCLib.Asn1Processor.Oid::.cctor()
-extern void Oid__cctor_m2BB261D013B1A1B58B28E3C1BA2EEC6ABD8805B2 (void);
+extern void Oid__cctor_m58D08C171C114B2ED85065CF4884363D2659606B (void);
 // 0x0000008F System.Void LipingShare.LCLib.Asn1Processor.RelativeOid::.ctor()
-extern void RelativeOid__ctor_mA234AF77BB88E381F7F3114044196A87F8FD3BB6 (void);
+extern void RelativeOid__ctor_m725CE5A8AB2B67DF5BEF5CDB5D4FA319F3FA6BF8 (void);
 // 0x00000090 System.String LipingShare.LCLib.Asn1Processor.RelativeOid::Decode(System.IO.Stream)
-extern void RelativeOid_Decode_mAA682B60ACE2D2C0C48492BD8773B08E2AC75188 (void);
+extern void RelativeOid_Decode_m7817692B71C86D7A64ABC89420D16297266F1791 (void);
 // 0x00000091 System.UInt32 <PrivateImplementationDetails>::ComputeStringHash(System.String)
-extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_mDE0DB27362C25C2C9BBE701261F602FC841D8EED (void);
+extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_mA4179D7D8427648F6CDD1215F7B4D899993E3BF9 (void);
 static Il2CppMethodPointer s_methodPointers[145] = 
 {
-	DistinguishedName_get_Country_m5705D26EF7F51682CD6344E1B426EBFC8888FDF2,
-	DistinguishedName_set_Country_m644113FCE1577A71446C0B2A9698D49EBDF3FE05,
-	DistinguishedName_get_Organization_mC1AAC91B7B901000C39D1D4126B4D80E8FD4D66F,
-	DistinguishedName_set_Organization_mBF5D0A889055E8A3950EA043EC75913BEC047D9B,
-	DistinguishedName_get_OrganizationalUnit_m6B0C07ADF10572753BFFBF0BBF1116D11A9FAA51,
-	DistinguishedName_set_OrganizationalUnit_mE9D6C9B59DDA526C02C569C374A693BA4FC7FF1F,
-	DistinguishedName_get_Dnq_mF2E929E4588D1650BD6D51ED672EB8FD2179D560,
-	DistinguishedName_set_Dnq_mCAFB509FB06425554BC57BB3B6960559DFE57083,
-	DistinguishedName_get_State_mE65222C233A29D23B5F340C0B918C3F225404EF3,
-	DistinguishedName_set_State_m82D2C570043AB77B9EE30368EC9A9FF5098674E0,
-	DistinguishedName_get_CommonName_mA97F153E2C29237AEAD1C2F409B618421805AB07,
-	DistinguishedName_set_CommonName_m40789277F6F29B5148ABE0C7FBFEE3D7392F9BD0,
-	DistinguishedName_set_SerialNumber_m046B03F0AFB9FAB98C340DD3778A3F95DEE65AF0,
-	DistinguishedName__ctor_mE470469A9A676895F9838CAD2DA3CE63BC3F0E53,
-	DistinguishedName_Equals_m89E11F96B162EB322E857EC6D2A03A0CC5877AA6,
-	DistinguishedName_ToString_m60422951E4513B6DD5F88F520C123FE7F90675DF,
-	X509Cert_set_SerialNumber_m0E2A92D44F00AC5041C7D87FC9F752695B2B6706,
-	X509Cert_set_ValidAfter_m285BB1F29D6CB01B79FFA7DE5C24AD843BEBDE1D,
-	X509Cert_set_ValidBefore_mA7B9CCB54BFD6FF9719E9E18A6B02AAD1BC117B0,
-	X509Cert_set_PubKey_m0CA3D6DF1696DA516F78271942D59ABEB47A60EA,
-	X509Cert_set_SelfSigned_m16DA548EB14E0F84FB8FBF180EAB4F71FF9808A1,
-	X509Cert_get_Subject_mC4302418A522A6DA1A68D4B2833CF706C597E3DC,
-	X509Cert_set_Subject_m16BD17E2E8E323908D0951F86E531393FA2DEF34,
-	X509Cert_get_Issuer_m6848D49F13208378FA8D38AC792F7EA6EC92BAD1,
-	X509Cert_set_Issuer_m6B59AFA4A236511371019062639EC7D8D5CD4D66,
-	X509Cert_set_Signature_mD98147C16D232D664C0723883C63F99BF928B81E,
-	X509Cert__ctor_mED9080BFDEA52940B2417AEB7D115D2FF8D81EF8,
-	X509Cert_ParseNode_m8DC538F79F401455E1C373EAAC9F2AF96F8D0D3E,
-	X509Cert_ParseTime_m48258C44A3B297A8C511F18249685B2385B8CD5D,
-	InvalidX509Data__ctor_mEB9B07DF4CAB42C23BFDC0FB405652C767BA2150,
-	PKCS7_get_data_mACFEA70C1748947E5C7E414D540BBB1E332807EF,
-	PKCS7_set_data_mAED515F87D45572C43F675765637237B81F9BDDA,
-	PKCS7_get_sinfos_m2F912CADC0A9B395173C87E6A030599E5F55B2F2,
-	PKCS7_set_sinfos_mCF9E7896BDA5C4E77AD50A8D274CB26C7CD8B8FF,
-	PKCS7_get_certChain_m0C37456FDA55978284D75C7C40BE4766EBC09F6E,
-	PKCS7_set_certChain_mCD15737D78033CCA7C1DF8BFFFC975974C73730A,
-	PKCS7__ctor_mA0D1C214D5EC40EB565222E5A6DF25AFCD40B774,
-	PKCS7_CheckStructure_m920B48FEEF6354721835224D56C5F1003C28579E,
-	SignerInfo_get_Version_m71B767BEA10336B9A7287001407BC3E673EA8CFE,
-	SignerInfo_set_Version_m9CB7D635795A0A0659C497001D8074B223087605,
-	SignerInfo_set_IssuerSerialNumber_mA89B275579C7CA5FDBCAEBF2C6FF9C178BA562BB,
-	SignerInfo_set_EncryptedDigest_m3B87783A3B6E4F2CC828FA992213C11481EEEA66,
-	SignerInfo__ctor_mA4BEC8CE242182B13E3F6AEF545B14DA69719C99,
-	IAPSecurityException__ctor_mE7BEC67ED3D093794039C26BC3F1F6B3F6E65297,
-	InvalidPKCS7Data__ctor_m26C25C402F21C892C0A0D4D146247F36B7963716,
-	InvalidTimeFormat__ctor_m463B812F45BB363E7451502C5F7D12C24736566F,
-	UnsupportedSignerInfoVersion__ctor_m7CC8C1E0AEE818F421BEB0E29D744B0BA19DE712,
-	RSAKey_set_rsa_mB6062514DAEE13A3B05A54032AA3FC6947AA92A6,
-	RSAKey__ctor_m0CFD0216714518B5C40B3AA7649896A7E28C9AF8,
-	RSAKey_ParseNode_m3721FD76B85C9C7D2E32A0DBC9C19B17BD0FAF98,
-	RSAKey_ToXML_mABB9357CD1CFCEDFE604C32453CBD96BC0823FB9,
-	InvalidRSAData__ctor_mCDF2F3C240FC5ED3000F5280CCC100B196B098D1,
-	AppleReceiptParser_Parse_mC5F46A1B701064EA82517DDD173B3507F8FC5E55,
-	AppleReceiptParser_Parse_mCEDDD6693E09CD6006BF83FF4492C105D03EAF15,
-	AppleReceiptParser_PushInvariantCultureOnThread_mF1313D362DAF78F9D08A3A023278DAE05B40F0FE,
-	AppleReceiptParser_PopCultureOffThread_m8714A497AA0A67C0CF5AED535E95A6D3A6358F3A,
-	AppleReceiptParser_ParseReceipt_m445615EC36C08D251DB99D8036B993BC0CD678DD,
-	AppleReceiptParser_ParseInAppReceipt_mC4CC07F2F5AF71B452CAFBE5DD0E87B638B46507,
-	AppleReceiptParser_TryParseDateTimeNode_m2C8A5D8F80B1E53D2CFA11B186F4E6432ED3863F,
+	DistinguishedName_get_Country_m157DD2B52F1B76D25169A01E124AF14579F8ED52,
+	DistinguishedName_set_Country_m9FA247108B60F4E1344E450B404169BDF28DEF9A,
+	DistinguishedName_get_Organization_mCF93722B5CE3CEC3A951CA2DCF536241DF1443F3,
+	DistinguishedName_set_Organization_mF539876E869E9FF1E736B375188336ADC7624827,
+	DistinguishedName_get_OrganizationalUnit_m5F4109BDBB40977061F2E2361EF048F9ED9459CA,
+	DistinguishedName_set_OrganizationalUnit_mB2F3A100B70517C5319AA791CEB21D257A94BCED,
+	DistinguishedName_get_Dnq_m15EED9600F75A719439938F17830B1637D858ECA,
+	DistinguishedName_set_Dnq_m1F728A29C29A5E667D6E7E0346CCFA7A30404AE0,
+	DistinguishedName_get_State_m3A1FB4CCE37EB42CB96E64C3A86E4537C6CB82AC,
+	DistinguishedName_set_State_m88AA839A5572D82295F4B085CFC18671419F27FF,
+	DistinguishedName_get_CommonName_m41FD94A2E3537F9DA228F0228730070119560B2F,
+	DistinguishedName_set_CommonName_mCB697202E58D8821DB2860256803719455691943,
+	DistinguishedName_set_SerialNumber_m057BE65B3101DEE2EF66E9FF5BDD1A741EA7EA32,
+	DistinguishedName__ctor_mF86CACF226C221D2EB73A79651601FC97A053940,
+	DistinguishedName_Equals_m52D16D76413F2962A013DE7692027A94B0F1B723,
+	DistinguishedName_ToString_m8F2E021201C3E80A613FE0DC03CDC566324BFFA4,
+	X509Cert_set_SerialNumber_m13E238AB16C2758CB6CD07F4A3D93CFE3D395F61,
+	X509Cert_set_ValidAfter_m2EB2BDD79EAC3E5D2121CF9C9E0EDF1B22D70C43,
+	X509Cert_set_ValidBefore_m3E5FBCC92677120AA5F339F785F65DCAF0CA949F,
+	X509Cert_set_PubKey_m7A9971797143DCCF4B18979AB900874BA654BD86,
+	X509Cert_set_SelfSigned_m27531D603830C730306B7CC35D0C0D0A5E96BE6D,
+	X509Cert_get_Subject_m9701D01645E40CBA76206871A54F10516788B18B,
+	X509Cert_set_Subject_mBE649EC34353D754C78934304934D52126B6318C,
+	X509Cert_get_Issuer_m72B64D194C52EB2B53A22C2B1A91449A3C2F2561,
+	X509Cert_set_Issuer_mB1CFF279F72029B4FD5A1DEF7E2ED21ECF13F34E,
+	X509Cert_set_Signature_mE21877BFCE23ADED6FA05C8B1A7C19A76679838F,
+	X509Cert__ctor_m15452EAB21FFCB79867DC723367D95B6C60B0B72,
+	X509Cert_ParseNode_m7BEDAABCD421F6DBAE16BFB634E7DDD730A63C4E,
+	X509Cert_ParseTime_m1C0FBF727A66BD3125B30027A4A705FF127B04CF,
+	InvalidX509Data__ctor_mC813B35A8F415E38E1D7A74FDD5DAED89F27891E,
+	PKCS7_get_data_m1871D8A0427E6A93D72B81A3085E4FBF00ED2AD1,
+	PKCS7_set_data_m6E89804BC54099F4B4D610C3745FB575B71DEAB1,
+	PKCS7_get_sinfos_m748935C5A47DDC30D072BBC1DF53FDBD05D2AB72,
+	PKCS7_set_sinfos_m2D912B83FED611E6C4779654B9DA90949A07CB41,
+	PKCS7_get_certChain_m6FF845BEEC289B22B182A97BB6F68D8E8BED7DA3,
+	PKCS7_set_certChain_m572E90BA5DDD0371EB9A395A51F6FD821F00399A,
+	PKCS7__ctor_m779839B5A14960404DCB3AA6245E4A015C9ADC18,
+	PKCS7_CheckStructure_m4FA7B227EBA421987745C8F427669FD3485BAA8D,
+	SignerInfo_get_Version_m038EAD01447C25AC08735C9CD6300BA740C63BB0,
+	SignerInfo_set_Version_m06D8B2388B5016ACC8741A06FC4DB52304C8315B,
+	SignerInfo_set_IssuerSerialNumber_m43A5682BFEE69E6AFA4E2773485DD8869080E902,
+	SignerInfo_set_EncryptedDigest_mD3575212D55E351A8022490EDDB2FECA4847EFA1,
+	SignerInfo__ctor_mC41D0C044EA6922FA1FE49C894D770FEEF529277,
+	IAPSecurityException__ctor_m32CCBB07794ED03A282BB32204C4E76AAAE89BEC,
+	InvalidPKCS7Data__ctor_m4A94EB203E545D46A8C3CC4E11AAF2EBDFF54920,
+	InvalidTimeFormat__ctor_mA5E2F9963D2B7B6D7BF5C1DA106195BED3280863,
+	UnsupportedSignerInfoVersion__ctor_mF22EE4649673DF0CAEC115147F2EFC17E3FD7BEA,
+	RSAKey_set_rsa_m7EF83991458B68DF4745BE44C93C427424345767,
+	RSAKey__ctor_mFD34C71175C0BCF3013FC257FF8D4B14C37486C9,
+	RSAKey_ParseNode_m3D32E36AFC8A70764B5459021CBB904CEB99ECA0,
+	RSAKey_ToXML_mF5F723766157ED7CC93AADED83EBC632EDD2BEA7,
+	InvalidRSAData__ctor_mAFB378FB3FD0C4B6F7C85CB337BC162EFABDCEAD,
+	AppleReceiptParser_Parse_m9E41042460D690C3A2259CAE305C3DE7019824D8,
+	AppleReceiptParser_Parse_m05494531B6D60B6AEFD6D2AFBE68BD07701D9D8A,
+	AppleReceiptParser_PushInvariantCultureOnThread_m03DF6F31EB14F6D8F56DD260EB8B9F8BE2BC1A44,
+	AppleReceiptParser_PopCultureOffThread_mBDE67E39910BCF56CE82D25672542BA99AABF049,
+	AppleReceiptParser_ParseReceipt_mF8B94955145DBB4FA399CBA4BE74AC5C837A0364,
+	AppleReceiptParser_ParseInAppReceipt_m73AFA47025BCF0F2ED680EBFB1459732DFE5C26C,
+	AppleReceiptParser_TryParseDateTimeNode_m6CFF7FDF0B65508ED49B22E44B071BD54A9E6F6E,
 	NULL,
-	AppleReceiptParser__ctor_m55B3CB7314526AA9C53998BEB520F537A3AA41D6,
-	AppleReceiptParser__cctor_m992F3A1736B89E1E234665685C3B199444A91C87,
-	AppleReceipt_set_bundleID_mDF46B9F133DFCFFDB4212DF8B126E0268CF90BA2,
-	AppleReceipt_set_appVersion_m45D28FE48142F9A94067B4EA98E802172726A5DD,
-	AppleReceipt_set_opaque_mEBEF271969CB83B35E461ADFDCFFC1627822FF1C,
-	AppleReceipt_set_hash_m8D6F86D0B0F6EC7079785CF75D8F0E4CA9C97C02,
-	AppleReceipt_set_originalApplicationVersion_m24F0DA997CCDFFCA9ECA1C2FE8DD838CC93FE39A,
-	AppleReceipt_set_receiptCreationDate_mFF453929F2F9985A91FF7AE15BB58E65093D5C6A,
-	AppleReceipt__ctor_m26F83FA546F6D5353BFEEA200300A9CC47012F59,
-	AppleInAppPurchaseReceipt_set_quantity_m22590A81D6389A778420FFE195A57769F743D550,
-	AppleInAppPurchaseReceipt_get_productID_m69B056541911080F0D4E28AC8CC97A33561D11AB,
-	AppleInAppPurchaseReceipt_set_productID_m20F762AEF279CDA0CFD98927253F2FDCCDF620FB,
-	AppleInAppPurchaseReceipt_get_transactionID_m46DB6A4DAFD7009B9860855490EF0A984F191032,
-	AppleInAppPurchaseReceipt_set_transactionID_mBFFEE85BA57FFBE4FF6436F54160FC3AD05C136E,
-	AppleInAppPurchaseReceipt_set_originalTransactionIdentifier_m1B614AF5282203FEB6787937278774782CF8B10F,
-	AppleInAppPurchaseReceipt_get_purchaseDate_m5AE8CD0C8251831AD21D14BBAEB4860C1E9BB282,
-	AppleInAppPurchaseReceipt_set_purchaseDate_mA828DE7D0673B51906630C88E0BDE2FECF264A60,
-	AppleInAppPurchaseReceipt_set_originalPurchaseDate_m9DA5BCCC243EE856336E10EE5B5B7A71D960332C,
-	AppleInAppPurchaseReceipt_get_subscriptionExpirationDate_m70C6028F669275496266AE76BB58692679556955,
-	AppleInAppPurchaseReceipt_set_subscriptionExpirationDate_m30254E8B697D017BFBE7127F3522D68F9FDBE8C2,
-	AppleInAppPurchaseReceipt_get_cancellationDate_mD118D32C8BF457BC3B788272B41E13D5D3AF4962,
-	AppleInAppPurchaseReceipt_set_cancellationDate_m8F969A29F12BC25677AE30D3444BF0290DB3C4F7,
-	AppleInAppPurchaseReceipt_get_isFreeTrial_m74294F600D07D85F1FCB0356154413E63F6923EE,
-	AppleInAppPurchaseReceipt_set_isFreeTrial_mB19383B992BA8F6BAA17CE2AC08CA115765C2E87,
-	AppleInAppPurchaseReceipt_get_productType_m0366D0DB879D97D5787C361F968276BA183AC1E0,
-	AppleInAppPurchaseReceipt_set_productType_m32FE4D498205722BD554DBE10275BCDD6D8411EA,
-	AppleInAppPurchaseReceipt_get_isIntroductoryPricePeriod_m61886CA7AA2EF9047ACAF35AEC111ABD5FFAED6B,
-	AppleInAppPurchaseReceipt_set_isIntroductoryPricePeriod_mC8B1461C75E76317F987DDC68F25C7C11770FC13,
-	AppleInAppPurchaseReceipt__ctor_m6B2B8E1887E40BB5B8C83ABBA56E0D8BA5CF4255,
-	Asn1Node__ctor_mDB8FFCC2140DEA8EBE553F40D25DE9FEEF784149,
-	Asn1Node_Init_m83A3832F254F034F6B9239B7243A9A7C00F6A65D,
-	Asn1Node_GetHexPrintingStr_mB0BCB3A3DEBD600BA4C5C202F60AD5462CD56715,
-	Asn1Node_FormatLineString_mDD2D67F042C50BAE1A1E224BD9C2A37717ED3FFC,
-	Asn1Node_FormatLineHexString_m61F88396AC29B9620066691F9C426B02F85E495A,
-	Asn1Node__ctor_mC4302864A7578A5524B4D2287D44D0F3781BDB35,
-	Asn1Node_get_Tag_mB6633947EBB9DAF6A42D02EBFD1C25BA29314A62,
-	Asn1Node_get_MaskedTag_mBA788BF663018C3D4CA5AC0DADA6FBEE80137465,
-	Asn1Node_LoadData_mF02656A7717C38039376F0F728548829047D84DF,
-	Asn1Node_SaveData_m1E2C91A8485B5E492A7F2D0F2383E2B516AB2868,
-	Asn1Node_ClearAll_mC5BF553394379A26EDCE5F416508BE4B5619D4F1,
-	Asn1Node_AddChild_mE3E2E15599C9354162FDDF61E218D6D94BD45E3F,
-	Asn1Node_get_ChildNodeCount_m98CF5036E2856785560F54BB3CE57236455C530B,
-	Asn1Node_GetChildNode_m508FD388D83A71A7CDE1677E1A8CDE6784E5E1F4,
-	Asn1Node_get_TagName_m292FA2F7E4E06A3ED2D3569C4466ADB81B446190,
-	Asn1Node_get_ParentNode_m0B7D8D129CEC2DC6587E690AF0A5C69B029496BE,
-	Asn1Node_GetText_m59A3FD93DA1840327C89626AC2A9FB69178B7B11,
-	Asn1Node_GetDataStr_mCD49BFA97F965E39F38C67EE38627805AEFA6C53,
-	Asn1Node_get_DataLength_m9A3C699840CD412EBD16D322F45B59CE19633B28,
-	Asn1Node_get_Data_m13A1B4001D3DEA938F5C59CA045B94B2B9E15345,
-	Asn1Node_get_Deepness_m17913AF1A1313BF900FAA0B4124E5D82F7171ABD,
-	Asn1Node_set_RequireRecalculatePar_m81C238E10C4C9D9AA102474366C8DF414842424C,
-	Asn1Node_RecalculateTreePar_m4C76D6D631D5E58EFAA62C0DBFDD9DCB1C22B582,
-	Asn1Node_ResetBranchDataLength_m63977EDC8A63E9B8BD1279EE45A41AFFD597EF2D,
-	Asn1Node_ResetDataLengthFieldWidth_mFBC2F6B8F8FEBD225252A8916B2B8D26C3C2B567,
-	Asn1Node_ResetChildNodePar_mF5E253CB07250C204A9D2DA13472C4C433735B8D,
-	Asn1Node_GetListStr_mAF100A86377875C27A179A1098162583CF378691,
-	Asn1Node_GetIndentStr_mA323DD1D9D6764287ABF871C2F5D6938EC66571C,
-	Asn1Node_GeneralDecode_m53F6E971F44EB1E058DDB407926CDD5776729F5D,
-	Asn1Node_ListDecode_m76D48C7772D4251A23A930850843A51CA9FE14D3,
-	Asn1Node_InternalLoadData_m7E610633DC3D84A9B9F93F0F71B1BC39429E3137,
-	Asn1Parser__ctor_m852EC36F43EEB8DF4D03E3BA5AE393CC804AF307,
-	Asn1Parser_LoadData_m36FA36C5B521ADF0287F3C1FFAB6FACF4E273F88,
-	Asn1Parser_get_RootNode_mABC8BBF8AC88ADE20AC11EB634C0CC2F7E5351FD,
-	Asn1Parser_GetNodeTextHeader_mD20100C50FA6E82D8340DA9F947C7D383C4C1243,
-	Asn1Parser_ToString_mF88EE558B4DF02E40B06FFFC7065D19D2EFF0D37,
-	Asn1Parser_GetNodeText_m139690669927DBC4B0A630AB0ECD83EBFF9D4B12,
-	Asn1Util_FormatString_m9A5636464D32AC80092AF316FD6868FDE2BEC7FB,
-	Asn1Util_GenStr_mDCDEB6D112E1B97AF1BFB453D3FD313B6889B0C4,
-	Asn1Util_BytesToLong_m7F65560A77AB53FAC45C657D9698B12963F36819,
-	Asn1Util_BytesToString_m90990BE8787022D58423E1212347AC2D72C367CA,
-	Asn1Util_ToHexString_m3BBDE355AEA488AF6E91206F3E6A4FE26CB4FF33,
-	Asn1Util_BytePrecision_m71119C2047CBEB5E6542ABE25307F935995ADDB9,
-	Asn1Util_DERLengthEncode_m68CC3EF1C6790B6CF0B33FAD73921E1235553A15,
-	Asn1Util_DerLengthDecode_m4098243E0284DE2B4D4DAAEF73F7E064D4D73B56,
-	Asn1Util_GetTagName_m25BDB1AF80D6F8038CC9F44F1F68B7D923715CA9,
-	Asn1Util__cctor_m95A709B6DCD1FC17A3C100BD75867BABB213A5FC,
-	Oid_GetOidName_mC84B297D2F1B3CBC9DFDD3680CFD60271BD84970,
-	Oid_Decode_mCE8258875EFE26F5D2C3F2BDED6217DDC64E5356,
-	Oid_Decode_mAD126798FD7C7692183A8CFAF896D38B4F3663FA,
-	Oid__ctor_m7FBB39374D2C0A01FDDAF2F9ED19EA23A24D1DB1,
-	Oid_DecodeValue_m979270583937E60F71EA390DE18C263C90534B9A,
-	Oid__cctor_m2BB261D013B1A1B58B28E3C1BA2EEC6ABD8805B2,
-	RelativeOid__ctor_mA234AF77BB88E381F7F3114044196A87F8FD3BB6,
-	RelativeOid_Decode_mAA682B60ACE2D2C0C48492BD8773B08E2AC75188,
-	U3CPrivateImplementationDetailsU3E_ComputeStringHash_mDE0DB27362C25C2C9BBE701261F602FC841D8EED,
+	AppleReceiptParser__ctor_m198D90CDE64ECA18FC0C9D81D79D6A8BC2E2C5BC,
+	AppleReceiptParser__cctor_m9944C351312895222D2C382AB3D2C126D9A886E5,
+	AppleReceipt_set_bundleID_m92F780FEDC1939BF19603D619B8C56A9957B973F,
+	AppleReceipt_set_appVersion_m54E1B6B1799B3791724207C341E192861ADE2C8A,
+	AppleReceipt_set_opaque_m398EE497790C9EA9009B6AAF7E7EC0A239083D26,
+	AppleReceipt_set_hash_mA3DC67A717037D17667BC36397392AE674EB5A3C,
+	AppleReceipt_set_originalApplicationVersion_mECD30F9F5ABBB91C95AE72B1583530B721C0D28B,
+	AppleReceipt_set_receiptCreationDate_m85B1F80B0DFDD26FAC95F91B45A41F2D101F284E,
+	AppleReceipt__ctor_m35C6C984CF3B231F12063FE6FEC52305A9F58866,
+	AppleInAppPurchaseReceipt_set_quantity_m6D5C6567ADF9D1362653F5767E5F18194473D7C4,
+	AppleInAppPurchaseReceipt_get_productID_mD366EDB6DECD6B7FDBC2E2087F98331D6E3F238C,
+	AppleInAppPurchaseReceipt_set_productID_m4FFD5BE2D157679AC18ECEED6E05CC6AA7DA361B,
+	AppleInAppPurchaseReceipt_get_transactionID_mD1002134ADC173A34BFBAD7FBBA46DC119D44C36,
+	AppleInAppPurchaseReceipt_set_transactionID_m52670129F56664AF2849DD9DC82A4FB03C83BA65,
+	AppleInAppPurchaseReceipt_set_originalTransactionIdentifier_mC8718D156C1D0791C30D4019B8BAC3316952CD3E,
+	AppleInAppPurchaseReceipt_get_purchaseDate_mC22FFE4988F46B92B2CF5B852780F16B5BBB6CE2,
+	AppleInAppPurchaseReceipt_set_purchaseDate_m11974FBFA2F4B63E263D94A5A5A4861442606782,
+	AppleInAppPurchaseReceipt_set_originalPurchaseDate_m6E6FF9B588168E7EC786D17612AC20F56BA1ABC5,
+	AppleInAppPurchaseReceipt_get_subscriptionExpirationDate_mACFC51931D9645A49A5CBAB24667E170341B23C7,
+	AppleInAppPurchaseReceipt_set_subscriptionExpirationDate_m59741BB14025DD1E9F49BCDDF400A279F648542E,
+	AppleInAppPurchaseReceipt_get_cancellationDate_mC55F70493F3B069CB37AF05A097F8232581E4FC9,
+	AppleInAppPurchaseReceipt_set_cancellationDate_m23C7B503E096DEFFAC0C5A4275543052021DD911,
+	AppleInAppPurchaseReceipt_get_isFreeTrial_m0FBF18D2C714B5BF56B2D90BD4936A3915374A4C,
+	AppleInAppPurchaseReceipt_set_isFreeTrial_m408B34CE16162532C4CDBD3B330DC938C492B273,
+	AppleInAppPurchaseReceipt_get_productType_m6358EE606CA6496AC1EDAD9A4E4099DC87B485F6,
+	AppleInAppPurchaseReceipt_set_productType_mDBDB45F498F407FC70626F371FF0CE71434FA288,
+	AppleInAppPurchaseReceipt_get_isIntroductoryPricePeriod_m15F316591C359527E0755F2B859075758DF1FD7A,
+	AppleInAppPurchaseReceipt_set_isIntroductoryPricePeriod_m31C57E76238A788E71FCFB6EE3DC61957FC47B7B,
+	AppleInAppPurchaseReceipt__ctor_mF05C6F69BDE94196F25F05A0E9C52223CFDC5928,
+	Asn1Node__ctor_m22350DE526EC75EC41E2FAD343927210503EED8E,
+	Asn1Node_Init_m87882E03A4ECB219EDB56ADC79A54DD86C597B29,
+	Asn1Node_GetHexPrintingStr_mF6092831329057DD6FD37A399D3C5008FF706308,
+	Asn1Node_FormatLineString_mEB03ED94E460D1238DEE12EB0AEFF696034346A0,
+	Asn1Node_FormatLineHexString_m0D0D92949284C608272605271D38D4798D31414E,
+	Asn1Node__ctor_m3927B51635F3EFF4DDBC20182D1C84470898A216,
+	Asn1Node_get_Tag_m2B980E78E6953CADC1DB5D97BE64528D4816F353,
+	Asn1Node_get_MaskedTag_mF11D97EF9E0B7ECBFF9F9C41E24BFADB3A5C8714,
+	Asn1Node_LoadData_m8CCACCA1C75A09906C36CAA5A02E6DC96C34BA88,
+	Asn1Node_SaveData_mD2EB3A823C0481B210345E8D12EF21BA6925F580,
+	Asn1Node_ClearAll_mFE4640DD1FDA287E21B75486B9ED34E01766920C,
+	Asn1Node_AddChild_m28BEEC5A546F010053DD22F77362CE8370A4E4F6,
+	Asn1Node_get_ChildNodeCount_mA381253B2A1957E921B09BD3379D0BA02AF90019,
+	Asn1Node_GetChildNode_mB002CCF1AD5FD255F122F489FCACEE111CC23C42,
+	Asn1Node_get_TagName_m6AC0A4455F2CD68FB4A83C49A52A00CF7B3A05F0,
+	Asn1Node_get_ParentNode_m451F42B3655BAB662583F68501627CA6261581A2,
+	Asn1Node_GetText_m4310CDE0CC72881555E11EEC5B645E123E6DD4F9,
+	Asn1Node_GetDataStr_mEBF365F501F5181D92752832D2D5CF6B989D6018,
+	Asn1Node_get_DataLength_m72CD93035CAD2EBEAB6CF94405932D343602CF79,
+	Asn1Node_get_Data_m2698B0BE639C6A0BE2D6AF7498375AAD0D4E77B0,
+	Asn1Node_get_Deepness_mD2B01EF824FA33094E4BDD9E974A3B75BF1D69AB,
+	Asn1Node_set_RequireRecalculatePar_m7C5105D9E70877C9333E47E266E267E8D4DF52B3,
+	Asn1Node_RecalculateTreePar_mA23F98F90CE85ECCA835E4457D1C26BD5D9CA226,
+	Asn1Node_ResetBranchDataLength_m352802BE8330D7BA52DEFC9AED8C00EA05627C77,
+	Asn1Node_ResetDataLengthFieldWidth_m7A926B8287F017141590F9A881A1894B2BD86B1B,
+	Asn1Node_ResetChildNodePar_m32FEC6DA0CC4745E4891C1D87DC04CEA9FD922B1,
+	Asn1Node_GetListStr_m0C0666B7796F3CD8A529B586634D6BFC6940D390,
+	Asn1Node_GetIndentStr_m55CDA663614EC0DF8D5DA04CD0DCFF52AC9F9D30,
+	Asn1Node_GeneralDecode_mE03D9141A8729BC4556959EAA44BDE08BDAD07E9,
+	Asn1Node_ListDecode_mE632EDFE4F453B612BF91316D7D9CD14656D945F,
+	Asn1Node_InternalLoadData_mBF6DA8B05A39BAE226A74FF310E134EEBDE12D63,
+	Asn1Parser__ctor_m82D7944674CA81797E10CDE60C05FAF1D281794E,
+	Asn1Parser_LoadData_mB0C8987D6183B96644060F67F64B4BF9D306C235,
+	Asn1Parser_get_RootNode_m9CAC415D72588F591B0D1BDFA2B69A8EAF3B931D,
+	Asn1Parser_GetNodeTextHeader_m49234F1BD24E3387A68D654F011BA7C6E44665CE,
+	Asn1Parser_ToString_mF8CE34B183E124A7D9931DDA8CF4B3302170EA73,
+	Asn1Parser_GetNodeText_m5E75D356335934F1228A521EF4D6C3E92B863A40,
+	Asn1Util_FormatString_m5D85DF29DF660EA75589DD51B8E02C1A10D5BDBC,
+	Asn1Util_GenStr_mFCA85BFBDF8C7D8C2EDEB91C925718804A590117,
+	Asn1Util_BytesToLong_mFA3824FDB96AD367B107BAA60FD3A12B2EA5F22D,
+	Asn1Util_BytesToString_m44A14DB4F85291B571C4D53776D9E3D5BC6AA938,
+	Asn1Util_ToHexString_m1A5435449D50461103BE0C98A13601EB807994DE,
+	Asn1Util_BytePrecision_m0B0ADD5DBA9E77F52ED4B468C12FA103B83D8AE0,
+	Asn1Util_DERLengthEncode_mD8FC4811667B0371D35479DFF62AFA1D2DE2DBE6,
+	Asn1Util_DerLengthDecode_m2AF86096D3AACD8F06AD60F3175DB35BF7EF54C5,
+	Asn1Util_GetTagName_mE327C31021466482DF804EF977A88278D5C6D537,
+	Asn1Util__cctor_m57021A76347B8F96E30DEF933AF9FC765CB95F14,
+	Oid_GetOidName_m95C0637D5EF5B0E687D52382B924FA6ECE4A0D11,
+	Oid_Decode_mAB921EDEC3BF5F48DADC823D7FFA627D368C2D24,
+	Oid_Decode_m7C4DF55042765D96A273656A11A361130548CBDB,
+	Oid__ctor_mC10AAB37B779050A5B18F4856839BCFE14B76F57,
+	Oid_DecodeValue_mFE83E8F74E068BD14B269BCC31AD0D865A1C21DC,
+	Oid__cctor_m58D08C171C114B2ED85065CF4884363D2659606B,
+	RelativeOid__ctor_m725CE5A8AB2B67DF5BEF5CDB5D4FA319F3FA6BF8,
+	RelativeOid_Decode_m7817692B71C86D7A64ABC89420D16297266F1791,
+	U3CPrivateImplementationDetailsU3E_ComputeStringHash_mA4179D7D8427648F6CDD1215F7B4D899993E3BF9,
 };
 static const int32_t s_InvokerIndices[145] = 
 {
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
 	2211,
 	2211,
 	1949,
-	2666,
+	2667,
 	2211,
 	2169,
 	2169,
 	2211,
 	2234,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
 	2211,
 	2211,
 	2211,
 	1514,
-	2716,
-	2666,
+	2717,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
 	2211,
-	2716,
-	2650,
+	2717,
+	2651,
 	2197,
 	2211,
 	2211,
 	2211,
-	2716,
-	2716,
-	2716,
-	2716,
+	2717,
+	2717,
+	2717,
+	2717,
 	2211,
 	2211,
 	1771,
 	1002,
-	2716,
+	2717,
 	1771,
 	997,
-	4164,
-	4121,
+	4165,
+	4122,
 	1771,
 	1771,
-	3940,
+	3941,
 	-1,
-	2716,
-	4181,
+	2717,
+	4182,
 	2211,
 	2211,
 	2211,
 	2211,
 	2211,
 	2169,
-	2716,
+	2717,
 	2197,
-	2666,
+	2667,
 	2211,
-	2666,
+	2667,
 	2211,
 	2211,
-	2622,
+	2623,
 	2169,
 	2169,
-	2622,
+	2623,
 	2169,
-	2622,
+	2623,
 	2169,
-	2650,
+	2651,
 	2197,
-	2650,
+	2651,
 	2197,
-	2650,
+	2651,
 	2197,
-	2716,
+	2717,
 	1340,
-	2716,
+	2717,
 	432,
 	422,
 	422,
-	2716,
-	2689,
-	2689,
+	2717,
+	2690,
+	2690,
 	1949,
 	1949,
-	2716,
+	2717,
 	2211,
-	2651,
+	2652,
 	1768,
-	2666,
-	2666,
+	2667,
+	2667,
 	1000,
 	1772,
-	2651,
-	2666,
-	2651,
+	2652,
+	2667,
+	2652,
 	2234,
-	2716,
-	4002,
-	4121,
+	2717,
+	4003,
+	4122,
 	1340,
 	1000,
 	1771,
 	1949,
 	1949,
 	1949,
-	2716,
+	2717,
 	2211,
-	2666,
-	4042,
-	2666,
-	3711,
-	3431,
-	3700,
-	4002,
-	4045,
-	4045,
-	3986,
-	3659,
-	3671,
-	4052,
-	4181,
+	2667,
+	4043,
+	2667,
+	3712,
+	3432,
+	3701,
+	4003,
+	4046,
+	4046,
+	3987,
+	3660,
+	3672,
+	4053,
+	4182,
 	1771,
 	1771,
 	1771,
-	2716,
+	2717,
 	939,
-	4181,
-	2716,
+	4182,
+	2717,
 	1771,
-	3989,
+	3990,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
@@ -604,8 +604,8 @@ static const Il2CppTokenRangePair s_rgctxIndices[1] =
 static const Il2CppRGCTXDefinition s_rgctxValues[3] = 
 {
 	{ (Il2CppRGCTXDataType)2, 13 },
-	{ (Il2CppRGCTXDataType)2, 1987 },
-	{ (Il2CppRGCTXDataType)3, 7773 },
+	{ (Il2CppRGCTXDataType)2, 1990 },
+	{ (Il2CppRGCTXDataType)3, 7784 },
 };
 extern const CustomAttributesCacheGenerator g_Security_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Security_CodeGenModule;

@@ -25,7 +25,7 @@ struct MethodInfo_t;
 // System.String
 struct String_t;
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA;
+struct UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E;
 // System.Void
 struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
 // UnityEngine.Purchasing.iOSStoreBindings
@@ -363,7 +363,7 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 };
 
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct  UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA  : public MulticastDelegate_t
+struct  UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E  : public MulticastDelegate_t
 {
 public:
 
@@ -377,7 +377,7 @@ public:
 
 
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::setUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_setUnityPurchasingCallback_m33160F79365EBFEBE19C75F8F0D062AE048E08E4 (UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * ___AsyncCallback0, const RuntimeMethod* method);
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_setUnityPurchasingCallback_m71460ABCE788BCCFF585B9AFFE773C1EDA49C187 (UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * ___AsyncCallback0, const RuntimeMethod* method);
 // System.String UnityEngine.Purchasing.iOSStoreBindings::getUnityPurchasingAppReceipt()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* iOSStoreBindings_getUnityPurchasingAppReceipt_m2BD2B3284EF83DE60BC376F5020528825F30A186 (const RuntimeMethod* method);
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::unityPurchasingRetrieveProducts(System.String)
@@ -501,7 +501,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_unityPurchasingAddTrans
 
 }
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::setUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_setUnityPurchasingCallback_m33160F79365EBFEBE19C75F8F0D062AE048E08E4 (UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * ___AsyncCallback0, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_setUnityPurchasingCallback_m71460ABCE788BCCFF585B9AFFE773C1EDA49C187 (UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * ___AsyncCallback0, const RuntimeMethod* method)
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc) (Il2CppMethodPointer);
 
@@ -541,11 +541,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_unityPurchasingIntercep
 
 }
 // System.Void UnityEngine.Purchasing.iOSStoreBindings::SetUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_SetUnityPurchasingCallback_mFF84A3457229C2FFF979C53986C5DD13E2260B56 (iOSStoreBindings_t1BFD06B1F6B08A3FA114C127037E0873283972D4 * __this, UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * ___AsyncCallback0, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void iOSStoreBindings_SetUnityPurchasingCallback_m8CE0C824A53A0018FEEF167A68B547EC829A74FE (iOSStoreBindings_t1BFD06B1F6B08A3FA114C127037E0873283972D4 * __this, UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * ___AsyncCallback0, const RuntimeMethod* method)
 {
 	{
-		UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * L_0 = ___AsyncCallback0;
-		iOSStoreBindings_setUnityPurchasingCallback_m33160F79365EBFEBE19C75F8F0D062AE048E08E4(L_0, /*hidden argument*/NULL);
+		UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * L_0 = ___AsyncCallback0;
+		iOSStoreBindings_setUnityPurchasingCallback_m71460ABCE788BCCFF585B9AFFE773C1EDA49C187(L_0, /*hidden argument*/NULL);
 		return;
 	}
 }

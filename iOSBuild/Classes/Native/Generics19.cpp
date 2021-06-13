@@ -6695,6 +6695,16 @@ IL_0045:
 		return;
 	}
 }
+// System.Collections.Generic.Queue`1/Enumerator<T> System.Collections.Generic.Queue`1<System.Object>::GetEnumerator()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Enumerator_t7AA6AE94A0D53334AA15EFC74FE63FF525189B8C  Queue_1_GetEnumerator_m93F41D0CCCF0AB82FC589F8E2B9AB6670C8D843F_gshared (Queue_1_t65333FCCA10D8CE1B441D400B6B94140BCB8BF64 * __this, const RuntimeMethod* method)
+{
+	{
+		Enumerator_t7AA6AE94A0D53334AA15EFC74FE63FF525189B8C  L_0;
+		memset((&L_0), 0, sizeof(L_0));
+		Enumerator__ctor_m54C0E2BFC625D1F20B0732D51974B7B0FCA8EFA8((&L_0), (Queue_1_t65333FCCA10D8CE1B441D400B6B94140BCB8BF64 *)__this, /*hidden argument*/IL2CPP_RGCTX_METHOD_INFO(method->klass->rgctx_data, 4));
+		return (Enumerator_t7AA6AE94A0D53334AA15EFC74FE63FF525189B8C )L_0;
+	}
+}
 // System.Collections.Generic.IEnumerator`1<T> System.Collections.Generic.Queue`1<System.Object>::System.Collections.Generic.IEnumerable<T>.GetEnumerator()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Queue_1_System_Collections_Generic_IEnumerableU3CTU3E_GetEnumerator_m1E250F5F09A19502C3442024191D6427D1792AD5_gshared (Queue_1_t65333FCCA10D8CE1B441D400B6B94140BCB8BF64 * __this, const RuntimeMethod* method)
 {

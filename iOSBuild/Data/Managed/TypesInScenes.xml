@@ -52,6 +52,7 @@
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp-firstpass">
+		<type fullname="UnityEngine.Purchasing.IAPButton" preserve="nothing"/>
 		<type fullname="VoxelBusters.NativePlugins.NPSettings" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">

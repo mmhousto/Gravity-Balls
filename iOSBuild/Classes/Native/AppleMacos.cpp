@@ -37,7 +37,7 @@ struct SafeSerializationManager_tDE44F029589A028F8A3053C5C06153FAB4AAE29F;
 // System.String
 struct String_t;
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA;
+struct UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E;
 // System.Void
 struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
 
@@ -48,7 +48,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_InterceptPromotionalPurcha
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_Purchase_m34C66CA72F52B2C85BCC751E9143DF4B81648831_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_RestoreTransactions_m957C23A063550F7396D4189704C31A351A987925_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_RetrieveProducts_m43B4FC523D3FFBDB7E48D74E4C95F06878DE3EA7_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_SetUnityPurchasingCallback_m827F35D2BC81A339145AA75FDABE7CDA875523CC_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_SetUnityPurchasingCallback_m79A83129D41C2C3CF18049D67D2BA82A59510AA1_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* OSXStoreBindings_get_appReceipt_mBCF1141A482BAF5B9942BEACE3E2E1757272294F_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
@@ -628,7 +628,7 @@ public:
 
 
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct  UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA  : public MulticastDelegate_t
+struct  UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E  : public MulticastDelegate_t
 {
 public:
 
@@ -659,12 +659,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m88880E0413421D13FD95325EDC
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Purchasing.OSXStoreBindings::SetUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OSXStoreBindings_SetUnityPurchasingCallback_m827F35D2BC81A339145AA75FDABE7CDA875523CC (OSXStoreBindings_tF68EB3D7FA5FD12FE36BA14A6A8D0DEE8C229297 * __this, UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * ___AsyncCallback0, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OSXStoreBindings_SetUnityPurchasingCallback_m79A83129D41C2C3CF18049D67D2BA82A59510AA1 (OSXStoreBindings_tF68EB3D7FA5FD12FE36BA14A6A8D0DEE8C229297 * __this, UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * ___AsyncCallback0, const RuntimeMethod* method)
 {
 	{
 		NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6 * L_0 = (NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6_il2cpp_TypeInfo_var)));
 		NotImplementedException__ctor_mA2E9CE7F00CB335581A296D2596082D57E45BA83(L_0, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&OSXStoreBindings_SetUnityPurchasingCallback_m827F35D2BC81A339145AA75FDABE7CDA875523CC_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&OSXStoreBindings_SetUnityPurchasingCallback_m79A83129D41C2C3CF18049D67D2BA82A59510AA1_RuntimeMethod_var)));
 	}
 }
 // System.Void UnityEngine.Purchasing.OSXStoreBindings::RestoreTransactions()

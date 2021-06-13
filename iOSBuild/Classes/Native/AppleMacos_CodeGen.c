@@ -13,7 +13,7 @@
 
 
 // 0x00000001 System.Void UnityEngine.Purchasing.OSXStoreBindings::SetUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-extern void OSXStoreBindings_SetUnityPurchasingCallback_m827F35D2BC81A339145AA75FDABE7CDA875523CC (void);
+extern void OSXStoreBindings_SetUnityPurchasingCallback_m79A83129D41C2C3CF18049D67D2BA82A59510AA1 (void);
 // 0x00000002 System.Void UnityEngine.Purchasing.OSXStoreBindings::RestoreTransactions()
 extern void OSXStoreBindings_RestoreTransactions_m957C23A063550F7396D4189704C31A351A987925 (void);
 // 0x00000003 System.Void UnityEngine.Purchasing.OSXStoreBindings::AddTransactionObserver()
@@ -32,7 +32,7 @@ extern void OSXStoreBindings_InterceptPromotionalPurchases_mCF43BCB6AA91834C02FB
 extern void OSXStoreBindings__ctor_mADB85713C5221D2AF4B8ED889CEF7A9A9D62B34C (void);
 static Il2CppMethodPointer s_methodPointers[9] = 
 {
-	OSXStoreBindings_SetUnityPurchasingCallback_m827F35D2BC81A339145AA75FDABE7CDA875523CC,
+	OSXStoreBindings_SetUnityPurchasingCallback_m79A83129D41C2C3CF18049D67D2BA82A59510AA1,
 	OSXStoreBindings_RestoreTransactions_m957C23A063550F7396D4189704C31A351A987925,
 	OSXStoreBindings_AddTransactionObserver_m18F3AE20AC877FFF867AA4AF60D637F1D2E84C0D,
 	OSXStoreBindings_RetrieveProducts_m43B4FC523D3FFBDB7E48D74E4C95F06878DE3EA7,
@@ -45,14 +45,14 @@ static Il2CppMethodPointer s_methodPointers[9] =
 static const int32_t s_InvokerIndices[9] = 
 {
 	2211,
-	2716,
-	2716,
+	2717,
+	2717,
 	2211,
 	1344,
 	1344,
-	2666,
-	2716,
-	2716,
+	2667,
+	2717,
+	2717,
 };
 extern const CustomAttributesCacheGenerator g_AppleMacos_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AppleMacos_CodeGenModule;

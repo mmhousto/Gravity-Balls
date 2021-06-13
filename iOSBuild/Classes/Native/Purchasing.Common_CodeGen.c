@@ -13,120 +13,120 @@
 
 
 // 0x00000001 System.String UnityEngine.Purchasing.MiniJson::JsonEncode(System.Object)
-extern void MiniJson_JsonEncode_mADDDA0EBBE9FCB5C24635D1375E000DA12773B0C (void);
+extern void MiniJson_JsonEncode_mD19AD0C83FA3E81A69D1FF5C0FB9AC51C26A9FC3 (void);
 // 0x00000002 System.Object UnityEngine.Purchasing.MiniJson::JsonDecode(System.String)
-extern void MiniJson_JsonDecode_mB9E9114168C46FA6527D881F3AAEF7B946A043AF (void);
+extern void MiniJson_JsonDecode_m2099594E89A01149F25E7F6876C492E267488D21 (void);
 // 0x00000003 System.Void UnityEngine.Purchasing.INativeStore::RetrieveProducts(System.String)
 // 0x00000004 System.Void UnityEngine.Purchasing.INativeStore::Purchase(System.String,System.String)
 // 0x00000005 System.Void UnityEngine.Purchasing.INativeStore::FinishTransaction(System.String,System.String)
 // 0x00000006 System.Void UnityEngine.Purchasing.UnityPurchasingCallback::.ctor(System.Object,System.IntPtr)
-extern void UnityPurchasingCallback__ctor_m6F253D80CB1B0181BF3B62CE631F57526F49CC90 (void);
+extern void UnityPurchasingCallback__ctor_m0717C20B4A9D1A98AA1DAA912825CB3C3D6A7ED0 (void);
 // 0x00000007 System.Void UnityEngine.Purchasing.UnityPurchasingCallback::Invoke(System.String,System.String,System.String,System.String)
-extern void UnityPurchasingCallback_Invoke_m1C33B636C157777FB35D5F4C43164D50B8D2A0AD (void);
+extern void UnityPurchasingCallback_Invoke_mA59F0F0BA1CE299B77C0C429E2CCC6BB1F174FD9 (void);
 // 0x00000008 System.IAsyncResult UnityEngine.Purchasing.UnityPurchasingCallback::BeginInvoke(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)
-extern void UnityPurchasingCallback_BeginInvoke_m9A5E68A742B7BABAC7E6AF35CE6DA7C28A11B890 (void);
+extern void UnityPurchasingCallback_BeginInvoke_m2FDC2D9A5137AB5AFE2915B3682525E9BA2927EE (void);
 // 0x00000009 System.Void UnityEngine.Purchasing.UnityPurchasingCallback::EndInvoke(System.IAsyncResult)
-extern void UnityPurchasingCallback_EndInvoke_mFE461C1AB6DA787011B3E1B3481DE34D718915DA (void);
+extern void UnityPurchasingCallback_EndInvoke_m74D43E98F7BBF6598FB4E5C5E5DBBF05A915F7A6 (void);
 // 0x0000000A System.Object UnityEngine.Purchasing.MiniJSON.Json::Deserialize(System.String)
-extern void Json_Deserialize_m3601DF8F7BE8300226E94B9A07588C873D9EBA95 (void);
+extern void Json_Deserialize_mC648D997B13799C2FE9ACB0E52CCC531F3C4E0B2 (void);
 // 0x0000000B System.String UnityEngine.Purchasing.MiniJSON.Json::Serialize(System.Object)
-extern void Json_Serialize_m8D55693F14A78BECE27034F3B302E495A3144F90 (void);
+extern void Json_Serialize_mD88146F0C541B9174CE0D2D3132080B84AADDF9D (void);
 // 0x0000000C System.Boolean UnityEngine.Purchasing.MiniJSON.Json/Parser::IsWordBreak(System.Char)
-extern void Parser_IsWordBreak_m102A5E094A94E2B5A93E28D8559765C67CD6D04E (void);
+extern void Parser_IsWordBreak_m71BFB0A6E8FBDE28C43ECCA79FD003D3FDE295CC (void);
 // 0x0000000D System.Void UnityEngine.Purchasing.MiniJSON.Json/Parser::.ctor(System.String)
-extern void Parser__ctor_m284CF1629768B535A979B59E7BA0F4213AC74DE1 (void);
+extern void Parser__ctor_mA986AA4BC14904D8FCAE3F3DBFE877C416ED92C5 (void);
 // 0x0000000E System.Object UnityEngine.Purchasing.MiniJSON.Json/Parser::Parse(System.String)
-extern void Parser_Parse_mB25F84DD0C80F1149B15C813960BDE937B9DA673 (void);
+extern void Parser_Parse_m43671F5110BBFABF518FC9C3AB24FE7D27A2EF77 (void);
 // 0x0000000F System.Void UnityEngine.Purchasing.MiniJSON.Json/Parser::Dispose()
-extern void Parser_Dispose_m4A0E97D1140F16AFDDDA1C626FC1E8066D198D0B (void);
+extern void Parser_Dispose_mB1776BD6ACC1CFDFEA8507E828A20BC1B5AC00B0 (void);
 // 0x00000010 System.Collections.Generic.Dictionary`2<System.String,System.Object> UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseObject()
-extern void Parser_ParseObject_mC5E0F4511601F4F9A24DB1CE677A9F825820DFA3 (void);
+extern void Parser_ParseObject_m88108B7B8D45AE72782ACA47CB8E80C454DDC6DB (void);
 // 0x00000011 System.Collections.Generic.List`1<System.Object> UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseArray()
-extern void Parser_ParseArray_m88A62FB35B1800443EA43928C255CAFB42D5B5D4 (void);
+extern void Parser_ParseArray_m9E4B26E96658CE0964C39BCF36E27C2FD5224EF2 (void);
 // 0x00000012 System.Object UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseValue()
-extern void Parser_ParseValue_m0911DCA3DC1E718A8FA2499D9257E78D3D46F550 (void);
+extern void Parser_ParseValue_m2D9EEA82F0B75136902408DED8F5B7925812689D (void);
 // 0x00000013 System.Object UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseByToken(UnityEngine.Purchasing.MiniJSON.Json/Parser/TOKEN)
-extern void Parser_ParseByToken_m0A8BC47AB92A92D8E8ADBB851735782875B779AC (void);
+extern void Parser_ParseByToken_mF8741621F723E1FB375BE67B77BD20FEE734F7CB (void);
 // 0x00000014 System.String UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseString()
-extern void Parser_ParseString_mF5FEB35854846930C3A23F073FABDF3729B382EC (void);
+extern void Parser_ParseString_m99F4C17FC8D23D4AA54720D692F010E5D7CD976B (void);
 // 0x00000015 System.Object UnityEngine.Purchasing.MiniJSON.Json/Parser::ParseNumber()
-extern void Parser_ParseNumber_m24BDE6C361DE12003F898ED21ABFD67F507AC0AE (void);
+extern void Parser_ParseNumber_m3D6E6B08D7FCFC1F6BF68D883596C23B0819800A (void);
 // 0x00000016 System.Void UnityEngine.Purchasing.MiniJSON.Json/Parser::EatWhitespace()
-extern void Parser_EatWhitespace_m166E89044A73463139836C4F82C3D4246FC38B83 (void);
+extern void Parser_EatWhitespace_m1B6601B2C5A77180EE0BEDD818BF63241189796C (void);
 // 0x00000017 System.Char UnityEngine.Purchasing.MiniJSON.Json/Parser::get_PeekChar()
-extern void Parser_get_PeekChar_m316D3D11A1277D13C92ABC83A9E280222F988321 (void);
+extern void Parser_get_PeekChar_mCFEB24B365834B3112A547D7CC7774B8E0549924 (void);
 // 0x00000018 System.Char UnityEngine.Purchasing.MiniJSON.Json/Parser::get_NextChar()
-extern void Parser_get_NextChar_m14444AC3C61882844F7B110C5626CAA2578A8088 (void);
+extern void Parser_get_NextChar_m5AEAB727267D52B3462221135EBC5D84209AC9A9 (void);
 // 0x00000019 System.String UnityEngine.Purchasing.MiniJSON.Json/Parser::get_NextWord()
-extern void Parser_get_NextWord_mAD504F684D9CBCD168AF0F2A38ECA13AEA5FA229 (void);
+extern void Parser_get_NextWord_m99A6F8179ECD355CF12DA1CBD58C8584BB519D06 (void);
 // 0x0000001A UnityEngine.Purchasing.MiniJSON.Json/Parser/TOKEN UnityEngine.Purchasing.MiniJSON.Json/Parser::get_NextToken()
-extern void Parser_get_NextToken_m1FB20EF84FF085FA29E1A589FAC3E4D80B0405EF (void);
+extern void Parser_get_NextToken_m8B479EA968629966258AC9E491AB41ACEE1A0E32 (void);
 // 0x0000001B System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::.ctor()
-extern void Serializer__ctor_m4F66C00AECAF4BDD8819DDEAE0F0CB7A5618FB73 (void);
+extern void Serializer__ctor_m3B339C64939CEF56C50AE82A260F2AED43B67328 (void);
 // 0x0000001C System.String UnityEngine.Purchasing.MiniJSON.Json/Serializer::Serialize(System.Object)
-extern void Serializer_Serialize_m566130639F2B1AB1950B06B5944F6218CE386367 (void);
+extern void Serializer_Serialize_m2617EFA0701E968CAEA956A66ABE32E659D05F11 (void);
 // 0x0000001D System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::SerializeValue(System.Object)
-extern void Serializer_SerializeValue_m62801D0436F633067A7C34F13B454BA0FAC88336 (void);
+extern void Serializer_SerializeValue_m145353E13655BDD4D8F60970CB5805F645F4887F (void);
 // 0x0000001E System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::SerializeObject(System.Collections.IDictionary)
-extern void Serializer_SerializeObject_mF7465ABD28DD58E760800D112B52934F5FE70788 (void);
+extern void Serializer_SerializeObject_mFF9F999F5BB2B80C2267F6D296E5ECFE7894F344 (void);
 // 0x0000001F System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::SerializeArray(System.Collections.IList)
-extern void Serializer_SerializeArray_mA441AEB1B3F79B0EC5AC38462EB60FCAD396D99F (void);
+extern void Serializer_SerializeArray_mFD263A65BD16AD80B603DA55742064B83074C7B8 (void);
 // 0x00000020 System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::SerializeString(System.String)
-extern void Serializer_SerializeString_mFA2BEA11154255DD72A46B0BBC37BF781D477B3B (void);
+extern void Serializer_SerializeString_m2A29302B634BC69B2EF4DE5E2D613A10C3B344E0 (void);
 // 0x00000021 System.Void UnityEngine.Purchasing.MiniJSON.Json/Serializer::SerializeOther(System.Object)
-extern void Serializer_SerializeOther_m0838AAE01271FA72EEFB466A96944FBDC3C08C46 (void);
+extern void Serializer_SerializeOther_mD61D0BD2D59052E3F04F71C955FAADB9D2F59158 (void);
 // 0x00000022 System.String UnityEngine.Purchasing.MiniJSON.MiniJsonExtensions::GetString(System.Collections.Generic.Dictionary`2<System.String,System.Object>,System.String,System.String)
-extern void MiniJsonExtensions_GetString_mC5CBC4375967D335D893DDFBA924C15A7EE4D0AC (void);
+extern void MiniJsonExtensions_GetString_mE2C9909379BD64CAAB028657BA44538A98E0328E (void);
 // 0x00000023 System.String UnityEngine.Purchasing.MiniJSON.MiniJsonExtensions::toJson(System.Collections.Generic.Dictionary`2<System.String,System.Object>)
-extern void MiniJsonExtensions_toJson_m567E5C1BCFF9748AC3E3673E8F11ED80D557A76A (void);
+extern void MiniJsonExtensions_toJson_mD48099B82AC540506EE622E93C98C344182B8C32 (void);
 // 0x00000024 System.String UnityEngine.Purchasing.MiniJSON.MiniJsonExtensions::toJson(System.Collections.Generic.Dictionary`2<System.String,System.String>)
-extern void MiniJsonExtensions_toJson_m4F83912F343E6FBEB792B66BECC56DB6C17556DD (void);
+extern void MiniJsonExtensions_toJson_m31CCA53769D6D57251919EB18ADF3DAC096073E3 (void);
 // 0x00000025 System.Collections.Generic.Dictionary`2<System.String,System.Object> UnityEngine.Purchasing.MiniJSON.MiniJsonExtensions::HashtableFromJson(System.String)
-extern void MiniJsonExtensions_HashtableFromJson_m3B3521AFD15B18FC75CA676A8E55A66B2C949610 (void);
+extern void MiniJsonExtensions_HashtableFromJson_m69E5E56F031C2A811E14D93A238A220D166F38FB (void);
 static Il2CppMethodPointer s_methodPointers[37] = 
 {
-	MiniJson_JsonEncode_mADDDA0EBBE9FCB5C24635D1375E000DA12773B0C,
-	MiniJson_JsonDecode_mB9E9114168C46FA6527D881F3AAEF7B946A043AF,
+	MiniJson_JsonEncode_mD19AD0C83FA3E81A69D1FF5C0FB9AC51C26A9FC3,
+	MiniJson_JsonDecode_m2099594E89A01149F25E7F6876C492E267488D21,
 	NULL,
 	NULL,
 	NULL,
-	UnityPurchasingCallback__ctor_m6F253D80CB1B0181BF3B62CE631F57526F49CC90,
-	UnityPurchasingCallback_Invoke_m1C33B636C157777FB35D5F4C43164D50B8D2A0AD,
-	UnityPurchasingCallback_BeginInvoke_m9A5E68A742B7BABAC7E6AF35CE6DA7C28A11B890,
-	UnityPurchasingCallback_EndInvoke_mFE461C1AB6DA787011B3E1B3481DE34D718915DA,
-	Json_Deserialize_m3601DF8F7BE8300226E94B9A07588C873D9EBA95,
-	Json_Serialize_m8D55693F14A78BECE27034F3B302E495A3144F90,
-	Parser_IsWordBreak_m102A5E094A94E2B5A93E28D8559765C67CD6D04E,
-	Parser__ctor_m284CF1629768B535A979B59E7BA0F4213AC74DE1,
-	Parser_Parse_mB25F84DD0C80F1149B15C813960BDE937B9DA673,
-	Parser_Dispose_m4A0E97D1140F16AFDDDA1C626FC1E8066D198D0B,
-	Parser_ParseObject_mC5E0F4511601F4F9A24DB1CE677A9F825820DFA3,
-	Parser_ParseArray_m88A62FB35B1800443EA43928C255CAFB42D5B5D4,
-	Parser_ParseValue_m0911DCA3DC1E718A8FA2499D9257E78D3D46F550,
-	Parser_ParseByToken_m0A8BC47AB92A92D8E8ADBB851735782875B779AC,
-	Parser_ParseString_mF5FEB35854846930C3A23F073FABDF3729B382EC,
-	Parser_ParseNumber_m24BDE6C361DE12003F898ED21ABFD67F507AC0AE,
-	Parser_EatWhitespace_m166E89044A73463139836C4F82C3D4246FC38B83,
-	Parser_get_PeekChar_m316D3D11A1277D13C92ABC83A9E280222F988321,
-	Parser_get_NextChar_m14444AC3C61882844F7B110C5626CAA2578A8088,
-	Parser_get_NextWord_mAD504F684D9CBCD168AF0F2A38ECA13AEA5FA229,
-	Parser_get_NextToken_m1FB20EF84FF085FA29E1A589FAC3E4D80B0405EF,
-	Serializer__ctor_m4F66C00AECAF4BDD8819DDEAE0F0CB7A5618FB73,
-	Serializer_Serialize_m566130639F2B1AB1950B06B5944F6218CE386367,
-	Serializer_SerializeValue_m62801D0436F633067A7C34F13B454BA0FAC88336,
-	Serializer_SerializeObject_mF7465ABD28DD58E760800D112B52934F5FE70788,
-	Serializer_SerializeArray_mA441AEB1B3F79B0EC5AC38462EB60FCAD396D99F,
-	Serializer_SerializeString_mFA2BEA11154255DD72A46B0BBC37BF781D477B3B,
-	Serializer_SerializeOther_m0838AAE01271FA72EEFB466A96944FBDC3C08C46,
-	MiniJsonExtensions_GetString_mC5CBC4375967D335D893DDFBA924C15A7EE4D0AC,
-	MiniJsonExtensions_toJson_m567E5C1BCFF9748AC3E3673E8F11ED80D557A76A,
-	MiniJsonExtensions_toJson_m4F83912F343E6FBEB792B66BECC56DB6C17556DD,
-	MiniJsonExtensions_HashtableFromJson_m3B3521AFD15B18FC75CA676A8E55A66B2C949610,
+	UnityPurchasingCallback__ctor_m0717C20B4A9D1A98AA1DAA912825CB3C3D6A7ED0,
+	UnityPurchasingCallback_Invoke_mA59F0F0BA1CE299B77C0C429E2CCC6BB1F174FD9,
+	UnityPurchasingCallback_BeginInvoke_m2FDC2D9A5137AB5AFE2915B3682525E9BA2927EE,
+	UnityPurchasingCallback_EndInvoke_m74D43E98F7BBF6598FB4E5C5E5DBBF05A915F7A6,
+	Json_Deserialize_mC648D997B13799C2FE9ACB0E52CCC531F3C4E0B2,
+	Json_Serialize_mD88146F0C541B9174CE0D2D3132080B84AADDF9D,
+	Parser_IsWordBreak_m71BFB0A6E8FBDE28C43ECCA79FD003D3FDE295CC,
+	Parser__ctor_mA986AA4BC14904D8FCAE3F3DBFE877C416ED92C5,
+	Parser_Parse_m43671F5110BBFABF518FC9C3AB24FE7D27A2EF77,
+	Parser_Dispose_mB1776BD6ACC1CFDFEA8507E828A20BC1B5AC00B0,
+	Parser_ParseObject_m88108B7B8D45AE72782ACA47CB8E80C454DDC6DB,
+	Parser_ParseArray_m9E4B26E96658CE0964C39BCF36E27C2FD5224EF2,
+	Parser_ParseValue_m2D9EEA82F0B75136902408DED8F5B7925812689D,
+	Parser_ParseByToken_mF8741621F723E1FB375BE67B77BD20FEE734F7CB,
+	Parser_ParseString_m99F4C17FC8D23D4AA54720D692F010E5D7CD976B,
+	Parser_ParseNumber_m3D6E6B08D7FCFC1F6BF68D883596C23B0819800A,
+	Parser_EatWhitespace_m1B6601B2C5A77180EE0BEDD818BF63241189796C,
+	Parser_get_PeekChar_mCFEB24B365834B3112A547D7CC7774B8E0549924,
+	Parser_get_NextChar_m5AEAB727267D52B3462221135EBC5D84209AC9A9,
+	Parser_get_NextWord_m99A6F8179ECD355CF12DA1CBD58C8584BB519D06,
+	Parser_get_NextToken_m8B479EA968629966258AC9E491AB41ACEE1A0E32,
+	Serializer__ctor_m3B339C64939CEF56C50AE82A260F2AED43B67328,
+	Serializer_Serialize_m2617EFA0701E968CAEA956A66ABE32E659D05F11,
+	Serializer_SerializeValue_m145353E13655BDD4D8F60970CB5805F645F4887F,
+	Serializer_SerializeObject_mFF9F999F5BB2B80C2267F6D296E5ECFE7894F344,
+	Serializer_SerializeArray_mFD263A65BD16AD80B603DA55742064B83074C7B8,
+	Serializer_SerializeString_m2A29302B634BC69B2EF4DE5E2D613A10C3B344E0,
+	Serializer_SerializeOther_mD61D0BD2D59052E3F04F71C955FAADB9D2F59158,
+	MiniJsonExtensions_GetString_mE2C9909379BD64CAAB028657BA44538A98E0328E,
+	MiniJsonExtensions_toJson_mD48099B82AC540506EE622E93C98C344182B8C32,
+	MiniJsonExtensions_toJson_m31CCA53769D6D57251919EB18ADF3DAC096073E3,
+	MiniJsonExtensions_HashtableFromJson_m69E5E56F031C2A811E14D93A238A220D166F38FB,
 };
 static const int32_t s_InvokerIndices[37] = 
 {
-	4045,
-	4045,
+	4046,
+	4046,
 	2211,
 	1344,
 	1344,
@@ -134,34 +134,34 @@ static const int32_t s_InvokerIndices[37] =
 	568,
 	131,
 	2211,
-	4045,
-	4045,
-	4070,
+	4046,
+	4046,
+	4071,
 	2211,
-	4045,
-	2716,
-	2666,
-	2666,
-	2666,
+	4046,
+	2717,
+	2667,
+	2667,
+	2667,
 	1768,
-	2666,
-	2666,
-	2716,
-	2649,
-	2649,
-	2666,
+	2667,
+	2667,
+	2717,
 	2650,
-	2716,
-	4045,
+	2650,
+	2667,
+	2651,
+	2717,
+	4046,
 	2211,
 	2211,
 	2211,
 	2211,
 	2211,
-	3437,
-	4045,
-	4045,
-	4045,
+	3438,
+	4046,
+	4046,
+	4046,
 };
 extern const CustomAttributesCacheGenerator g_Purchasing_Common_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_Purchasing_Common_CodeGenModule;

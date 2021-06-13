@@ -20,7 +20,7 @@ extern void FacebookStoreBindings_Check_mE6705148157E73247952DD94DFBD40B6E4006EE
 // 0x00000005 System.Void UnityEngine.Purchasing.FacebookStoreBindings::Init()
 extern void FacebookStoreBindings_Init_m68BBDD582C1FF844E91435BCFF8A0C757D00A26E (void);
 // 0x00000006 System.Void UnityEngine.Purchasing.FacebookStoreBindings::SetUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-extern void FacebookStoreBindings_SetUnityPurchasingCallback_m035B220BBA1C6ADBF53FA0D94E5345964997B61C (void);
+extern void FacebookStoreBindings_SetUnityPurchasingCallback_mB8B8FC63C52E0846421DF30C662B22A329A790F3 (void);
 // 0x00000007 System.Void UnityEngine.Purchasing.FacebookStoreBindings::RetrieveProducts(System.String)
 extern void FacebookStoreBindings_RetrieveProducts_mFD554F01BE47BD1AB4D3ABBDD8F83597E272072F (void);
 // 0x00000008 System.Void UnityEngine.Purchasing.FacebookStoreBindings::Purchase(System.String,System.String)
@@ -36,7 +36,7 @@ static Il2CppMethodPointer s_methodPointers[10] =
 	NULL,
 	FacebookStoreBindings_Check_mE6705148157E73247952DD94DFBD40B6E4006EE5,
 	FacebookStoreBindings_Init_m68BBDD582C1FF844E91435BCFF8A0C757D00A26E,
-	FacebookStoreBindings_SetUnityPurchasingCallback_m035B220BBA1C6ADBF53FA0D94E5345964997B61C,
+	FacebookStoreBindings_SetUnityPurchasingCallback_mB8B8FC63C52E0846421DF30C662B22A329A790F3,
 	FacebookStoreBindings_RetrieveProducts_mFD554F01BE47BD1AB4D3ABBDD8F83597E272072F,
 	FacebookStoreBindings_Purchase_m73EA1C9E77352ADD6F98A69DA9D25B2BAB868299,
 	FacebookStoreBindings_FinishTransaction_m3A015D96565BF800357C83E28C46C5B4DC33D720,
@@ -44,16 +44,16 @@ static Il2CppMethodPointer s_methodPointers[10] =
 };
 static const int32_t s_InvokerIndices[10] = 
 {
-	2689,
-	2716,
+	2690,
+	2717,
 	2211,
-	2689,
-	2716,
+	2690,
+	2717,
 	2211,
 	2211,
 	1344,
 	1344,
-	2716,
+	2717,
 };
 extern const CustomAttributesCacheGenerator g_FacebookStore_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_FacebookStore_CodeGenModule;

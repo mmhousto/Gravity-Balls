@@ -37,7 +37,7 @@ struct SafeSerializationManager_tDE44F029589A028F8A3053C5C06153FAB4AAE29F;
 // System.String
 struct String_t;
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA;
+struct UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E;
 // System.Void
 struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
 
@@ -46,7 +46,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_FinishTransaction_m3A
 IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_Init_m68BBDD582C1FF844E91435BCFF8A0C757D00A26E_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_Purchase_m73EA1C9E77352ADD6F98A69DA9D25B2BAB868299_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_RetrieveProducts_mFD554F01BE47BD1AB4D3ABBDD8F83597E272072F_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_SetUnityPurchasingCallback_m035B220BBA1C6ADBF53FA0D94E5345964997B61C_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* FacebookStoreBindings_SetUnityPurchasingCallback_mB8B8FC63C52E0846421DF30C662B22A329A790F3_RuntimeMethod_var;
 struct Delegate_t_marshaled_com;
 struct Delegate_t_marshaled_pinvoke;
 struct Exception_t_marshaled_com;
@@ -671,7 +671,7 @@ public:
 
 
 // UnityEngine.Purchasing.UnityPurchasingCallback
-struct  UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA  : public MulticastDelegate_t
+struct  UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E  : public MulticastDelegate_t
 {
 public:
 
@@ -726,12 +726,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FacebookStoreBindings_Init_m68BBDD582C1F
 	}
 }
 // System.Void UnityEngine.Purchasing.FacebookStoreBindings::SetUnityPurchasingCallback(UnityEngine.Purchasing.UnityPurchasingCallback)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FacebookStoreBindings_SetUnityPurchasingCallback_m035B220BBA1C6ADBF53FA0D94E5345964997B61C (FacebookStoreBindings_tF7D2346F5EDDE4383A154ED6BFE831635B0E3B1A * __this, UnityPurchasingCallback_tE98C450765DD461BDE46E9511199DE16D8D890AA * ___AsyncCallback0, const RuntimeMethod* method)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FacebookStoreBindings_SetUnityPurchasingCallback_mB8B8FC63C52E0846421DF30C662B22A329A790F3 (FacebookStoreBindings_tF7D2346F5EDDE4383A154ED6BFE831635B0E3B1A * __this, UnityPurchasingCallback_t5425C9EF9CC6F907F302996E292F9812E40C4E1E * ___AsyncCallback0, const RuntimeMethod* method)
 {
 	{
 		NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6 * L_0 = (NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6 *)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotImplementedException_t26260C4EE0444C5FA022994203060B3A42A3ADE6_il2cpp_TypeInfo_var)));
 		NotImplementedException__ctor_mA2E9CE7F00CB335581A296D2596082D57E45BA83(L_0, /*hidden argument*/NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&FacebookStoreBindings_SetUnityPurchasingCallback_m035B220BBA1C6ADBF53FA0D94E5345964997B61C_RuntimeMethod_var)));
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&FacebookStoreBindings_SetUnityPurchasingCallback_mB8B8FC63C52E0846421DF30C662B22A329A790F3_RuntimeMethod_var)));
 	}
 }
 // System.Void UnityEngine.Purchasing.FacebookStoreBindings::RetrieveProducts(System.String)
