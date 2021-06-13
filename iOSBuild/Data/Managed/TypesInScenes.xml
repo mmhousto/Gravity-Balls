@@ -33,7 +33,6 @@
 		<type fullname="UnityEngine.Component" preserve="nothing"/>
 		<type fullname="UnityEngine.GameObject" preserve="nothing"/>
 		<type fullname="UnityEngine.SpriteRenderer" preserve="nothing"/>
-		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.MonoBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.RectTransform" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
@@ -48,11 +47,11 @@
 		<type fullname="UnityEngine.MeshRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Light" preserve="nothing"/>
 		<type fullname="UnityEngine.Mesh" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.PhysicMaterial" preserve="nothing"/>
 		<type fullname="UnityEngine.MeshFilter" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp-firstpass">
-		<type fullname="UnityEngine.Purchasing.IAPButton" preserve="nothing"/>
 		<type fullname="VoxelBusters.NativePlugins.NPSettings" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
@@ -96,6 +95,10 @@
 	</assembly>
 	<assembly fullname="Unity.VectorGraphics">
 		<type fullname="SVGImage" preserve="nothing"/>
+	</assembly>
+	<assembly fullname="UnityEngine.Advertisements">
+		<type fullname="UnityEngine.Advertisements.Placeholder" preserve="nothing"/>
+		<type fullname="UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>

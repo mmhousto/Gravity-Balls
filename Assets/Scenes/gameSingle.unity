@@ -6510,6 +6510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2214469185972971250, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2214469185972971251, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
       propertyPath: m_RootOrder
       value: 10

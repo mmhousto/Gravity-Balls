@@ -404,32 +404,10 @@
             ]
         },
         {
-            "managedAssemblyName": "UnityEngine.dll",
-            "nativeClass": "AudioClip",
-            "fullManagedTypeName": "UnityEngine.AudioClip",
-            "moduleName": "Audio",
-            "usedInScenes": [
-                "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity",
-                "Assets/Scenes/gameSkill.unity"
-            ]
-        },
-        {
             "managedAssemblyName": "",
             "nativeClass": "NavMeshSettings",
             "fullManagedTypeName": "",
             "moduleName": "AI",
-            "usedInScenes": [
-                "Assets/Scenes/MainScreen.unity",
-                "Assets/Scenes/gameSingle.unity",
-                "Assets/Scenes/gameSkill.unity"
-            ]
-        },
-        {
-            "managedAssemblyName": "",
-            "nativeClass": "SampleClip",
-            "fullManagedTypeName": "",
-            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/MainScreen.unity",
                 "Assets/Scenes/gameSingle.unity",
@@ -592,9 +570,29 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioClip",
+            "fullManagedTypeName": "UnityEngine.AudioClip",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "PhysicMaterial",
             "fullManagedTypeName": "UnityEngine.PhysicMaterial",
             "moduleName": "Physics",
+            "usedInScenes": [
+                "Assets/Scenes/gameSingle.unity",
+                "Assets/Scenes/gameSkill.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "",
+            "nativeClass": "SampleClip",
+            "fullManagedTypeName": "",
+            "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/Scenes/gameSingle.unity",
                 "Assets/Scenes/gameSkill.unity"
@@ -609,13 +607,6 @@
                 "Assets/Scenes/gameSingle.unity",
                 "Assets/Scenes/gameSkill.unity"
             ]
-        },
-        {
-            "managedAssemblyName": "Assembly-CSharp-firstpass.dll",
-            "nativeClass": "",
-            "fullManagedTypeName": "UnityEngine.Purchasing.IAPButton",
-            "moduleName": "",
-            "usedInScenes": []
         },
         {
             "managedAssemblyName": "Assembly-CSharp-firstpass.dll",
@@ -873,6 +864,20 @@
             "managedAssemblyName": "Unity.VectorGraphics.dll",
             "nativeClass": "",
             "fullManagedTypeName": "SVGImage",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.Advertisements.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Advertisements.Placeholder",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "UnityEngine.Advertisements.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "UnityEngine.Advertisements.Platform.Editor.BannerPlaceholder",
             "moduleName": "",
             "usedInScenes": []
         },

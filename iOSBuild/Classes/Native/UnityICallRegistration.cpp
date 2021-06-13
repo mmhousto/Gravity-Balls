@@ -602,10 +602,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Camera_ScreenToViewportPoint_Injected();
 		Register_UnityEngine_Camera_ScreenToViewportPoint_Injected();
 
-		//System.Void UnityEngine.Camera::ScreenToWorldPoint_Injected(UnityEngine.Vector3&,UnityEngine.Camera/MonoOrStereoscopicEye,UnityEngine.Vector3&)
-		void Register_UnityEngine_Camera_ScreenToWorldPoint_Injected();
-		Register_UnityEngine_Camera_ScreenToWorldPoint_Injected();
-
 		//System.Void UnityEngine.Camera::ViewportToWorldPoint_Injected(UnityEngine.Vector3&,UnityEngine.Camera/MonoOrStereoscopicEye,UnityEngine.Vector3&)
 		void Register_UnityEngine_Camera_ViewportToWorldPoint_Injected();
 		Register_UnityEngine_Camera_ViewportToWorldPoint_Injected();
@@ -2979,18 +2975,6 @@ void RegisterAllStrippedInternalCalls()
 		Register_UnityEngine_Sprite_get_vertices();
 
 	//End Registrations for type : UnityEngine.Sprite
-
-	//Start Registrations for type : UnityEngine.SpriteRenderer
-
-		//System.Void UnityEngine.SpriteRenderer::set_color_Injected(UnityEngine.Color&)
-		void Register_UnityEngine_SpriteRenderer_set_color_Injected();
-		Register_UnityEngine_SpriteRenderer_set_color_Injected();
-
-		//System.Void UnityEngine.SpriteRenderer::set_sprite(UnityEngine.Sprite)
-		void Register_UnityEngine_SpriteRenderer_set_sprite();
-		Register_UnityEngine_SpriteRenderer_set_sprite();
-
-	//End Registrations for type : UnityEngine.SpriteRenderer
 
 	//Start Registrations for type : UnityEngine.SystemInfo
 
