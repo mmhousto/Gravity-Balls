@@ -6,15 +6,19 @@ public class paddle : MonoBehaviour
 {
     public Collider wall, wall2, switchL, switchR;
 	public bool isPaddle1;
-    private SpriteRenderer spriteRenderer;
-    public Sprite basic, dark, pro;
+    private MeshRenderer meshRenderer;
+    public Material basic, dark, pro, cyan, red, gold, orange, green, lime;
 	public float speed = 10f;
+    private GameObject threeDPaddle;
     private Vector3 touchPosition, tP2;
     private Rigidbody rb;
     private Vector3 direction;
     public GameObject brickWall, paddleP1;
     private GameObject paddle2;
+    public float wallZ = 0;
     private bool isActive = false;
+
+    public Camera cam;
     public AudioSource coinCollect;
     public AudioSource ballBounce;
     public AudioSource lifeGain;
@@ -25,14 +29,16 @@ public class paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        #if UNITY_IOS
+#if UNITY_IOS
             switchL.enabled = false;
             switchR.enabled = false;
-        #elif UNITY_ANDROID
+#elif UNITY_ANDROID
             switchL.enabled = false;
             switchR.enabled = false;
-        #else
-        #endif
+#else
+#endif
+        transform.position = new Vector3(0, -3.45f, -.2f);
+        threeDPaddle = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
         AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
         brickHits = 0;
         paddleP1 = GetComponent<GameObject>();
@@ -40,28 +46,34 @@ public class paddle : MonoBehaviour
         Physics.IgnoreCollision(wall, GetComponent<Collider>());
         Physics.IgnoreCollision(wall2, GetComponent<Collider>());
         Physics.IgnoreCollision(brickWall.GetComponent<Collider>(), GetComponent<Collider>());
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
+
         if(PlayerPrefs.GetInt("selectedPaddle") == 0) {
-            spriteRenderer.sprite = basic;
+            meshRenderer.material = basic;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 1) {
-            spriteRenderer.sprite = dark;
+            meshRenderer.material = dark;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 2) {
-            spriteRenderer.sprite = pro;
+            meshRenderer.material = pro;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 3) {
-            spriteRenderer.sprite = basic;
-            spriteRenderer.color = Color.red;
+            meshRenderer.material = red;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 4) {
-            spriteRenderer.sprite = basic;
-            spriteRenderer.color = Color.yellow;
+            meshRenderer.material = gold;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 5) {
-            spriteRenderer.sprite = basic;
-            spriteRenderer.color = Color.green;
+            meshRenderer.material = green;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 6) {
-            spriteRenderer.sprite = basic;
-            spriteRenderer.color = new Color(1, 0.4f, 0, 1);
+            meshRenderer.material = orange;
+
         } else if (PlayerPrefs.GetInt("selectedPaddle") == 7) {
-            spriteRenderer.sprite = basic;
-            spriteRenderer.color = Color.cyan;
+            meshRenderer.material = cyan;
+
+        } else if (PlayerPrefs.GetInt("selectedPaddle") == 8) {
+            meshRenderer.material = lime;
         }
     }
 
@@ -146,6 +158,15 @@ public class paddle : MonoBehaviour
         brickHits += 1;
     }
 
+    private Vector3 GetWorldPosition(float z)
+    {
+        Ray mousePos = cam.ScreenPointToRay(Input.mousePosition);
+        Plane wallBG = new Plane(Vector3.forward, new Vector3(0, 0, z));
+        float distance;
+        wallBG.Raycast(mousePos, out distance);
+        return mousePos.GetPoint(distance);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -153,14 +174,14 @@ public class paddle : MonoBehaviour
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f, Space.World);
         if(Input.touchCount > 0) {
             Touch touch = Input.GetTouch(0);
-            touchPosition = Camera.main.ScreenToWorldPoint(touch.position); 
-            touchPosition.z = 0f;
+            touchPosition = GetWorldPosition(wallZ); 
+            touchPosition.z = -.2f;
             touchPosition.y = -3.45f;
             direction.x = (touchPosition.x - transform.position.x);
             rb.velocity = new Vector3(direction.x, 0f, 0f) * speed;
             if(touch.tapCount == 2) {
-                tP2 = Camera.main.ScreenToWorldPoint(touch.position);
-                tP2.z = 0f;
+                tP2 = GetWorldPosition(wallZ);
+                tP2.z = -.2f;
                 tP2.y = -3.45f;
                 transform.position = tP2;
             }

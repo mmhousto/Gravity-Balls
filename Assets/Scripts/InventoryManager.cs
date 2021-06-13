@@ -21,13 +21,13 @@ public interface IClickable<T> {
 
 public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int>, IClickable<int> {
 	public GameObject Paddle1, Paddle2, Paddle3, Paddle4, Paddle5, Paddle6, Paddle7, Paddle8;
-	public GameObject paddleBasic, paddleDark, paddlePro;
+	public GameObject paddleBasic, paddleDark, paddlePro, threeDPaddle;
 	public List<GameObject> paddlesT = new List<GameObject>();
 	private TextMeshProUGUI paddleName, priceLbl;
 	private int coins;
 	private string[] sprites = new string[] {"Paddles/begginer-paddle.svg", "Paddles/paddle-dark.svg", "Paddles/paddle-pro.svg"};
-	private int[] price = new int[] {0, 50, 75, 20, 20, 20, 20, 20};
-	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0, 0, 0, 0};
+	private int[] price = new int[] {0, 50, 75, 20, 20, 20, 20, 20, 20};
+	private int[] ownPaddle = new int[] {1, 0, 0, 0, 0, 0, 0, 0, 0};
     private GameObject selectedPaddle;
 
     // Start is called before the first frame update
@@ -40,6 +40,7 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int>, ICl
         paddlesT.Add(Paddle6);
         paddlesT.Add(Paddle7);
         paddlesT.Add(Paddle8);
+        paddlesT.Add(threeDPaddle);
         coins = PlayerPrefs.GetInt("Coins");
         selectedPaddle = paddlesT[PlayerPrefs.GetInt("selectedPaddle")];
         for(int i = 0; i < ownPaddle.Length; i++) {

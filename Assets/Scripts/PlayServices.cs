@@ -16,7 +16,7 @@ public class PlayServices : MonoBehaviour
 #if UNITY_ANDROID
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
-#elif UNITY_IPHONE
+#else
         signIn.SetActive(false);
         signOut.SetActive(false);
 #endif
