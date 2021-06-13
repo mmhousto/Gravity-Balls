@@ -158,9 +158,9 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 19
+  AndroidBundleVersionCode: 20
   AndroidMinSdkVersion: 19
-  AndroidTargetSdkVersion: 0
+  AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -810,7 +810,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING
     4: NO_GPGS;NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING;UNITY_PURCHASING
-    7: NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING
+    7: NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING;UNITY_PURCHASING
     14: NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING
     25: NATIVE_PLUGINS_LITE_VERSION;USES_NETWORK_CONNECTIVITY;USES_SHARING
   additionalCompilerArguments: {}
