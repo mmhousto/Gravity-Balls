@@ -16,6 +16,7 @@ public class onCollide : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(8,8);
+        Physics.IgnoreLayerCollision(7, 6);
         ten.Stop();
     }
 

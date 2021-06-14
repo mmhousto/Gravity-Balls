@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2551192314395016462}
   - component: {fileID: -9186403484003419313}
   - component: {fileID: 2413878248413039432}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gravBall
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 5249523022026451172}
   - component: {fileID: 2153938193349768249}
   - component: {fileID: 7668458137754704813}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TenNRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

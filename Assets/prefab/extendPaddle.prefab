@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5314511479021403576}
   - component: {fileID: 3533539171928525898}
   - component: {fileID: -5665917698623119272}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: extendPaddle
   m_TagString: extend
   m_Icon: {fileID: 0}

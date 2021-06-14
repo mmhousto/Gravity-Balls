@@ -3696,11 +3696,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2122447339628015314, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_Name
-      value: Paddle (1)
+      value: Paddle
       objectReference: {fileID: 0}
     - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_LocalPosition.x
