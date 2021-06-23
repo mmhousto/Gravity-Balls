@@ -1,24 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class paddle : MonoBehaviour
 {
-    public Collider wall, wall2, switchL, switchR;
+    public string soloScene, skillScene, versusScene;
+    private Collider wall, wall2, switchL, switchR;
 	public bool isPaddle1;
     private MeshRenderer meshRenderer;
     public Material basic, dark, pro, cyan, red, gold, orange, green, lime;
 	public float speed = 10f;
-    private GameObject threeDPaddle;
+    private GameObject threeDPaddle, brickWall;
     private Vector3 touchPosition, tP2;
     private Rigidbody rb;
     private Vector3 direction;
-    public GameObject brickWall, paddleP1;
+    public GameObject paddleP1;
     private GameObject paddle2;
     public float wallZ = 0;
     private bool isActive = false;
 
-    public Camera cam;
+    private Camera cam;
     public AudioSource coinCollect;
     public AudioSource ballBounce;
     public AudioSource lifeGain;
@@ -29,6 +31,15 @@ public class paddle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get components
+        cam = Camera.main;
+        wall = GameObject.Find("WallL").GetComponent<Collider>();
+        wall2 = GameObject.Find("WallR").GetComponent<Collider>();
+        switchL = GameObject.Find("switchL").GetComponent<Collider>();
+        switchR = GameObject.Find("switchR").GetComponent<Collider>();
+        brickWall = GameObject.Find("Environment").transform.Find("BrickWall").gameObject;
+        brickWall.SetActive(false);
+        // disable switches
 #if UNITY_IOS
             switchL.enabled = false;
             switchR.enabled = false;
@@ -37,7 +48,14 @@ public class paddle : MonoBehaviour
             switchR.enabled = false;
 #else
 #endif
-        transform.position = new Vector3(0, -3.45f, -.2f);
+        if(SceneManager.GetActiveScene().name == soloScene || SceneManager.GetActiveScene().name == skillScene)
+        {
+            transform.position = new Vector3(0, -3.45f, -.2f);
+        } else
+        {
+
+        }
+        
         threeDPaddle = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
         AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
         brickHits = 0;
@@ -86,7 +104,6 @@ public class paddle : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collision) {
-        Camera cam = Camera.main;
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
         if(collision.transform.name == "switchL") {

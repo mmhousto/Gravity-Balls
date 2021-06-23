@@ -3770,6 +3770,18 @@ PrefabInstance:
       propertyPath: brickWall
       value: 
       objectReference: {fileID: 1739286265}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: soloScene
+      value: gameSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: skillScene
+      value: gameSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: versusScene
+      value: gameVersus
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2122447339628015316, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
@@ -4634,7 +4646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214469185972971250, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2214469185972971251, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
       propertyPath: m_RootOrder

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameSkill.unity
     guid: fd5fcc1fee6274ab9ae080a4e971a3d2
+  - enabled: 1
+    path: Assets/Scenes/gameVersus.unity
+    guid: 5754d207874036941b478011f44fe5b8
   m_configObjects: {}

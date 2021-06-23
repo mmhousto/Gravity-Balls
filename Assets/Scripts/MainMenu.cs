@@ -16,4 +16,10 @@ public class MainMenu : MonoBehaviour
 		SceneManager.LoadScene(2);
 	}
 
+	public void PlayVersus()
+	{
+		Destroy(GameObject.Find("AudioManager"));
+		SceneManager.LoadScene(3);
+	}
+
 }

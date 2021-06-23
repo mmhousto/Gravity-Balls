@@ -15,7 +15,7 @@ public class onCollide : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Physics.IgnoreLayerCollision(8,8);
+        Physics.IgnoreLayerCollision(7, 7);
         Physics.IgnoreLayerCollision(7, 6);
         ten.Stop();
     }
@@ -32,7 +32,7 @@ public class onCollide : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision) {
-    	if(collision.transform.name == "Paddle"){
+    	if(collision.transform.tag == "Player"){
             score.AddPoint();
             ballBounces += 1;
         }

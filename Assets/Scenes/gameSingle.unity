@@ -6434,6 +6434,10 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6497,6 +6501,18 @@ PrefabInstance:
       propertyPath: brickWall
       value: 
       objectReference: {fileID: 1952172614}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: soloScene
+      value: gameSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: skillScene
+      value: gameSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
+      propertyPath: versusScene
+      value: gameVersus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
 --- !u!1001 &2214469184692972724
@@ -6512,7 +6528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2214469185972971250, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2214469185972971251, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
       propertyPath: m_RootOrder
