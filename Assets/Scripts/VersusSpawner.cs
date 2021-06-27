@@ -1,36 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class VersusSpawner : MonoBehaviour
+public class VersusSpawner : MonoBehaviourPunCallbacks
 {
-    public GameObject gravBall, coin;
-    public Transform node1;
-    private bool spawnedBall, spawnedCoin, gameStarted = false, playersConnected = false;
+    public GameObject ball;
+    public GameObject coin, brick, extendPaddle;
+    //public Transform node1;
+    private bool spawnedBall = false;
+    private bool spawnedCoin, gameStarted = false, playersConnected = false;
+    private GameObject clone;
     // Start is called before the first frame update
     void Start()
     {
-        //playersConnected = PasswordNetworkManager.EveryoneConnected();
+        StartCoroutine(wait());
         spawnedCoin = false;
     }
 
     IEnumerator wait()
     {
         yield return new WaitForSeconds(3.1f);
-        Spawn(gravBall);
-        spawnedBall = false;
+        SpawnBall();
     }
 
     private void SpawnCoin()
     {
+        PhotonNetwork.InstantiateRoomObject(coin.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
         spawnedCoin = true;
-        Instantiate(coin, node1.transform.position, node1.transform.rotation);
     }
 
-    private void Spawn(GameObject ball)
+    public void SpawnBall()
     {
+        clone = PhotonNetwork.InstantiateRoomObject(ball.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
         spawnedBall = true;
-        Instantiate(ball, node1.transform.position, node1.transform.rotation);
     }
 
     // Update is called once per frame
@@ -39,9 +42,13 @@ public class VersusSpawner : MonoBehaviour
         //playersConnected = PasswordNetworkManager.EveryoneConnected();
 
         gameStarted = true;
-        StartCoroutine(wait());
 
-        if (0 == score.Score % 7 && !spawnedCoin && score.Score != 0)
+        if(!clone && spawnedBall == true)
+        {
+            SpawnBall();
+        }
+
+        /*if (0 == score.Score % 7 && !spawnedCoin && score.Score != 0)
         {
             SpawnCoin();
         }
@@ -57,6 +64,6 @@ public class VersusSpawner : MonoBehaviour
         else if ((score.Score % 10) != 0)
         {
             spawnedBall = false;
-        }
+        }*/
     }
 }

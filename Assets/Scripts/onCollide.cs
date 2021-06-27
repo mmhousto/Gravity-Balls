@@ -39,6 +39,7 @@ public class onCollide : MonoBehaviour
         if(collision.transform.tag == "brickWall"){
             brickHit.Play();
             paddle.hitBrick();
+            PlayerManager.hitBrick();
         }
     }
 

@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+	public void GoToMainMenu()
+    {
+		Destroy(GameObject.Find("AudioManager"));
+		Destroy(GameObject.Find("PlayerData"));
+		Destroy(GameObject.Find("PlayServices"));
+		SceneManager.LoadScene(0);
+	}
 
 	public void PlaySolo() {
 		Destroy(GameObject.Find("AudioManager"));

@@ -33,12 +33,16 @@ public class paddle : MonoBehaviour
     {
         // get components
         cam = Camera.main;
+        soloScene = "gameSingle";
+        skillScene = "gameSkill";
+        versusScene = "gameVersus";
         wall = GameObject.Find("WallL").GetComponent<Collider>();
         wall2 = GameObject.Find("WallR").GetComponent<Collider>();
         switchL = GameObject.Find("switchL").GetComponent<Collider>();
         switchR = GameObject.Find("switchR").GetComponent<Collider>();
         brickWall = GameObject.Find("Environment").transform.Find("BrickWall").gameObject;
         brickWall.SetActive(false);
+
         // disable switches
 #if UNITY_IOS
             switchL.enabled = false;
@@ -48,13 +52,9 @@ public class paddle : MonoBehaviour
             switchR.enabled = false;
 #else
 #endif
-        if(SceneManager.GetActiveScene().name == soloScene || SceneManager.GetActiveScene().name == skillScene)
-        {
-            transform.position = new Vector3(0, -3.45f, -.2f);
-        } else
-        {
 
-        }
+        // set paddle position
+        transform.position = new Vector3(0, -3.45f, -.2f);
         
         threeDPaddle = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
         AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
@@ -64,33 +64,57 @@ public class paddle : MonoBehaviour
         Physics.IgnoreCollision(wall, GetComponent<Collider>());
         Physics.IgnoreCollision(wall2, GetComponent<Collider>());
         Physics.IgnoreCollision(brickWall.GetComponent<Collider>(), GetComponent<Collider>());
-        meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
 
-        if(PlayerPrefs.GetInt("selectedPaddle") == 0) {
+        meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
+        SetPaddleMat();
+        
+    }
+
+    void SetPaddleMat()
+    {
+
+        if (PlayerPrefs.GetInt("selectedPaddle") == 0)
+        {
             meshRenderer.material = basic;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 1) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 1)
+        {
             meshRenderer.material = dark;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 2) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 2)
+        {
             meshRenderer.material = pro;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 3) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 3)
+        {
             meshRenderer.material = red;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 4) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 4)
+        {
             meshRenderer.material = gold;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 5) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 5)
+        {
             meshRenderer.material = green;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 6) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 6)
+        {
             meshRenderer.material = orange;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 7) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 7)
+        {
             meshRenderer.material = cyan;
 
-        } else if (PlayerPrefs.GetInt("selectedPaddle") == 8) {
+        }
+        else if (PlayerPrefs.GetInt("selectedPaddle") == 8)
+        {
             meshRenderer.material = lime;
         }
     }
@@ -106,7 +130,8 @@ public class paddle : MonoBehaviour
     void OnTriggerEnter(Collider collision) {
         float height = 2f * cam.orthographicSize;
         float width = height * cam.aspect;
-        if(collision.transform.name == "switchL") {
+
+        if (collision.transform.name == "switchL") {
             if(width > 7.5) {
                 transform.Translate(8.6f, 0f, 0f);
             } else transform.Translate(width, 0f, 0f);
@@ -116,8 +141,9 @@ public class paddle : MonoBehaviour
             } else transform.Translate(-width, 0f, 0f);
         }
     }
+
     void OnCollisionEnter(Collision collision) {
-        if(collision.transform.tag == "extend") {
+        if (collision.transform.tag == "extend") {
             if(transform.localScale.x >= 0.25){
                 extendPaddle.Play();
             } else {
@@ -154,15 +180,13 @@ public class paddle : MonoBehaviour
 
     IEnumerator waitResize() {
         yield return new WaitForSeconds(15);
-            transform.localScale -= new Vector3(0.08f, 0f, 0f);
-            extendPaddle.Play();
+        transform.localScale -= new Vector3(0.08f, 0f, 0f);
+        extendPaddle.Play();
     }
 
     IEnumerator brickBreak() {
         yield return new WaitForSeconds(10);
-            brickHits = 0;
-            isActive = false;
-            brickWall.transform.gameObject.SetActive(false);
+            EndBrick();
     }
 
     public void EndBrick() {

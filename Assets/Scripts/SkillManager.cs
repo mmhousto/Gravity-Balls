@@ -57,6 +57,7 @@ public class SkillManager : MonoBehaviour
 
     public void loadMenu(){
         Destroy(GameObject.Find("PlayerData"));
+        Destroy(GameObject.Find("PlayServices"));
         SceneManager.LoadScene(0);
     }
     // Update is called once per frame

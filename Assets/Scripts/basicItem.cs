@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class basicItem : MonoBehaviour
 {
@@ -14,7 +15,14 @@ public class basicItem : MonoBehaviour
         float sy = Random.Range(0, 2) == 0 ? -1 : 1;
 
         GetComponent<Rigidbody>().velocity = new Vector3 (speed * sx, speed * sy, 0f);
-        StartCoroutine(stopXV());
+        if(SceneManager.GetActiveScene().name == "gameVersus")
+        {
+
+        }else
+        {
+            StartCoroutine(stopXV());
+        }
+        
     }
 
     IEnumerator stopXV(){

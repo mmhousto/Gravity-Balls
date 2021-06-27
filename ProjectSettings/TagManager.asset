@@ -18,6 +18,9 @@ TagManager:
   - settingsMusic2
   - settingsSound
   - settingsSound2
+  - switchL
+  - switchR
+  - NetworkPlayer
   layers:
   - Default
   - TransparentFX
@@ -27,8 +30,8 @@ TagManager:
   - UI
   - collectible
   - ball
-  - 
-  - 
+  - Player
+  - BrickWall
   - 
   - 
   - 
