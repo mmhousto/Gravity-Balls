@@ -24,7 +24,7 @@ public class BallCollide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ballBounces > 9)
+        if (ballBounces > 9 && GetComponent<PhotonView>().IsMine)
         {
             tenExplode.Play();
             ten.Emit(6);
@@ -49,12 +49,12 @@ public class BallCollide : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.name == "death")
+        if (collision.transform.name == "death" && GetComponent<PhotonView>().IsMine)
         {
             missBall.Play();
             PhotonNetwork.Destroy(this.gameObject);
             
-        } else if (collision.transform.name == "death2")
+        } else if (collision.transform.name == "death2" && GetComponent<PhotonView>().IsMine)
         {
             missBall.Play();
             PhotonNetwork.Destroy(this.gameObject);

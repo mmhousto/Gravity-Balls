@@ -160,7 +160,6 @@ namespace Com.MorganHouston.PaddleBalls
         // Update is called once per frame
         void Update()
         {
-            //playersConnected = PasswordNetworkManager.EveryoneConnected();
 
             if (p1Lives < 1)
             {
@@ -194,22 +193,6 @@ namespace Com.MorganHouston.PaddleBalls
                 }
                 Time.timeScale = 0;
             }
-
-            /*if (playersConnected && gameStarted == false)
-            {
-                gameStarted = true;
-                counter.gameObject.SetActive(true);
-                Time.timeScale = 1;
-            }
-            else if (playersConnected)
-            {
-                Time.timeScale = 1;
-            }
-            else if (!playersConnected)
-            {
-                counter.gameObject.SetActive(false);
-                Time.timeScale = 0;
-            }*/
 
         }
 
