@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class PlayerManager : MonoBehaviourPun
 {
-    private MeshRenderer meshRenderer;
+    public MeshRenderer meshRenderer;
     public Material basic, dark, pro, cyan, red, gold, orange, green, lime;
     public float speed = 10f;
     private GameObject threeDPaddle, brickWall;
@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviourPun
     private Vector3 direction;
     public float wallZ = 0;
     private bool isActive = false;
+    public int selectedPaddle;
 
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
@@ -61,70 +62,70 @@ public class PlayerManager : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-
         if (photonView.IsMine)
         {
             cam = Camera.main;
-            
-            
-            threeDPaddle = this.gameObject.transform.GetChild(0).GetChild(0).gameObject;
+
+            selectedPaddle = PlayerPrefs.GetInt("selectedPaddle");
+            //threeDPaddle = PlayerManager.LocalPlayerInstance.transform.GetChild(0).GetChild(0).gameObject;
+            //meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
+            //SetPaddleMat(selectedPaddle);
+
             AudioListener.volume = PlayerPrefs.GetFloat("gameVolume");
             rb = GetComponent<Rigidbody>();
-            meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
+            
+            this.photonView.RPC("SetPaddleMat", RpcTarget.AllBuffered, selectedPaddle); //SetPaddleMat();
         }
         
-        SetPaddleMat();
 
     }
 
-    void SetPaddleMat()
+    [PunRPC]
+    void SetPaddleMat(int selectedPaddle)
     {
-        if (photonView.IsMine)
+        if (selectedPaddle == 0)
         {
-            if (PlayerPrefs.GetInt("selectedPaddle") == 0)
-            {
-                meshRenderer.material = basic;
+            meshRenderer.material = basic;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 1)
-            {
-                meshRenderer.material = dark;
+        }
+        else if (selectedPaddle == 1)
+        {
+            meshRenderer.material = dark;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 2)
-            {
-                meshRenderer.material = pro;
+        }
+        else if (selectedPaddle == 2)
+        {
+            meshRenderer.material = pro;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 3)
-            {
-                meshRenderer.material = red;
+        }
+        else if (selectedPaddle == 3)
+        {
+            meshRenderer.material = red;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 4)
-            {
-                meshRenderer.material = gold;
+        }
+        else if (selectedPaddle == 4)
+        {
+            meshRenderer.material = gold;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 5)
-            {
-                meshRenderer.material = green;
+        }
+        else if (selectedPaddle == 5)
+        {
+            meshRenderer.material = green;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 6)
-            {
-                meshRenderer.material = orange;
+        }
+        else if (selectedPaddle == 6)
+        {
+            meshRenderer.material = orange;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 7)
-            {
-                meshRenderer.material = cyan;
+        }
+        else if (selectedPaddle == 7)
+        {
+            meshRenderer.material = cyan;
 
-            }
-            else if (PlayerPrefs.GetInt("selectedPaddle") == 8)
-            {
-                meshRenderer.material = lime;
-            }
+        }
+        else if (selectedPaddle == 8)
+        {
+            meshRenderer.material = lime;
         }
     }
 
