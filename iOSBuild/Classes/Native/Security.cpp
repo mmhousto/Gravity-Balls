@@ -5701,7 +5701,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Asn1Node_Init_m87882E03A4ECB219EDB56ADC7
 		__this->set_tag_0((uint8_t)((int32_t)48));
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_1 = __this->get_childNodeList_5();
 		NullCheck(L_1);
-		VirtActionInvoker0::Invoke(26 /* System.Void System.Collections.ArrayList::Clear() */, L_1);
+		VirtActionInvoker0::Invoke(31 /* System.Void System.Collections.ArrayList::Clear() */, L_1);
 		__this->set_deepness_7(((int64_t)((int64_t)0)));
 		__this->set_parentNode_9((Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 *)NULL);
 		return;
@@ -6445,7 +6445,7 @@ IL_000c:
 		int32_t L_1 = V_1;
 		NullCheck(L_0);
 		RuntimeObject * L_2;
-		L_2 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(22 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
+		L_2 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(27 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
 		V_0 = ((Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 *)CastclassClass((RuntimeObject*)L_2, Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22_il2cpp_TypeInfo_var));
 		Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 * L_3 = V_0;
 		NullCheck(L_3);
@@ -6460,7 +6460,7 @@ IL_002b:
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_6 = __this->get_childNodeList_5();
 		NullCheck(L_6);
 		int32_t L_7;
-		L_7 = VirtFuncInvoker0< int32_t >::Invoke(19 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_6);
+		L_7 = VirtFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_6);
 		V_2 = (bool)((((int32_t)L_5) < ((int32_t)L_7))? 1 : 0);
 		bool L_8 = V_2;
 		if (L_8)
@@ -6471,7 +6471,7 @@ IL_002b:
 	{
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_9 = __this->get_childNodeList_5();
 		NullCheck(L_9);
-		VirtActionInvoker0::Invoke(26 /* System.Void System.Collections.ArrayList::Clear() */, L_9);
+		VirtActionInvoker0::Invoke(31 /* System.Void System.Collections.ArrayList::Clear() */, L_9);
 		Asn1Node_RecalculateTreePar_mA23F98F90CE85ECCA835E4457D1C26BD5D9CA226(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -6484,7 +6484,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Asn1Node_AddChild_m28BEEC5A546F010053DD2
 		Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 * L_1 = ___xdata0;
 		NullCheck(L_0);
 		int32_t L_2;
-		L_2 = VirtFuncInvoker1< int32_t, RuntimeObject * >::Invoke(24 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_0, L_1);
+		L_2 = VirtFuncInvoker1< int32_t, RuntimeObject * >::Invoke(29 /* System.Int32 System.Collections.ArrayList::Add(System.Object) */, L_0, L_1);
 		Asn1Node_RecalculateTreePar_mA23F98F90CE85ECCA835E4457D1C26BD5D9CA226(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -6497,7 +6497,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Asn1Node_get_ChildNodeCount_mA381253B
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_0 = __this->get_childNodeList_5();
 		NullCheck(L_0);
 		int32_t L_1;
-		L_1 = VirtFuncInvoker0< int32_t >::Invoke(19 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_0);
+		L_1 = VirtFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_0);
 		V_0 = ((int64_t)((int64_t)L_1));
 		goto IL_0010;
 	}
@@ -6537,7 +6537,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC4
 		int32_t L_4 = ___index0;
 		NullCheck(L_3);
 		RuntimeObject * L_5;
-		L_5 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(22 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_3, L_4);
+		L_5 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(27 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_3, L_4);
 		V_0 = ((Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 *)CastclassClass((RuntimeObject*)L_5, Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22_il2cpp_TypeInfo_var));
 	}
 
@@ -7527,7 +7527,7 @@ IL_05cc:
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_302 = __this->get_childNodeList_5();
 		NullCheck(L_302);
 		int32_t L_303;
-		L_303 = VirtFuncInvoker0< int32_t >::Invoke(19 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_302);
+		L_303 = VirtFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_302);
 		V_18 = (bool)((((int32_t)((((int32_t)L_303) < ((int32_t)0))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_304 = V_18;
 		if (!L_304)
@@ -8400,7 +8400,7 @@ IL_000b:
 		int32_t L_1 = V_1;
 		NullCheck(L_0);
 		RuntimeObject * L_2;
-		L_2 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(22 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
+		L_2 = VirtFuncInvoker1< RuntimeObject *, int32_t >::Invoke(27 /* System.Object System.Collections.ArrayList::get_Item(System.Int32) */, L_0, L_1);
 		V_2 = ((Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 *)CastclassClass((RuntimeObject*)L_2, Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22_il2cpp_TypeInfo_var));
 		String_t* L_3 = V_0;
 		Asn1Node_tA2B618DF4725914B61BBD1344B87550EFC429D22 * L_4 = V_2;
@@ -8422,7 +8422,7 @@ IL_0032:
 		ArrayList_t6C1A49839DC1F0D568E8E11FA1626FCF0EC06575 * L_11 = __this->get_childNodeList_5();
 		NullCheck(L_11);
 		int32_t L_12;
-		L_12 = VirtFuncInvoker0< int32_t >::Invoke(19 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_11);
+		L_12 = VirtFuncInvoker0< int32_t >::Invoke(22 /* System.Int32 System.Collections.ArrayList::get_Count() */, L_11);
 		V_3 = (bool)((((int32_t)L_10) < ((int32_t)L_12))? 1 : 0);
 		bool L_13 = V_3;
 		if (L_13)

@@ -24,12 +24,19 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharpU2Dfirstpass_CodeGe
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_FacebookStore_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Mono_Security_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Photon3Unity3D_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_PhotonChat_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_PhotonRealtime_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_PhotonUnityNetworking_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_PhotonUnityNetworking_Demos_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_PhotonUnityNetworking_Utilities_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Purchasing_Common_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Security_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Stores_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Configuration_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Core_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Numerics_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_Xml_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_Advertisements_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_UnityEngine_AndroidJNIModule_CodeGenModule;
@@ -66,7 +73,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_VectorGraphics_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_winrt_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[48] = 
+const Il2CppCodeGenModule* g_CodeGenModules[55] = 
 {
 	(&g_AppleCore_CodeGenModule),
 	(&g_AppleMacos_CodeGenModule),
@@ -75,12 +82,19 @@ const Il2CppCodeGenModule* g_CodeGenModules[48] =
 	(&g_AssemblyU2DCSharp_CodeGenModule),
 	(&g_FacebookStore_CodeGenModule),
 	(&g_Mono_Security_CodeGenModule),
+	(&g_Photon3Unity3D_CodeGenModule),
+	(&g_PhotonChat_CodeGenModule),
+	(&g_PhotonRealtime_CodeGenModule),
+	(&g_PhotonUnityNetworking_CodeGenModule),
+	(&g_PhotonUnityNetworking_Demos_CodeGenModule),
+	(&g_PhotonUnityNetworking_Utilities_CodeGenModule),
 	(&g_Purchasing_Common_CodeGenModule),
 	(&g_Security_CodeGenModule),
 	(&g_Stores_CodeGenModule),
 	(&g_System_CodeGenModule),
 	(&g_System_Configuration_CodeGenModule),
 	(&g_System_Core_CodeGenModule),
+	(&g_System_Numerics_CodeGenModule),
 	(&g_System_Xml_CodeGenModule),
 	(&g_UnityEngine_Advertisements_CodeGenModule),
 	(&g_UnityEngine_AndroidJNIModule_CodeGenModule),
@@ -120,19 +134,19 @@ const Il2CppCodeGenModule* g_CodeGenModules[48] =
 IL2CPP_EXTERN_C const Il2CppCodeRegistration g_CodeRegistration;
 const Il2CppCodeRegistration g_CodeRegistration = 
 {
-	23,
+	25,
 	g_ReversePInvokeWrapperPointers,
-	17689,
+	20405,
 	g_Il2CppGenericMethodPointers,
-	4186,
+	4650,
 	g_Il2CppInvokerPointers,
-	673,
+	720,
 	g_UnresolvedVirtualMethodPointers,
-	346,
+	373,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	48,
+	55,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;

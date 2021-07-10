@@ -1070,9 +1070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ea03e6acd3ec24094edbb1b316d658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravBall: {fileID: 4695902618589583103, guid: 3f4dde7a6d2eceb49a9870f0a5d0b634, type: 3}
+  ball: {fileID: 0}
   coin: {fileID: 8899670777861077739, guid: f835929ae833b447b9e0dc52a408f61f, type: 3}
-  node1: {fileID: 336133669}
+  brick: {fileID: 0}
+  extendPaddle: {fileID: 0}
 --- !u!33 &336133671
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1868,7 +1869,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 61d0f495ab6ec184b9993c08873a6314, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dbaaed4710c674cf6958a0872555161c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2758,12 +2759,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01f8fcf9b99a77418ebc51059a58384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
+  life1: {fileID: 0}
+  life2: {fileID: 0}
+  life3: {fileID: 0}
+  p2Life1: {fileID: 0}
+  p2Life2: {fileID: 0}
+  p2Life3: {fileID: 0}
+  p1Lives: 3
+  p2Lives: 3
   gameOver: {fileID: 628069989}
   pauseMenu: {fileID: 1321885282}
   settingsMenu: {fileID: 3631617}
   counter: {fileID: 512202203}
   pauseBtn: {fileID: 328164898}
-  scoreBox: {fileID: 1787974420}
 --- !u!4 &756367414
 Transform:
   m_ObjectHideFlags: 0

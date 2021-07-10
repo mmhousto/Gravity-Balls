@@ -44,15 +44,15 @@ static Il2CppMethodPointer s_methodPointers[9] =
 };
 static const int32_t s_InvokerIndices[9] = 
 {
-	2211,
-	2717,
-	2717,
-	2211,
-	1344,
-	1344,
-	2667,
-	2717,
-	2717,
+	2454,
+	3024,
+	3024,
+	2454,
+	1487,
+	1487,
+	2974,
+	3024,
+	3024,
 };
 extern const CustomAttributesCacheGenerator g_AppleMacos_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AppleMacos_CodeGenModule;

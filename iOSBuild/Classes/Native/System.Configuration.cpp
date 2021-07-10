@@ -26,6 +26,8 @@ struct Binder_t2BEE27FD84737D1E79BC47FD67F6D3DD2F2DDA30;
 struct ConfigurationCollectionAttribute_t354F77C0DE61B8BFEC17006B49F23D7F7C73C5D6;
 // System.Configuration.ConfigurationElement
 struct ConfigurationElement_t571C446CFDFF39CF17130653C433786BEFF25DFA;
+// System.Configuration.ConfigurationElementCollection
+struct ConfigurationElementCollection_t09097ED83C909F1481AEF6E4451CF7595AFA403E;
 // System.Configuration.ConfigurationPropertyCollection
 struct ConfigurationPropertyCollection_t8C098DB59DF7BA2C2A71369978F4225B92B2F59B;
 // System.Configuration.ConfigurationSection
@@ -50,7 +52,11 @@ struct Void_t700C6383A2A510C2CF4DD86DABD5CA9FF70ADAC5;
 struct XmlReader_tECCB3D8B757F8CE744EF0430F338BEF15E060138;
 
 IL2CPP_EXTERN_C RuntimeClass* PlatformNotSupportedException_t4F02BDC290520CA1A2452F51A8AC464F6D5E356E_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElementCollection_get_ThrowOnDuplicate_mC37B95927D6EDD14E35D9EC8BC9DFBCA0813E608_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_DeserializeElement_m4ECB46BD2AD94E797FDAFCF49264391687A29566_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_InitializeDefault_m5635E1B839F939FB38E78DCDE1A8A773617A3BEA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_IsModified_mEBE1C1B7CBDE483BBD4D10CE356D5DAD5E91A760_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_PostDeserialize_mD6DA5B4EA7D61D714AD1DD5EF0C7F191FF18D9EB_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_ResetModified_m5C8C779356B852E71503BC907E0A870988B13792_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_Reset_mBB5E07E68F8F5B8980BAD6FD48444FE0CB6CD852_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ConfigurationElement_get_Properties_m9BEF5154370B1E154727190595DF0B7E68F4AA35_RuntimeMethod_var;
@@ -97,6 +103,15 @@ struct Il2CppArrayBounds;
 
 // System.Attribute
 struct  Attribute_t037CA9D9F3B742C063DB364D2EEBBF9FC5772C71  : public RuntimeObject
+{
+public:
+
+public:
+};
+
+
+// System.Configuration.Configuration
+struct  Configuration_t2D6AF83B04651CA3592278913AAE0CBE02D7C380  : public RuntimeObject
 {
 public:
 
@@ -877,6 +892,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlatformNotSupportedException__ctor_mF41
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void System.Configuration.ConfigurationCollectionAttribute::.ctor(System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigurationCollectionAttribute__ctor_m89928B3545B1827E694566EC696326B4A3F85206 (ConfigurationCollectionAttribute_t354F77C0DE61B8BFEC17006B49F23D7F7C73C5D6 * __this, Type_t * ___itemType0, const RuntimeMethod* method)
 {
@@ -906,6 +929,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConfigurationPropertyCollection_t8C098DB59DF7
 		return (ConfigurationPropertyCollection_t8C098DB59DF7BA2C2A71369978F4225B92B2F59B *)NULL;
 	}
 }
+// System.Void System.Configuration.ConfigurationElement::DeserializeElement(System.Xml.XmlReader,System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigurationElement_DeserializeElement_m4ECB46BD2AD94E797FDAFCF49264391687A29566 (ConfigurationElement_t571C446CFDFF39CF17130653C433786BEFF25DFA * __this, XmlReader_tECCB3D8B757F8CE744EF0430F338BEF15E060138 * ___reader0, bool ___serializeCollectionKey1, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ConfigurationElement_DeserializeElement_m4ECB46BD2AD94E797FDAFCF49264391687A29566_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(ConfigurationElement_DeserializeElement_m4ECB46BD2AD94E797FDAFCF49264391687A29566_RuntimeMethod_var);
+		return;
+	}
+}
+// System.Void System.Configuration.ConfigurationElement::InitializeDefault()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigurationElement_InitializeDefault_m5635E1B839F939FB38E78DCDE1A8A773617A3BEA (ConfigurationElement_t571C446CFDFF39CF17130653C433786BEFF25DFA * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ConfigurationElement_InitializeDefault_m5635E1B839F939FB38E78DCDE1A8A773617A3BEA_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(ConfigurationElement_InitializeDefault_m5635E1B839F939FB38E78DCDE1A8A773617A3BEA_RuntimeMethod_var);
+		return;
+	}
+}
 // System.Boolean System.Configuration.ConfigurationElement::IsModified()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConfigurationElement_IsModified_mEBE1C1B7CBDE483BBD4D10CE356D5DAD5E91A760 (ConfigurationElement_t571C446CFDFF39CF17130653C433786BEFF25DFA * __this, const RuntimeMethod* method)
 {
@@ -921,6 +972,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConfigurationElement_IsModified_mEBE1C1B
 		il2cpp_codegen_initobj((&V_0), sizeof(bool));
 		bool L_0 = V_0;
 		return L_0;
+	}
+}
+// System.Void System.Configuration.ConfigurationElement::PostDeserialize()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigurationElement_PostDeserialize_mD6DA5B4EA7D61D714AD1DD5EF0C7F191FF18D9EB (ConfigurationElement_t571C446CFDFF39CF17130653C433786BEFF25DFA * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ConfigurationElement_PostDeserialize_mD6DA5B4EA7D61D714AD1DD5EF0C7F191FF18D9EB_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_raise_profile_exception(ConfigurationElement_PostDeserialize_mD6DA5B4EA7D61D714AD1DD5EF0C7F191FF18D9EB_RuntimeMethod_var);
+		return;
 	}
 }
 // System.Void System.Configuration.ConfigurationElement::Reset(System.Configuration.ConfigurationElement)
@@ -959,6 +1024,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConfigurationElement_ResetModified_m5C8C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Boolean System.Configuration.ConfigurationElementCollection::get_ThrowOnDuplicate()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ConfigurationElementCollection_get_ThrowOnDuplicate_mC37B95927D6EDD14E35D9EC8BC9DFBCA0813E608 (ConfigurationElementCollection_t09097ED83C909F1481AEF6E4451CF7595AFA403E * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&ConfigurationElementCollection_get_ThrowOnDuplicate_mC37B95927D6EDD14E35D9EC8BC9DFBCA0813E608_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	bool V_0 = false;
+	{
+		il2cpp_codegen_raise_profile_exception(ConfigurationElementCollection_get_ThrowOnDuplicate_mC37B95927D6EDD14E35D9EC8BC9DFBCA0813E608_RuntimeMethod_var);
+		il2cpp_codegen_initobj((&V_0), sizeof(bool));
+		bool L_0 = V_0;
+		return L_0;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

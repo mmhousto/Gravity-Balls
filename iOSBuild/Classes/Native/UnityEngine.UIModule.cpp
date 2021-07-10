@@ -2431,6 +2431,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CanvasGroup_get_interactable_m643399D4E2
 	bool icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
 }
+// System.Void UnityEngine.CanvasGroup::set_interactable(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasGroup_set_interactable_m139F4C59174EFB13F80AD10837BD0760E0B97835 (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F * __this, bool ___value0, const RuntimeMethod* method)
+{
+	typedef void (*CanvasGroup_set_interactable_m139F4C59174EFB13F80AD10837BD0760E0B97835_ftn) (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F *, bool);
+	static CanvasGroup_set_interactable_m139F4C59174EFB13F80AD10837BD0760E0B97835_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (CanvasGroup_set_interactable_m139F4C59174EFB13F80AD10837BD0760E0B97835_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.CanvasGroup::set_interactable(System.Boolean)");
+	_il2cpp_icall_func(__this, ___value0);
+}
 // System.Boolean UnityEngine.CanvasGroup::get_blocksRaycasts()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CanvasGroup_get_blocksRaycasts_m54BEB93C34E4B4ADB35A33679B0D475A0094F3B4 (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F * __this, const RuntimeMethod* method)
 {
@@ -2440,6 +2449,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CanvasGroup_get_blocksRaycasts_m54BEB93C
 	_il2cpp_icall_func = (CanvasGroup_get_blocksRaycasts_m54BEB93C34E4B4ADB35A33679B0D475A0094F3B4_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.CanvasGroup::get_blocksRaycasts()");
 	bool icallRetVal = _il2cpp_icall_func(__this);
 	return icallRetVal;
+}
+// System.Void UnityEngine.CanvasGroup::set_blocksRaycasts(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasGroup_set_blocksRaycasts_m322FC5A1B70A23524463A84CC707BF50FD284B3A (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F * __this, bool ___value0, const RuntimeMethod* method)
+{
+	typedef void (*CanvasGroup_set_blocksRaycasts_m322FC5A1B70A23524463A84CC707BF50FD284B3A_ftn) (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F *, bool);
+	static CanvasGroup_set_blocksRaycasts_m322FC5A1B70A23524463A84CC707BF50FD284B3A_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (CanvasGroup_set_blocksRaycasts_m322FC5A1B70A23524463A84CC707BF50FD284B3A_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.CanvasGroup::set_blocksRaycasts(System.Boolean)");
+	_il2cpp_icall_func(__this, ___value0);
 }
 // System.Boolean UnityEngine.CanvasGroup::get_ignoreParentGroups()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool CanvasGroup_get_ignoreParentGroups_m191E84D6A34F34A69767B396DFB6E69C8BE33A81 (CanvasGroup_t6912220105AB4A288A2FD882D163D7218EAA577F * __this, const RuntimeMethod* method)

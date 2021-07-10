@@ -1021,6 +1021,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Particle_set_startColor_mA7B0363E82B7A7C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Particle_set_randomSeed_m8FD7A4DB7F8E7EBDEF2C51A28197F8D9D7CB6E04 (Particle_tDAEF22C4F9FB70E048551ECB203B6A81185832E1 * __this, uint32_t ___value0, const RuntimeMethod* method);
 // System.Void UnityEngine.ParticleSystem::EmitOld_Internal(UnityEngine.ParticleSystem/Particle&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_EmitOld_Internal_m4F094DC523986298D5626F0F3F2335DFF596C993 (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E * __this, Particle_tDAEF22C4F9FB70E048551ECB203B6A81185832E1 * ___particle0, const RuntimeMethod* method);
+// System.Void UnityEngine.ParticleSystem::Play(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E * __this, bool ___withChildren0, const RuntimeMethod* method);
 // System.Void UnityEngine.ParticleSystem::Stop(System.Boolean,UnityEngine.ParticleSystemStopBehavior)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_Stop_m275B200BC21580C60987EC8FC8B2DD0FEB365C1A (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E * __this, bool ___withChildren0, int32_t ___stopBehavior1, const RuntimeMethod* method);
 // System.Void UnityEngine.ParticleSystem::Stop(System.Boolean)
@@ -1083,6 +1085,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_Emit_mF1E108B9BF7E0094C35
 {
 	{
 		ParticleSystem_EmitOld_Internal_m4F094DC523986298D5626F0F3F2335DFF596C993(__this, (Particle_tDAEF22C4F9FB70E048551ECB203B6A81185832E1 *)(&___particle0), /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.ParticleSystem::Play(System.Boolean)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E * __this, bool ___withChildren0, const RuntimeMethod* method)
+{
+	typedef void (*ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A_ftn) (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E *, bool);
+	static ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ParticleSystem::Play(System.Boolean)");
+	_il2cpp_icall_func(__this, ___withChildren0);
+}
+// System.Void UnityEngine.ParticleSystem::Play()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ParticleSystem_Play_m28D27CC4CDC1D93195C75647E6F6DAECF8B6BC50 (ParticleSystem_t2F526CCDBD3512879B3FCBE04BCAB20D7B4F391E * __this, const RuntimeMethod* method)
+{
+	{
+		ParticleSystem_Play_m97D70BAF373265E633ACD91833E56D981B19958A(__this, (bool)1, /*hidden argument*/NULL);
 		return;
 	}
 }

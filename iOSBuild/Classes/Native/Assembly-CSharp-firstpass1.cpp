@@ -4695,6 +4695,8 @@ public:
 	RuntimeObject * ____rngAccess_12;
 	// System.Security.Cryptography.RandomNumberGenerator System.Guid::_rng
 	RandomNumberGenerator_t2CB5440F189986116A2FA9F907AE52644047AC50 * ____rng_13;
+	// System.Security.Cryptography.RandomNumberGenerator System.Guid::_fastRng
+	RandomNumberGenerator_t2CB5440F189986116A2FA9F907AE52644047AC50 * ____fastRng_14;
 
 public:
 	inline static int32_t get_offset_of_Empty_0() { return static_cast<int32_t>(offsetof(Guid_t_StaticFields, ___Empty_0)); }
@@ -4721,6 +4723,15 @@ public:
 	{
 		____rng_13 = value;
 		Il2CppCodeGenWriteBarrier((void**)(&____rng_13), (void*)value);
+	}
+
+	inline static int32_t get_offset_of__fastRng_14() { return static_cast<int32_t>(offsetof(Guid_t_StaticFields, ____fastRng_14)); }
+	inline RandomNumberGenerator_t2CB5440F189986116A2FA9F907AE52644047AC50 * get__fastRng_14() const { return ____fastRng_14; }
+	inline RandomNumberGenerator_t2CB5440F189986116A2FA9F907AE52644047AC50 ** get_address_of__fastRng_14() { return &____fastRng_14; }
+	inline void set__fastRng_14(RandomNumberGenerator_t2CB5440F189986116A2FA9F907AE52644047AC50 * value)
+	{
+		____fastRng_14 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&____fastRng_14), (void*)value);
 	}
 };
 
@@ -15598,7 +15609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JSONWriter_WriteDictionary_m5309952A9137
 		RuntimeObject* L_0 = ____dict0;
 		NullCheck(L_0);
 		RuntimeObject* L_1;
-		L_1 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(4 /* System.Collections.IDictionaryEnumerator System.Collections.IDictionary::GetEnumerator() */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_0);
+		L_1 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(9 /* System.Collections.IDictionaryEnumerator System.Collections.IDictionary::GetEnumerator() */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_0);
 		V_1 = L_1;
 		// StringBuilder.Append('{');
 		StringBuilder_t * L_2;
@@ -19753,7 +19764,7 @@ IL_0037:
 			String_t* L_14 = V_4;
 			NullCheck(L_13);
 			bool L_15;
-			L_15 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(3 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_13, L_14);
+			L_15 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(4 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_13, L_14);
 			if (L_15)
 			{
 				goto IL_0048;
@@ -31741,7 +31752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WebResponse_t75F15484A5B639F7779A14F006AF6DC2
 		RuntimeObject* L_2 = ____jsonResponse0;
 		NullCheck(L_2);
 		bool L_3;
-		L_3 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(3 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_2, _stringLiteral2C410EB1F22365EC1A74DF0D8C89C99D53453CDD);
+		L_3 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(4 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_2, _stringLiteral2C410EB1F22365EC1A74DF0D8C89C99D53453CDD);
 		if (!L_3)
 		{
 			goto IL_0083;
@@ -31758,7 +31769,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR WebResponse_t75F15484A5B639F7779A14F006AF6DC2
 		RuntimeObject* L_6 = V_1;
 		NullCheck(L_6);
 		bool L_7;
-		L_7 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(3 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_6, _stringLiteralA44A39671D4B7FA8FBE50D795EAB52248D5C5469);
+		L_7 = InterfaceFuncInvoker1< bool, RuntimeObject * >::Invoke(4 /* System.Boolean System.Collections.IDictionary::Contains(System.Object) */, IDictionary_t99871C56B8EC2452AC5C4CF3831695E617B89D3A_il2cpp_TypeInfo_var, L_6, _stringLiteralA44A39671D4B7FA8FBE50D795EAB52248D5C5469);
 		if (!L_7)
 		{
 			goto IL_0083;

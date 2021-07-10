@@ -44,16 +44,16 @@ static Il2CppMethodPointer s_methodPointers[10] =
 };
 static const int32_t s_InvokerIndices[10] = 
 {
-	2690,
-	2717,
-	2211,
-	2690,
-	2717,
-	2211,
-	2211,
-	1344,
-	1344,
-	2717,
+	2997,
+	3024,
+	2454,
+	2997,
+	3024,
+	2454,
+	2454,
+	1487,
+	1487,
+	3024,
 };
 extern const CustomAttributesCacheGenerator g_FacebookStore_AttributeGenerators[];
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_FacebookStore_CodeGenModule;
