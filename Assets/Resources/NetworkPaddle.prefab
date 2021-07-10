@@ -616,6 +616,7 @@ MonoBehaviour:
   speed: 10
   wallZ: 0
   selectedPaddle: 0
+  versusGameManager: {fileID: 0}
   coinCollect: {fileID: 3907890793184785296}
   ballBounce: {fileID: 3907890793184785295}
   lifeGain: {fileID: 3907890793184785292}

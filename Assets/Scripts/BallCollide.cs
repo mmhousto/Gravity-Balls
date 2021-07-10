@@ -3,62 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class BallCollide : MonoBehaviour
+namespace Com.MorganHouston.PaddleBalls
 {
-    Rigidbody rb;
-    private int ballBounces = 0;
-    public ParticleSystem ten;
-    public AudioSource missBall;
-    public AudioSource brickHit;
-    public AudioSource tenExplode;
 
-    // Start is called before the first frame update
-    void Start()
+    public class BallCollide : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-        Physics.IgnoreLayerCollision(7, 7);
-        Physics.IgnoreLayerCollision(7, 6);
-        ten.Stop();
-    }
+        Rigidbody rb;
+        private int ballBounces = 0;
+        public ParticleSystem ten;
+        public AudioSource missBall;
+        public AudioSource brickHit;
+        public AudioSource tenExplode;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (ballBounces > 9 && GetComponent<PhotonView>().IsMine)
+        // Start is called before the first frame update
+        void Start()
         {
-            tenExplode.Play();
-            ten.Emit(6);
-            PhotonNetwork.Destroy(this.gameObject);
+            rb = GetComponent<Rigidbody>();
+            Physics.IgnoreLayerCollision(7, 7);
+            Physics.IgnoreLayerCollision(7, 6);
+            ten.Stop();
         }
 
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "brickWall")
+        // Update is called once per frame
+        void Update()
         {
-            brickHit.Play();
-            paddle.hitBrick();
-            PlayerManager.hitBrick();
+            if (ballBounces > 9 && GetComponent<PhotonView>().IsMine)
+            {
+                tenExplode.Play();
+                ten.Emit(6);
+                PhotonNetwork.Destroy(this.gameObject);
+            }
+
         }
-        if (collision.transform.tag == "NetworkPlayer")
+
+        void OnCollisionEnter(Collision collision)
         {
-            ballBounces += 1;
+            if (collision.transform.tag == "brickWall")
+            {
+                brickHit.Play();
+                paddle.hitBrick();
+                PlayerManager.hitBrick();
+            }
+            if (collision.transform.tag == "NetworkPlayer")
+            {
+                ballBounces += 1;
+            }
         }
-    }
 
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.name == "death" && GetComponent<PhotonView>().IsMine)
+        void OnTriggerEnter(Collider collision)
         {
-            missBall.Play();
-            PhotonNetwork.Destroy(this.gameObject);
-            
-        } else if (collision.transform.name == "death2" && GetComponent<PhotonView>().IsMine)
-        {
-            missBall.Play();
-            PhotonNetwork.Destroy(this.gameObject);
+            if (collision.transform.name == "death" && GetComponent<PhotonView>().IsMine)
+            {
+                missBall.Play();
+                PhotonNetwork.Destroy(this.gameObject);
+                PlayerManager.LoseLife(0);
 
+            }
+            else if (collision.transform.name == "death2" && GetComponent<PhotonView>().IsMine)
+            {
+                missBall.Play();
+                PhotonNetwork.Destroy(this.gameObject);
+                PlayerManager.LoseLife(1);
+
+            } else if (collision.transform.name == "death3" && GetComponent<PhotonView>().IsMine)
+            {
+                missBall.Play();
+                PhotonNetwork.Destroy(this.gameObject);
+            }
         }
     }
 }

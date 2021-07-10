@@ -16,8 +16,7 @@ public class SkillSpawner : MonoBehaviour
 
     IEnumerator wait() {
         yield return new WaitForSeconds(3.1f);
-        Spawn(gravBall); 
-        spawnedBall = false;
+        Spawn(gravBall);
     }
 
     private void SpawnCoin(){
@@ -35,13 +34,15 @@ public class SkillSpawner : MonoBehaviour
     {
         if(0 == score.Score % 7 && !spawnedCoin && score.Score != 0){
             SpawnCoin();
-        }else if ((score.Score % 7) != 0) {
+        }
+        if ((score.Score % 7) != 0) {
             spawnedCoin = false;
         }
 
         if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0)){
         	Spawn(gravBall);
-        } else if ((score.Score % 10) != 0) {
+        }
+        if ((score.Score % 10) != 0) {
             spawnedBall = false;
         }
     }

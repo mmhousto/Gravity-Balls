@@ -14,13 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/gameSkill.unity
     guid: fd5fcc1fee6274ab9ae080a4e971a3d2
-  - enabled: 1
-    path: Assets/Scenes/Launcher.unity
-    guid: 4940dbafd2ff49949b8815d74ca9dea9
-  - enabled: 1
-    path: Assets/Scenes/Room for 1.unity
-    guid: cc8e1ea0f8fabdf418a0137d850f8252
-  - enabled: 1
-    path: Assets/Scenes/Room for 2.unity
-    guid: 2504efa0c5592d943abc8e908814fa85
   m_configObjects: {}

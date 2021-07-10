@@ -158,6 +158,7 @@ public class paddle : MonoBehaviour
         }
         if(collision.transform.tag == "coin") {
             GameManager.collectCoin();
+            SkillManager.collectCoin();
             coinCollect.Play();
         }
         if(collision.transform.tag == "enemy") {

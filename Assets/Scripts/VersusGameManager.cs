@@ -20,8 +20,9 @@ namespace Com.MorganHouston.PaddleBalls
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
-
-        public static int p1Lives = 3, p2Lives = 3, coins, newCoins;
+        public GameObject life1, life2, life3, p2Life1, p2Life2, p2Life3;
+        public int p1Lives = 3, p2Lives = 3;
+        public static int coins, newCoins;
         public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
         public static VersusGameManager Instance;
 
@@ -160,39 +161,8 @@ namespace Com.MorganHouston.PaddleBalls
         // Update is called once per frame
         void Update()
         {
-
-            if (p1Lives < 1)
-            {
-                PlayerPrefs.SetInt("CoinsC", coins);
-                //PlayServices.AddScoreToSkillLeaderboard();
-                pauseBtn.gameObject.SetActive(false);
-                gameOver.gameObject.SetActive(true);
-                if (isSettingsActive == true)
-                {
-                    gameOver.gameObject.SetActive(false);
-                }
-                if (isSettingsActive == false)
-                {
-                    gameOver.gameObject.SetActive(true);
-                }
-                Time.timeScale = 0;
-            }
-            else if (p2Lives < 1)
-            {
-                PlayerPrefs.SetInt("CoinsC", coins);
-                //PlayServices.AddScoreToSkillLeaderboard();
-                pauseBtn.gameObject.SetActive(false);
-                gameOver.gameObject.SetActive(true);
-                if (isSettingsActive == true)
-                {
-                    gameOver.gameObject.SetActive(false);
-                }
-                if (isSettingsActive == false)
-                {
-                    gameOver.gameObject.SetActive(true);
-                }
-                Time.timeScale = 0;
-            }
+            // Handles lives
+            HandleLives();
 
         }
 
@@ -243,7 +213,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void restartGame()
         {
-            SceneManager.LoadScene("gameVersus");
+            PhotonNetwork.LoadLevel("Room for 2");
             counter.gameObject.SetActive(false);
             //coinManager.collectedCoins();
             //coins = 0;
@@ -267,16 +237,134 @@ namespace Com.MorganHouston.PaddleBalls
             SceneManager.LoadScene(0);
         }
 
-        public static void Death()
+        public void Death(int player)
         {
-            p1Lives -= 1;
+            if(player == 0)
+            {
+                p1Lives -= 1;
+            } else if (player == 1)
+            {
+                p2Lives -= 1;
+            }
+            
+
         }
 
-        public static void P2Death()
+        public void HandleLives()
         {
-            p2Lives -= 1;
-        }
+            // Player 1 lives
+            switch (p1Lives)
+            {
+                case 3:
+                    life1.gameObject.SetActive(true);
+                    life2.gameObject.SetActive(true);
+                    life3.gameObject.SetActive(true);
+                    break;
+                case 2:
+                    life1.gameObject.SetActive(true);
+                    life2.gameObject.SetActive(true);
+                    life3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    life1.gameObject.SetActive(true);
+                    life2.gameObject.SetActive(false);
+                    life3.gameObject.SetActive(false);
+                    break;
+                case 0:
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    //PlayServices.AddScoreToLeaderboard();
+                    life1.gameObject.SetActive(false);
+                    life2.gameObject.SetActive(false);
+                    life3.gameObject.SetActive(false);
+                    pauseBtn.gameObject.SetActive(false);
+                    gameOver.gameObject.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.gameObject.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.gameObject.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+                default:
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    //PlayServices.AddScoreToLeaderboard();
+                    life1.gameObject.SetActive(false);
+                    life2.gameObject.SetActive(false);
+                    life3.gameObject.SetActive(false);
+                    pauseBtn.gameObject.SetActive(false);
+                    gameOver.gameObject.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.gameObject.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.gameObject.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+            }
 
-        #endregion
+            // Player 2 lives
+            switch (p2Lives)
+            {
+                case 3:
+                    p2Life1.gameObject.SetActive(true);
+                    p2Life2.gameObject.SetActive(true);
+                    p2Life3.gameObject.SetActive(true);
+                    break;
+                case 2:
+                    p2Life1.gameObject.SetActive(true);
+                    p2Life2.gameObject.SetActive(true);
+                    p2Life3.gameObject.SetActive(false);
+                    break;
+                case 1:
+                    p2Life1.gameObject.SetActive(true);
+                    p2Life2.gameObject.SetActive(false);
+                    p2Life3.gameObject.SetActive(false);
+                    break;
+                case 0:
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    //PlayServices.AddScoreToLeaderboard();
+                    p2Life1.gameObject.SetActive(false);
+                    p2Life2.gameObject.SetActive(false);
+                    p2Life3.gameObject.SetActive(false);
+                    pauseBtn.gameObject.SetActive(false);
+                    gameOver.gameObject.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.gameObject.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.gameObject.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+                default:
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    //PlayServices.AddScoreToLeaderboard();
+                    p2Life1.gameObject.SetActive(false);
+                    p2Life2.gameObject.SetActive(false);
+                    p2Life3.gameObject.SetActive(false);
+                    pauseBtn.gameObject.SetActive(false);
+                    gameOver.gameObject.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.gameObject.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.gameObject.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+            }
+
+            #endregion
+        }
     }
 }
