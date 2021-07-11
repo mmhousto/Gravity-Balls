@@ -21,7 +21,6 @@ namespace Com.MorganHouston.PaddleBalls
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
         public GameObject life1, life2, life3, p2Life1, p2Life2, p2Life3;
-        public int p1Lives = 3, p2Lives = 3;
         public static int coins, newCoins;
         public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
         public static VersusGameManager Instance;
@@ -66,7 +65,8 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
-
+                gameOver.gameObject.SetActive(false);
+                PlayerManager.ResetLives();
                 LoadArena();
             }
         }
@@ -81,7 +81,8 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
-
+                gameOver.gameObject.SetActive(false);
+                PlayerManager.ResetLives();
                 LoadArena();
             }
         }
@@ -188,6 +189,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         #region Public Methods
 
+
         public void Leave()
         {
             PhotonNetwork.LeaveRoom();
@@ -213,11 +215,24 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void restartGame()
         {
-            PhotonNetwork.LoadLevel("Room for 2");
-            counter.gameObject.SetActive(false);
+            //counter.gameObject.SetActive(false);
+            //pauseBtn.gameObject.SetActive(true);
+            //gameOver.gameObject.SetActive(false);
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                photonView.RPC("RpcRestartScene", RpcTarget.All);
+            }
             //coinManager.collectedCoins();
             //coins = 0;
             //PlayerPrefs.SetInt("CoinsC", coins);
+        }
+
+        [PunRPC]
+        public void RpcRestartScene()
+        {
+            PlayerManager.ResetLives();
+            PhotonNetwork.LoadLevel("Room for 2");
         }
 
         public void toSettings()
@@ -237,23 +252,10 @@ namespace Com.MorganHouston.PaddleBalls
             SceneManager.LoadScene(0);
         }
 
-        public void Death(int player)
-        {
-            if(player == 0)
-            {
-                p1Lives -= 1;
-            } else if (player == 1)
-            {
-                p2Lives -= 1;
-            }
-            
-
-        }
-
         public void HandleLives()
         {
             // Player 1 lives
-            switch (p1Lives)
+            switch (PlayerManager.GetP1Lives())
             {
                 case 3:
                     life1.gameObject.SetActive(true);
@@ -309,7 +311,7 @@ namespace Com.MorganHouston.PaddleBalls
             }
 
             // Player 2 lives
-            switch (p2Lives)
+            switch (PlayerManager.GetP2Lives())
             {
                 case 3:
                     p2Life1.gameObject.SetActive(true);

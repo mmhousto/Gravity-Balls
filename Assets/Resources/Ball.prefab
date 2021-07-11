@@ -5293,6 +5293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a4de2e5c539e94fbc40769e279729b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballBounces: 0
   ten: {fileID: 6218821718549620639}
   missBall: {fileID: 7552050437018922664}
   brickHit: {fileID: 5416340013005711593}

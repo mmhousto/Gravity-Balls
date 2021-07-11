@@ -9,15 +9,18 @@ namespace Com.MorganHouston.PaddleBalls
     public class BallCollide : MonoBehaviour
     {
         Rigidbody rb;
-        private int ballBounces = 0;
+        public int ballBounces = 0;
         public ParticleSystem ten;
         public AudioSource missBall;
         public AudioSource brickHit;
         public AudioSource tenExplode;
 
+        private static PhotonView PV;
+
         // Start is called before the first frame update
         void Start()
         {
+            PV = GetComponent<PhotonView>();
             rb = GetComponent<Rigidbody>();
             Physics.IgnoreLayerCollision(7, 7);
             Physics.IgnoreLayerCollision(7, 6);
@@ -36,6 +39,12 @@ namespace Com.MorganHouston.PaddleBalls
 
         }
 
+        [PunRPC]
+        void BallBounce(int ballBounced)
+        {
+            ballBounced += 1;
+        }
+
         void OnCollisionEnter(Collision collision)
         {
             if (collision.transform.tag == "brickWall")
@@ -46,7 +55,7 @@ namespace Com.MorganHouston.PaddleBalls
             }
             if (collision.transform.tag == "NetworkPlayer")
             {
-                ballBounces += 1;
+                PV.RPC("BallBounce", RpcTarget.All, ballBounces);
             }
         }
 
@@ -54,16 +63,16 @@ namespace Com.MorganHouston.PaddleBalls
         {
             if (collision.transform.name == "death" && GetComponent<PhotonView>().IsMine)
             {
+                PlayerManager.LoseLife(0);
                 missBall.Play();
                 PhotonNetwork.Destroy(this.gameObject);
-                PlayerManager.LoseLife(0);
-
+                
             }
             else if (collision.transform.name == "death2" && GetComponent<PhotonView>().IsMine)
             {
+                PlayerManager.LoseLife(1);
                 missBall.Play();
                 PhotonNetwork.Destroy(this.gameObject);
-                PlayerManager.LoseLife(1);
 
             } else if (collision.transform.name == "death3" && GetComponent<PhotonView>().IsMine)
             {

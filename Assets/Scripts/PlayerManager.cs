@@ -9,31 +9,52 @@ namespace Com.MorganHouston.PaddleBalls
 
     public class PlayerManager : MonoBehaviourPun
     {
-        public MeshRenderer meshRenderer;
-        public Material basic, dark, pro, cyan, red, gold, orange, green, lime;
-        public float speed = 10f;
+        #region Private Fields
+
+
         private GameObject threeDPaddle, brickWall;
         private Vector3 touchPosition, tP2;
         private Rigidbody rb;
         private Vector3 direction;
-        public float wallZ = 0;
         private bool isActive = false;
+        private GameObject environment;
+        private Camera cam;
+        private static int brickHits;
+        private static PhotonView PV;
+
+
+        #endregion
+
+
+        #region Public Fields
+
+
+        public MeshRenderer meshRenderer;
+        public Material basic, dark, pro, cyan, red, gold, orange, green, lime;
+        public float speed = 10f;
+
+        public AudioSource coinCollect;
+        public AudioSource ballBounce;
+        public AudioSource lifeGain;
+        public AudioSource extendPaddle;
+        public AudioSource breakBrick;
+
+        public static int p1Lives = 3, p2Lives = 3;
+
+        public float wallZ = 0;
+
         public int selectedPaddle;
         public VersusGameManager versusGameManager;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-        private GameObject environment;
 
-        private Camera cam;
-        public AudioSource coinCollect;
-        public AudioSource ballBounce;
-        public AudioSource lifeGain;
-        public AudioSource extendPaddle;
-        public AudioSource breakBrick;
-        private static int brickHits;
-        private static PhotonView PV;
+        #endregion
+
+
+        #region MonoBehaviour CallBacks
+
 
         void Awake()
         {
@@ -88,6 +109,33 @@ namespace Com.MorganHouston.PaddleBalls
 
         }
 
+        // Update is called once per frame
+        void Update()
+        {
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+            {
+                return;
+            }
+            if (photonView.IsMine)
+            {
+                MovePaddle();
+
+            }
+
+            if (brickHits > 3)
+            {
+                EndBrick();
+                breakBrick.Play();
+            }
+        }
+
+
+        #endregion
+
+
+        #region RPC Calls
+
+
         [PunRPC]
         void SetPaddleMat(int selectedPaddle)
         {
@@ -136,6 +184,27 @@ namespace Com.MorganHouston.PaddleBalls
                 meshRenderer.material = lime;
             }
         }
+
+        [PunRPC]
+        public void Death(int player)
+        {
+            if (player == 0)
+            {
+                p1Lives -= 1;
+            }
+            else if (player == 1)
+            {
+                p2Lives -= 1;
+            }
+
+        }
+
+
+        #endregion
+
+
+        #region Private Methods
+
 
         void OnTriggerEnter(Collider collision)
         {
@@ -213,39 +282,6 @@ namespace Com.MorganHouston.PaddleBalls
             }
         }
 
-        IEnumerator waitTen()
-        {
-            yield return new WaitForSeconds(10);
-        }
-
-        IEnumerator waitResize()
-        {
-            if (photonView.IsMine)
-            {
-                yield return new WaitForSeconds(15);
-                transform.localScale -= new Vector3(0.08f, 0f, 0f);
-                extendPaddle.Play();
-            }
-        }
-
-        IEnumerator brickBreak()
-        {
-            yield return new WaitForSeconds(10);
-            EndBrick();
-        }
-
-        public void EndBrick()
-        {
-            brickHits = 0;
-            isActive = false;
-            //brickWall.transform.gameObject.SetActive(false);
-        }
-
-        public static void hitBrick()
-        {
-            brickHits += 1;
-        }
-
         private Vector3 GetWorldPosition(float z)
         {
             Ray mousePos = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -282,35 +318,69 @@ namespace Com.MorganHouston.PaddleBalls
 
         }
 
-        public static void LoseLife(int player)
+        IEnumerator waitTen()
         {
-            PV.RPC("RpcMinusLife", RpcTarget.All, player);
+            yield return new WaitForSeconds(10);
         }
 
-        [PunRPC]
-        public void RpcMinusLife(int player)
+        IEnumerator waitResize()
         {
-            versusGameManager.Death(player);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
-            {
-                return;
-            }
             if (photonView.IsMine)
             {
-                MovePaddle();
-
-            }
-
-            if (brickHits > 3)
-            {
-                EndBrick();
-                breakBrick.Play();
+                yield return new WaitForSeconds(15);
+                transform.localScale -= new Vector3(0.08f, 0f, 0f);
+                extendPaddle.Play();
             }
         }
+
+        IEnumerator brickBreak()
+        {
+            yield return new WaitForSeconds(10);
+            EndBrick();
+        }
+
+
+        #endregion
+
+
+        #region Public Methods
+
+
+        public void EndBrick()
+        {
+            brickHits = 0;
+            isActive = false;
+            //brickWall.transform.gameObject.SetActive(false);
+        }
+
+        public static void hitBrick()
+        {
+            brickHits += 1;
+        }
+
+        public static int GetP1Lives()
+        {
+            return p1Lives;
+        }
+
+        public static int GetP2Lives()
+        {
+            return p2Lives;
+        }
+
+        public static void ResetLives()
+        {
+            p1Lives = 3;
+            p2Lives = 3;
+        }
+
+        public static void LoseLife(int player)
+        {
+            PV.RPC("Death", RpcTarget.All, player);
+        }
+
+
+        #endregion
+
     }
 }
