@@ -34,7 +34,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         private static bool playersConnected = false, gameStarted = false;
 
-        private GameObject brickWall, brickWall2;
+        private GameObject brickWall, brickWall2, settingsBtns;
 
         private static int brickHits, brick2Hits;
 
@@ -51,7 +51,8 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(3);
+            ActivateSettingsBtns();
+            SceneManager.LoadScene(0);
 
             base.OnLeftRoom();
         }
@@ -83,7 +84,7 @@ namespace Com.MorganHouston.PaddleBalls
 
                 gameOver.gameObject.SetActive(false);
                 PlayerManager.ResetLives();
-                LoadArena();
+                PhotonNetwork.LeaveRoom();
             }
         }
 
@@ -98,6 +99,11 @@ namespace Com.MorganHouston.PaddleBalls
         void Start()
         {
             Instance = this;
+
+            
+            settingsBtns = GameObject.FindWithTag("settingsSound");
+            StartCoroutine(Wait());
+            //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
 
             // spawn 
             if (playerPrefab == null)
@@ -172,6 +178,11 @@ namespace Com.MorganHouston.PaddleBalls
 
         #region Private Methods
 
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.01f);
+            DeactivateSettingsBtns();
+        }
 
         void LoadArena()
         {
@@ -180,6 +191,7 @@ namespace Com.MorganHouston.PaddleBalls
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            ActivateSettingsBtns();
             PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
 
@@ -189,6 +201,15 @@ namespace Com.MorganHouston.PaddleBalls
 
         #region Public Methods
 
+        public void ActivateSettingsBtns()
+        {
+            settingsBtns.gameObject.SetActive(true);
+        }
+
+        public void DeactivateSettingsBtns()
+        {
+            settingsBtns.gameObject.SetActive(false);
+        }
 
         public void Leave()
         {
@@ -238,11 +259,13 @@ namespace Com.MorganHouston.PaddleBalls
         public void toSettings()
         {
             isSettingsActive = true;
+            ActivateSettingsBtns();
         }
 
         public void offSettings()
         {
             isSettingsActive = false;
+            DeactivateSettingsBtns();
         }
 
         public void loadMenu()

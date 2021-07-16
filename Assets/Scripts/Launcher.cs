@@ -159,6 +159,8 @@ namespace Com.MorganHouston.PaddleBalls
 
                 // #Critical
                 // Load the Room Level.
+
+                MainMenu.ActivateSettingsBtns();
                 PhotonNetwork.LoadLevel("Room for 1");
             }
 

@@ -1858,7 +1858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &590410048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2766,8 +2766,6 @@ MonoBehaviour:
   p2Life1: {fileID: 0}
   p2Life2: {fileID: 0}
   p2Life3: {fileID: 0}
-  p1Lives: 3
-  p2Lives: 3
   gameOver: {fileID: 628069989}
   pauseMenu: {fileID: 1321885282}
   settingsMenu: {fileID: 3631617}

@@ -43,7 +43,7 @@ public class VersusSpawner : MonoBehaviourPunCallbacks
 
         gameStarted = true;
 
-        if(!clone && spawnedBall == true)
+        if(!clone && spawnedBall == true && PhotonNetwork.InRoom)
         {
             SpawnBall();
         }

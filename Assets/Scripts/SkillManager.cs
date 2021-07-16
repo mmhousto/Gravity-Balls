@@ -8,9 +8,15 @@ public class SkillManager : MonoBehaviour
 	public static int lives = 1, coins, newCoins;
 	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private bool isSettingsActive = false;
+    private GameObject settingsBtns;
     // Start is called before the first frame update
     void Start()
     {
+        settingsBtns = GameObject.FindWithTag("settingsSound");
+        
+        StartCoroutine(Wait());
+        //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
+
         PlayerData.addPlay();
         Time.timeScale = 1;
         lives = 1;
@@ -18,6 +24,22 @@ public class SkillManager : MonoBehaviour
         coins = PlayerPrefs.GetInt("CoinsC", 0);
         gameOver.gameObject.SetActive(false);
         scoreBox.gameObject.SetActive(true);
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.01f);
+        DeactivateSettingsBtns();
+    }
+
+    public void ActivateSettingsBtns()
+    {
+        settingsBtns.gameObject.SetActive(true);
+    }
+
+    public void DeactivateSettingsBtns()
+    {
+        settingsBtns.gameObject.SetActive(false);
     }
 
     public static void collectCoin() {
@@ -38,6 +60,7 @@ public class SkillManager : MonoBehaviour
     }
 
     public void restartGame(){
+        ActivateSettingsBtns();
         SceneManager.LoadScene("gameSkill");
         counter.gameObject.SetActive(true);
         coinManager.collectedCoins();
@@ -45,17 +68,22 @@ public class SkillManager : MonoBehaviour
         PlayerPrefs.SetInt("CoinsC", coins);
     }
 
-    public void toSettings(){
+    public void toSettings()
+    {
         isSettingsActive = true;
+        ActivateSettingsBtns();
         scoreBox.gameObject.SetActive(false);
     }
 
-    public void offSettings(){
+    public void offSettings()
+    {
         isSettingsActive = false;
+        DeactivateSettingsBtns();
         scoreBox.gameObject.SetActive(true);
     }
 
     public void loadMenu(){
+        ActivateSettingsBtns();
         Destroy(GameObject.Find("PlayerData"));
         Destroy(GameObject.Find("PlayServices"));
         SceneManager.LoadScene(0);
