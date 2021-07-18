@@ -16,7 +16,7 @@ public class MusicManager : MonoBehaviour
     {
         isMusicOn = PlayerPrefs.GetInt("music", 1);
         musicAudio = GameObject.Find("AudioManager").gameObject.GetComponent<AudioSource>();
-        musicImage = GameObject.Find("btnMusic").GetComponent<Image>();
+        musicImage = gameObject.GetComponent<Image>();
         
     }
 

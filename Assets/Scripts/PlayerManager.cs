@@ -44,7 +44,6 @@ namespace Com.MorganHouston.PaddleBalls
         public float wallZ = 0;
 
         public int selectedPaddle;
-        public VersusGameManager versusGameManager;
 
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
@@ -88,7 +87,6 @@ namespace Com.MorganHouston.PaddleBalls
         // Start is called before the first frame update
         void Start()
         {
-            versusGameManager = GameObject.FindObjectOfType(typeof(VersusGameManager)) as VersusGameManager;
 
             PV = GetComponent<PhotonView>();
             if (photonView.IsMine)

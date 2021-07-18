@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &409973911266272953
 Transform:
   m_ObjectHideFlags: 0
@@ -44,15 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3505f309d13a48f8831f20f29fbb824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicOn: {fileID: 21300000, guid: 5d3c62c9c58e54540a8540dbba66b025, type: 3}
-  musicOff: {fileID: 21300000, guid: f6522e1e413344fa980cf7a168d78d4d, type: 3}
-  musicImage: {fileID: 3733225321432298357, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
-  soundImage: {fileID: 7588693873008086097, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
-  soundOff: {fileID: 21300000, guid: cde424bdbc0b04f14824d023fc2aa776, type: 3}
-  soundLow: {fileID: 21300000, guid: b707c1fc25aec42aaa2d0f75cd9252e7, type: 3}
-  soundMed: {fileID: 21300000, guid: 839e889a2d6a9437eae837daa0464f81, type: 3}
-  soundHigh: {fileID: 21300000, guid: d47c5b0fc21394f13ac90e629dfab047, type: 3}
-  musicAudio: {fileID: 409973911266272951}
 --- !u!82 &409973911266272951
 AudioSource:
   m_ObjectHideFlags: 0

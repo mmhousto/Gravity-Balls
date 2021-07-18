@@ -17,9 +17,8 @@ GameObject:
   - component: {fileID: 3907890793184785293}
   - component: {fileID: 3907890793184785290}
   - component: {fileID: 5859113620659104284}
-  - component: {fileID: 5859113620659104283}
   - component: {fileID: 7970488691675575803}
-  - component: {fileID: -5115331927233601732}
+  - component: {fileID: 1196228752646006724}
   m_Layer: 8
   m_Name: NetworkPaddle
   m_TagString: NetworkPlayer
@@ -570,27 +569,10 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5859113620659104283}
-  - {fileID: -5115331927233601732}
+  - {fileID: 1196228752646006724}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &5859113620659104283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3907890793184785300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 1
-  m_UseLocal: 1
 --- !u!114 &7970488691675575803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,8 +603,7 @@ MonoBehaviour:
   breakBrick: {fileID: 3907890793184785290}
   wallZ: 0
   selectedPaddle: 0
-  versusGameManager: {fileID: 0}
---- !u!114 &-5115331927233601732
+--- !u!114 &1196228752646006724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -631,13 +612,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3907890793184785300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Script: {fileID: 11500000, guid: ef394f9a38288bd4e938abb91542b0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 1
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
+  localScripts:
+  - {fileID: 7970488691675575803}
+  localObjects:
+  - {fileID: 409973911266272955, guid: c8ab767a2a1b5ee448ca288d101bac9a, type: 3}
+  - {fileID: 7134977033058766534, guid: 85c6faba3ee2b874bb9e8237784c2bf4, type: 3}
+  - {fileID: 3222507499573348473, guid: af37d3ebb21aec04b94f22bf1fba868f, type: 3}
+  - {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
 --- !u!1001 &3907890794362521765
 PrefabInstance:
   m_ObjectHideFlags: 0

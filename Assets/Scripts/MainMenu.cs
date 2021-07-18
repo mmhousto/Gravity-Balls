@@ -9,15 +9,25 @@ public class MainMenu : MonoBehaviour {
 
 	void Start()
     {
-		
-		settingsBtns = GameObject.FindWithTag("settingsSound").gameObject;
-		settingsBtns.SetActive(true);
-		settingsBtns.SetActive(false);
+
+		settingsBtns = GameObject.FindWithTag("settingsSound");
+		StartCoroutine(Wait());
+	}
+
+	IEnumerator Wait()
+	{
+		yield return new WaitForSeconds(0.01f);
+		DeactivateSettingsBtns();
 	}
 
 	public static void ActivateSettingsBtns()
     {
 		settingsBtns.SetActive(true);
+	}
+
+	public static void DeactivateSettingsBtns()
+	{
+		settingsBtns.SetActive(false);
 	}
 
 	public void GoToMainMenu()
