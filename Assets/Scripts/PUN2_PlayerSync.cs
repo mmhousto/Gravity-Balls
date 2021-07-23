@@ -19,9 +19,6 @@ public class PUN2_PlayerSync : MonoBehaviourPun, IPunObservable
         {
             //Player is local
             gameObject.tag = "NetworkPlayer";
-            //Add Rigidbody to make the player interact with rigidbody
-            Rigidbody r = gameObject.GetComponent<Rigidbody>();
-            r.isKinematic = true;
         }
         else
         {

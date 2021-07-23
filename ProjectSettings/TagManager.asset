@@ -22,6 +22,8 @@ TagManager:
   - switchR
   - NetworkPlayer
   - Audio
+  - Ready
+  - Ready2
   layers:
   - Default
   - TransparentFX

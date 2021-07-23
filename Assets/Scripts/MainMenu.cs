@@ -14,6 +14,14 @@ public class MainMenu : MonoBehaviour {
 		StartCoroutine(Wait());
 	}
 
+	void Update()
+    {
+        if (GameObject.Find("settingsScreen"))
+        {
+			ActivateSettingsBtns();
+        }
+    }
+
 	IEnumerator Wait()
 	{
 		yield return new WaitForSeconds(0.01f);

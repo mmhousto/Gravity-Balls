@@ -24,11 +24,7 @@ public class DontDestroy : MonoBehaviour
 
     void Update()
     {
-        GameObject[] btns = GameObject.FindGameObjectsWithTag("settingsSound");
 
-        if (btns.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
+        
     }
 }
