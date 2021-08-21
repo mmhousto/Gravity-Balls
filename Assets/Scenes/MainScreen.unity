@@ -17079,6 +17079,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1229896986091756666, guid: a70f9d933957d074bab850697d969f70, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2512564855715566784, guid: a70f9d933957d074bab850697d969f70, type: 3}
       propertyPath: m_Camera
       value: 
@@ -17178,6 +17182,10 @@ PrefabInstance:
     - target: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
       propertyPath: m_TagString
       value: settingsSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444316152716950523, guid: a70f9d933957d074bab850697d969f70, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70f9d933957d074bab850697d969f70, type: 3}

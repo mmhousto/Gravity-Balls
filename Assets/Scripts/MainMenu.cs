@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-	private static GameObject settingsBtns;
+	private static GameObject settingsBtns, music, sound;
+	private static bool isChangingScenes;
 
 	void Start()
     {
-
+		isChangingScenes = false;
 		settingsBtns = GameObject.FindWithTag("settingsSound");
+		music = GameObject.FindWithTag("music");
+		sound = GameObject.FindWithTag("sound");
 		StartCoroutine(Wait());
 	}
 
@@ -19,6 +22,9 @@ public class MainMenu : MonoBehaviour {
         if (GameObject.Find("settingsScreen"))
         {
 			ActivateSettingsBtns();
+        } else if(!GameObject.Find("settingsScreen") && !isChangingScenes)
+        {
+			DeactivateSettingsBtns();
         }
     }
 
@@ -38,8 +44,24 @@ public class MainMenu : MonoBehaviour {
 		settingsBtns.SetActive(false);
 	}
 
+	public static void VersusSettings()
+    {
+		isChangingScenes = true;
+		settingsBtns.SetActive(true);
+		music.SetActive(false);
+		sound.SetActive(false);
+    }
+
+	public static void MainMenuSettings()
+    {
+		settingsBtns.SetActive(false);
+		music.SetActive(false);
+		sound.SetActive(false);
+	}
+
 	public void GoToMainMenu()
     {
+		isChangingScenes = true;
 		settingsBtns.gameObject.SetActive(true);
 		//Destroy(GameObject.Find("AudioManager"));
 		Destroy(GameObject.Find("PlayerData"));
@@ -49,18 +71,21 @@ public class MainMenu : MonoBehaviour {
 
 	public void PlaySolo() {
 		//Destroy(GameObject.Find("AudioManager"));
+		isChangingScenes = true;
 		settingsBtns.gameObject.SetActive(true);
 		SceneManager.LoadScene(1); //StartCoroutine(LoadYourAsyncScene("gameSingle"));
 	}
 
 	public void PlaySkill() {
 		//Destroy(GameObject.Find("AudioManager"));
+		isChangingScenes = true;
 		settingsBtns.gameObject.SetActive(true);
 		SceneManager.LoadScene(2);//StartCoroutine(LoadYourAsyncScene("gameSkill"));
 	}
 
 	public void PlayVersus()
 	{
+		isChangingScenes = true;
 		settingsBtns.gameObject.SetActive(true);
 		//Destroy(GameObject.Find("AudioManager"));
 		SceneManager.LoadScene(3);

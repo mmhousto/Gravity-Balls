@@ -35,7 +35,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         private static bool playersConnected = false, gameStarted = false, isGameOver = false;
 
-        private GameObject brickWall, brickWall2, settingsBtns;
+        private GameObject brickWall, brickWall2, settingsBtns, btnMusic, btnSound;
 
         private static int brickHits, brick2Hits;
 
@@ -112,8 +112,11 @@ namespace Com.MorganHouston.PaddleBalls
         void Start()
         {
             Instance = this;
-
             settingsBtns = GameObject.FindWithTag("settingsSound");
+            btnMusic = GameObject.FindWithTag("music"); // GET CHILD OF SETTINGSBTNS
+            btnSound = GameObject.FindWithTag("sound");
+            btnMusic.SetActive(true);
+            btnSound.SetActive(true);
             StartCoroutine(Wait());
             
             //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
@@ -230,12 +233,14 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void ActivateSettingsBtns()
         {
-            settingsBtns.gameObject.SetActive(true);
+            btnMusic.gameObject.SetActive(true);
+            btnSound.gameObject.SetActive(true);
         }
 
         public void DeactivateSettingsBtns()
         {
-            settingsBtns.gameObject.SetActive(false);
+            btnMusic.gameObject.SetActive(false);
+            btnSound.gameObject.SetActive(false);
         }
 
         public void ShowReadyPlayers()

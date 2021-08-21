@@ -98,6 +98,7 @@ namespace Com.MorganHouston.PaddleBalls
             isConnecting = false;
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
+            MainMenu.MainMenuSettings();
             Debug.LogWarningFormat("PUN Basics Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
@@ -152,6 +153,8 @@ namespace Com.MorganHouston.PaddleBalls
         {
             Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
             // #Critical: We only load if we are the first player, else we rely on `PhotonNetwork.AutomaticallySyncScene` to sync our instance scene.
+
+            
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
                 Debug.Log("We load the 'Room for 1' ");
@@ -159,10 +162,9 @@ namespace Com.MorganHouston.PaddleBalls
 
                 // #Critical
                 // Load the Room Level.
-
-                MainMenu.ActivateSettingsBtns();
                 PhotonNetwork.LoadLevel("Room for 1");
             }
+
 
         }
 
