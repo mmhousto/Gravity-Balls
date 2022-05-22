@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour
 	public GameObject life1, life2, life3, life4, life5, life6, gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private GameObject settingsBtns;
     private bool isSettingsActive = false;
+
+    private void Awake()
+    {
+        settingsBtns = GameObject.FindWithTag("settingsSound");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        settingsBtns = GameObject.FindWithTag("settingsSound");
         StartCoroutine(Wait());
         //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
 
@@ -39,12 +44,12 @@ public class GameManager : MonoBehaviour
 
     public void ActivateSettingsBtns()
     {
-        settingsBtns.gameObject.SetActive(true);
+        settingsBtns.SetActive(true);
     }
 
     public void DeactivateSettingsBtns()
     {
-        settingsBtns.gameObject.SetActive(false);
+        settingsBtns.SetActive(false);
     }
 
     public static void collectCoin() {
