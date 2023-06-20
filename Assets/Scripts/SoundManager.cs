@@ -14,12 +14,13 @@ public class SoundManager : MonoBehaviour
     {
 		volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
 		soundImage = GetComponent<Image>();
+		SetVolume();
 	}
 
     // Start is called before the first frame update
     void Start()
 	{ 
-		SetVolume();
+		
 
 	}
 

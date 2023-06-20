@@ -17,13 +17,13 @@ public class MusicManager : MonoBehaviour
         isMusicOn = PlayerPrefs.GetInt("music", 1);
         musicAudio = GameObject.Find("AudioManager").gameObject.GetComponent<AudioSource>();
         musicImage = gameObject.GetComponent<Image>();
-        
+        SetMusic();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        SetMusic();
+        
         //musicImage.transform.parent.gameObject.SetActive(false);
 
     }

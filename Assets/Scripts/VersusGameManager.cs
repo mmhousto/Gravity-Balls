@@ -23,7 +23,7 @@ namespace Com.MorganHouston.PaddleBalls
         public GameObject playerPrefab;
         public GameObject life1, life2, life3, p2Life1, p2Life2, p2Life3;
         public static int coins, newCoins;
-        public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
+        public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn, btnMusic, btnSound;
         public static VersusGameManager Instance;
 
         #endregion
@@ -35,7 +35,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         private static bool playersConnected = false, gameStarted = false, isGameOver = false;
 
-        private GameObject brickWall, brickWall2, settingsBtns, btnMusic, btnSound;
+        private GameObject brickWall, brickWall2;
 
         private static int brickHits, brick2Hits;
 
@@ -46,6 +46,8 @@ namespace Com.MorganHouston.PaddleBalls
         private Toggle toggle1, toggle2;
 
         private Button rematchBtn;
+
+        private bool isPaused;
 
         #endregion
 
@@ -58,7 +60,7 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         public override void OnLeftRoom()
         {
-            ActivateSettingsBtns();
+            //ActivateSettingsBtns();
             SceneManager.LoadScene(0);
 
             base.OnLeftRoom();
@@ -112,12 +114,7 @@ namespace Com.MorganHouston.PaddleBalls
         void Start()
         {
             Instance = this;
-            settingsBtns = GameObject.FindWithTag("settingsSound");
-            btnMusic = GameObject.FindWithTag("music"); // GET CHILD OF SETTINGSBTNS
-            btnSound = GameObject.FindWithTag("sound");
-            btnMusic.SetActive(true);
-            btnSound.SetActive(true);
-            StartCoroutine(Wait());
+            //StartCoroutine(Wait());
             
             //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
 
@@ -181,7 +178,8 @@ namespace Com.MorganHouston.PaddleBalls
             Time.timeScale = 1;
             PlayerPrefs.SetInt("CoinsC", 0);
             coins = PlayerPrefs.GetInt("CoinsC", 0);
-            gameOver.gameObject.SetActive(false);
+            gameOver.SetActive(false);
+            settingsMenu.SetActive(false);
         }
 
         // Update is called once per frame
@@ -215,7 +213,7 @@ namespace Com.MorganHouston.PaddleBalls
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            ActivateSettingsBtns();
+            //ActivateSettingsBtns();
             PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
 
@@ -241,6 +239,34 @@ namespace Com.MorganHouston.PaddleBalls
         {
             btnMusic.gameObject.SetActive(false);
             btnSound.gameObject.SetActive(false);
+        }
+
+        public void ToSettings()
+        {
+            if (isPaused)
+            {
+                settingsMenu.SetActive(true);
+                pauseMenu.SetActive(false);
+            }
+            else if (isGameOver)
+            {
+                settingsMenu.SetActive(true);
+                gameOver.SetActive(false);
+            }
+        }
+
+        public void BackSettings()
+        {
+            if (isPaused)
+            {
+                settingsMenu.SetActive(false);
+                pauseMenu.SetActive(true);
+            }
+            else if (isGameOver)
+            {
+                settingsMenu.SetActive(false);
+                gameOver.SetActive(true);
+            }
         }
 
         public void ShowReadyPlayers()
@@ -295,13 +321,14 @@ namespace Com.MorganHouston.PaddleBalls
         {
             Time.timeScale = 0;
             pauseMenu.gameObject.SetActive(true);
-
+            isPaused = true;
         }
 
         public void ResumeGame()
         {
             pauseMenu.gameObject.SetActive(false);
             Time.timeScale = 1;
+            isPaused = false;
         }
 
         public void restartGame()
@@ -320,18 +347,6 @@ namespace Com.MorganHouston.PaddleBalls
         {
             PlayerManager.ResetLives();
             PhotonNetwork.LoadLevel("Room for 2");
-        }
-
-        public void toSettings()
-        {
-            isSettingsActive = true;
-            ActivateSettingsBtns();
-        }
-
-        public void offSettings()
-        {
-            isSettingsActive = false;
-            DeactivateSettingsBtns();
         }
 
         public void loadMenu()
@@ -364,6 +379,7 @@ namespace Com.MorganHouston.PaddleBalls
                     break;
                 case 0:
                     isGameOver = true;
+                    isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
                     life1.gameObject.SetActive(false);
@@ -371,18 +387,12 @@ namespace Com.MorganHouston.PaddleBalls
                     life3.gameObject.SetActive(false);
                     pauseBtn.gameObject.SetActive(false);
                     gameOver.gameObject.SetActive(true);
-                    if (isSettingsActive == true)
-                    {
-                        gameOver.gameObject.SetActive(false);
-                    }
-                    if (isSettingsActive == false)
-                    {
-                        gameOver.gameObject.SetActive(true);
-                    }
+                    settingsMenu.gameObject.SetActive(false);
                     Time.timeScale = 0;
                     break;
                 default:
                     isGameOver = true;
+                    isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
                     life1.gameObject.SetActive(false);
@@ -390,14 +400,7 @@ namespace Com.MorganHouston.PaddleBalls
                     life3.gameObject.SetActive(false);
                     pauseBtn.gameObject.SetActive(false);
                     gameOver.gameObject.SetActive(true);
-                    if (isSettingsActive == true)
-                    {
-                        gameOver.gameObject.SetActive(false);
-                    }
-                    if (isSettingsActive == false)
-                    {
-                        gameOver.gameObject.SetActive(true);
-                    }
+                    settingsMenu.gameObject.SetActive(false);
                     Time.timeScale = 0;
                     break;
             }
@@ -423,6 +426,7 @@ namespace Com.MorganHouston.PaddleBalls
                     break;
                 case 0:
                     isGameOver = true;
+                    isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
                     p2Life1.gameObject.SetActive(false);
@@ -430,18 +434,12 @@ namespace Com.MorganHouston.PaddleBalls
                     p2Life3.gameObject.SetActive(false);
                     pauseBtn.gameObject.SetActive(false);
                     gameOver.gameObject.SetActive(true);
-                    if (isSettingsActive == true)
-                    {
-                        gameOver.gameObject.SetActive(false);
-                    }
-                    if (isSettingsActive == false)
-                    {
-                        gameOver.gameObject.SetActive(true);
-                    }
+                    settingsMenu.gameObject.SetActive(false);
                     Time.timeScale = 0;
                     break;
                 default:
                     isGameOver = true;
+                    isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
                     p2Life1.gameObject.SetActive(false);
@@ -449,14 +447,7 @@ namespace Com.MorganHouston.PaddleBalls
                     p2Life3.gameObject.SetActive(false);
                     pauseBtn.gameObject.SetActive(false);
                     gameOver.gameObject.SetActive(true);
-                    if (isSettingsActive == true)
-                    {
-                        gameOver.gameObject.SetActive(false);
-                    }
-                    if (isSettingsActive == false)
-                    {
-                        gameOver.gameObject.SetActive(true);
-                    }
+                    settingsMenu.gameObject.SetActive(false);
                     Time.timeScale = 0;
                     break;
             }

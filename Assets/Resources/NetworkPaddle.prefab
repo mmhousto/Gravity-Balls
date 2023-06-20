@@ -38,6 +38,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.45, z: -0.02}
   m_LocalScale: {x: 0.06, y: 0.14999999, z: 0.25}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3580683334604435278}
   m_Father: {fileID: 0}
@@ -51,9 +52,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3907890793184785300}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 14.849453, y: 2.220071, z: 2.3294563}
   m_Center: {x: 0.041637324, y: -0.5162096, z: -0.017757416}
 --- !u!54 &3907890793184785294
@@ -63,10 +72,21 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3907890793184785300}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1e+9
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -663,6 +683,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3907890793184785299}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d0d0e83e6ea450a44924a6abc88f8686, type: 3}
@@ -778,14 +799,17 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d0e83e6ea450a44924a6abc88f8686, type: 3}
---- !u!4 &3580683334604435278 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0d0e83e6ea450a44924a6abc88f8686, type: 3}
-  m_PrefabInstance: {fileID: 3907890794362521765}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &2320345337791644616 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7635826562936255635, guid: d0d0e83e6ea450a44924a6abc88f8686, type: 3}
+  m_PrefabInstance: {fileID: 3907890794362521765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3580683334604435278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0d0e83e6ea450a44924a6abc88f8686, type: 3}
   m_PrefabInstance: {fileID: 3907890794362521765}
   m_PrefabAsset: {fileID: 0}

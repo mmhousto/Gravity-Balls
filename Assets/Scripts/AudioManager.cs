@@ -27,6 +27,7 @@ public class AudioManager : MonoBehaviour
         musicAudio = GetComponent<AudioSource>();
 
         SetMusic();
+        SetVolume();
 
     }
 
@@ -81,11 +82,12 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic()
     {
         if (musicAudio.isPlaying) return;
-        musicAudio.Play();
+            musicAudio.Play();
     }
 
     void Update()
     {
+        PlayMusic();
     }
 
 	

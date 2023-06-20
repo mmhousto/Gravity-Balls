@@ -63,6 +63,7 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
             }
+            else return;
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
@@ -103,6 +104,7 @@ namespace Com.MorganHouston.PaddleBalls
 
                 this.photonView.RPC("SetPaddleMat", RpcTarget.AllBuffered, selectedPaddle); //SetPaddleMat();
             }
+            else return;
 
 
         }
