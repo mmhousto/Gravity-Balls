@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7588693873008086099, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 125
+      value: -125
       objectReference: {fileID: 0}
     - target: {fileID: 7588693873008086099, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -443,12 +443,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 798728690, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
   m_PrefabInstance: {fileID: 56986086}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 56986089}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b727dca8ab8ac429665735a79868fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &56986089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7588693873008086100, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
+  m_PrefabInstance: {fileID: 56986086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &101723795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -559,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733225321432298379, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -125
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 3733225321432298379, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -592,12 +597,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1142410077, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
   m_PrefabInstance: {fileID: 101723795}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 101723798}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aef2683915f21b24091f3c9e284de960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &101723798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3733225321432298376, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
+  m_PrefabInstance: {fileID: 101723795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &119368420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,11 +1805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -97.19808
+      value: -97.19806
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2201,30 +2211,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1929037033}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3631617}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 756367413}
         m_TargetAssemblyTypeName: Com.MorganHouston.PaddleBalls.VersusGameManager,
           Assembly-CSharp
@@ -2677,8 +2663,8 @@ MonoBehaviour:
   settingsMenu: {fileID: 3631617}
   counter: {fileID: 573996082188048375, guid: 4ff9f68177d034d41adc7ed37d4d3816, type: 3}
   pauseBtn: {fileID: 328164898}
-  btnMusic: {fileID: 0}
-  btnSound: {fileID: 0}
+  btnMusic: {fileID: 101723798}
+  btnSound: {fileID: 56986089}
 --- !u!4 &756367414
 Transform:
   m_ObjectHideFlags: 0
@@ -2830,30 +2816,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1321885282}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3631617}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 756367413}
         m_TargetAssemblyTypeName: Com.MorganHouston.PaddleBalls.VersusGameManager,
           Assembly-CSharp
@@ -3109,11 +3071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -157.19814
+      value: -157.19812
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3784,7 +3746,6 @@ RectTransform:
   - {fileID: 1929037034}
   - {fileID: 1321885285}
   - {fileID: 3631618}
-  - {fileID: 1863710367}
   m_Father: {fileID: 1832890751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4836,30 +4797,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3631617}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1321885282}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 756367413}
         m_TargetAssemblyTypeName: Com.MorganHouston.PaddleBalls.VersusGameManager,
           Assembly-CSharp
@@ -4985,11 +4922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -37.19808
+      value: -37.19806
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5370,42 +5307,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848363151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1863710366
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1863710367}
-  m_Layer: 5
-  m_Name: ScoreBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1863710367
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863710366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1235471398}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 432.75552}
-  m_SizeDelta: {x: 0, y: -1081.0591}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1929037033
 GameObject:
   m_ObjectHideFlags: 0

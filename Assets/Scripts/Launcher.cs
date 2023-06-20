@@ -26,6 +26,8 @@ namespace Com.MorganHouston.PaddleBalls
         [SerializeField]
         private GameObject progressLabel;
 
+        private string roomCode = "";
+
 
         #endregion
 
@@ -98,7 +100,6 @@ namespace Com.MorganHouston.PaddleBalls
             isConnecting = false;
             progressLabel.SetActive(false);
             controlPanel.SetActive(true);
-            MainMenu.MainMenuSettings();
             Debug.LogWarningFormat("PUN Basics Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
         }
 
@@ -116,13 +117,15 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         public void Connect()
         {
+            if (string.IsNullOrEmpty(roomCode)) return;
+
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
             if (PhotonNetwork.IsConnected)
             {
                 // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-                PhotonNetwork.JoinRandomRoom();
+                PhotonNetwork.CreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
             }
             else if (PhotonNetwork.IsConnected == false)
             {
@@ -133,6 +136,18 @@ namespace Com.MorganHouston.PaddleBalls
             }
         }
 
+        public void SetRoomName(string value)
+        {
+            // #Important
+            if (string.IsNullOrEmpty(value))
+            {
+                Debug.LogError("Room Name is null or empty");
+                return;
+            }
+
+            roomCode = value;
+        }
+
         /// <summary>
         /// On failure to join room this method is called
         /// </summary>
@@ -141,9 +156,9 @@ namespace Com.MorganHouston.PaddleBalls
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
             Debug.Log("PUN Basics Tutorial/Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
-
+            if (string.IsNullOrEmpty(roomCode)) return;
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room with set maxPlayersPerRoom.
-            PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+            PhotonNetwork.CreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
         }
 
         /// <summary>

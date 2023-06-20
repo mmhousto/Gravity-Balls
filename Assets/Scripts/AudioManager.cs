@@ -15,15 +15,13 @@ public class AudioManager : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("Audio").Length > 1)
         {
-			Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
-		DontDestroyOnLoad(this.gameObject);
-	}
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {
-        isMusicOn = PlayerPrefs.GetInt("music", 1);
-        volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
         musicAudio = GetComponent<AudioSource>();
 
         SetMusic();
@@ -31,31 +29,37 @@ public class AudioManager : MonoBehaviour
 
     }
 
-        void SetVolume()
+    void SetVolume()
+    {
+        if(volumeLevel != PlayerPrefs.GetString("gameVolume", "medium"))
+            volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
+
+        if (volumeLevel == "high" && AudioListener.volume != 1.0f)
         {
-            if (volumeLevel == "high")
-            {
-                AudioListener.volume = 1.0f;
-            }
-
-            if (volumeLevel == "medium")
-            {
-                AudioListener.volume = 0.75f;
-            }
-
-            if (volumeLevel == "low")
-            {
-                AudioListener.volume = 0.25f;
-            }
-
-            if (volumeLevel == "off")
-            {
-                AudioListener.volume = 0.0f;
-            }
+            AudioListener.volume = 1.0f;
         }
+
+        if (volumeLevel == "medium" && AudioListener.volume != 0.75f)
+        {
+            AudioListener.volume = 0.75f;
+        }
+
+        if (volumeLevel == "low" && AudioListener.volume != 0.25f)
+        {
+            AudioListener.volume = 0.25f;
+        }
+
+        if (volumeLevel == "off" && AudioListener.volume != 0.0f)
+        {
+            AudioListener.volume = 0.0f;
+        }
+    }
 
     void SetMusic()
     {
+        if(isMusicOn != PlayerPrefs.GetInt("music", 1))
+            isMusicOn = PlayerPrefs.GetInt("music", 1);
+
         if (isMusicOn == 0)
         {
             if (isPlaying == true)
@@ -81,14 +85,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic()
     {
-        if (musicAudio.isPlaying) return;
-            musicAudio.Play();
+        if (musicAudio.isPlaying || isMusicOn == 0) return;
+        musicAudio.Play();
     }
 
     void Update()
     {
         PlayMusic();
+        SetVolume();
+        SetMusic();
     }
 
-	
+
 }

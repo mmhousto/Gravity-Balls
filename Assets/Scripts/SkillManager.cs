@@ -8,11 +8,11 @@ public class SkillManager : MonoBehaviour
 	public static int lives = 1, coins, newCoins;
 	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private bool isSettingsActive = false;
-    private GameObject settingsBtns;
+    private bool isPaused, isGameOver;
+
     // Start is called before the first frame update
     void Start()
     {
-        settingsBtns = GameObject.FindWithTag("settingsSound");
         
         StartCoroutine(Wait());
         //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
@@ -22,24 +22,16 @@ public class SkillManager : MonoBehaviour
         lives = 1;
         PlayerPrefs.SetInt("CoinsC", 0);
         coins = PlayerPrefs.GetInt("CoinsC", 0);
-        gameOver.gameObject.SetActive(false);
-        scoreBox.gameObject.SetActive(true);
+        gameOver.SetActive(false);
+        scoreBox.SetActive(true);
+        isPaused = false;
+        isGameOver = false;
     }
 
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.01f);
-        DeactivateSettingsBtns();
-    }
-
-    public void ActivateSettingsBtns()
-    {
-        settingsBtns.gameObject.SetActive(true);
-    }
-
-    public void DeactivateSettingsBtns()
-    {
-        settingsBtns.gameObject.SetActive(false);
+        settingsMenu.SetActive(false);
     }
 
     public static void collectCoin() {
@@ -48,42 +40,53 @@ public class SkillManager : MonoBehaviour
 
     public void puaseGame(){
         Time.timeScale = 0;
-        pauseMenu.gameObject.SetActive(true);
-        scoreBox.gameObject.SetActive(false);
-
+        pauseMenu.SetActive(true);
+        scoreBox.SetActive(false);
+        isPaused = true;
     }
 
     public void resumeGame(){
-        pauseMenu.gameObject.SetActive(false);
-        scoreBox.gameObject.SetActive(true);
+        pauseMenu.SetActive(false);
+        scoreBox.SetActive(true);
         Time.timeScale = 1;
+        isPaused = false;
     }
 
     public void restartGame(){
-        ActivateSettingsBtns();
         SceneManager.LoadScene("gameSkill");
-        counter.gameObject.SetActive(true);
+        counter.SetActive(true);
         coinManager.collectedCoins();
         coins = 0;
         PlayerPrefs.SetInt("CoinsC", coins);
     }
 
-    public void toSettings()
+    public void ToSettings()
     {
         isSettingsActive = true;
-        ActivateSettingsBtns();
-        scoreBox.gameObject.SetActive(false);
+
+        if (isGameOver)
+            gameOver.SetActive(false);
+        else if (isPaused)
+            pauseMenu.SetActive(false);
+
+        settingsMenu.SetActive(true);
+        scoreBox.SetActive(false);
     }
 
-    public void offSettings()
+    public void OffSettings()
     {
+        settingsMenu.SetActive(false);
+
+        if (isGameOver)
+            gameOver.SetActive(true);
+        else if (isPaused)
+            pauseMenu.SetActive(true);
+
         isSettingsActive = false;
-        DeactivateSettingsBtns();
-        scoreBox.gameObject.SetActive(true);
+        scoreBox.SetActive(true);
     }
 
     public void loadMenu(){
-        ActivateSettingsBtns();
         Destroy(GameObject.Find("PlayerData"));
         Destroy(GameObject.Find("PlayServices"));
         SceneManager.LoadScene(0);
@@ -92,15 +95,18 @@ public class SkillManager : MonoBehaviour
     void Update()
     {
         if(lives < 1){
+            isPaused = false;
+            isGameOver = true;
+            pauseMenu.SetActive(false);
             PlayerPrefs.SetInt("CoinsC", coins);
             PlayServices.AddScoreToSkillLeaderboard();
-            pauseBtn.gameObject.SetActive(false);
-            gameOver.gameObject.SetActive(true);
+            pauseBtn.SetActive(false);
+            gameOver.SetActive(true);
             if(isSettingsActive == true) {
-        		gameOver.gameObject.SetActive(false);
+        		gameOver.SetActive(false);
             }
             if(isSettingsActive == false) {
-      	    	gameOver.gameObject.SetActive(true);
+      	    	gameOver.SetActive(true);
             }
         	Time.timeScale = 0;
         }

@@ -27,7 +27,9 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
+		if (volumeLevel != PlayerPrefs.GetString("gameVolume", "medium"))
+			volumeLevel = PlayerPrefs.GetString("gameVolume", "medium");
+
 		SetVolume();
 	}
 
@@ -37,7 +39,6 @@ public class SoundManager : MonoBehaviour
 		{
 			soundImage.sprite = soundHigh;
 
-			AudioListener.volume = 1.0f;
 			isSOnMed = false;
 			isSOnHigh = true;
 			isSOnLow = false;
@@ -47,7 +48,6 @@ public class SoundManager : MonoBehaviour
 		{
 			soundImage.sprite = soundMed;
 
-			AudioListener.volume = 0.75f;
 			isSOnMed = true;
 			isSOnHigh = false;
 			isSOnLow = false;
@@ -57,7 +57,6 @@ public class SoundManager : MonoBehaviour
 		{
 			soundImage.sprite = soundLow;
 
-			AudioListener.volume = 0.25f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = true;
@@ -67,7 +66,6 @@ public class SoundManager : MonoBehaviour
 		{
 			soundImage.sprite = soundOff;
 
-			AudioListener.volume = 0.0f;
 			isSOnMed = false;
 			isSOnHigh = false;
 			isSOnLow = false;
@@ -78,7 +76,6 @@ public class SoundManager : MonoBehaviour
 	{
 		if (isSOnMed)
 		{
-			AudioListener.volume = 1.0f;
 
 			soundImage.sprite = soundHigh;
 
@@ -90,7 +87,6 @@ public class SoundManager : MonoBehaviour
 		else
 		if (isSOnHigh)
 		{
-			AudioListener.volume = 0.0f;
 
 			soundImage.sprite = soundOff;
 
@@ -102,7 +98,6 @@ public class SoundManager : MonoBehaviour
 		else
 		if (!isSOnLow && !isSOnMed && !isSOnHigh)
 		{
-			AudioListener.volume = 0.25f;
 
 			soundImage.sprite = soundLow;
 
@@ -114,7 +109,6 @@ public class SoundManager : MonoBehaviour
 		else
 		if (isSOnLow)
 		{
-			AudioListener.volume = 0.75f;
 
 			soundImage.sprite = soundMed;
 

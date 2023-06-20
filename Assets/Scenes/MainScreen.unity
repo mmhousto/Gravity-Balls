@@ -578,17 +578,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 328256999}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: DeactivateSettingsBtns
-        m_Mode: 1
+      - m_Target: {fileID: 1610091596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &89548527
 MonoBehaviour:
@@ -12322,23 +12322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 4
   m_AspectRatio: 0.66665626
---- !u!1 &1584727808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
-  m_PrefabInstance: {fileID: 2512564856628679621}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1584727814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584727808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 083b0cd4f8fa44ba0b3a6ab2ea5ab673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1588499477
 GameObject:
   m_ObjectHideFlags: 0
@@ -12669,6 +12652,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609762000}
   m_CullTransparentMesh: 0
+--- !u!1 &1610091596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
+  m_PrefabInstance: {fileID: 2512564856628679621}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1612857563
 GameObject:
   m_ObjectHideFlags: 0
@@ -12899,10 +12887,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 328256999}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ActivateSettingsBtns
-        m_Mode: 1
+      - m_Target: {fileID: 1610091596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14383,6 +14371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1610091596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1786695903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15815,17 +15815,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 328256999}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: DeactivateSettingsBtns
-        m_Mode: 1
+      - m_Target: {fileID: 1610091596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1995399919
 MonoBehaviour:
@@ -17701,7 +17701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
       propertyPath: m_TagString
@@ -17714,10 +17714,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2512564855715566789, guid: a70f9d933957d074bab850697d969f70, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1584727814}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70f9d933957d074bab850697d969f70, type: 3}
 --- !u!1001 &3222507498342300344
 PrefabInstance:
