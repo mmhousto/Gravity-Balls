@@ -665,7 +665,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142714640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 409de7e58a2e549d8a09c3b378f9a12d, type: 3}
   m_Name: 
@@ -1647,11 +1647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -157.19814
+      value: -157.19812
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2107,6 +2107,9 @@ MonoBehaviour:
   settingsMenu: {fileID: 3631617}
   counter: {fileID: 573996082188048375, guid: 4ff9f68177d034d41adc7ed37d4d3816, type: 3}
   pauseBtn: {fileID: 328164898}
+  toggle1: {fileID: 0}
+  toggle2: {fileID: 0}
+  rematchBtn: {fileID: 1331052856}
 --- !u!4 &756367414
 Transform:
   m_ObjectHideFlags: 0
@@ -2562,11 +2565,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -97.19808
+      value: -97.19806
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3753,7 +3756,7 @@ MonoBehaviour:
       - m_Target: {fileID: 756367413}
         m_TargetAssemblyTypeName: Com.MorganHouston.PaddleBalls.VersusGameManager,
           Assembly-CSharp
-        m_MethodName: PlayerReady
+        m_MethodName: Rematch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4115,11 +4118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -37.19808
+      value: -37.19806
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -41.596355
+      value: -41.596313
       objectReference: {fileID: 0}
     - target: {fileID: 1769336056717054035, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

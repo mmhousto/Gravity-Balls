@@ -81,7 +81,7 @@ namespace Com.MorganHouston.PaddleBalls
             }
             else
             {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> boundaries Component on Environment.", this);
+                Debug.Log("<Color=Red><a>Missing</a></Color> boundaries Component on Environment.");
             }
         }
 
@@ -127,6 +127,16 @@ namespace Com.MorganHouston.PaddleBalls
                 EndBrick();
                 breakBrick.Play();
             }
+        }
+
+        private void OnDisable()
+        {
+            LocalPlayerInstance = null;
+        }
+
+        private void OnDestroy()
+        {
+            LocalPlayerInstance = null;
         }
 
 
@@ -299,7 +309,7 @@ namespace Com.MorganHouston.PaddleBalls
                 Touch touch = Input.GetTouch(0);
                 touchPosition = GetWorldPosition(wallZ);
                 touchPosition.z = -.2f;
-                touchPosition.y = -3.45f;
+                touchPosition.y = transform.position.y;
                 direction.x = (touchPosition.x - transform.position.x);
                 rb.velocity = new Vector3(direction.x, 0f, 0f) * speed;
                 if (touch.tapCount == 2)

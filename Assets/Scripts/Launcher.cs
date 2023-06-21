@@ -59,7 +59,10 @@ namespace Com.MorganHouston.PaddleBalls
         {
             // #Critical
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
+            isConnecting = true;
             PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.GameVersion = gameVersion;
+            PhotonNetwork.ConnectUsingSettings();
         }
 
 
@@ -68,8 +71,7 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         void Start()
         {
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
+            
         }
 
 
@@ -81,7 +83,6 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("PUN Basics Launcher: OnConnectedToMaster() was called by PUN");
 
             // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnJoinRandomFailed()
             // we don't want to do anything if we are not attempting to join a room.
@@ -89,9 +90,21 @@ namespace Com.MorganHouston.PaddleBalls
             // we don't want to do anything.
             if (isConnecting)
             {
-                PhotonNetwork.JoinRandomRoom();
+                //PhotonNetwork.JoinLobby();
                 isConnecting = false;
+                progressLabel.SetActive(false);
+                controlPanel.SetActive(true);
             }
+        }
+
+        /// <summary>
+        /// Loads the lobby scene and sets NickName to player's name, after joining successfully.
+        /// </summary>
+        public override void OnJoinedLobby()
+        {
+            isConnecting = false;
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
         }
 
 
@@ -125,14 +138,15 @@ namespace Com.MorganHouston.PaddleBalls
             if (PhotonNetwork.IsConnected)
             {
                 // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-                PhotonNetwork.CreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+                PhotonNetwork.JoinOrCreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom }, TypedLobby.Default);
             }
             else if (PhotonNetwork.IsConnected == false)
             {
                 // #Critical, we must first and foremost connect to Photon Online Server.
                 // keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
-                isConnecting = PhotonNetwork.ConnectUsingSettings();
                 PhotonNetwork.GameVersion = gameVersion;
+                isConnecting = PhotonNetwork.ConnectUsingSettings();
+                
             }
         }
 
@@ -141,7 +155,6 @@ namespace Com.MorganHouston.PaddleBalls
             // #Important
             if (string.IsNullOrEmpty(value))
             {
-                Debug.LogError("Room Name is null or empty");
                 return;
             }
 
@@ -155,7 +168,6 @@ namespace Com.MorganHouston.PaddleBalls
         /// <param name="message"></param>
         public override void OnJoinRandomFailed(short returnCode, string message)
         {
-            Debug.Log("PUN Basics Tutorial/Launcher:OnJoinRandomFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom");
             if (string.IsNullOrEmpty(roomCode)) return;
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room with set maxPlayersPerRoom.
             PhotonNetwork.CreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
@@ -166,15 +178,11 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         public override void OnJoinedRoom()
         {
-            Debug.Log("PUN Basics Tutorial/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
             // #Critical: We only load if we are the first player, else we rely on `PhotonNetwork.AutomaticallySyncScene` to sync our instance scene.
 
             
             if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
             {
-                Debug.Log("We load the 'Room for 1' ");
-
-
                 // #Critical
                 // Load the Room Level.
                 PhotonNetwork.LoadLevel("Room for 1");

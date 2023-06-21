@@ -69,7 +69,6 @@ namespace Com.MorganHouston.PaddleBalls
             // #Important
             if (string.IsNullOrEmpty(value))
             {
-                Debug.LogError("Player Name is null or empty");
                 return;
             }
             PhotonNetwork.NickName = value;

@@ -443,17 +443,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 798728690, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
   m_PrefabInstance: {fileID: 56986086}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56986089}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b727dca8ab8ac429665735a79868fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &56986089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7588693873008086100, guid: 6f2902ee7b98345599c5c1ded19c6a9a, type: 3}
-  m_PrefabInstance: {fileID: 56986086}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &101723795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -597,17 +592,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1142410077, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
   m_PrefabInstance: {fileID: 101723795}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101723798}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aef2683915f21b24091f3c9e284de960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &101723798 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3733225321432298376, guid: 3b539194819714c1a8f5014425b31dca, type: 3}
-  m_PrefabInstance: {fileID: 101723795}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &119368420
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +724,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142714640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 409de7e58a2e549d8a09c3b378f9a12d, type: 3}
   m_Name: 
@@ -2663,8 +2653,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 3631617}
   counter: {fileID: 573996082188048375, guid: 4ff9f68177d034d41adc7ed37d4d3816, type: 3}
   pauseBtn: {fileID: 328164898}
-  btnMusic: {fileID: 101723798}
-  btnSound: {fileID: 56986089}
+  rematchBtn: {fileID: 1473223177}
 --- !u!4 &756367414
 Transform:
   m_ObjectHideFlags: 0

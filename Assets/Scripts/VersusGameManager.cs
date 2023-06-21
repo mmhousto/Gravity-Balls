@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 
 
 using UnityEngine;
@@ -9,7 +8,7 @@ using UnityEngine.UI;
 
 using Photon.Pun;
 using Photon.Realtime;
-
+using System.Collections;
 
 namespace Com.MorganHouston.PaddleBalls
 {
@@ -41,11 +40,11 @@ namespace Com.MorganHouston.PaddleBalls
 
         private Collider wall, wall2, switchL, switchR;
 
-        private int readyPlayers = 0;
+        public static int readyPlayers = 0;
 
-        private Toggle toggle1, toggle2;
+        public Toggle toggle1, toggle2;
 
-        private Button rematchBtn;
+        public Button rematchBtn;
 
         private bool isPaused;
 
@@ -53,8 +52,6 @@ namespace Com.MorganHouston.PaddleBalls
 
 
         #region Photon Callbacks
-
-
         /// <summary>
         /// Called when the local player left the room. We need to load the launcher scene.
         /// </summary>
@@ -115,7 +112,7 @@ namespace Com.MorganHouston.PaddleBalls
         {
             Instance = this;
             StartCoroutine(Wait());
-            
+
             //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
 
             // spawn 
@@ -125,27 +122,12 @@ namespace Com.MorganHouston.PaddleBalls
             }
             else
             {
-                if (PlayerManager.LocalPlayerInstance == null)
-                {
-                    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", Application.loadedLevelName);
-                    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
-                    {
-                        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, -3.45f, -0.2f), Quaternion.identity, 0);
-                    }
-                    else if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
-                    {
-                        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 3.45f, -0.2f), Quaternion.identity, 0);
-                    }
-                }
-                else
-                {
-                    Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
-                }
+                PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
 
             }
 
             brickHits = 0;
+            readyPlayers = 0;
 
             brickWall = GameObject.Find("Environment").transform.Find("BrickWall").gameObject;
             brickWall.SetActive(false);
@@ -157,7 +139,6 @@ namespace Com.MorganHouston.PaddleBalls
             switchR = GameObject.FindWithTag("switchR").GetComponent<Collider>();
             toggle1 = GameObject.FindWithTag("Ready").GetComponent<Toggle>();
             toggle2 = GameObject.FindWithTag("Ready2").GetComponent<Toggle>();
-            rematchBtn = GameObject.Find("btnRestart").GetComponent<Button>();
 
             // disable switches
 #if UNITY_IOS
@@ -187,17 +168,30 @@ namespace Com.MorganHouston.PaddleBalls
             // Handles lives
             HandleLives();
 
-            if(isGameOver == true)
+            if (isGameOver == true)
             {
                 ShowReadyPlayers();
             }
-            
+
         }
 
         #endregion
 
 
         #region Private Methods
+
+        Vector3 GetSpawnPosition()
+        {
+            // Determine the spawn position based on whether the client is the host or not
+            if (PhotonNetwork.IsMasterClient)
+            {
+                return new Vector3(0f, -3.45f, -0.2f); // Spawn position for host
+            }
+            else
+            {
+                return new Vector3(0f, 3.45f, -0.2f);
+            }
+        }
 
         IEnumerator Wait()
         {
@@ -268,6 +262,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void ShowReadyPlayers()
         {
+            Debug.Log(readyPlayers);
+
             switch (readyPlayers)
             {
                 case 2:
@@ -291,17 +287,15 @@ namespace Com.MorganHouston.PaddleBalls
             }
         }
 
-        public void PlayerReady()
+        public void Rematch()
         {
-            photonView.RPC("RpcPlayerReady", RpcTarget.MasterClient);
-            rematchBtn.interactable = false;
+            this.photonView.RPC("RpcRematch", RpcTarget.AllViaServer);
         }
 
         [PunRPC]
-        public void RpcPlayerReady()
+        public void RpcRematch()
         {
             readyPlayers++;
-            Debug.Log(readyPlayers);
         }
 
         public void Leave()
