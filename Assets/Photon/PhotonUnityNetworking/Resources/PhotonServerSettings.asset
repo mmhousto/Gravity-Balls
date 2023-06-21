@@ -47,6 +47,8 @@ MonoBehaviour:
   - ShowReadyPlayers
   - RpcReadyPlayer
   - RpcRematch
+  - UpdateRematchStatus
+  - Rematch
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

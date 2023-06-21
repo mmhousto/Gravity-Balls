@@ -41,6 +41,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         public static int p1Lives = 3, p2Lives = 3;
 
+        public static int playersReady = 0;
+
         public float wallZ = 0;
 
         public int selectedPaddle;
@@ -129,6 +131,11 @@ namespace Com.MorganHouston.PaddleBalls
             }
         }
 
+        private void OnEnable()
+        {
+            playersReady = 0;
+        }
+
         private void OnDisable()
         {
             LocalPlayerInstance = null;
@@ -207,6 +214,12 @@ namespace Com.MorganHouston.PaddleBalls
                 p2Lives -= 1;
             }
 
+        }
+
+        [PunRPC]
+        public void Rematch()
+        {
+            playersReady++;
         }
 
 
@@ -316,7 +329,7 @@ namespace Com.MorganHouston.PaddleBalls
                 {
                     tP2 = GetWorldPosition(wallZ);
                     tP2.z = -.2f;
-                    tP2.y = -3.45f;
+                    tP2.y = transform.position.y;
                     transform.position = tP2;
                 }
 
@@ -386,7 +399,12 @@ namespace Com.MorganHouston.PaddleBalls
 
         public static void LoseLife(int player)
         {
-            PV.RPC("Death", RpcTarget.All, player);
+            PV.RPC("Death", RpcTarget.AllBuffered, player);
+        }
+
+        public static void RematchPlayer()
+        {
+            PV.RPC("Rematch", RpcTarget.AllBuffered);
         }
 
 

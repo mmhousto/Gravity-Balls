@@ -32,7 +32,9 @@ namespace Com.MorganHouston.PaddleBalls
 
         private bool isSettingsActive = false;
 
-        private static bool playersConnected = false, gameStarted = false, isGameOver = false;
+        private static bool playersConnected = false, gameStarted = false;
+
+        public static bool isGameOver = false;
 
         private GameObject brickWall, brickWall2;
 
@@ -58,9 +60,17 @@ namespace Com.MorganHouston.PaddleBalls
         public override void OnLeftRoom()
         {
             //ActivateSettingsBtns();
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            PhotonNetwork.LoadLevel(3);
 
             base.OnLeftRoom();
+        }
+
+        public override void OnDisconnected(DisconnectCause cause)
+        {
+            loadMenu();
+
+            base.OnDisconnected(cause);
         }
 
         public override void OnPlayerEnteredRoom(Player other)
@@ -120,10 +130,12 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
             }
-            else
+            else if (PhotonNetwork.IsMasterClient)
             {
                 PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
-
+            }else if (PlayerManager.LocalPlayerInstance == null)
+            {
+                PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
             }
 
             brickHits = 0;
@@ -172,7 +184,6 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 ShowReadyPlayers();
             }
-
         }
 
         #endregion
@@ -262,14 +273,12 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void ShowReadyPlayers()
         {
-            Debug.Log(readyPlayers);
-
-            switch (readyPlayers)
+            switch (PlayerManager.playersReady)
             {
                 case 2:
                     toggle1.isOn = true;
                     toggle2.isOn = true;
-                    StartCoroutine(RestartingGame());
+                    restartGame();
 
                     break;
                 case 1:
@@ -289,7 +298,9 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void Rematch()
         {
-            this.photonView.RPC("RpcRematch", RpcTarget.AllViaServer);
+            rematchBtn.interactable = false;
+            PlayerManager.RematchPlayer();
+            //this.photonView.RPC("RpcRematch", RpcTarget.AllViaServer);
         }
 
         [PunRPC]
@@ -300,7 +311,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void Leave()
         {
-            PhotonNetwork.LeaveRoom();
+            //PhotonNetwork.LeaveRoom();
+            PhotonNetwork.Disconnect();
         }
 
         public static void collectCoin()
