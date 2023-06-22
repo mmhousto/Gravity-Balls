@@ -14,14 +14,19 @@ public class VersusSpawner : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(wait());
-        spawnedCoin = false;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            StartCoroutine(wait());
+            spawnedCoin = false;
+        }
+        
     }
 
     IEnumerator wait()
     {
         yield return new WaitForSeconds(3.1f);
         SpawnBall();
+        gameStarted = true;
     }
 
     private void SpawnCoin()
@@ -41,9 +46,7 @@ public class VersusSpawner : MonoBehaviourPunCallbacks
     {
         //playersConnected = PasswordNetworkManager.EveryoneConnected();
 
-        gameStarted = true;
-
-        if(!clone && spawnedBall == true && PhotonNetwork.InRoom)
+        if(!clone && spawnedBall == true && PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
         {
             SpawnBall();
         }

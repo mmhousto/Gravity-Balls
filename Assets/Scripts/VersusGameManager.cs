@@ -44,6 +44,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         public static int readyPlayers = 0;
 
+        public static int playersSpawned = 0;
+
         public Toggle toggle1, toggle2;
 
         public Button rematchBtn;
@@ -68,7 +70,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            loadMenu();
+            //loadMenu();
 
             base.OnDisconnected(cause);
         }
@@ -84,6 +86,7 @@ namespace Com.MorganHouston.PaddleBalls
 
                 gameOver.SetActive(false);
                 PlayerManager.ResetLives();
+                playersSpawned = 0;
                 LoadArena();
             }
         }
@@ -93,15 +96,10 @@ namespace Com.MorganHouston.PaddleBalls
         {
             Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
 
-
-            if (PhotonNetwork.IsMasterClient)
-            {
-                Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
-
-                gameOver.SetActive(false);
-                PlayerManager.ResetLives();
-                PhotonNetwork.LeaveRoom();
-            }
+            gameOver.SetActive(false);
+            PlayerManager.ResetLives();
+            playersSpawned = 0;
+            LoadArena();
         }
 
 
@@ -120,6 +118,8 @@ namespace Com.MorganHouston.PaddleBalls
         // Start is called before the first frame update
         void Start()
         {
+            if (Instance != null) PhotonNetwork.Destroy(this.gameObject);
+
             Instance = this;
             StartCoroutine(Wait());
 
@@ -130,12 +130,10 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
             }
-            else if (PhotonNetwork.IsMasterClient)
+            else if (playersSpawned < 1)
             {
                 PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
-            }else if (PlayerManager.LocalPlayerInstance == null)
-            {
-                PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
+                playersSpawned++;
             }
 
             brickHits = 0;
@@ -166,7 +164,9 @@ namespace Com.MorganHouston.PaddleBalls
             Physics.IgnoreLayerCollision(3, 8);
 
             PlayerData.addPlay();
-            PhotonNetwork.InstantiateRoomObject(counter.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
+
+            if(PhotonNetwork.IsMasterClient)
+                PhotonNetwork.InstantiateRoomObject(counter.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
 
             Time.timeScale = 1;
             PlayerPrefs.SetInt("CoinsC", 0);
@@ -194,7 +194,7 @@ namespace Com.MorganHouston.PaddleBalls
         Vector3 GetSpawnPosition()
         {
             // Determine the spawn position based on whether the client is the host or not
-            if (PhotonNetwork.IsMasterClient)
+            if (photonView.IsMine)
             {
                 return new Vector3(0f, -3.45f, -0.2f); // Spawn position for host
             }
@@ -273,7 +273,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void ShowReadyPlayers()
         {
-            switch (PlayerManager.playersReady)
+            switch (readyPlayers)
             {
                 case 2:
                     toggle1.isOn = true;
@@ -299,20 +299,21 @@ namespace Com.MorganHouston.PaddleBalls
         public void Rematch()
         {
             rematchBtn.interactable = false;
-            PlayerManager.RematchPlayer();
-            //this.photonView.RPC("RpcRematch", RpcTarget.AllViaServer);
+            readyPlayers++;
+            PlayerManager.RematchPlayer(readyPlayers);
         }
 
         [PunRPC]
         public void RpcRematch()
         {
             readyPlayers++;
+            
         }
 
         public void Leave()
         {
-            //PhotonNetwork.LeaveRoom();
-            PhotonNetwork.Disconnect();
+            PhotonNetwork.LeaveRoom();
+            //PhotonNetwork.Disconnect();
         }
 
         public static void collectCoin()
@@ -339,7 +340,8 @@ namespace Com.MorganHouston.PaddleBalls
             //counter.SetActive(false);
             //pauseBtn.SetActive(true);
             //gameOver.SetActive(false);
-            photonView.RPC("RpcRestartScene", RpcTarget.All);
+            if(PhotonNetwork.IsMasterClient)
+                photonView.RPC("RpcRestartScene", RpcTarget.All);
             //coinManager.collectedCoins();
             //coins = 0;
             //PlayerPrefs.SetInt("CoinsC", coins);

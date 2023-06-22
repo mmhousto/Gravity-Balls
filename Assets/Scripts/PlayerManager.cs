@@ -41,7 +41,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public static int p1Lives = 3, p2Lives = 3;
 
-        public static int playersReady = 0;
+        public int playersReady = 0;
 
         public float wallZ = 0;
 
@@ -61,16 +61,16 @@ namespace Com.MorganHouston.PaddleBalls
         {
             // #Important
             // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
-            if (photonView.IsMine)
+            if (photonView.IsMine && LocalPlayerInstance == null)
             {
-                PlayerManager.LocalPlayerInstance = this.gameObject;
+                LocalPlayerInstance = this.gameObject;
             }
-            else return;
+            else if (photonView.IsMine && LocalPlayerInstance != null) PhotonNetwork.Destroy(this.gameObject);
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
 
-            environment = GameObject.Find("Environment");
+            /*environment = GameObject.Find("Environment");
 
             boundaries _boundaries = environment.GetComponent<boundaries>();
 
@@ -84,7 +84,7 @@ namespace Com.MorganHouston.PaddleBalls
             else
             {
                 Debug.Log("<Color=Red><a>Missing</a></Color> boundaries Component on Environment.");
-            }
+            }*/
         }
 
         // Start is called before the first frame update
@@ -95,7 +95,7 @@ namespace Com.MorganHouston.PaddleBalls
             if (photonView.IsMine)
             {
                 cam = Camera.main;
-
+                playersReady = 0;
                 selectedPaddle = PlayerPrefs.GetInt("selectedPaddle");
                 //threeDPaddle = PlayerManager.LocalPlayerInstance.transform.GetChild(0).GetChild(0).gameObject;
                 //meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
@@ -217,9 +217,9 @@ namespace Com.MorganHouston.PaddleBalls
         }
 
         [PunRPC]
-        public void Rematch()
+        public void Rematch(int newValue)
         {
-            playersReady++;
+            playersReady = newValue;
         }
 
 
@@ -402,9 +402,9 @@ namespace Com.MorganHouston.PaddleBalls
             PV.RPC("Death", RpcTarget.AllBuffered, player);
         }
 
-        public static void RematchPlayer()
+        public static void RematchPlayer(int newValue)
         {
-            PV.RPC("Rematch", RpcTarget.AllBuffered);
+            PV.RPC("Rematch", RpcTarget.AllBuffered, newValue);
         }
 
 

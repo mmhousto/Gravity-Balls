@@ -11,6 +11,7 @@ public class PUN2_PlayerSync : MonoBehaviourPun, IPunObservable
     //Values that will be synced over network
     Vector3 latestPos;
     Quaternion latestRot;
+    int latestReadyPlayers;
 
     // Use this for initialization
     void Start()

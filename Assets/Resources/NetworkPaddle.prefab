@@ -587,7 +587,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 2
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
@@ -625,6 +625,7 @@ MonoBehaviour:
   lifeGain: {fileID: 3907890793184785292}
   extendPaddle: {fileID: 3907890793184785293}
   breakBrick: {fileID: 3907890793184785290}
+  playersReady: 0
   wallZ: 0
   selectedPaddle: 0
 --- !u!114 &1196228752646006724
