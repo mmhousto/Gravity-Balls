@@ -40,8 +40,6 @@ namespace Com.MorganHouston.PaddleBalls
 
         private static int brickHits, brick2Hits;
 
-        private Collider wall, wall2, switchL, switchR;
-
         public static int readyPlayers = 0;
 
         public static int playersSpawned = 0;
@@ -63,6 +61,9 @@ namespace Com.MorganHouston.PaddleBalls
         {
             //ActivateSettingsBtns();
             //SceneManager.LoadScene(0);
+            isGameOver = false;
+            readyPlayers = 0;
+            playersSpawned = 0;
             PhotonNetwork.LoadLevel(3);
 
             base.OnLeftRoom();
@@ -86,7 +87,6 @@ namespace Com.MorganHouston.PaddleBalls
 
                 gameOver.SetActive(false);
                 PlayerManager.ResetLives();
-                playersSpawned = 0;
                 LoadArena();
             }
         }
@@ -96,10 +96,10 @@ namespace Com.MorganHouston.PaddleBalls
         {
             Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
 
-            gameOver.SetActive(false);
-            PlayerManager.ResetLives();
+            isGameOver = false;
+            readyPlayers = 0;
             playersSpawned = 0;
-            LoadArena();
+            PhotonNetwork.LoadLevel(3);
         }
 
 
@@ -143,22 +143,9 @@ namespace Com.MorganHouston.PaddleBalls
             brickWall.SetActive(false);
             brickWall2 = GameObject.Find("Environment").transform.Find("BrickWall2").gameObject;
             brickWall2.SetActive(false);
-            wall = GameObject.Find("WallL").GetComponent<Collider>();
-            wall2 = GameObject.Find("WallR").GetComponent<Collider>();
-            switchL = GameObject.FindWithTag("switchL").GetComponent<Collider>();
-            switchR = GameObject.FindWithTag("switchR").GetComponent<Collider>();
             toggle1 = GameObject.FindWithTag("Ready").GetComponent<Toggle>();
             toggle2 = GameObject.FindWithTag("Ready2").GetComponent<Toggle>();
 
-            // disable switches
-#if UNITY_IOS
-            switchL.enabled = false;
-            switchR.enabled = false;
-#elif UNITY_ANDROID
-            switchL.enabled = false;
-            switchR.enabled = false;
-#else
-#endif
 
             // Collisions to ignore
             Physics.IgnoreLayerCollision(3, 8);
@@ -184,6 +171,12 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 ShowReadyPlayers();
             }
+
+            if(Time.timeScale == 0 && PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate != 1)
+            {
+                PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = 1;
+            }else if (Time.timeScale == 1 && PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate != -1)
+                PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = -1;
         }
 
         #endregion
@@ -299,15 +292,13 @@ namespace Com.MorganHouston.PaddleBalls
         public void Rematch()
         {
             rematchBtn.interactable = false;
-            readyPlayers++;
-            PlayerManager.RematchPlayer(readyPlayers);
+            photonView.RPC("RpcRematch", RpcTarget.All);
         }
 
         [PunRPC]
         public void RpcRematch()
         {
             readyPlayers++;
-            
         }
 
         public void Leave()
@@ -323,7 +314,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void PauseGame()
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             pauseMenu.SetActive(true);
             isPaused = true;
         }
@@ -331,7 +322,7 @@ namespace Com.MorganHouston.PaddleBalls
         public void ResumeGame()
         {
             pauseMenu.SetActive(false);
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
             isPaused = false;
         }
 

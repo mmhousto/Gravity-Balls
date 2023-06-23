@@ -41,8 +41,6 @@ namespace Com.MorganHouston.PaddleBalls
 
         public static int p1Lives = 3, p2Lives = 3;
 
-        public int playersReady = 0;
-
         public float wallZ = 0;
 
         public int selectedPaddle;
@@ -95,7 +93,6 @@ namespace Com.MorganHouston.PaddleBalls
             if (photonView.IsMine)
             {
                 cam = Camera.main;
-                playersReady = 0;
                 selectedPaddle = PlayerPrefs.GetInt("selectedPaddle");
                 //threeDPaddle = PlayerManager.LocalPlayerInstance.transform.GetChild(0).GetChild(0).gameObject;
                 //meshRenderer = threeDPaddle.GetComponent<MeshRenderer>();
@@ -129,11 +126,6 @@ namespace Com.MorganHouston.PaddleBalls
                 EndBrick();
                 breakBrick.Play();
             }
-        }
-
-        private void OnEnable()
-        {
-            playersReady = 0;
         }
 
         private void OnDisable()
@@ -216,12 +208,6 @@ namespace Com.MorganHouston.PaddleBalls
 
         }
 
-        [PunRPC]
-        public void Rematch(int newValue)
-        {
-            playersReady = newValue;
-        }
-
 
         #endregion
 
@@ -229,7 +215,7 @@ namespace Com.MorganHouston.PaddleBalls
         #region Private Methods
 
 
-        void OnTriggerEnter(Collider collision)
+        /*void OnTriggerEnter(Collider collision)
         {
             if (!photonView.IsMine)
             {
@@ -257,7 +243,7 @@ namespace Com.MorganHouston.PaddleBalls
                     else transform.Translate(-width, 0f, 0f);
                 }
             }
-        }
+        }*/
 
         void OnCollisionEnter(Collision collision)
         {
@@ -400,11 +386,6 @@ namespace Com.MorganHouston.PaddleBalls
         public static void LoseLife(int player)
         {
             PV.RPC("Death", RpcTarget.AllBuffered, player);
-        }
-
-        public static void RematchPlayer(int newValue)
-        {
-            PV.RPC("Rematch", RpcTarget.AllBuffered, newValue);
         }
 
 
