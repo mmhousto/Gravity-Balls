@@ -1,14 +1,11 @@
-using System;
-
-
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Com.MorganHouston.PaddleBalls
 {
@@ -61,6 +58,15 @@ namespace Com.MorganHouston.PaddleBalls
         {
             //ActivateSettingsBtns();
             //SceneManager.LoadScene(0);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.DestroyAll();
+            }
+            else
+            {
+                PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
+            }
+
             isGameOver = false;
             readyPlayers = 0;
             playersSpawned = 0;
@@ -78,12 +84,10 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnPlayerEnteredRoom(Player other)
         {
-            Debug.LogFormat("OnPlayerEnteredRoom() {0}", other.NickName); // not seen if you're the player connecting
 
 
             if (PhotonNetwork.IsMasterClient)
             {
-                Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
                 gameOver.SetActive(false);
                 PlayerManager.ResetLives();
@@ -94,12 +98,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnPlayerLeftRoom(Player other)
         {
-            Debug.LogFormat("OnPlayerLeftRoom() {0}", other.NickName); // seen when other disconnects
 
-            isGameOver = false;
-            readyPlayers = 0;
-            playersSpawned = 0;
-            PhotonNetwork.LoadLevel(3);
+            PhotonNetwork.LeaveRoom();
         }
 
 
@@ -128,7 +128,6 @@ namespace Com.MorganHouston.PaddleBalls
             // spawn 
             if (playerPrefab == null)
             {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
             }
             else if (playersSpawned < 1)
             {
@@ -207,9 +206,9 @@ namespace Com.MorganHouston.PaddleBalls
         {
             if (!PhotonNetwork.IsMasterClient)
             {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+                //Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
-            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            //Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
             //ActivateSettingsBtns();
             PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
         }
