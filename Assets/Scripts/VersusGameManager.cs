@@ -131,7 +131,7 @@ namespace Com.MorganHouston.PaddleBalls
             }
             else if (playersSpawned < 1)
             {
-                player = PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
+                player = PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), GetSpawnRotation(), 0);
                 playersSpawned++;
             }
 
@@ -202,6 +202,19 @@ namespace Com.MorganHouston.PaddleBalls
             else
             {
                 return new Vector3(0f, 3.45f, -0.2f);
+            }
+        }
+
+        Quaternion GetSpawnRotation()
+        {
+            // Determine the spawn position based on whether the client is the host or not
+            if (photonView.IsMine)
+            {
+                return Quaternion.identity; // Spawn position for host
+            }
+            else
+            {
+                return Quaternion.Euler(180f, 180f, 0f);
             }
         }
 

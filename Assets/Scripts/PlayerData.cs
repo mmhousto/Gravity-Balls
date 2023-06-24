@@ -92,6 +92,7 @@ public class PlayerData : MonoBehaviour
         plays += 1;
         PlayerPrefs.SetInt("Plays", plays);
         PlayServices.AddPlays(plays);
+        Debug.Log($"PLAYS: {plays}");
     }
 
     public static void AddWin()

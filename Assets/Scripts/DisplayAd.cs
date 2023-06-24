@@ -8,24 +8,29 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
 	public string myGameIdAndroid = "3917197";
 	public string myGameIdIOS = "3917196";
-	public string myVideoPlacement = "gameOver";
+	private string myVideoPlacementIOS = "iOS_Interstitial";
+	private string myVideoPlacementAndroid = "Android_Interstitial";
+    public string myVideoPlacement = "";
 	public bool adStarted = false;
-	private bool testMode = false;
+	public bool testMode = false;
     private bool isReady = false;
     public GameObject gameOver;
 
     // Start is called before the first frame update
-    void Start() {
-        #if UNITY_IOS
+    void Start()
+    {
+#if UNITY_IOS
         	Advertisement.Initialize(myGameIdIOS, testMode, this);
-        #else
-        	Advertisement.Initialize(myGameIdAndroid, testMode, this);
-        #endif
+            myVideoPlacement = myVideoPlacementIOS;
+#else
+            Advertisement.Initialize(myGameIdAndroid, testMode, this);
+            myVideoPlacement = myVideoPlacementAndroid;
+#endif
     }
 
     // Update is called once per frame
     void Update() {
-        if (Advertisement.isInitialized && isReady && !adStarted && (GameManager.lives == 0 || SkillManager.lives == 0) && gameOver.activeSelf == true && (PlayerData.plays % 10 == 0)) {
+        if (Advertisement.isSupported && Advertisement.isInitialized && isReady && !adStarted && gameOver.activeInHierarchy == true && (PlayerData.plays % 10 == 0)) {
         	Advertisement.Show(myVideoPlacement, this);
         	adStarted = true;
         }
@@ -33,6 +38,7 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     public void OnInitializationComplete()
     {
+        Debug.Log("Ad Init");
         Advertisement.Load(myVideoPlacement, this);
     }
 
@@ -44,6 +50,7 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
     public void OnUnityAdsAdLoaded(string placementId)
     {
         isReady = true;
+        Debug.Log("Ad Ready");
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)

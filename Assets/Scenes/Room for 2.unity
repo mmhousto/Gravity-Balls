@@ -2107,8 +2107,8 @@ MonoBehaviour:
   settingsMenu: {fileID: 3631617}
   counter: {fileID: 573996082188048375, guid: 4ff9f68177d034d41adc7ed37d4d3816, type: 3}
   pauseBtn: {fileID: 328164898}
-  toggle1: {fileID: 0}
-  toggle2: {fileID: 0}
+  toggle1: {fileID: 1371549713}
+  toggle2: {fileID: 958559240}
   rematchBtn: {fileID: 1331052856}
 --- !u!4 &756367414
 Transform:

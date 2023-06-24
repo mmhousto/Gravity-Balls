@@ -3098,6 +3098,7 @@ MonoBehaviour:
   myGameIdIOS: 3917196
   myVideoPlacement: gameOver
   adStarted: 0
+  testMode: 0
   gameOver: {fileID: 995509585}
 --- !u!4 &1337751206
 Transform:
