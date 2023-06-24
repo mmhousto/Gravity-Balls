@@ -9,6 +9,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 using System.Threading.Tasks;
+using Apple.GameKit;
 
 public class PlayServices : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PlayServices : MonoBehaviour
     public GameObject signIn, signOut;
     public string token;
     public bool loggedIn;
+    string Signature;
+    string TeamPlayerID;
+    string Salt;
+    string PublicKeyUrl;
+    string Timestamp;
 
     // Player Data Object
     private PlayerData player;
@@ -68,6 +74,7 @@ public class PlayServices : MonoBehaviour
 #endif
     }
 
+#if UNITY_ANDROID
     private void LoginGooglePlayGames()
     {
         PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (success) =>
@@ -86,6 +93,7 @@ public class PlayServices : MonoBehaviour
             }
         });
     }
+#endif
 
     async void SignInGoogle(string code)
     {
@@ -95,6 +103,64 @@ public class PlayServices : MonoBehaviour
     async void InitUGS()
     {
         await UnityServices.InitializeAsync();
+    }
+
+    public async Task LoginAppleGameCenter()
+    {
+        if (!GKLocalPlayer.Local.IsAuthenticated)
+        {
+            // Perform the authentication.
+            var player = await GKLocalPlayer.Authenticate();
+            Debug.Log($"GameKit Authentication: player {player}");
+
+            // Grab the display name.
+            var localPlayer = GKLocalPlayer.Local;
+            Debug.Log($"Local Player: {localPlayer.DisplayName}");
+
+            // Fetch the items.
+            var fetchItemsResponse = await GKLocalPlayer.Local.FetchItems();
+
+            Signature = Convert.ToBase64String(fetchItemsResponse.GetSignature());
+            TeamPlayerID = localPlayer.TeamPlayerId;
+            Debug.Log($"Team Player ID: {TeamPlayerID}");
+
+            Salt = Convert.ToBase64String(fetchItemsResponse.GetSalt());
+            PublicKeyUrl = fetchItemsResponse.PublicKeyUrl;
+            Timestamp = fetchItemsResponse.Timestamp.ToString();
+
+
+            /*Debug.Log($"GameKit Authentication: signature => {Signature}");
+            Debug.Log($"GameKit Authentication: publickeyurl => {PublicKeyUrl}");
+            Debug.Log($"GameKit Authentication: salt => {Salt}");
+            Debug.Log($"GameKit Authentication: Timestamp => {Timestamp}");*/
+            await SignInWithAppleGameCenterAsync(Signature, TeamPlayerID, PublicKeyUrl, Salt, Convert.ToUInt64(Timestamp));
+        }
+        else
+        {
+            Debug.Log("AppleGameCenter player already logged in.");
+        }
+    }
+
+    async Task SignInWithAppleGameCenterAsync(string signature, string teamPlayerId, string publicKeyURL, string salt, ulong timestamp)
+    {
+        try
+        {
+            await AuthenticationService.Instance.SignInWithAppleGameCenterAsync(signature, teamPlayerId, publicKeyURL, salt, timestamp);
+            //Debug.Log("SignIn is successful.");
+            SetPlayerData(AuthenticationService.Instance.PlayerId);
+        }
+        catch (AuthenticationException ex)
+        {
+            // Compare error code to AuthenticationErrorCodes
+            // Notify the player with the proper error message
+            //Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            // Compare error code to CommonErrorCodes
+            // Notify the player with the proper error message
+            //Debug.LogException(ex);
+        }
     }
 
     async Task SignInWithGooglePlayGamesAsync(string authCode)
@@ -120,9 +186,14 @@ public class PlayServices : MonoBehaviour
         }
     }
 
+    async void LoginApple()
+    {
+        await LoginAppleGameCenter();
+    }
+
     void ProcessAuthentication(bool success) {
         if(success) {
-            
+            LoginApple();
         }
         else
         {
@@ -217,7 +288,7 @@ public class PlayServices : MonoBehaviour
         PlayGamesPlatform.Instance.SignOut();
         AuthenticationService.Instance.SignOut();
         Debug.Log("Signed OUT!");
-#endif   
+#endif
     }
 
     public void ShowAchievements()

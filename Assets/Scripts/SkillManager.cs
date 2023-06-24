@@ -92,7 +92,7 @@ public class SkillManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lives < 1){
+        if(lives < 1 && isGameOver == false){
             isPaused = false;
             isGameOver = true;
             pauseMenu.SetActive(false);
