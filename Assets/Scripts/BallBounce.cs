@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallBounce : MonoBehaviour
 {
-    public float speed = 3f;
+    public float speed = 2.75f;
     private Rigidbody localRgb;
 
     // Start is called before the first frame update

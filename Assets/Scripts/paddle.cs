@@ -127,18 +127,13 @@ public class paddle : MonoBehaviour
         Destroy(paddle2);
     }
 
+    
     void OnTriggerEnter(Collider collision) {
-        float height = 2f * cam.orthographicSize;
-        float width = height * cam.aspect;
 
         if (collision.transform.name == "switchL") {
-            if(width > 7.5) {
-                transform.Translate(8.6f, 0f, 0f);
-            } else transform.Translate(width, 0f, 0f);
+            transform.Translate(6, 0f, 0f);
         } else if(collision.transform.name == "switchR") {
-            if(width > 7.5) {
-                transform.Translate(-8.6f, 0f, 0f);
-            } else transform.Translate(-width, 0f, 0f);
+            transform.Translate(-6, 0f, 0f);
         }
     }
 

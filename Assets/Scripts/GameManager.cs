@@ -99,102 +99,111 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lives > 6){
-        	lives = 6;
-        }
-        switch(lives) {
-        	case 6:
-        		life1.SetActive(true);
-        		life2.SetActive(true);
-        		life3.SetActive(true);
-        		life4.SetActive(true);
-        		life5.SetActive(true);
-        		life6.SetActive(true);
-        		break;
-        	case 5:
-        		life1.SetActive(true);
-        		life2.SetActive(true);
-        		life3.SetActive(true);
-        		life4.SetActive(true);
-        		life5.SetActive(true);
-        		life6.SetActive(false);
-        		break;
-        	case 4:
-        		life1.SetActive(true);
-        		life2.SetActive(true);
-        		life3.SetActive(true);
-        		life4.SetActive(true);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		break;
-        	case 3:
-        		life1.SetActive(true);
-        		life2.SetActive(true);
-        		life3.SetActive(true);
-        		life4.SetActive(false);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		break;
-        	case 2:
-        		life1.SetActive(true);
-        		life2.SetActive(true);
-        		life3.SetActive(false);
-        		life4.SetActive(false);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		break;
-        	case 1:
-        		life1.SetActive(true);
-        		life2.SetActive(false);
-        		life3.SetActive(false);
-        		life4.SetActive(false);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		break;
-        	case 0:
-                isGameOver = true;
-                isPaused = false;
-                PlayerPrefs.SetInt("CoinsC", coins);
-                PlayServices.AddScoreToLeaderboard();
-                life1.SetActive(false);
-        		life2.SetActive(false);
-        		life3.SetActive(false);
-        		life4.SetActive(false);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		pauseBtn.SetActive(false);
-                pauseMenu.SetActive(false);
-                gameOver.SetActive(true);
-                if(isSettingsActive == true) {
-        		  gameOver.SetActive(false);
-                }
-                if(isSettingsActive == false) {
-                  gameOver.SetActive(true);
-                }
-        		Time.timeScale = 0;
-        		break;
-        	default:
-                isGameOver = true;
-                isPaused = false;
-                PlayerPrefs.SetInt("CoinsC", coins);
-                PlayServices.AddScoreToLeaderboard();
-                life1.SetActive(false);
-        		life2.SetActive(false);
-        		life3.SetActive(false);
-        		life4.SetActive(false);
-        		life5.SetActive(false);
-        		life6.SetActive(false);
-        		pauseBtn.SetActive(false);
-                pauseMenu.SetActive(false);
-                gameOver.SetActive(true);
-                if(isSettingsActive == true) {
-        		  gameOver.SetActive(false);
-                }
-                if(isSettingsActive == false) {
-                  gameOver.SetActive(true);
-                }
-        		Time.timeScale = 0;
-        		break;
+        if (isGameOver == false)
+        {
+            if (lives > 6)
+            {
+                lives = 6;
+            }
+            switch (lives)
+            {
+                case 6:
+                    life1.SetActive(true);
+                    life2.SetActive(true);
+                    life3.SetActive(true);
+                    life4.SetActive(true);
+                    life5.SetActive(true);
+                    life6.SetActive(true);
+                    break;
+                case 5:
+                    life1.SetActive(true);
+                    life2.SetActive(true);
+                    life3.SetActive(true);
+                    life4.SetActive(true);
+                    life5.SetActive(true);
+                    life6.SetActive(false);
+                    break;
+                case 4:
+                    life1.SetActive(true);
+                    life2.SetActive(true);
+                    life3.SetActive(true);
+                    life4.SetActive(true);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    break;
+                case 3:
+                    life1.SetActive(true);
+                    life2.SetActive(true);
+                    life3.SetActive(true);
+                    life4.SetActive(false);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    break;
+                case 2:
+                    life1.SetActive(true);
+                    life2.SetActive(true);
+                    life3.SetActive(false);
+                    life4.SetActive(false);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    break;
+                case 1:
+                    life1.SetActive(true);
+                    life2.SetActive(false);
+                    life3.SetActive(false);
+                    life4.SetActive(false);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    break;
+                case 0:
+                    isGameOver = true;
+                    isPaused = false;
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    PlayServices.AddScoreToLeaderboard();
+                    life1.SetActive(false);
+                    life2.SetActive(false);
+                    life3.SetActive(false);
+                    life4.SetActive(false);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    pauseBtn.SetActive(false);
+                    pauseMenu.SetActive(false);
+                    gameOver.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+                default:
+                    isGameOver = true;
+                    isPaused = false;
+                    PlayerPrefs.SetInt("CoinsC", coins);
+                    PlayServices.AddScoreToLeaderboard();
+                    life1.SetActive(false);
+                    life2.SetActive(false);
+                    life3.SetActive(false);
+                    life4.SetActive(false);
+                    life5.SetActive(false);
+                    life6.SetActive(false);
+                    pauseBtn.SetActive(false);
+                    pauseMenu.SetActive(false);
+                    gameOver.SetActive(true);
+                    if (isSettingsActive == true)
+                    {
+                        gameOver.SetActive(false);
+                    }
+                    if (isSettingsActive == false)
+                    {
+                        gameOver.SetActive(true);
+                    }
+                    Time.timeScale = 0;
+                    break;
+            }
         }
 
     }

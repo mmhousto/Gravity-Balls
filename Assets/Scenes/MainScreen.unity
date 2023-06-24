@@ -2184,7 +2184,7 @@ GameObject:
   - component: {fileID: 275426735}
   m_Layer: 0
   m_Name: signIn
-  m_TagString: Untagged
+  m_TagString: SignIn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2452,7 +2452,7 @@ GameObject:
   - component: {fileID: 326976823}
   m_Layer: 0
   m_Name: signOut
-  m_TagString: Untagged
+  m_TagString: SignOut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

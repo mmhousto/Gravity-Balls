@@ -1,5 +1,3 @@
-
-
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
@@ -20,7 +18,6 @@ namespace Com.MorganHouston.PaddleBalls
         public GameObject life1, life2, life3, p2Life1, p2Life2, p2Life3;
         public static int coins, newCoins;
         public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn;
-        public static VersusGameManager Instance;
 
         #endregion
 
@@ -47,6 +44,8 @@ namespace Com.MorganHouston.PaddleBalls
 
         private bool isPaused;
 
+        private GameObject player;
+
         #endregion
 
 
@@ -62,11 +61,12 @@ namespace Com.MorganHouston.PaddleBalls
             {
                 PhotonNetwork.DestroyAll();
             }
-            else
+            else if (player != null)
             {
-                PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
+                PhotonNetwork.Destroy(player);
             }
 
+            PlayerManager.ResetLives();
             isGameOver = false;
             readyPlayers = 0;
             playersSpawned = 0;
@@ -77,7 +77,12 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            //loadMenu();
+            PlayerManager.ResetLives();
+            isGameOver = false;
+            readyPlayers = 0;
+            playersSpawned = 0;
+            //PhotonNetwork.LoadLevel(3);
+            loadMenu();
 
             base.OnDisconnected(cause);
         }
@@ -89,7 +94,6 @@ namespace Com.MorganHouston.PaddleBalls
             if (PhotonNetwork.IsMasterClient)
             {
 
-                gameOver.SetActive(false);
                 PlayerManager.ResetLives();
                 LoadArena();
             }
@@ -114,13 +118,9 @@ namespace Com.MorganHouston.PaddleBalls
 
         #region MonoBehaviour CallBacks
 
-
         // Start is called before the first frame update
         void Start()
         {
-            if (Instance != null) PhotonNetwork.Destroy(this.gameObject);
-
-            Instance = this;
             StartCoroutine(Wait());
 
             //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
@@ -131,7 +131,7 @@ namespace Com.MorganHouston.PaddleBalls
             }
             else if (playersSpawned < 1)
             {
-                PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
+                player = PhotonNetwork.Instantiate(playerPrefab.name, GetSpawnPosition(), Quaternion.identity, 0);
                 playersSpawned++;
             }
 
@@ -158,24 +158,33 @@ namespace Com.MorganHouston.PaddleBalls
             PlayerPrefs.SetInt("CoinsC", 0);
             coins = PlayerPrefs.GetInt("CoinsC", 0);
             gameOver.SetActive(false);
+            isGameOver = false;
         }
 
         // Update is called once per frame
         void Update()
         {
             // Handles lives
-            HandleLives();
+            if(isGameOver == false)
+            {
+                HandleLives();
+            }
+            
 
             if (isGameOver == true)
             {
                 ShowReadyPlayers();
             }
 
-            if(Time.timeScale == 0 && PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate != 1)
+            if (!PhotonNetwork.IsConnectedAndReady || !PhotonNetwork.IsConnected)
             {
-                PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = 1;
-            }else if (Time.timeScale == 1 && PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate != -1)
-                PhotonNetwork.MinimalTimeScaleToDispatchInFixedUpdate = -1;
+                PhotonNetwork.Disconnect();
+            }
+        }
+
+        private void OnApplicationQuit()
+        {
+            PhotonNetwork.LeaveRoom();
         }
 
         #endregion
@@ -291,7 +300,7 @@ namespace Com.MorganHouston.PaddleBalls
         public void Rematch()
         {
             rematchBtn.interactable = false;
-            photonView.RPC("RpcRematch", RpcTarget.All);
+            photonView.RPC("RpcRematch", RpcTarget.AllViaServer);
         }
 
         [PunRPC]
@@ -303,7 +312,6 @@ namespace Com.MorganHouston.PaddleBalls
         public void Leave()
         {
             PhotonNetwork.LeaveRoom();
-            //PhotonNetwork.Disconnect();
         }
 
         public static void collectCoin()
@@ -330,8 +338,10 @@ namespace Com.MorganHouston.PaddleBalls
             //counter.SetActive(false);
             //pauseBtn.SetActive(true);
             //gameOver.SetActive(false);
-            if(PhotonNetwork.IsMasterClient)
-                photonView.RPC("RpcRestartScene", RpcTarget.All);
+            readyPlayers = 0;
+            isGameOver = false;
+            PlayerManager.ResetLives();
+            PhotonNetwork.LoadLevel("Room for 2");
             //coinManager.collectedCoins();
             //coins = 0;
             //PlayerPrefs.SetInt("CoinsC", coins);
@@ -340,6 +350,9 @@ namespace Com.MorganHouston.PaddleBalls
         [PunRPC]
         public void RpcRestartScene()
         {
+            readyPlayers = 0;
+            playersSpawned = 0;
+            isGameOver = false;
             PlayerManager.ResetLives();
             PhotonNetwork.LoadLevel("Room for 2");
         }
@@ -349,6 +362,34 @@ namespace Com.MorganHouston.PaddleBalls
             Destroy(GameObject.Find("PlayerData"));
             Destroy(GameObject.Find("PlayServices"));
             SceneManager.LoadScene(0);
+        }
+
+        private void P1Lose()
+        {
+            // If p1 loses and you are master client(host) you lose
+            // else p1 loses and you are remote client you win
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PlayerData.AddLoss();
+            }
+            else
+            {
+                PlayerData.AddWin();
+            }
+        }
+
+        private void P2Lose()
+        {
+            // If p2 loses and you are master client(host) you win
+            // else p2 loses and you are remote client you lose
+            if (PhotonNetwork.IsMasterClient)
+            {
+                PlayerData.AddWin();
+            }
+            else
+            {
+                PlayerData.AddLoss();
+            }
         }
 
         public void HandleLives()
@@ -373,6 +414,7 @@ namespace Com.MorganHouston.PaddleBalls
                     life3.SetActive(false);
                     break;
                 case 0:
+                    P1Lose();
                     isGameOver = true;
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
@@ -383,9 +425,9 @@ namespace Com.MorganHouston.PaddleBalls
                     pauseBtn.SetActive(false);
                     gameOver.SetActive(true);
                     settingsMenu.SetActive(false);
-                    Time.timeScale = 0;
                     break;
                 default:
+                    P1Lose();
                     isGameOver = true;
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
@@ -396,7 +438,6 @@ namespace Com.MorganHouston.PaddleBalls
                     pauseBtn.SetActive(false);
                     gameOver.SetActive(true);
                     settingsMenu.SetActive(false);
-                    Time.timeScale = 0;
                     break;
             }
 
@@ -420,6 +461,7 @@ namespace Com.MorganHouston.PaddleBalls
                     p2Life3.SetActive(false);
                     break;
                 case 0:
+                    P2Lose();
                     isGameOver = true;
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
@@ -431,9 +473,9 @@ namespace Com.MorganHouston.PaddleBalls
                     gameOver.SetActive(true);
                     settingsMenu.SetActive(false);
                     pauseMenu.SetActive(false);
-                    Time.timeScale = 0;
                     break;
                 default:
+                    P2Lose();
                     isGameOver = true;
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
@@ -445,7 +487,6 @@ namespace Com.MorganHouston.PaddleBalls
                     gameOver.SetActive(true);
                     settingsMenu.SetActive(false);
                     pauseMenu.SetActive(false);
-                    Time.timeScale = 0;
                     break;
             }
 

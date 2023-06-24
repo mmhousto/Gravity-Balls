@@ -59,12 +59,20 @@ namespace Com.MorganHouston.PaddleBalls
         {
             // #Critical
             // this makes sure we can use PhotonNetwork.LoadLevel() on the master client and all clients in the same room sync their level automatically
+            Time.timeScale = 1;
             isConnecting = true;
             PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.GameVersion = gameVersion;
-            PhotonNetwork.ConnectUsingSettings();
-        }
 
+            if(!PhotonNetwork.IsConnected)
+                PhotonNetwork.ConnectUsingSettings();
+            else
+            {
+                isConnecting = false;
+                progressLabel.SetActive(false);
+                controlPanel.SetActive(true);
+            }
+        }
 
         /// <summary>
         /// MonoBehaviour method called on GameObject by Unity during initialization phase.
@@ -111,9 +119,10 @@ namespace Com.MorganHouston.PaddleBalls
         public override void OnDisconnected(DisconnectCause cause)
         {
             isConnecting = false;
-            progressLabel.SetActive(false);
-            controlPanel.SetActive(true);
-            Debug.LogWarningFormat("PUN Basics Launcher: OnDisconnected() was called by PUN with reason {0}", cause);
+            if(progressLabel)
+                progressLabel.SetActive(false);
+            if(controlPanel)
+                controlPanel.SetActive(true);
         }
 
 

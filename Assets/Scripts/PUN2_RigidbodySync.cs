@@ -26,8 +26,12 @@ public class PUN2_RigidbodySync : MonoBehaviourPun, IPunObservable
             //We own this player: send the others our data
             stream.SendNext(transform.position);
             stream.SendNext(transform.rotation);
-            stream.SendNext(r.velocity);
-            stream.SendNext(r.angularVelocity);
+            if(r != null)
+            {
+                stream.SendNext(r.velocity);
+                stream.SendNext(r.angularVelocity);
+            }
+            
         }
         else
         {

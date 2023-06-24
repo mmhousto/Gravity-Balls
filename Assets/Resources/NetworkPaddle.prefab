@@ -619,7 +619,7 @@ MonoBehaviour:
   orange: {fileID: 2100000, guid: 5ecdc778c0bcc9243a5f2a7206bb900d, type: 2}
   green: {fileID: 2100000, guid: b5726af2217eda74091abd2f0d873126, type: 2}
   lime: {fileID: 2100000, guid: bffad45c0937ef7418476bd43a6b6bb4, type: 2}
-  speed: 10
+  speed: 25
   coinCollect: {fileID: 3907890793184785296}
   ballBounce: {fileID: 3907890793184785295}
   lifeGain: {fileID: 3907890793184785292}

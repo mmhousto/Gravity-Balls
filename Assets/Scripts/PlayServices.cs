@@ -48,25 +48,11 @@ public class PlayServices : MonoBehaviour
 
     void ProcessAuthentication(bool success) {
         if(success) {
-            Debug.Log ("Authentication successful");
-#if UNITY_IPHONE
-            Social.CreateLeaderboard();
-            Social.CreateLeaderboard().id = "AllTimeLeader";
-            Social.CreateLeaderboard();
-            Social.CreateLeaderboard().id = "SkillLeader";
-#elif UNITY_ANDROID
-            Social.CreateLeaderboard();
-            Social.CreateLeaderboard().id = "CgkItYzmyokEEAIQAg";
-            Social.CreateLeaderboard();
-            Social.CreateLeaderboard().id = "CgkItYzmyokEEAIQAw";
-#else
-            //do error things here
-            Debug.Log("Playing on Web!");
-#endif
+            
         }
         else
         {
-            Debug.Log ("Failed to authenticate");
+            //Debug.Log ("Failed to authenticate");
         }
     }
 
@@ -90,6 +76,43 @@ public class PlayServices : MonoBehaviour
                 Social.ReportScore(playerScore, "SkillLeader", success => { });
 #elif UNITY_ANDROID
                 PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAw", success => { });
+#endif
+        }
+    }
+
+    public static void AddPlays(int valueToReport)
+    {
+        if (Social.localUser.authenticated)
+        {
+#if UNITY_IPHONE
+                Social.ReportScore(valueToReport, "AllTimeGames", success => { });
+#elif UNITY_ANDROID
+                PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBg", success => { });
+#endif
+        }
+    }
+
+    public static void AddWins(int valueToReport)
+    {
+        if (Social.localUser.authenticated)
+        {
+#if UNITY_IPHONE
+                Social.ReportScore(valueToReport, "AllTimeWins", success => { });
+#elif UNITY_ANDROID
+                PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBA", success => { });
+#endif
+        }
+    }
+
+    public static void AddWinPercent(float valueToReport)
+    {
+        if (Social.localUser.authenticated)
+        {
+            long valueAsLong = (long)(valueToReport * 100);
+#if UNITY_IPHONE
+                Social.ReportScore(valueAsLong, "AllTimeWinPercent", success => { });
+#elif UNITY_ANDROID
+            PlayGamesPlatform.Instance.ReportScore(valueAsLong, "CgkItYzmyokEEAIQBQ", success => { });
 #endif
         }
     }

@@ -24,6 +24,8 @@ TagManager:
   - Audio
   - Ready
   - Ready2
+  - SignIn
+  - SignOut
   layers:
   - Default
   - TransparentFX
