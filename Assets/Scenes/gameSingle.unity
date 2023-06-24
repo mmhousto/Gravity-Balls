@@ -5147,11 +5147,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d4ec21d6290c42089f58aaa67f04130, type: 3}
---- !u!1 &1952172614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2214469185972971250, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
-  m_PrefabInstance: {fileID: 2214469184692972724}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1952172615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2214469185972971251, guid: c8f527b598750374c9e9b0f50f02fd81, type: 3}
@@ -5585,10 +5580,6 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5627,46 +5618,6 @@ PrefabInstance:
     - target: {fileID: 2122447339628015317, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: wall
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: speed
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: wall2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: switchL
-      value: 
-      objectReference: {fileID: 412391615}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: switchR
-      value: 
-      objectReference: {fileID: 1274474793}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: brickWall
-      value: 
-      objectReference: {fileID: 1952172614}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: soloScene
-      value: gameSingle
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: skillScene
-      value: gameSkill
-      objectReference: {fileID: 0}
-    - target: {fileID: 2122447339628015319, guid: db3dd1b2131907a479b1fa884950585f, type: 3}
-      propertyPath: versusScene
-      value: gameVersus
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
