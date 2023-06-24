@@ -19,11 +19,11 @@ public class IAPShop : MonoBehaviour {
 	}
 
 	void Start() {
-		coins = PlayerData.getcoins();
+		coins = PlayerData.Instance.getcoins();
 	}
 
 	void Update() {
-		coins = PlayerData.getcoins();
+		coins = PlayerData.Instance.getcoins();
 	}
     
 	public void OnPurchaseComplete(Product product) {

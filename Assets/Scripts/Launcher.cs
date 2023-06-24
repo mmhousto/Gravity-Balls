@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 /// <summary>
 /// Namespace for me and Paddle Balls
@@ -24,7 +25,10 @@ namespace Com.MorganHouston.PaddleBalls
         private GameObject controlPanel;
         [Tooltip("The UI Label to inform the user that the connection is in progress")]
         [SerializeField]
-        private GameObject progressLabel;
+        private GameObject progressLabel, errorLabel;
+
+        public MainMenu sceneManager;
+        private TextMeshProUGUI errorLabelUI;
 
         private string roomCode = "";
 
@@ -63,6 +67,8 @@ namespace Com.MorganHouston.PaddleBalls
             isConnecting = true;
             PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.GameVersion = gameVersion;
+            errorLabelUI = errorLabel.GetComponent<TextMeshProUGUI>();
+            errorLabel.SetActive(false);
 
             if(!PhotonNetwork.IsConnected)
                 PhotonNetwork.ConnectUsingSettings();
@@ -118,11 +124,7 @@ namespace Com.MorganHouston.PaddleBalls
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            isConnecting = false;
-            if(progressLabel)
-                progressLabel.SetActive(false);
-            if(controlPanel)
-                controlPanel.SetActive(true);
+            sceneManager.GoToMainMenu();
         }
 
 
@@ -139,8 +141,14 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         public void Connect()
         {
-            if (string.IsNullOrEmpty(roomCode)) return;
+            if (string.IsNullOrEmpty(roomCode))
+            {
+                errorLabel.SetActive(true);
+                errorLabelUI.text = "Room Code Empty!";
+                return;
+            }
 
+            errorLabel.SetActive(false);
             progressLabel.SetActive(true);
             controlPanel.SetActive(false);
             // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
@@ -175,11 +183,13 @@ namespace Com.MorganHouston.PaddleBalls
         /// </summary>
         /// <param name="returnCode"></param>
         /// <param name="message"></param>
-        public override void OnJoinRandomFailed(short returnCode, string message)
+        public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            if (string.IsNullOrEmpty(roomCode)) return;
             // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room with set maxPlayersPerRoom.
-            PhotonNetwork.CreateRoom(roomCode, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
+            errorLabel.SetActive(true);
+            errorLabelUI.text = "Room Already Full!";
+            progressLabel.SetActive(false);
+            controlPanel.SetActive(true);
         }
 
         /// <summary>

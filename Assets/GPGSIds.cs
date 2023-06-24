@@ -24,8 +24,11 @@
 
 public static class GPGSIds
 {
+        public const string leaderboard_all_time_versus_wins = "CgkItYzmyokEEAIQBA"; // <GPGSID>
         public const string leaderboard_all_time_skill_leaderboard = "CgkItYzmyokEEAIQAw"; // <GPGSID>
         public const string leaderboard_all_time_leaderboard = "CgkItYzmyokEEAIQAg"; // <GPGSID>
+        public const string leaderboard_all_time_versus_win_percent = "CgkItYzmyokEEAIQBQ"; // <GPGSID>
+        public const string leaderboard_all_time_games_played = "CgkItYzmyokEEAIQBg"; // <GPGSID>
 
 }
 

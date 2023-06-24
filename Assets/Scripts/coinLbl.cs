@@ -12,12 +12,12 @@ public class coinLbl : MonoBehaviour
     void Start()
     {
     	coinsLbl = GetComponent<TextMeshProUGUI>();
-        coinsLbl.text = PlayerData.getcoins().ToString();
+        coinsLbl.text = PlayerData.Instance.getcoins().ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinsLbl.text = PlayerData.getcoins().ToString();
+        coinsLbl.text = PlayerData.Instance.getcoins().ToString();
     }
 }

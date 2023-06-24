@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Wait());
         //GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>().PlayMusic();
 
-        PlayerData.addPlay();
+        PlayerData.Instance.addPlay();
         Time.timeScale = 1;
         lives = 5;
         PlayerPrefs.SetInt("CoinsC", 0);
@@ -92,8 +92,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void loadMenu(){
-        Destroy(GameObject.Find("PlayerData"));
-        Destroy(GameObject.Find("PlayServices"));
         SceneManager.LoadScene(0);
     }
     // Update is called once per frame

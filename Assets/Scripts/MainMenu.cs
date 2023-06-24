@@ -9,9 +9,8 @@ public class MainMenu : MonoBehaviour {
 	public void GoToMainMenu()
     {
 		//Destroy(GameObject.Find("AudioManager"));
-		PhotonNetwork.Disconnect();
-		Destroy(GameObject.Find("PlayerData"));
-		Destroy(GameObject.Find("PlayServices"));
+		if(PhotonNetwork.IsConnected)
+			PhotonNetwork.Disconnect();
 		SceneManager.LoadScene(0);
 	}
 

@@ -149,7 +149,7 @@ namespace Com.MorganHouston.PaddleBalls
             // Collisions to ignore
             Physics.IgnoreLayerCollision(3, 8);
 
-            PlayerData.addPlay();
+            PlayerData.Instance.addPlay();
 
             if(PhotonNetwork.IsMasterClient)
                 PhotonNetwork.InstantiateRoomObject(counter.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
@@ -372,8 +372,6 @@ namespace Com.MorganHouston.PaddleBalls
 
         public void loadMenu()
         {
-            Destroy(GameObject.Find("PlayerData"));
-            Destroy(GameObject.Find("PlayServices"));
             SceneManager.LoadScene(0);
         }
 
@@ -383,11 +381,11 @@ namespace Com.MorganHouston.PaddleBalls
             // else p1 loses and you are remote client you win
             if (PhotonNetwork.IsMasterClient)
             {
-                PlayerData.AddLoss();
+                PlayerData.Instance.AddLoss();
             }
             else
             {
-                PlayerData.AddWin();
+                PlayerData.Instance.AddWin();
             }
         }
 
@@ -397,11 +395,11 @@ namespace Com.MorganHouston.PaddleBalls
             // else p2 loses and you are remote client you lose
             if (PhotonNetwork.IsMasterClient)
             {
-                PlayerData.AddWin();
+                PlayerData.Instance.AddWin();
             }
             else
             {
-                PlayerData.AddLoss();
+                PlayerData.Instance.AddLoss();
             }
         }
 
