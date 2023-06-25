@@ -8,6 +8,18 @@ using Unity.Services.CloudSave;
 
 public class MainMenu : MonoBehaviour {
 
+	public GameObject signIn, signOut;
+
+    private void Start()
+    {
+#if UNITY_IOS
+		if(signIn)
+			signIn.SetActive(false);
+		if(signOut)
+			signOut.SetActive(false);
+#endif
+	}
+
 	public void GoToMainMenu()
     {
 		//Destroy(GameObject.Find("AudioManager"));
@@ -40,6 +52,16 @@ public class MainMenu : MonoBehaviour {
 			
         }
 		PlayerData.Instance.SetData();
+	}
+
+	public void SignIn()
+    {
+		PlayServices.Instance.SignInAccount();
+    }
+
+	public void SignOut()
+	{
+		PlayServices.Instance.SignOutAccount();
 	}
 
 	/*IEnumerator LoadYourAsyncScene(string m_Scene)

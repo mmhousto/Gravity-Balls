@@ -20,7 +20,6 @@ public class PlayServices : MonoBehaviour
     public static PlayServices Instance { get { return _instance; } }
 
     static int playerScore;
-    public GameObject signIn, signOut;
     public string token;
     public bool loggedIn;
     string Signature;
@@ -59,9 +58,6 @@ public class PlayServices : MonoBehaviour
 #if UNITY_ANDROID
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
-#else
-        signIn.SetActive(false);
-        signOut.SetActive(false);
 #endif
     }
 
