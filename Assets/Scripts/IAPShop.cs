@@ -57,6 +57,7 @@ public class IAPShop : MonoBehaviour {
 			PlayerPrefs.SetInt("Coins", coins);
 		}
 
+		PlayServices.Instance.SaveCloudData();
 	}
 
 	public void OnPurchaseFailed(Product product, PurchaseFailureReason reason) {

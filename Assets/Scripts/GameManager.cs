@@ -160,6 +160,7 @@ public class GameManager : MonoBehaviour
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     life1.SetActive(false);
                     life2.SetActive(false);
                     life3.SetActive(false);
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     life1.SetActive(false);
                     life2.SetActive(false);
                     life3.SetActive(false);

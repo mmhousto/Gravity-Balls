@@ -9,7 +9,9 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 using System.Threading.Tasks;
+#if UNITY_IOS
 using Apple.GameKit;
+#endif
 
 public class PlayServices : MonoBehaviour
 {
@@ -66,6 +68,8 @@ public class PlayServices : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GetComponent<PlayerData>();
+
 #if UNITY_IPHONE
         Social.localUser.Authenticate (ProcessAuthentication);
 
@@ -105,6 +109,7 @@ public class PlayServices : MonoBehaviour
         await UnityServices.InitializeAsync();
     }
 
+#if UNITY_IOS
     public async Task LoginAppleGameCenter()
     {
         if (!GKLocalPlayer.Local.IsAuthenticated)
@@ -140,6 +145,7 @@ public class PlayServices : MonoBehaviour
             Debug.Log("AppleGameCenter player already logged in.");
         }
     }
+#endif
 
     async Task SignInWithAppleGameCenterAsync(string signature, string teamPlayerId, string publicKeyURL, string salt, ulong timestamp)
     {
@@ -186,6 +192,8 @@ public class PlayServices : MonoBehaviour
         }
     }
 
+    #if UNITY_IOS
+
     async void LoginApple()
     {
         await LoginAppleGameCenter();
@@ -200,6 +208,7 @@ public class PlayServices : MonoBehaviour
             //Debug.Log ("Failed to authenticate");
         }
     }
+#endif
 
     public static void AddScoreToLeaderboard()
     {
@@ -338,7 +347,19 @@ public class PlayServices : MonoBehaviour
         player.SetData();
     }
 
-    public async void SavePlayersData(string key, SavePlayerData data)
+    /// <summary>
+    /// Saves player data to cloud if user is signed in.
+    /// </summary>
+    public async void SaveCloudData()
+    {
+        if (AuthenticationService.Instance.IsSignedIn)
+        {
+            SavePlayerData data = new SavePlayerData(player);
+            await SavePlayersData(AuthenticationService.Instance.PlayerId, data);
+        }
+    }
+
+    private async Task SavePlayersData(string key, SavePlayerData data)
     {
         try
         {

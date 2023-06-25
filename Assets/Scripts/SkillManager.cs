@@ -99,6 +99,7 @@ public class SkillManager : MonoBehaviour
             pauseMenu.SetActive(false);
             PlayerPrefs.SetInt("CoinsC", coins);
             PlayServices.AddScoreToSkillLeaderboard();
+            PlayServices.Instance.SaveCloudData();
             pauseBtn.SetActive(false);
             gameOver.SetActive(true);
             if(isSettingsActive == true) {

@@ -102,6 +102,7 @@ public class InventoryManager : MonoBehaviour, IUseable<int>, IBuyable<int>, ICl
         } else {
             Buy(paddleInt);// calls buy interface mathod
         }
+        PlayServices.Instance.SaveCloudData();
     }
 
 //

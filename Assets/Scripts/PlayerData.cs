@@ -183,6 +183,7 @@ public class PlayerData : MonoBehaviour
         PlayServices.AddWins(wins);
         float winPercent = Mathf.Round((wins / (losses + wins) * 100f) / 100f);
         PlayServices.AddWinPercent(winPercent);
+        PlayServices.Instance.SaveCloudData();
     }
 
     public void AddLoss()
@@ -191,6 +192,7 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetInt("Losses", losses);
         float winPercent = Mathf.Round((wins / (losses + wins) * 100f) / 100f);
         PlayServices.AddWinPercent(winPercent);
+        PlayServices.Instance.SaveCloudData();
     }
 
     public static int getMusicOn()
