@@ -430,6 +430,7 @@ namespace Com.MorganHouston.PaddleBalls
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     life1.SetActive(false);
                     life2.SetActive(false);
                     life3.SetActive(false);
@@ -443,6 +444,7 @@ namespace Com.MorganHouston.PaddleBalls
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     life1.SetActive(false);
                     life2.SetActive(false);
                     life3.SetActive(false);
@@ -477,6 +479,7 @@ namespace Com.MorganHouston.PaddleBalls
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     p2Life1.SetActive(false);
                     p2Life2.SetActive(false);
                     p2Life3.SetActive(false);
@@ -491,6 +494,7 @@ namespace Com.MorganHouston.PaddleBalls
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     //PlayServices.AddScoreToLeaderboard();
+                    PlayServices.Instance.SaveCloudData();
                     p2Life1.SetActive(false);
                     p2Life2.SetActive(false);
                     p2Life3.SetActive(false);
