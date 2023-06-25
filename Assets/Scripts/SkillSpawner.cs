@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkillSpawner : MonoBehaviour
 {
 	public GameObject gravBall, coin;
+    public SkillManager gameManager;
 	public Transform node1;
 	private bool spawnedBall, spawnedCoin;
     // Start is called before the first frame update
@@ -32,17 +33,19 @@ public class SkillSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(0 == score.Score % 7 && !spawnedCoin && score.Score != 0){
+
+        if(0 == score.Score % 7 && !spawnedCoin && score.Score != 0 && gameManager.isGameOver){
             SpawnCoin();
         }
-        if ((score.Score % 7) != 0) {
+        if ((score.Score % 7) != 0 && gameManager.isGameOver) {
             spawnedCoin = false;
         }
 
-        if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0)){
+        if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0) && gameManager.isGameOver)
+        {
         	Spawn(gravBall);
         }
-        if ((score.Score % 10) != 0) {
+        if ((score.Score % 10) != 0 && gameManager.isGameOver) {
             spawnedBall = false;
         }
     }

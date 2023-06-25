@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 	public static int lives, coins, newCoins;
 	public GameObject life1, life2, life3, life4, life5, life6, gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private bool isSettingsActive = false;
-    private bool isPaused, isGameOver;
+    public bool isPaused, isGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -155,6 +155,8 @@ public class GameManager : MonoBehaviour
                     break;
                 case 0:
                     isGameOver = true;
+                    DestroyBalls();
+
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     PlayServices.AddScoreToLeaderboard();
@@ -175,10 +177,11 @@ public class GameManager : MonoBehaviour
                     {
                         gameOver.SetActive(true);
                     }
-                    Time.timeScale = 0;
                     break;
                 default:
                     isGameOver = true;
+                    DestroyBalls();
+
                     isPaused = false;
                     PlayerPrefs.SetInt("CoinsC", coins);
                     PlayServices.AddScoreToLeaderboard();
@@ -199,11 +202,19 @@ public class GameManager : MonoBehaviour
                     {
                         gameOver.SetActive(true);
                     }
-                    Time.timeScale = 0;
                     break;
             }
         }
 
+    }
+
+    private void DestroyBalls()
+    {
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("enemy");
+        foreach(GameObject ball in balls)
+        {
+            Destroy(ball);
+        }
     }
 
     public static void Death() {

@@ -8,7 +8,7 @@ public class SkillManager : MonoBehaviour
 	public static int lives = 1, coins, newCoins;
 	public GameObject gameOver, pauseMenu, settingsMenu, counter, pauseBtn, scoreBox;
     private bool isSettingsActive = false;
-    private bool isPaused, isGameOver;
+    public bool isPaused, isGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +95,7 @@ public class SkillManager : MonoBehaviour
         if(lives < 1 && isGameOver == false){
             isPaused = false;
             isGameOver = true;
+            DestroyBalls();
             pauseMenu.SetActive(false);
             PlayerPrefs.SetInt("CoinsC", coins);
             PlayServices.AddScoreToSkillLeaderboard();
@@ -106,9 +107,17 @@ public class SkillManager : MonoBehaviour
             if(isSettingsActive == false) {
       	    	gameOver.SetActive(true);
             }
-        	Time.timeScale = 0;
         }
 
+    }
+
+    private void DestroyBalls()
+    {
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("enemy");
+        foreach (GameObject ball in balls)
+        {
+            Destroy(ball);
+        }
     }
 
     public static void Death() {

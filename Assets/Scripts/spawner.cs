@@ -6,6 +6,7 @@ public class spawner : MonoBehaviour
 {
 	public GameObject gravBall, extendP, extraLife, brickW, coin;
 	public Transform node1;
+    public GameManager gameManager;
 	private bool spawnedBall, spawnedItem, spawnedCoin, spawnedFirstBall;
     private GameObject[] items = new GameObject[3];
     int randItem;
@@ -46,14 +47,15 @@ public class spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(0 == score.Score % 7 && spawnedItem == false && score.Score != 0){
+        if(0 == score.Score % 7 && spawnedItem == false && score.Score != 0 && !gameManager.isGameOver){
             SpawnRandom();
         }
         if ((score.Score % 7) != 0) {
             spawnedItem = false;
         }
 
-        if((0 == score.Score % 10) && (spawnedBall == false) && (score.Score != 0)){
+        if((0 == score.Score % 10) && (spawnedBall == false) && (score.Score != 0) && !gameManager.isGameOver)
+        {
         	Spawn(gravBall);
             SpawnCoin();
         }
@@ -61,7 +63,7 @@ public class spawner : MonoBehaviour
             spawnedBall = false;
         }
 
-        if(GameObject.FindWithTag("enemy") == null && spawnedFirstBall == true)
+        if(GameObject.FindWithTag("enemy") == null && spawnedFirstBall == true && !gameManager.isGameOver)
         {
             Spawn(gravBall);
         }

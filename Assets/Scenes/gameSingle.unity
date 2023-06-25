@@ -2604,6 +2604,8 @@ MonoBehaviour:
   counter: {fileID: 383850055}
   pauseBtn: {fileID: 492466648}
   scoreBox: {fileID: 1757893030}
+  isPaused: 0
+  isGameOver: 0
 --- !u!4 &1036508624
 Transform:
   m_ObjectHideFlags: 0
@@ -3460,8 +3462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGameIdAndroid: 3917197
   myGameIdIOS: 3917196
-  myVideoPlacement: gameOver
   adStarted: 0
+  testMode: 0
   gameOver: {fileID: 995509585}
 --- !u!4 &1337751206
 Transform:
@@ -3658,6 +3660,7 @@ MonoBehaviour:
   brickW: {fileID: 6009356541270233818, guid: 137bd18a447974fd4ad88bb2eb21fca3, type: 3}
   coin: {fileID: 8899670777861077739, guid: f835929ae833b447b9e0dc52a408f61f, type: 3}
   node1: {fileID: 1442176444}
+  gameManager: {fileID: 1036508623}
 --- !u!33 &1442176443
 MeshFilter:
   m_ObjectHideFlags: 0

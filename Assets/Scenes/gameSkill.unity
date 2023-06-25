@@ -2476,6 +2476,8 @@ MonoBehaviour:
   counter: {fileID: 383850055}
   pauseBtn: {fileID: 492466648}
   scoreBox: {fileID: 1377907851}
+  isPaused: 0
+  isGameOver: 0
 --- !u!1 &1114979883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,7 +3098,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGameIdAndroid: 3917197
   myGameIdIOS: 3917196
-  myVideoPlacement: gameOver
   adStarted: 0
   testMode: 0
   gameOver: {fileID: 995509585}
@@ -3430,6 +3431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravBall: {fileID: 3271499533263637368, guid: 606e2cd5a445e41c59b685ddf12ae785, type: 3}
   coin: {fileID: 8899670777861077739, guid: f835929ae833b447b9e0dc52a408f61f, type: 3}
+  gameManager: {fileID: 1036508625}
   node1: {fileID: 1442176444}
 --- !u!33 &1442176443
 MeshFilter:

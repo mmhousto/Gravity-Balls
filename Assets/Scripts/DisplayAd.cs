@@ -67,21 +67,21 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
     {
-        
+        Debug.Log("Ad Show FAILED");
     }
 
     public void OnUnityAdsShowStart(string placementId)
     {
-        
+        Debug.Log("Ad Show STARTED");
     }
 
     public void OnUnityAdsShowClick(string placementId)
     {
-        
+        Debug.Log("Ad Show CLICKED");
     }
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
-        
+        Debug.Log("Ad Show COMPLETE");
     }
 }
