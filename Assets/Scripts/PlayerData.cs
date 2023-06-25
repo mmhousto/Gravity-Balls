@@ -119,6 +119,20 @@ public class PlayerData : MonoBehaviour
         ownPaddle5 = 0;
         paddlePath = "Paddles/begginer-paddle.svg";
         paddleNum = 0;
+
+        PlayerPrefs.SetInt("Plays", 0);
+        PlayerPrefs.SetInt("Wins", 0);
+        PlayerPrefs.SetInt("Losses", 0);
+        PlayerPrefs.SetInt("HighScore", 0);
+        PlayerPrefs.SetInt("SkillHighScore", 0);
+        PlayerPrefs.SetInt("Coins", 0);
+        PlayerPrefs.SetInt("ownPaddle1", 1);
+        PlayerPrefs.SetInt("ownPaddle2", 0);
+        PlayerPrefs.SetInt("ownPaddle3", 0);
+        PlayerPrefs.SetInt("ownPaddle4", 0);
+        PlayerPrefs.SetInt("ownPaddle5", 0);
+        PlayerPrefs.SetString("Paddle", "Paddles/begginer-paddle.svg");
+        PlayerPrefs.SetInt("selectedPaddle", 0);
     }
 
     public void SetData(SavePlayerData data)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Unity.Services.Authentication;
+using Unity.Services.CloudSave;
 
 public class MainMenu : MonoBehaviour {
 
@@ -28,6 +30,16 @@ public class MainMenu : MonoBehaviour {
 	{
 		//Destroy(GameObject.Find("AudioManager"));
 		SceneManager.LoadScene(3);
+	}
+
+	public void DeleteMyAccount()
+    {
+        if (AuthenticationService.Instance.IsSignedIn)
+        {
+			AuthenticationService.Instance.DeleteAccountAsync();
+			
+        }
+		PlayerData.Instance.SetData();
 	}
 
 	/*IEnumerator LoadYourAsyncScene(string m_Scene)
