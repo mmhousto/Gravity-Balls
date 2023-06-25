@@ -37,28 +37,27 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     public void OnInitializationComplete()
     {
-        Debug.Log("Ad Init");
         loadingAd = true;
         Advertisement.Load(myVideoPlacement, this);
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
     {
-        Debug.Log("Error Init Ads");
+        //Debug.Log("Error Init Ads");
     }
 
     public void OnUnityAdsAdLoaded(string placementId)
     {
         isReady = true;
         loadingAd = false;
-        Debug.Log("Ad Ready");
+        //Debug.Log("Ad Ready");
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
     {
         tries++;
         isReady = false;
-        Debug.Log("Ad NOT Ready");
+        //Debug.Log("Ad NOT Ready");
         if (tries < 3)
             Advertisement.Load(myVideoPlacement, this);
         else
@@ -67,21 +66,21 @@ public class DisplayAd : MonoBehaviour, IUnityAdsInitializationListener, IUnityA
 
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
     {
-        Debug.Log("Ad Show FAILED");
+        //Debug.Log("Ad Show FAILED");
     }
 
     public void OnUnityAdsShowStart(string placementId)
     {
-        Debug.Log("Ad Show STARTED");
+        //Debug.Log("Ad Show STARTED");
     }
 
     public void OnUnityAdsShowClick(string placementId)
     {
-        Debug.Log("Ad Show CLICKED");
+        //Debug.Log("Ad Show CLICKED");
     }
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
-        Debug.Log("Ad Show COMPLETE");
+        //Debug.Log("Ad Show COMPLETE");
     }
 }
