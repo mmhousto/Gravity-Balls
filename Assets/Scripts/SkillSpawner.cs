@@ -34,18 +34,18 @@ public class SkillSpawner : MonoBehaviour
     void Update()
     {
 
-        if(0 == score.Score % 7 && !spawnedCoin && score.Score != 0 && gameManager.isGameOver){
+        if(0 == score.Score % 7 && !spawnedCoin && score.Score != 0 && !gameManager.isGameOver){
             SpawnCoin();
         }
-        if ((score.Score % 7) != 0 && gameManager.isGameOver) {
+        if ((score.Score % 7) != 0 && !gameManager.isGameOver) {
             spawnedCoin = false;
         }
 
-        if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0) && gameManager.isGameOver)
+        if((0 == score.Score % 10) && (!spawnedBall) && (score.Score != 0) && !gameManager.isGameOver)
         {
         	Spawn(gravBall);
         }
-        if ((score.Score % 10) != 0 && gameManager.isGameOver) {
+        if ((score.Score % 10) != 0 && !gameManager.isGameOver) {
             spawnedBall = false;
         }
     }
