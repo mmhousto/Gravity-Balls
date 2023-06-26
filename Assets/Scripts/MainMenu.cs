@@ -8,19 +8,27 @@ using Unity.Services.CloudSave;
 
 public class MainMenu : MonoBehaviour {
 
-	public GameObject signIn, signOut;
+	public GameObject signIn;
 
     private void Start()
     {
-#if UNITY_IOS
-		if(signIn)
+        if (Social.localUser.authenticated)
+        {
 			signIn.SetActive(false);
-		if(signOut)
-			signOut.SetActive(false);
-#endif
+        }
 	}
 
-	public void GoToMainMenu()
+    private void Update()
+    {
+        if(Social.localUser.authenticated && signIn.activeInHierarchy)
+			signIn.SetActive(false);
+        else if(!Social.localUser.authenticated && !signIn.activeInHierarchy)
+        {
+			signIn.SetActive(true);
+		}
+	}
+
+    public void GoToMainMenu()
     {
 		//Destroy(GameObject.Find("AudioManager"));
 		if(PhotonNetwork.IsConnected)
@@ -56,13 +64,15 @@ public class MainMenu : MonoBehaviour {
 
 	public void SignIn()
     {
+		signIn.SetActive(false);
 		PlayServices.Instance.SignInAccount();
     }
-
+	
+	/*
 	public void SignOut()
 	{
 		PlayServices.Instance.SignOutAccount();
-	}
+	}*/
 
 	/*IEnumerator LoadYourAsyncScene(string m_Scene)
 	{

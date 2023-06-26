@@ -66,33 +66,17 @@ public class PlayServices : MonoBehaviour
     {
         player = GetComponent<PlayerData>();
 
-#if UNITY_IPHONE
         Social.localUser.Authenticate (ProcessAuthentication);
 
-#elif UNITY_ANDROID
-        LoginGooglePlayGames();
-#endif
     }
 
 #if UNITY_ANDROID
     private void LoginGooglePlayGames()
     {
-        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (success) =>
-        {
-            if (success == SignInStatus.Success)
-            {
-                //Debug.Log("Login with Google Play games successful.");
-
-                token = PlayGamesPlatform.Instance.GetServerAuthCode();
-                SignInGoogle(token);
-            }
-            else
-            {
-                //"Failed to retrieve Google play games authorization code";
-                //Debug.Log("Login Unsuccessful");
-            }
-        });
+        PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
     }
+
+    
 #endif
 
     async void SignInGoogle(string code)
@@ -188,23 +172,47 @@ public class PlayServices : MonoBehaviour
         }
     }
 
-    #if UNITY_IOS
+#if UNITY_IOS
 
     async void LoginApple()
     {
         await LoginAppleGameCenter();
     }
+#endif
 
     void ProcessAuthentication(bool success) {
         if(success) {
+#if UNITY_IOS
             LoginApple();
+#elif UNITY_ANDROID
+            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code => {
+                SignInGoogle(code);
+            });
+#endif
         }
         else
         {
             //Debug.Log ("Failed to authenticate");
         }
     }
+
+    private void ProcessAuthentication(SignInStatus obj)
+    {
+        if (obj == SignInStatus.Success)
+        {
+#if UNITY_IOS
+            LoginApple();
+#elif UNITY_ANDROID
+            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code => {
+                SignInGoogle(code);
+            });
 #endif
+        }
+        else
+        {
+            //Debug.Log ("Failed to authenticate");
+        }
+    }
 
     public static void AddScoreToLeaderboard()
     {
@@ -280,13 +288,19 @@ public class PlayServices : MonoBehaviour
         }
     }
 
+    
     public void SignInAccount()
     {
 #if UNITY_ANDROID
         LoginGooglePlayGames();
+#elif UNITY_IOS
+        Social.localUser.Authenticate (ProcessAuthentication);
 #endif
     }
 
+    /*
+     * DEPRECATED
+     * 
     public void SignOutAccount()
     {
 #if UNITY_ANDROID
@@ -294,7 +308,7 @@ public class PlayServices : MonoBehaviour
         AuthenticationService.Instance.SignOut();
         Debug.Log("Signed OUT!");
 #endif
-    }
+    }*/
 
     public void ShowAchievements()
     {
