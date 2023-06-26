@@ -5,8 +5,10 @@ using System;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using Unity.Services.CloudSave;
+#if UNITY_ANDROID
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+#endif
 using UnityEngine.SocialPlatforms;
 using AppleAuth;
 using AppleAuth.Native;
@@ -385,24 +387,23 @@ public class PlayServices : MonoBehaviour
         }
     }
 
+#if UNITY_ANDROID
     private void ProcessAuthentication(SignInStatus obj)
     {
         if (obj == SignInStatus.Success)
         {
             loggedIn = true;
-#if UNITY_IOS
-            
-#elif UNITY_ANDROID
+
             PlayGamesPlatform.Instance.RequestServerSideAccess(false, code =>
             {
                 SignInGoogle(code);
             });
-#endif
         }
         else
         {
         }
     }
+#endif
 
     public static void AddScoreToLeaderboard()
     {
