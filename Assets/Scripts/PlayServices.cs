@@ -55,9 +55,7 @@ public class PlayServices : MonoBehaviour
             InitUGS();
         }
 
-
 #if UNITY_ANDROID
-        PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
 #endif
     }
@@ -77,7 +75,7 @@ public class PlayServices : MonoBehaviour
         }
 
 #if UNITY_ANDROID
-        Social.localUser.Authenticate(ProcessAuthentication);
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
 #endif
 
     }
@@ -350,7 +348,7 @@ public class PlayServices : MonoBehaviour
         try
         {
             await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
-            //Debug.Log("SignIn is successful.");
+            Debug.Log("SignIn Google is successful.");
             SetPlayerData(AuthenticationService.Instance.PlayerId);
 
         }
@@ -384,7 +382,6 @@ public class PlayServices : MonoBehaviour
         }
         else
         {
-            //Debug.Log ("Failed to authenticate");
         }
     }
 
@@ -404,7 +401,6 @@ public class PlayServices : MonoBehaviour
         }
         else
         {
-            //Debug.Log ("Failed to authenticate");
         }
     }
 
