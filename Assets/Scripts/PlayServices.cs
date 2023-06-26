@@ -8,10 +8,13 @@ using Unity.Services.CloudSave;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
+using AppleAuth;
+using AppleAuth.Native;
+using AppleAuth.Enums;
+using AppleAuth.Extensions;
+using AppleAuth.Interfaces;
 using System.Threading.Tasks;
-#if UNITY_IOS
-using Apple.GameKit;
-#endif
+using System.Text;
 
 public class PlayServices : MonoBehaviour
 {
@@ -22,18 +25,16 @@ public class PlayServices : MonoBehaviour
     static int playerScore;
     public string token;
     public bool loggedIn;
-    string Signature;
-    string TeamPlayerID;
-    string Salt;
-    string PublicKeyUrl;
-    string Timestamp;
+
+    private IAppleAuthManager appleAuthManager;
+    private bool triedQuickLogin = false;
 
     // Player Data Object
     private PlayerData player;
 
     void Awake()
     {
-        if(_instance != null && _instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
         }
@@ -53,7 +54,7 @@ public class PlayServices : MonoBehaviour
         {
             InitUGS();
         }
-        
+
 
 #if UNITY_ANDROID
         PlayGamesPlatform.DebugLogEnabled = true;
@@ -66,8 +67,41 @@ public class PlayServices : MonoBehaviour
     {
         player = GetComponent<PlayerData>();
 
-        Social.localUser.Authenticate (ProcessAuthentication);
+        // If the current platform is supported initialize apple authentication.
+        if (AppleAuthManager.IsCurrentPlatformSupported)
+        {
+            // Creates a default JSON deserializer, to transform JSON Native responses to C# instances
+            IPayloadDeserializer deserializer = new PayloadDeserializer();
+            // Creates an Apple Authentication manager with the deserializer
+            appleAuthManager = new AppleAuthManager(deserializer);
+        }
 
+#if UNITY_ANDROID
+        Social.localUser.Authenticate(ProcessAuthentication);
+#endif
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+#if (UNITY_IOS || UNITY_STANDALONE_OSX)
+            // Updates the AppleAuthManager instance to execute
+            // pending callbacks inside Unity's execution loop
+            if (appleAuthManager != null)
+            {
+                appleAuthManager.Update();
+            }
+
+            // Tries to quick login on Apple, if user previously logged in.
+            if (triedQuickLogin == false && appleAuthManager != null)
+            {
+                GetCredentialState();
+                triedQuickLogin = true;
+            }
+#endif
+
+        playerScore = score.GetScore();
     }
 
 #if UNITY_ANDROID
@@ -76,8 +110,26 @@ public class PlayServices : MonoBehaviour
         PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
     }
 
-    
+
 #endif
+
+    /// <summary>
+    /// Signs user into Apple with Auth from Apple.
+    /// </summary>
+    public async void SignInApple()
+    {
+        if (!AuthenticationService.Instance.IsSignedIn)
+            AuthenticationService.Instance.SwitchProfile("apple");
+
+        var idToken = await GetAppleIdTokenAsync();
+
+        if (idToken != null)
+        {
+            await SignInWithAppleAsync(idToken);
+
+        }
+
+    }
 
     async void SignInGoogle(string code)
     {
@@ -89,63 +141,207 @@ public class PlayServices : MonoBehaviour
         await UnityServices.InitializeAsync();
     }
 
-#if UNITY_IOS
-    public async Task LoginAppleGameCenter()
+    private void GameCenterLogin()
     {
-        if (!GKLocalPlayer.Local.IsAuthenticated)
-        {
-            // Perform the authentication.
-            var player = await GKLocalPlayer.Authenticate();
-            Debug.Log($"GameKit Authentication: player {player}");
-
-            // Grab the display name.
-            var localPlayer = GKLocalPlayer.Local;
-            Debug.Log($"Local Player: {localPlayer.DisplayName}");
-
-            // Fetch the items.
-            var fetchItemsResponse = await GKLocalPlayer.Local.FetchItems();
-
-            Signature = Convert.ToBase64String(fetchItemsResponse.GetSignature());
-            TeamPlayerID = localPlayer.TeamPlayerId;
-            Debug.Log($"Team Player ID: {TeamPlayerID}");
-
-            Salt = Convert.ToBase64String(fetchItemsResponse.GetSalt());
-            PublicKeyUrl = fetchItemsResponse.PublicKeyUrl;
-            Timestamp = fetchItemsResponse.Timestamp.ToString();
-
-
-            /*Debug.Log($"GameKit Authentication: signature => {Signature}");
-            Debug.Log($"GameKit Authentication: publickeyurl => {PublicKeyUrl}");
-            Debug.Log($"GameKit Authentication: salt => {Salt}");
-            Debug.Log($"GameKit Authentication: Timestamp => {Timestamp}");*/
-            await SignInWithAppleGameCenterAsync(Signature, TeamPlayerID, PublicKeyUrl, Salt, Convert.ToUInt64(Timestamp));
-        }
-        else
-        {
-            Debug.Log("AppleGameCenter player already logged in.");
-        }
+        Social.localUser.Authenticate(ProcessAuthentication);
     }
-#endif
 
-    async Task SignInWithAppleGameCenterAsync(string signature, string teamPlayerId, string publicKeyURL, string salt, ulong timestamp)
+    /// <summary>
+    /// Performs continue with Apple login.
+    /// </summary>
+    public async void QuickLoginApple()
+    {
+        Debug.Log("Quick Login Apple Called");
+        if (appleAuthManager == null) return;
+
+        if (!AuthenticationService.Instance.IsSignedIn)
+            AuthenticationService.Instance.SwitchProfile("apple");
+
+        var quickLoginArgs = new AppleAuthQuickLoginArgs();
+
+        this.appleAuthManager.QuickLogin(
+            quickLoginArgs,
+            credential =>
+            {
+                // Received a valid credential!
+                // Try casting to IAppleIDCredential or IPasswordCredential
+
+                // Previous Apple sign in credential
+                var appleIdCredential = credential as IAppleIDCredential;
+
+                // Saved Keychain credential (read about Keychain Items)
+                var passwordCredential = credential as IPasswordCredential;
+
+                if (appleIdCredential != null)
+                {
+                    //userID = PlayerPrefs.GetString("AppleUserIdKey", appleIdCredential.User);
+                    //userName = PlayerPrefs.GetString("AppleUserNameKey", appleIdCredential.FullName.GivenName);
+
+                }
+
+            },
+            error =>
+            {
+                //Debug.Log("Quick Login Apple Failed");
+                SignInApple();
+                return;
+                // Quick login failed. The user has never used Sign in With Apple on your app. Go to login screen
+            });
+
+        var idToken = PlayerPrefs.GetString("AppleTokenIdKey");
+
+        await SignInWithAppleAsync(idToken);
+
+    }
+
+    /// <summary>
+    /// Checks if user has logged in with apple before on device, if so continues to quick login.
+    /// </summary>
+    public void GetCredentialState()
+    {
+        var userID = PlayerPrefs.GetString("AppleUserIdKey");
+        this.appleAuthManager.GetCredentialState(
+                    userID,
+                    state =>
+                    {
+                        switch (state)
+                        {
+                            case CredentialState.Authorized:
+                                // User ID is still valid. Login the user.
+                                //Debug.Log("User ID is valid!");
+                                QuickLoginApple();
+                                break;
+
+                            case CredentialState.Revoked:
+                                // User ID was revoked. Go to login screen.
+                                //Debug.Log("User ID was revoked.");
+                                if (AuthenticationService.Instance.IsSignedIn)
+                                {
+                                    AuthenticationService.Instance.SignOut();
+                                }
+                                SignInApple();
+                                break;
+
+                            case CredentialState.NotFound:
+                                // User ID was not found. Go to login screen.
+                                //Debug.Log("User ID was not found.");
+                                SignInApple();
+                                break;
+                        }
+                    },
+                    error =>
+                    {
+                        // Something went wrong
+                        //Debug.Log("Credential Failed");
+                        if (AuthenticationService.Instance.IsSignedIn)
+                        {
+                            AuthenticationService.Instance.SignOut();
+                        }
+                        SignInApple();
+                        return;
+                    });
+    }
+
+    /// <summary>
+    /// Gets the Apple Identity Token to Authenticate the user.
+    /// Stores username, userID, Identity Token and email in Player Prefs.
+    /// Returns the Identity Token.
+    /// </summary>
+    /// <returns></returns>
+    private Task<string> GetAppleIdTokenAsync()
+    {
+        var tcs = new TaskCompletionSource<string>();
+
+        if (appleAuthManager == null) return null;
+
+        var loginArgs = new AppleAuthLoginArgs(LoginOptions.IncludeFullName);
+
+        this.appleAuthManager.LoginWithAppleId(
+            loginArgs,
+            credential =>
+            {
+                //      Obtained credential, cast it to IAppleIDCredential
+                var appleIdCredential = credential as IAppleIDCredential;
+                if (appleIdCredential != null)
+                {
+                    // Apple User ID
+                    // You should save the user ID somewhere in the device
+                    if (appleIdCredential.User != null)
+                    {
+                        var userID = appleIdCredential.User;
+                        PlayerPrefs.SetString("AppleUserIdKey", userID);
+                    }
+                    else
+                    {
+                        var userID = PlayerPrefs.GetString("AppleUserIdKey", "123456");
+                    }
+
+
+                    // Email (Received ONLY in the first login)
+                    /*email = appleIdCredential.Email;
+                        PlayerPrefs.SetString("AppleUserEmailKey", email);*/
+
+                    // Full name (Received ONLY in the first login)
+                    //userName = appleIdCredential.FullName.GivenName;
+
+
+                    // Identity token
+                    var idToken = Encoding.UTF8.GetString(
+                        appleIdCredential.IdentityToken,
+                        0,
+                        appleIdCredential.IdentityToken.Length);
+
+                    tcs.SetResult(idToken);
+
+                    PlayerPrefs.SetString("AppleTokenIdKey", idToken);
+
+                    // Authorization code
+                    var AuthCode = Encoding.UTF8.GetString(
+                                appleIdCredential.AuthorizationCode,
+                                0,
+                                appleIdCredential.AuthorizationCode.Length);
+
+                    // And now you have all the information to create/login a user in your system
+
+                }
+                else
+                {
+                    tcs.SetException(new Exception("Retrieving Apple Id Token failed."));
+                }
+            },
+            error =>
+            {
+                // Something went wrong
+                tcs.SetException(new Exception("Retrieving Apple Id Token failed."));
+                var authorizationErrorCode = error.GetAuthorizationErrorCode();
+                return;
+            });
+
+        return tcs.Task;
+
+    }
+
+    async Task SignInWithAppleAsync(string idToken)
     {
         try
         {
-            await AuthenticationService.Instance.SignInWithAppleGameCenterAsync(signature, teamPlayerId, publicKeyURL, salt, timestamp);
+            await AuthenticationService.Instance.SignInWithAppleAsync(idToken);
             //Debug.Log("SignIn is successful.");
             SetPlayerData(AuthenticationService.Instance.PlayerId);
+
+            GameCenterLogin();
         }
         catch (AuthenticationException ex)
         {
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
-            //Debug.LogException(ex);
+            Debug.LogException(ex);
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
-            //Debug.LogException(ex);
+            Debug.LogException(ex);
         }
     }
 
@@ -162,30 +358,26 @@ public class PlayServices : MonoBehaviour
         {
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
-            //Debug.LogException(ex);
+            Debug.LogException(ex);
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
-            //Debug.LogException(ex);
+            Debug.LogException(ex);
         }
     }
 
-#if UNITY_IOS
-
-    async void LoginApple()
+    void ProcessAuthentication(bool success)
     {
-        await LoginAppleGameCenter();
-    }
-#endif
-
-    void ProcessAuthentication(bool success) {
-        if(success) {
+        if (success)
+        {
+            loggedIn = true;
 #if UNITY_IOS
-            LoginApple();
+            
 #elif UNITY_ANDROID
-            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code => {
+            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code =>
+            {
                 SignInGoogle(code);
             });
 #endif
@@ -200,10 +392,12 @@ public class PlayServices : MonoBehaviour
     {
         if (obj == SignInStatus.Success)
         {
+            loggedIn = true;
 #if UNITY_IOS
-            LoginApple();
+            
 #elif UNITY_ANDROID
-            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code => {
+            PlayGamesPlatform.Instance.RequestServerSideAccess(false, code =>
+            {
                 SignInGoogle(code);
             });
 #endif
@@ -221,7 +415,7 @@ public class PlayServices : MonoBehaviour
 #if UNITY_IPHONE
                 Social.ReportScore(playerScore, "AllTimeLeader", success => { });
 #elif UNITY_ANDROID
-                PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAg", success => { });
+            PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAg", success => { });
 #endif
         }
     }
@@ -233,7 +427,7 @@ public class PlayServices : MonoBehaviour
 #if UNITY_IPHONE
                 Social.ReportScore(playerScore, "SkillLeader", success => { });
 #elif UNITY_ANDROID
-                PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAw", success => { });
+            PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAw", success => { });
 #endif
         }
     }
@@ -245,7 +439,7 @@ public class PlayServices : MonoBehaviour
 #if UNITY_IPHONE
                 Social.ReportScore(valueToReport, "AllTimeGames", success => { });
 #elif UNITY_ANDROID
-                PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBg", success => { });
+            PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBg", success => { });
 #endif
         }
     }
@@ -257,7 +451,7 @@ public class PlayServices : MonoBehaviour
 #if UNITY_IPHONE
                 Social.ReportScore(valueToReport, "AllTimeWins", success => { });
 #elif UNITY_ANDROID
-                PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBA", success => { });
+            PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBA", success => { });
 #endif
         }
     }
@@ -288,13 +482,13 @@ public class PlayServices : MonoBehaviour
         }
     }
 
-    
+
     public void SignInAccount()
     {
 #if UNITY_ANDROID
         LoginGooglePlayGames();
 #elif UNITY_IOS
-        Social.localUser.Authenticate (ProcessAuthentication);
+        SignInApple();
 #endif
     }
 
@@ -352,7 +546,7 @@ public class PlayServices : MonoBehaviour
         player.SetData(id);
     }
 
-    private void ResetPlayerData()
+    public void ResetPlayerData()
     {
         player.SetData();
     }
@@ -435,9 +629,5 @@ public class PlayServices : MonoBehaviour
         }
     }*/
 
-    // Update is called once per frame
-    void Update()
-    {
-        playerScore = score.GetScore();
-    }
+
 }

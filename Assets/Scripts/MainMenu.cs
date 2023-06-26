@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     private void Start()
     {
-        if (Social.localUser.authenticated)
+        if (signIn != null && Social.localUser.authenticated)
         {
 			signIn.SetActive(false);
         }
@@ -20,12 +20,16 @@ public class MainMenu : MonoBehaviour {
 
     private void Update()
     {
-        if(Social.localUser.authenticated && signIn.activeInHierarchy)
-			signIn.SetActive(false);
-        else if(!Social.localUser.authenticated && !signIn.activeInHierarchy)
+		if(signIn != null)
         {
-			signIn.SetActive(true);
+			if (Social.localUser.authenticated && signIn.activeInHierarchy)
+				signIn.SetActive(false);
+			else if (!Social.localUser.authenticated && !signIn.activeInHierarchy)
+			{
+				signIn.SetActive(true);
+			}
 		}
+        
 	}
 
     public void GoToMainMenu()
@@ -59,7 +63,7 @@ public class MainMenu : MonoBehaviour {
 			AuthenticationService.Instance.DeleteAccountAsync();
 			
         }
-		PlayerData.Instance.SetData();
+		PlayServices.Instance.ResetPlayerData();
 	}
 
 	public void SignIn()
