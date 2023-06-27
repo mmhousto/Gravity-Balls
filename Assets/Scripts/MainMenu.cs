@@ -71,6 +71,11 @@ public class MainMenu : MonoBehaviour {
 		signIn.SetActive(false);
 		PlayServices.Instance.SignInAccount();
     }
+
+	public void ShowLeaderboard()
+    {
+		PlayServices.Instance.ShowLeaderboard();
+    }
 	
 	/*
 	public void SignOut()

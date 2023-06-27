@@ -10863,17 +10863,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220327310}
   m_CullTransparentMesh: 0
---- !u!114 &1252242114 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3222507499573348474, guid: af37d3ebb21aec04b94f22bf1fba868f, type: 3}
-  m_PrefabInstance: {fileID: 3222507498342300344}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79497076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d49e84ef6c3ed41a44e30e34a91219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1252242116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12138,8 +12127,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1252242114}
-        m_TargetAssemblyTypeName: PlayServices, Assembly-CSharp
+      - m_Target: {fileID: 328256999}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ShowLeaderboard
         m_Mode: 1
         m_Arguments:
