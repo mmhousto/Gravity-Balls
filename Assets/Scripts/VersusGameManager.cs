@@ -152,7 +152,7 @@ namespace Com.MorganHouston.PaddleBalls
             PlayerData.Instance.addPlay();
 
             if(PhotonNetwork.IsMasterClient)
-                PhotonNetwork.InstantiateRoomObject(counter.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
+                PhotonNetwork.InstantiateRoomObject(counter.name, counter.transform.position, Quaternion.identity, 0);
 
             Time.timeScale = 1;
             PlayerPrefs.SetInt("CoinsC", 0);

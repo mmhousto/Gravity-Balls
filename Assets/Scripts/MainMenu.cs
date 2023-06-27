@@ -9,9 +9,13 @@ using Unity.Services.CloudSave;
 public class MainMenu : MonoBehaviour {
 
 	public GameObject signIn;
+	public GameObject connectingScreen, startScreen;
+	private PlayServices playServices;
+	private bool finishedLoggingIn = false;
 
     private void Start()
     {
+		playServices = PlayServices.Instance;
         if (signIn != null && Social.localUser.authenticated)
         {
 			signIn.SetActive(false);
@@ -20,6 +24,12 @@ public class MainMenu : MonoBehaviour {
 
     private void Update()
     {
+		if (playServices == null)
+			playServices = PlayServices.Instance;
+
+		if (playServices != null && startScreen != null && (playServices.couldntLogIn || playServices.loggedIn) && !startScreen.activeInHierarchy && finishedLoggingIn == false)
+			SignedIn();
+
 		if(signIn != null)
         {
 			if (Social.localUser.authenticated && signIn.activeInHierarchy)
@@ -31,6 +41,13 @@ public class MainMenu : MonoBehaviour {
 		}
         
 	}
+
+	public void SignedIn()
+    {
+		finishedLoggingIn = true;
+		connectingScreen.SetActive(false);
+		startScreen.SetActive(true);
+    }
 
     public void GoToMainMenu()
     {

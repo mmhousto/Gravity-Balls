@@ -3561,11 +3561,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467095943}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1488673226 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -37647379194820396, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
-  m_PrefabInstance: {fileID: 1618614830}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1567638074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,6 +3703,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2131840007}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: -37647379194820396, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3772,11 +3771,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: background-01
       objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10.53
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 7243324766535440047, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
+--- !u!4 &1618614831 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8742538545776668643, guid: f0439e2bbe4874ceda8d498d9b261e08, type: 3}
+  m_PrefabInstance: {fileID: 1618614830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1739286264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5014,10 +5026,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1488673226}
   - {fileID: 566704080}
   - {fileID: 1442176444}
-  - {fileID: 383850061}
   - {fileID: 412391614}
   - {fileID: 1274474792}
   - {fileID: 1739286266}
@@ -5026,6 +5036,8 @@ Transform:
   - {fileID: 2081683134}
   - {fileID: 606127846}
   - {fileID: 870424363}
+  - {fileID: 383850061}
+  - {fileID: 1618614831}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

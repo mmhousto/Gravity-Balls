@@ -27,6 +27,7 @@ public class PlayServices : MonoBehaviour
     static int playerScore;
     public string token;
     public bool loggedIn;
+    public bool couldntLogIn;
 
     private IAppleAuthManager appleAuthManager;
     private bool triedQuickLogin = false;
@@ -128,12 +129,19 @@ public class PlayServices : MonoBehaviour
             await SignInWithAppleAsync(idToken);
 
         }
+        else
+        {
+            couldntLogIn = true;
+        }
 
     }
 
     async void SignInGoogle(string code)
     {
-        await SignInWithGooglePlayGamesAsync(code);
+        if(code != null)
+            await SignInWithGooglePlayGamesAsync(code);
+        else
+            couldntLogIn = true;
     }
 
     async void InitUGS()
@@ -151,7 +159,7 @@ public class PlayServices : MonoBehaviour
     /// </summary>
     public async void QuickLoginApple()
     {
-        Debug.Log("Quick Login Apple Called");
+        //Debug.Log("Quick Login Apple Called");
         if (appleAuthManager == null) return;
 
         if (!AuthenticationService.Instance.IsSignedIn)
@@ -336,12 +344,14 @@ public class PlayServices : MonoBehaviour
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
+            couldntLogIn = true;
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
             Debug.LogException(ex);
+            couldntLogIn = true;
         }
     }
 
@@ -352,19 +362,22 @@ public class PlayServices : MonoBehaviour
             await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
             Debug.Log("SignIn Google is successful.");
             SetPlayerData(AuthenticationService.Instance.PlayerId);
+            loggedIn = true;
 
         }
         catch (AuthenticationException ex)
         {
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
-            Debug.LogException(ex);
+            //Debug.LogException(ex);
+            couldntLogIn = true;
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
-            Debug.LogException(ex);
+            //Debug.LogException(ex);
+            couldntLogIn = true;
         }
     }
 
@@ -372,9 +385,8 @@ public class PlayServices : MonoBehaviour
     {
         if (success)
         {
-            loggedIn = true;
 #if UNITY_IOS
-            
+            loggedIn = true;
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.RequestServerSideAccess(false, code =>
             {
@@ -384,6 +396,7 @@ public class PlayServices : MonoBehaviour
         }
         else
         {
+            couldntLogIn = true;
         }
     }
 
@@ -392,8 +405,6 @@ public class PlayServices : MonoBehaviour
     {
         if (obj == SignInStatus.Success)
         {
-            loggedIn = true;
-
             PlayGamesPlatform.Instance.RequestServerSideAccess(false, code =>
             {
                 SignInGoogle(code);
@@ -401,6 +412,7 @@ public class PlayServices : MonoBehaviour
         }
         else
         {
+            couldntLogIn = true;
         }
     }
 #endif
