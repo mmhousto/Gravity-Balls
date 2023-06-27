@@ -70,7 +70,7 @@ public class MainMenu : MonoBehaviour {
 	public void PlayVersus()
 	{
 		//Destroy(GameObject.Find("AudioManager"));
-		SceneManager.LoadScene(3);
+		StartCoroutine(LoadYourAsyncScene(3));
 	}
 
 	public void DeleteMyAccount()
@@ -100,7 +100,7 @@ public class MainMenu : MonoBehaviour {
 		PlayServices.Instance.SignOutAccount();
 	}*/
 
-	/*IEnumerator LoadYourAsyncScene(string m_Scene)
+	IEnumerator LoadYourAsyncScene(int m_Scene)
 	{
 		// Set the current Scene to be able to unload it later
 		Scene currentScene = SceneManager.GetActiveScene();
@@ -115,9 +115,9 @@ public class MainMenu : MonoBehaviour {
 		}
 
 		// Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
-		SceneManager.MoveGameObjectToScene(audioManager, SceneManager.GetSceneByName(m_Scene));
+		//SceneManager.MoveGameObjectToScene(audioManager, SceneManager.GetSceneByName(m_Scene));
 		// Unload the previous Scene
 		SceneManager.UnloadSceneAsync(currentScene);
-	}*/
+	}
 
 }

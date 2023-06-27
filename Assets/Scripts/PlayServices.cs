@@ -76,6 +76,10 @@ public class PlayServices : MonoBehaviour
             // Creates an Apple Authentication manager with the deserializer
             appleAuthManager = new AppleAuthManager(deserializer);
         }
+#if UNITY_IOS
+        else
+            couldntLogIn = true;
+#endif
 
 #if UNITY_ANDROID
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
@@ -343,14 +347,14 @@ public class PlayServices : MonoBehaviour
         {
             // Compare error code to AuthenticationErrorCodes
             // Notify the player with the proper error message
-            Debug.LogException(ex);
+            //Debug.LogException(ex);
             couldntLogIn = true;
         }
         catch (RequestFailedException ex)
         {
             // Compare error code to CommonErrorCodes
             // Notify the player with the proper error message
-            Debug.LogException(ex);
+            //Debug.LogException(ex);
             couldntLogIn = true;
         }
     }
@@ -421,7 +425,7 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-#if UNITY_IPHONE
+#if UNITY_IOS
                 Social.ReportScore(playerScore, "AllTimeLeader", success => { });
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAg", success => { });
@@ -433,7 +437,7 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-#if UNITY_IPHONE
+#if UNITY_IOS
                 Social.ReportScore(playerScore, "SkillLeader", success => { });
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(playerScore, "CgkItYzmyokEEAIQAw", success => { });
@@ -445,7 +449,7 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-#if UNITY_IPHONE
+#if UNITY_IOS
                 Social.ReportScore(valueToReport, "AllTimeGames", success => { });
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBg", success => { });
@@ -457,7 +461,7 @@ public class PlayServices : MonoBehaviour
     {
         if (Social.localUser.authenticated)
         {
-#if UNITY_IPHONE
+#if UNITY_IOS
                 Social.ReportScore(valueToReport, "AllTimeWins", success => { });
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(valueToReport, "CgkItYzmyokEEAIQBA", success => { });
@@ -470,7 +474,7 @@ public class PlayServices : MonoBehaviour
         if (Social.localUser.authenticated)
         {
             long valueAsLong = (long)(valueToReport * 100);
-#if UNITY_IPHONE
+#if UNITY_IOS
                 Social.ReportScore(valueAsLong, "AllTimeWinPercent", success => { });
 #elif UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(valueAsLong, "CgkItYzmyokEEAIQBQ", success => { });
