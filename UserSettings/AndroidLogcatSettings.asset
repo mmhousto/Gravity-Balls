@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "932AY05NK4",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "932AY05NK4",
+        "name": "com.MorganHouston.GravityBalls",
+        "processId": 12458,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -36,6 +36,18 @@
             "deviceId": "932AY05NK4",
             "name": "com.google.android.apps.nexuslauncher",
             "processId": 24511,
+            "exited": false
+        },
+        {
+            "deviceId": "932AY05NK4",
+            "name": "com.MorganHouston.GravityBalls",
+            "processId": 8628,
+            "exited": false
+        },
+        {
+            "deviceId": "932AY05NK4",
+            "name": "com.MorganHouston.GravityBalls",
+            "processId": 12458,
             "exited": false
         }
     ],

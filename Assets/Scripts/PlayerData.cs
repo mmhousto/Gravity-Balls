@@ -150,6 +150,20 @@ public class PlayerData : MonoBehaviour
         ownPaddle5 = data.ownPaddle5;
         paddlePath = data.paddlePath;
         paddleNum = data.paddleNum;
+
+        PlayerPrefs.SetInt("Plays", plays);
+        PlayerPrefs.SetInt("Wins", wins);
+        PlayerPrefs.SetInt("Losses", losses);
+        PlayerPrefs.SetInt("HighScore", hiScore);
+        PlayerPrefs.SetInt("SkillHighScore", skillHiScore);
+        PlayerPrefs.SetInt("Coins", coins);
+        PlayerPrefs.SetInt("ownPaddle1", ownPaddle1);
+        PlayerPrefs.SetInt("ownPaddle2", ownPaddle2);
+        PlayerPrefs.SetInt("ownPaddle3", ownPaddle3);
+        PlayerPrefs.SetInt("ownPaddle4", ownPaddle4);
+        PlayerPrefs.SetInt("ownPaddle5", ownPaddle5);
+        PlayerPrefs.SetString("Paddle", paddlePath);
+        PlayerPrefs.SetInt("selectedPaddle", paddleNum);
     }
 
     public void SetData(string id)
