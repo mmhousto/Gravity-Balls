@@ -15,7 +15,9 @@ public class MainMenu : MonoBehaviour {
 
     private void Start()
     {
-		playServices = PlayServices.Instance;
+		if (playServices == null && PlayServices.Instance != null)
+			playServices = PlayServices.Instance;
+
         if (signIn != null && Social.localUser.authenticated)
         {
 			signIn.SetActive(false);
@@ -24,7 +26,7 @@ public class MainMenu : MonoBehaviour {
 
     private void Update()
     {
-		if (playServices == null)
+		if (playServices == null && PlayServices.Instance != null)
 			playServices = PlayServices.Instance;
 
 		if (playServices != null && startScreen != null && (playServices.couldntLogIn || playServices.loggedIn) && !startScreen.activeInHierarchy && finishedLoggingIn == false)
