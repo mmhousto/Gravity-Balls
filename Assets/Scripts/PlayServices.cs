@@ -109,6 +109,11 @@ public class PlayServices : MonoBehaviour
         playerScore = score.GetScore();
     }
 
+    private void OnApplicationPause(bool pause)
+    {
+        IronSource.Agent.onApplicationPause(pause);
+    }
+
 #if UNITY_ANDROID
     private void LoginGooglePlayGames()
     {
