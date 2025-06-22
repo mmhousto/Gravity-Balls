@@ -42,28 +42,24 @@ public class DisplayAd : MonoBehaviour
 
         LevelPlay.Init("2252c9f0d");
         //Advertisement.Initialize(myGameIdAndroid, testMode, this);
-        Debug.Log("START Ads Init");
     }
 
     private void SdkInitializationFailedEvent(LevelPlayInitError error)
     {
-        Debug.Log("Ads Init FAILED");
     }
 
     private void SdkInitializationCompletedEvent(LevelPlayConfiguration configuration)
     {
         //IronSource.Agent.launchTestSuite();
-        Debug.Log("Ads Init SUCCESS");
         loadingAd = true;
         interstitialAd.LoadAd();
     }
 
     // Update is called once per frame
     void Update() {
-        /*if (Advertisement.isInitialized && isReady && !adStarted && gameOver.activeInHierarchy == true && (PlayerData.Instance.plays % 10 == 0)) {
-            Advertisement.Show(myVideoPlacement, this);
-            adStarted = true;
-        }*/
+        if (isReady && !adStarted && gameOver.activeInHierarchy == true && (PlayerData.Instance.plays % 10 == 0)) {
+            ShowAd();
+        }
     }
 
     // Implement the events
@@ -71,13 +67,21 @@ public class DisplayAd : MonoBehaviour
     {
         isReady = true;
         loadingAd = false;
-        interstitialAd.ShowAd(myVideoPlacement);
-        Debug.Log("Ad Load LOADED");
+        //interstitialAd.ShowAd(myVideoPlacement);
+    }
+
+    public void ShowAd()
+    {
+        if (isReady)
+        {
+            adStarted = true;
+            interstitialAd.ShowAd(myVideoPlacement);
+        }
+            
     }
 
     void InterstitialOnAdLoadFailedEvent(LevelPlayAdError error) 
     {
-        Debug.Log("Ad Load FAILED");
         tries++;
         isReady = false;
         //Debug.Log("Ad NOT Ready");
@@ -86,10 +90,10 @@ public class DisplayAd : MonoBehaviour
         else
             loadingAd = false;
     }
-    void InterstitialOnAdDisplayedEvent(LevelPlayAdInfo adInfo) { Debug.Log("Ad Show DISPLAYED"); }
-    void InterstitialOnAdDisplayFailedEvent(LevelPlayAdDisplayInfoError infoError) { Debug.Log("Ad Show FAILED: " + infoError.LevelPlayError); }
-    void InterstitialOnAdClickedEvent(LevelPlayAdInfo adInfo) { Debug.Log("Ad Show CLICKED"); }
-    void InterstitialOnAdClosedEvent(LevelPlayAdInfo adInfo) { Debug.Log("Ad Show CLOSED"); }
+    void InterstitialOnAdDisplayedEvent(LevelPlayAdInfo adInfo) {  }
+    void InterstitialOnAdDisplayFailedEvent(LevelPlayAdDisplayInfoError infoError) {  }
+    void InterstitialOnAdClickedEvent(LevelPlayAdInfo adInfo) {  }
+    void InterstitialOnAdClosedEvent(LevelPlayAdInfo adInfo) {  }
     void InterstitialOnAdInfoChangedEvent(LevelPlayAdInfo adInfo) { }
 
 
